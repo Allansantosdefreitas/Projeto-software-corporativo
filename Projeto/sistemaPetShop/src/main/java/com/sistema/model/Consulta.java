@@ -2,6 +2,7 @@ package com.sistema.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 
@@ -39,6 +41,18 @@ public class Consulta implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "ext_IdPet", referencedColumnName = "lon_id")
     private Pet pet;
+    
+    @ManyToOne(fetch = FetchType.LAZY, optional = true)
+    @JoinColumn (name = "ext_IdVeterinario", referencedColumnName = "lon_id")
+    private Veterinario veterinario;
+    
+    @ManyToOne(fetch = FetchType.LAZY, optional = true)
+    @JoinColumn (name = "ext_IdConsulta", referencedColumnName = "lon_id")
+    private Consulta consulta;
+    
+    @ManyToOne(fetch = FetchType.LAZY, optional = true)
+    @JoinColumn (name = "ext_IdExame", referencedColumnName = "lon_id")
+    private Exame exame;
 
     public Long getIdConsulta() {
         return idConsulta;
@@ -79,4 +93,29 @@ public class Consulta implements Serializable {
     public void setPet(Pet pet) {
         this.pet = pet;
     }
+    
+    public Veterinario getVeterinario() {
+        return veterinario;
+    }
+
+    public void setVeterinario(Veterinario veterinario) {
+        this.veterinario = veterinario;
+    }
+    
+    public Consulta getConsulta() {
+        return consulta;
+    }
+
+    public void setConsulta(Consulta consulta) {
+        this.consulta = consulta;
+    }
+    
+    public Exame getExame() {
+        return exame;
+    }
+
+    public void setExame(Exame exame) {
+        this.exame = exame;
+    }
+    
 }

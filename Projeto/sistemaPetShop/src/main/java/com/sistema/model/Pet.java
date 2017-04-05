@@ -50,7 +50,7 @@ public class Pet implements Serializable {
     
     @OneToMany (mappedBy = "pet", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     @JoinColumn (name = "ext_IdConsulta", referencedColumnName = "lon_id")
-    private List<Consulta> consulta;
+    private List<Consulta> consultas;
 
     public Long getIdPet() {
         return idPet;
@@ -101,10 +101,10 @@ public class Pet implements Serializable {
     }
 
     public List<Consulta> getConsulta() {
-        return consulta;
+        return consultas;
     }
 
     public void setConsulta(List<Consulta> consulta) {
-        this.consulta = consulta;
+        this.consultas = consulta;
     }
 }

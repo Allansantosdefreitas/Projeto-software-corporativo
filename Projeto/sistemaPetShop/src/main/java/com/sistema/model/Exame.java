@@ -1,11 +1,16 @@
 package com.sistema.model;
 
 import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -32,6 +37,10 @@ public class Exame implements Serializable {
 
     @Column(name = "dbl_valor", unique = false)
     private Double valor;
+    
+    @OneToMany (mappedBy = "exame", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    @JoinColumn (name = "ext_IdConsulta", referencedColumnName = "lon_id")
+    private List<Consulta> consultas;
 
     public Long getIdExame() {
         return idExame;
@@ -71,6 +80,14 @@ public class Exame implements Serializable {
 
     public void setValor(Double valor) {
         this.valor = valor;
+    }
+    
+    public List<Consulta> getConsultas() {
+        return consultas;
+    }
+
+    public void setConsultas(List<Consulta> consultas) {
+        this.consultas = consultas;
     }
 
 }
