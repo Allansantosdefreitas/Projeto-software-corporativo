@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -35,6 +36,9 @@ public class Endereco implements Serializable {
 
     @Column(name = "str_bairro", length = 60, nullable = false)
     private String bairro;
+
+    @OneToOne(mappedBy = "endereco", optional = false)
+    private Usuario usuario;
 
     public Long getIdEndereco() {
         return idEndereco;
@@ -82,5 +86,13 @@ public class Endereco implements Serializable {
 
     public void setBairro(String bairro) {
         this.bairro = bairro;
+    }
+    
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }

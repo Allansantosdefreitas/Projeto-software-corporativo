@@ -5,10 +5,7 @@
  */
 package com.sistema.aplicacao;
 
-import com.sistema.model.Cartao;
-import com.sistema.model.Cliente;
-import java.util.Calendar;
-import java.util.List;
+import com.sistema.model.Consulta;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -18,7 +15,7 @@ import javax.persistence.Persistence;
  *
  * @author Jonathan Romualdo
  */
-public class CrudCliente {
+public class CrudConsulta {
     
     private static EntityManagerFactory EMF = null;
     private static EntityManager EM = null;
@@ -27,43 +24,20 @@ public class CrudCliente {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {        
-        Cliente cliente = new Cliente();
-        Calendar calendario = Calendar.getInstance();
-        calendario.set(2018, 7, 17);
+    public static void main(String[] args) {
         
-        Cartao cartao = new Cartao("Visa", "1234568790123456", calendario.getTime());
-        
-        List<Cartao> listaCartao = null;
-        listaCartao.add(cartao);
-               
-        cliente.setNome("Kirk");
-        cliente.setCartao(listaCartao);
-        cliente.setEmail("kirk@capitao.com");
-        cliente.setLogin("kirkCapitao");
-        cliente.setSenha("melhorCapitao");
-        
-        inserirCliente(cliente);
-        
-        consultarCliente(Long.valueOf('1'));
-        
-        cliente.setNome("Spock");
-        cliente.setEmail("spock@capitaoEnterprise.com");
-        
-        atualizarCliente(cliente);
-        
-        //deletarCliente(cliente);
+        Consulta consulta = new Consulta();
         
     }
     
-    public static void inserirCliente(Cliente cliente){
+    public static void inserirConsulta(Consulta consulta){
         EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
         EM = EMF.createEntityManager();
         et  = EM.getTransaction();
         
         try{ 
             et.begin();
-            EM.persist(cliente);
+            EM.persist(consulta);
             et.commit();
         } catch (Exception ex) {
             if (et != null && et.isActive()) {
@@ -79,14 +53,14 @@ public class CrudCliente {
         }
     }
     
-    public static void atualizarCliente(Cliente cliente){
+    public static void atualizarConsulta(Consulta consulta){
         EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
         EM = EMF.createEntityManager();
         et  = EM.getTransaction(); 
         
         try{ 
             et.begin();
-            EM.merge(cliente);
+            EM.merge(consulta);
             et.commit();
         } catch (Exception ex) {
             if (et != null && et.isActive()) {
@@ -102,14 +76,14 @@ public class CrudCliente {
         }
     }
 
-    public static void deletarCliente(Cliente cliente){
+    public static void deletarConsulta(Consulta consulta){
         EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
         EM = EMF.createEntityManager();
         et  = EM.getTransaction(); 
         
         try{ 
             et.begin();
-            EM.remove(cliente);
+            EM.remove(consulta);
             et.commit();
         } catch (Exception ex) {
             if (et != null && et.isActive()) {
@@ -126,14 +100,14 @@ public class CrudCliente {
         
     }
  
-    public static void consultarCliente(Long idCliente){
+    public static void consultarConsulta(Long idCliente){
         EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
         EM = EMF.createEntityManager();
         et  = EM.getTransaction(); 
         
         try{ 
             et.begin();
-            EM.find(Cliente.class, idCliente);
+            EM.find(Consulta.class, idCliente);
             et.commit();
         } catch (Exception ex) {
             if (et != null && et.isActive()) {
@@ -148,5 +122,5 @@ public class CrudCliente {
             }
         }
     }
- 
+    
 }

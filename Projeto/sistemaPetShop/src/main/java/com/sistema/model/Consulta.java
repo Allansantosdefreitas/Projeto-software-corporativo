@@ -4,9 +4,12 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 
@@ -26,12 +29,16 @@ public class Consulta implements Serializable {
     @Column(name = "dat_dataMarcada")
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataMarcada;
-    
+
     @Column(name = "str_diagnostico", length = 100)
     private String diagnostico;
 
     @Column(name = "str_status", length = 60)
     private StatusConsulta status;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "ext_IdPet", referencedColumnName = "lon_id")
+    private Pet pet;
 
     public Long getIdConsulta() {
         return idConsulta;
@@ -65,4 +72,11 @@ public class Consulta implements Serializable {
         this.status = status;
     }
 
+    public Pet getPet() {
+        return pet;
+    }
+
+    public void setPet(Pet pet) {
+        this.pet = pet;
+    }
 }

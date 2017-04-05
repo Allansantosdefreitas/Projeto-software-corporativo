@@ -7,6 +7,10 @@ package com.sistema.model;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -14,14 +18,19 @@ import java.util.List;
  */
 public class Cliente extends Usuario implements Serializable {
 
-    private Cartao cartao;
+    @OneToMany (mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    @JoinColumn (name = "ext_IdCartao", referencedColumnName = "long_idCartao", nullable = true)
+    private List<Cartao> cartao;
+    
+    @OneToMany (mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    @JoinColumn (name = "ext_IdPet", referencedColumnName = "lon_id")
     private List<Pet> listaPet;
 
-    public Cartao getCartao() {
+    public List<Cartao> getCartao() {
         return cartao;
     }
 
-    public void setCartao(Cartao cartao) {
+    public void setCartao(List<Cartao> cartao) {
         this.cartao = cartao;
     }
 

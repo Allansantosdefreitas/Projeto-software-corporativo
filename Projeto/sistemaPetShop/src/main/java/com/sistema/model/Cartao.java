@@ -4,9 +4,12 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 
@@ -32,6 +35,10 @@ public class Cartao implements Serializable {
     @Column(name = "date_dataValidade")
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataValidade;
+    
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn (name = "ext_IdUsuario", referencedColumnName = "lon_id")
+    private Cliente cliente;
 
     public Cartao() {
     }
@@ -73,4 +80,13 @@ public class Cartao implements Serializable {
     public void setDataValidade(Date dataValidade) {
         this.dataValidade = dataValidade;
     }
+    
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
 }
