@@ -5,7 +5,7 @@
  */
 package com.sistema.aplicacao;
 
-import com.sistema.model.Consulta;
+import com.sistema.model.ConsultaGeral;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -15,7 +15,7 @@ import javax.persistence.Persistence;
  *
  * @author Jonathan Romualdo
  */
-public class CrudConsulta {
+public class CrudConsultaGeral {
     
     private static EntityManagerFactory EMF = null;
     private static EntityManager EM = null;
@@ -26,11 +26,11 @@ public class CrudConsulta {
      */
     public static void main(String[] args) {
         
-        Consulta consulta = new Consulta();
+        ConsultaGeral consulta = new ConsultaGeral();
         
     }
     
-    public static void inserirConsulta(Consulta consulta){
+    public static void inserirConsulta(ConsultaGeral consulta){
         EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
         EM = EMF.createEntityManager();
         et  = EM.getTransaction();
@@ -53,7 +53,7 @@ public class CrudConsulta {
         }
     }
     
-    public static void atualizarConsulta(Consulta consulta){
+    public static void atualizarConsulta(ConsultaGeral consulta){
         EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
         EM = EMF.createEntityManager();
         et  = EM.getTransaction(); 
@@ -76,7 +76,7 @@ public class CrudConsulta {
         }
     }
 
-    public static void deletarConsulta(Consulta consulta){
+    public static void deletarConsulta(ConsultaGeral consulta){
         EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
         EM = EMF.createEntityManager();
         et  = EM.getTransaction(); 
@@ -100,14 +100,14 @@ public class CrudConsulta {
         
     }
  
-    public static void consultarConsulta(Long idCliente){
+    public static void buscarConsulta(Long idConsultaGeral){
         EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
         EM = EMF.createEntityManager();
         et  = EM.getTransaction(); 
         
         try{ 
             et.begin();
-            EM.find(Consulta.class, idCliente);
+            EM.find(ConsultaGeral.class, idConsultaGeral);
             et.commit();
         } catch (Exception ex) {
             if (et != null && et.isActive()) {
