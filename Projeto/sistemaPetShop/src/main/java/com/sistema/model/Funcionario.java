@@ -8,6 +8,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
@@ -24,12 +26,15 @@ import javax.persistence.Table;
 @Access(AccessType.FIELD)
 public class Funcionario extends Usuario implements Serializable{
     
+    
+    @Enumerated(EnumType.STRING)
     @Column (name = "enum_especialidadeFuncionario")
     private EspecialidadeFuncionario especialidadeFuncionario;
     
-    // Relacionamento Consulta Geral
+    // Relacionamento ConsultaGeral
     @OneToMany(mappedBy = "funcionario", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = false)
     private List<ConsultaGeral> listaConsultaGeral;
+    
     
     // getters e Setters -----------------------------
     public EspecialidadeFuncionario getEspecialidadeFuncionario() {

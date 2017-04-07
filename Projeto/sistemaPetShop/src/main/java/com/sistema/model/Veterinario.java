@@ -10,6 +10,8 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -29,6 +31,7 @@ public class Veterinario extends Usuario implements Serializable {
     @Column(name = "str_crmv", nullable = false, length = 60, unique = true)
     private String crmv;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "str_especialidade", nullable = false, length = 60)
     private String especialidade;
 

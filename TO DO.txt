@@ -10,9 +10,9 @@ Veterinario (ok)
 Exame (ok)
 ConsultaMedica (ok)
 
-ConsultaGeral
-Funcionario
-Servico
+ConsultaGeral (ok)
+Funcionario (ok)
+Servico (ok)
 
 
 CRUD: DOING
