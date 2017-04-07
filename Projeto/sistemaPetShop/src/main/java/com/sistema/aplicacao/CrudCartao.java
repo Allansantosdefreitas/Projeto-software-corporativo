@@ -38,7 +38,16 @@ public class CrudCartao {
         
         //atualizarCartao(cartao);
         
+        cartao.setBandeira("Master");
+        
+        atualizarCartao(cartao);     
+        
+        System.out.println("Bandeira: " + cartaoResultado.getBandeira());
+        
         //deletarCartao(cartao);
+        
+        deletarCartao(cartao);
+        
         
     }
     
