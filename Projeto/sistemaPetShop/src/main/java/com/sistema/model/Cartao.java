@@ -2,6 +2,8 @@ package com.sistema.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,6 +21,7 @@ import javax.persistence.Temporal;
  */
 @Entity
 @Table(name = "tb_cartao")
+@Access(AccessType.FIELD)
 public class Cartao implements Serializable {
 
     @Id
@@ -36,8 +39,9 @@ public class Cartao implements Serializable {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataValidade;
     
+    // Relacionamento Cliente
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn (name = "fk_usuario", referencedColumnName = "id_usuario")
+    @JoinColumn (name = "fk_cliente", referencedColumnName = "id_cliente")
     private Cliente cliente;
 
     public Cartao() {
@@ -49,6 +53,7 @@ public class Cartao implements Serializable {
         this.dataValidade = dataValidade;
     }  
 
+    // getters e Setters -----------------------------
     public Long getIdCartao() {
         return idCartao;
     }

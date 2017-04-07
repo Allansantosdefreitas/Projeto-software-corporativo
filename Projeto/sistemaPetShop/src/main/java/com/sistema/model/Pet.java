@@ -44,14 +44,19 @@ public class Pet implements Serializable {
     @Column(name = "boo_pedegree", nullable = false)
     private Boolean pedegree;
     
+    
+    // Relacionamento Cliente
     @ManyToOne(fetch = FetchType.LAZY, optional = true)
-    @JoinColumn (name = "fk_cliente", referencedColumnName = "id_usuario")
+    @JoinColumn (name = "fk_cliente", referencedColumnName = "id_cliente")
     private Cliente cliente;
     
+    // Relacionamento ConsultaMedica
     @OneToMany (mappedBy = "pet", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
-    @JoinColumn (name = "fk_consulta_medica", referencedColumnName = "id_consulta")
+    @JoinColumn (name = "fk_consulta_medica", referencedColumnName = "id_consulta_medica")
     private List<ConsultaMedica> ListaConsultaMedica;
 
+    
+    // getters e Setters -----------------------------
     public Long getIdPet() {
         return idPet;
     }

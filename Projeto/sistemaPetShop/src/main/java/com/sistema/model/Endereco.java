@@ -3,6 +3,7 @@ package com.sistema.model;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -37,9 +38,12 @@ public class Endereco implements Serializable {
     @Column(name = "str_bairro", length = 60, nullable = false)
     private String bairro;
 
-    @OneToOne(mappedBy = "endereco", optional = false)
+    // Relacionamento Usuario
+    @OneToOne(mappedBy = "endereco", optional = false, fetch = FetchType.LAZY)
     private Usuario usuario;
 
+    
+    // getters e Setters -----------------------------
     public Long getIdEndereco() {
         return idEndereco;
     }

@@ -8,10 +8,12 @@ package com.sistema.model;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 /**
@@ -20,6 +22,8 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "tb_Veterinario")
+@DiscriminatorValue(value = "vet")
+@PrimaryKeyJoinColumn(name = "id_veterinario", referencedColumnName = "id_usuario") 
 public class Veterinario extends Usuario implements Serializable {
 
     @Column(name = "str_crmv", nullable = false, length = 60, unique = true)
@@ -28,10 +32,13 @@ public class Veterinario extends Usuario implements Serializable {
     @Column(name = "str_especialidade", nullable = false, length = 60)
     private String especialidade;
 
+    // Relacionamento ConsultaMedica
     @OneToMany(fetch = FetchType.LAZY, orphanRemoval = false)
-    @JoinColumn(name = "fk_consulta", referencedColumnName = "id_consulta")
+    @JoinColumn(name = "fk_consulta", referencedColumnName = "id_consulta_medica")
     private List<ConsultaMedica> ListaConsultaMedica;
 
+    
+    // getters e Setters -----------------------------
     public String getCrmv() {
         return crmv;
     }
@@ -55,4 +62,6 @@ public class Veterinario extends Usuario implements Serializable {
     public void setListaConsultaMedica(List<ConsultaMedica> ListaConsultaMedica) {
         this.ListaConsultaMedica = ListaConsultaMedica;
     }
+    
+    
 }

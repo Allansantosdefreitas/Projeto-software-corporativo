@@ -2,16 +2,18 @@ package com.sistema.model;
 
 import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.CascadeType;
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 
@@ -21,12 +23,15 @@ import javax.persistence.Temporal;
  */
 @Entity
 @Table(name = "tb_consulta")
-public class Consulta implements Serializable {
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "disc_consulta", discriminatorType = DiscriminatorType.STRING, length = 3)
+@Access(AccessType.FIELD)
+public abstract class Consulta implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_consulta", nullable = false, unique = true)
-    private Long idConsulta;
+    protected Long idConsulta; // O id é herdado pelas subclasses
 
     @Column(name = "dat_dataMarcada")
     @Temporal(javax.persistence.TemporalType.DATE)
@@ -35,15 +40,7 @@ public class Consulta implements Serializable {
     @Column(name = "str_status", length = 60)
     private StatusConsulta status;
     
-    /// ????????????
-    @ManyToOne(fetch = FetchType.LAZY, optional = true)
-    @JoinColumn (name = "ext_IdConsulta", referencedColumnName = "lon_id")
-    private Consulta consulta;
-    
-    @ManyToOne(fetch = FetchType.LAZY, optional = true)
-    @JoinColumn (name = "ext_IdExame", referencedColumnName = "lon_id")
-    private Exame exame;
-
+    // getters e Setters -----------------------------
     public Long getIdConsulta() {
         return idConsulta;
     }
@@ -66,22 +63,6 @@ public class Consulta implements Serializable {
 
     public void setStatus(StatusConsulta status) {
         this.status = status;
-    }
-    
-    public Consulta getConsulta() {
-        return consulta;
-    }
-
-    public void setConsulta(Consulta consulta) {
-        this.consulta = consulta;
-    }
-    
-    public Exame getExame() {
-        return exame;
-    }
-
-    public void setExame(Exame exame) {
-        this.exame = exame;
     }
     
 }

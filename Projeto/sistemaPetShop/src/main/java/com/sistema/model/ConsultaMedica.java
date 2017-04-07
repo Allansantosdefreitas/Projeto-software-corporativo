@@ -6,11 +6,15 @@
 package com.sistema.model;
 
 import java.io.Serializable;
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 /**
@@ -18,22 +22,57 @@ import javax.persistence.Table;
  * @author allanfreitas
  */
 @Entity
-@Table(name = "tb_consulta_medica" )
+@Table(name = "tb_consulta_medica")
+@DiscriminatorValue(value = "med")
+@PrimaryKeyJoinColumn(name = "id_consulta_medica" )
+@Access(AccessType.FIELD)
 public class ConsultaMedica extends Consulta implements Serializable{
     
     @Column(name = "str_diagnostico", nullable = false, length = 400)
     private String diagnostico;
     
+    // Relacionamento Pet
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "fk_pet", referencedColumnName = "id_pet")
     private Pet pet;
     
-    
+    // Relacionamento Veterinario
     @ManyToOne(fetch = FetchType.LAZY, optional = true)
-    @JoinColumn (name = "fk_veterinario", referencedColumnName = "id_usuario")
+    @JoinColumn (name = "fk_veterinario", referencedColumnName = "id_veterinario")
     private Veterinario veterinario;
     
+    // Relacionamento Exame
+    @ManyToOne(fetch = FetchType.LAZY, optional = true)
+    @JoinColumn (name = "fk_exame", referencedColumnName = "id_exame")
+    private Exame exame;
 
+    
+    
+     // getters e Setters -----------------------------
+    public Pet getPet() {
+        return pet;
+    }
+
+    public void setPet(Pet pet) {
+        this.pet = pet;
+    }
+
+    public Veterinario getVeterinario() {
+        return veterinario;
+    }
+
+    public void setVeterinario(Veterinario veterinario) {
+        this.veterinario = veterinario;
+    }
+
+    public Exame getExame() {
+        return exame;
+    }
+
+    public void setExame(Exame exame) {
+        this.exame = exame;
+    }
+    
     public String getDiagnostico() {
         return diagnostico;
     }

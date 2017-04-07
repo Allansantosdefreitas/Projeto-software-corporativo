@@ -7,26 +7,40 @@ package com.sistema.model;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
 
 /**
  *
  * @author Jonathan Romualdo
  */
+
+@Entity
+@Table(name = "tb_cliente")
+@DiscriminatorValue(value = "cli")
+@PrimaryKeyJoinColumn(name = "id_cliente", referencedColumnName = "id_usuario") 
+@Access(AccessType.FIELD)
 public class Cliente extends Usuario implements Serializable {
 
+    // Relacionamento Cartao
     @OneToMany (mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     @JoinColumn (name = "fk_cartao", referencedColumnName = "id_cartao", nullable = true)
     private List<Cartao> cartao;
     
-    
+    // Relacionamento Pet
     @OneToMany (mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     @JoinColumn (name = "fk_pet", referencedColumnName = "id_pet")
     private List<Pet> listaPet;
 
+    // getters e Setters -----------------------------
     public List<Cartao> getCartao() {
         return cartao;
     }

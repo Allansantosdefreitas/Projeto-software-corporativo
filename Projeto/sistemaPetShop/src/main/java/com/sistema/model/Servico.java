@@ -7,6 +7,8 @@ package com.sistema.model;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,6 +26,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "tb_servico")
+@Access(AccessType.FIELD)
 public class Servico implements Serializable {
 
     @Id
@@ -37,10 +40,13 @@ public class Servico implements Serializable {
     @Column(name = "dbl_valor", nullable = false, unique = true)
     private Double valor;
     
-    @OneToMany (mappedBy = "consulta", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
-    @JoinColumn (name = "ext_IdConsulta", referencedColumnName = "lon_id")
-    private List<Consulta> consultas;
+    // Relacionamento Consulta
+    @OneToMany (mappedBy = "servico", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = false)
+    //@JoinColumn (name = "fk_consulta_geral", referencedColumnName = "id_consulta_geral")
+    private List<Consulta> listaConsulta;
 
+    
+    // getters e Setters -----------------------------
     public Long getIdServico() {
         return idServico;
     }
@@ -64,13 +70,13 @@ public class Servico implements Serializable {
     public void setValor(Double valor) {
         this.valor = valor;
     }
+
+    public List<Consulta> getListaConsulta() {
+        return listaConsulta;
+    }
+
+    public void setListaConsulta(List<Consulta> listaConsulta) {
+        this.listaConsulta = listaConsulta;
+    }
     
-    public List<Consulta> getConsultas() {
-        return consultas;
-    }
-
-    public void setConsultas(List<Consulta> consultas) {
-        this.consultas = consultas;
-    }
-
 }

@@ -1,13 +1,19 @@
 package com.sistema.model;
 
 import java.io.Serializable;
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -18,12 +24,15 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "tb_usuario")
-public class Usuario implements Serializable {
+@Inheritance(strategy = InheritanceType.JOINED) 
+@DiscriminatorColumn(name = "disc_usuario", discriminatorType = DiscriminatorType.STRING, length= 3) // 3 é o tamanho do campo discriminator (disc_usuario)
+@Access(AccessType.FIELD)
+public abstract class Usuario implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_usuario", nullable = false)
-    private Long idUsuario;
+    protected Long idUsuario; // O id é herdado pelos filhos
 
     @Column(name = "str_nome", length = 60, nullable = false)
     private String nome;
@@ -37,23 +46,25 @@ public class Usuario implements Serializable {
     @Column(name = "str_senha", length = 16, nullable = false)
     private String senha;
 
-    @OneToOne(fetch = FetchType.LAZY, optional = false, orphanRemoval = true,
+    // Relacionamento Endereco
+    @OneToOne(fetch = FetchType.LAZY, optional = false, orphanRemoval = true, // optional false indica que é obrigado colocar endereço para dar persist
             cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_endereco", referencedColumnName = "id_endereco")
     private Endereco endereco;
 
     public Usuario() {
+        
     }
 
-      public Long getIdUsuario() {
+    // getters e Setters -----------------------------
+    public Long getIdUsuario() {
         return idUsuario;
     }
 
     public void setIdUsuario(Long idUsuario) {
         this.idUsuario = idUsuario;
     }
-    
-    
+
     public String getEmail() {
         return email;
     }
@@ -61,8 +72,6 @@ public class Usuario implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
-
-  
 
     public String getNome() {
         return nome;

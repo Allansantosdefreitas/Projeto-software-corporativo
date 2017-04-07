@@ -2,6 +2,8 @@ package com.sistema.model;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,11 +21,12 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "tb_exame")
+@Access(AccessType.FIELD)
 public class Exame implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "lon_id", nullable = false)
+    @Column(name = "id_exame", nullable = false)
     private Long idExame;
 
     @Column(name = "str_nome", length = 60, unique = false)
@@ -38,10 +41,13 @@ public class Exame implements Serializable {
     @Column(name = "dbl_valor", unique = false)
     private Double valor;
     
-    @OneToMany (mappedBy = "exame", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
-    @JoinColumn (name = "ext_IdConsulta", referencedColumnName = "lon_id")
-    private List<Consulta> consultas;
+    // Relacionamento ConsultaMedica
+    @OneToMany (mappedBy = "exame", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = false)
+    @JoinColumn (name = "fk_consulta_medica", referencedColumnName = "id_consulta_medica")
+    private List<ConsultaMedica> listaConsultaMedica;
 
+    
+    // getters e Setters -----------------------------
     public Long getIdExame() {
         return idExame;
     }
@@ -81,13 +87,15 @@ public class Exame implements Serializable {
     public void setValor(Double valor) {
         this.valor = valor;
     }
-    
-    public List<Consulta> getConsultas() {
-        return consultas;
+
+    public List<ConsultaMedica> getListaConsultaMedica() {
+        return listaConsultaMedica;
     }
 
-    public void setConsultas(List<Consulta> consultas) {
-        this.consultas = consultas;
+    public void setListaConsultaMedica(List<ConsultaMedica> listaConsultaMedica) {
+        this.listaConsultaMedica = listaConsultaMedica;
     }
+    
+  
 
 }
