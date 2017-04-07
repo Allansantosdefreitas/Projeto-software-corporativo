@@ -22,8 +22,8 @@ public class Usuario implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "lon_id", nullable = false)
-    private Long id;
+    @Column(name = "id_usuario", nullable = false)
+    private Long idUsuario;
 
     @Column(name = "str_nome", length = 60, nullable = false)
     private String nome;
@@ -39,12 +39,21 @@ public class Usuario implements Serializable {
 
     @OneToOne(fetch = FetchType.LAZY, optional = false, orphanRemoval = true,
             cascade = CascadeType.ALL)
-    @JoinColumn(name = "ext_IdEndereco", referencedColumnName = "lon_id")
+    @JoinColumn(name = "fk_endereco", referencedColumnName = "id_endereco")
     private Endereco endereco;
 
     public Usuario() {
     }
 
+      public Long getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(Long idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+    
+    
     public String getEmail() {
         return email;
     }
@@ -53,13 +62,7 @@ public class Usuario implements Serializable {
         this.email = email;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+  
 
     public String getNome() {
         return nome;

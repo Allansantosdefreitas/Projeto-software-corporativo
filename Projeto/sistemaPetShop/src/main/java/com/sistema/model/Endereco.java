@@ -19,7 +19,7 @@ public class Endereco implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "lon_id", nullable = false, unique = false)
+    @Column(name = "id_endereco", nullable = false, unique = false)
     private Long idEndereco;
 
     @Column(name = "str_logradouro", nullable = false, length = 60)

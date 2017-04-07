@@ -19,11 +19,12 @@ import javax.persistence.OneToMany;
 public class Cliente extends Usuario implements Serializable {
 
     @OneToMany (mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
-    @JoinColumn (name = "ext_IdCartao", referencedColumnName = "long_idCartao", nullable = true)
+    @JoinColumn (name = "fk_cartao", referencedColumnName = "id_cartao", nullable = true)
     private List<Cartao> cartao;
     
+    
     @OneToMany (mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
-    @JoinColumn (name = "ext_IdPet", referencedColumnName = "lon_id")
+    @JoinColumn (name = "fk_pet", referencedColumnName = "id_pet")
     private List<Pet> listaPet;
 
     public List<Cartao> getCartao() {

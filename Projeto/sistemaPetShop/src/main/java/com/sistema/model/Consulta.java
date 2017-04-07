@@ -25,27 +25,17 @@ public class Consulta implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "lon_id", nullable = false, unique = true)
+    @Column(name = "id_consulta", nullable = false, unique = true)
     private Long idConsulta;
 
     @Column(name = "dat_dataMarcada")
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataMarcada;
 
-    @Column(name = "str_diagnostico", length = 100)
-    private String diagnostico;
-
     @Column(name = "str_status", length = 60)
     private StatusConsulta status;
-
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "ext_IdPet", referencedColumnName = "lon_id")
-    private Pet pet;
     
-    @ManyToOne(fetch = FetchType.LAZY, optional = true)
-    @JoinColumn (name = "ext_IdVeterinario", referencedColumnName = "lon_id")
-    private Veterinario veterinario;
-    
+    /// ????????????
     @ManyToOne(fetch = FetchType.LAZY, optional = true)
     @JoinColumn (name = "ext_IdConsulta", referencedColumnName = "lon_id")
     private Consulta consulta;
@@ -70,36 +60,12 @@ public class Consulta implements Serializable {
         this.dataMarcada = dataMarcada;
     }
 
-    public String getDiagnostico() {
-        return diagnostico;
-    }
-
-    public void setDiagnostico(String diagnostico) {
-        this.diagnostico = diagnostico;
-    }
-
     public StatusConsulta getStatus() {
         return status;
     }
 
     public void setStatus(StatusConsulta status) {
         this.status = status;
-    }
-
-    public Pet getPet() {
-        return pet;
-    }
-
-    public void setPet(Pet pet) {
-        this.pet = pet;
-    }
-    
-    public Veterinario getVeterinario() {
-        return veterinario;
-    }
-
-    public void setVeterinario(Veterinario veterinario) {
-        this.veterinario = veterinario;
     }
     
     public Consulta getConsulta() {

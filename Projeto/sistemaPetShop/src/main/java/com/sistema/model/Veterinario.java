@@ -29,8 +29,8 @@ public class Veterinario extends Usuario implements Serializable {
     private String especialidade;
 
     @OneToMany(fetch = FetchType.LAZY, orphanRemoval = false)
-    @JoinColumn(name = "ext_IdConsulta", referencedColumnName = "lon_id")
-    private List<Consulta> consulta;
+    @JoinColumn(name = "fk_consulta", referencedColumnName = "id_consulta")
+    private List<ConsultaMedica> ListaConsultaMedica;
 
     public String getCrmv() {
         return crmv;
@@ -48,12 +48,11 @@ public class Veterinario extends Usuario implements Serializable {
         this.especialidade = especialidade;
     }
 
-    public List<Consulta> getConsulta() {
-        return consulta;
+    public List<ConsultaMedica> getListaConsultaMedica() {
+        return ListaConsultaMedica;
     }
 
-    public void setConsulta(List<Consulta> consulta) {
-        this.consulta = consulta;
+    public void setListaConsultaMedica(List<ConsultaMedica> ListaConsultaMedica) {
+        this.ListaConsultaMedica = ListaConsultaMedica;
     }
-
 }

@@ -22,7 +22,7 @@ import javax.persistence.Temporal;
 public class Cartao implements Serializable {
 
     @Id
-    @Column(name = "long_idCartao", unique = true, nullable = false)
+    @Column(name = "id_cartao", unique = true, nullable = false)
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long idCartao;
 
@@ -37,7 +37,7 @@ public class Cartao implements Serializable {
     private Date dataValidade;
     
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn (name = "ext_IdUsuario", referencedColumnName = "lon_id")
+    @JoinColumn (name = "fk_usuario", referencedColumnName = "id_usuario")
     private Cliente cliente;
 
     public Cartao() {

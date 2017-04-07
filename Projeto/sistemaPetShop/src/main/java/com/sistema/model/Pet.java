@@ -24,12 +24,12 @@ import javax.persistence.Table;
  * @author Jonathan Romualdo
  */
 @Entity
-@Table(name = "tb_animal")
+@Table(name = "tb_pet")
 public class Pet implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "lon_id")
+    @Column(name = "id_pet")
     private Long idPet;
 
     @Column(name = "str_nome", nullable = true, length = 60)
@@ -45,12 +45,12 @@ public class Pet implements Serializable {
     private Boolean pedegree;
     
     @ManyToOne(fetch = FetchType.LAZY, optional = true)
-    @JoinColumn (name = "ext_IdUsuario", referencedColumnName = "lon_id")
+    @JoinColumn (name = "fk_cliente", referencedColumnName = "id_usuario")
     private Cliente cliente;
     
     @OneToMany (mappedBy = "pet", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
-    @JoinColumn (name = "ext_IdConsulta", referencedColumnName = "lon_id")
-    private List<Consulta> consultas;
+    @JoinColumn (name = "fk_consulta_medica", referencedColumnName = "id_consulta")
+    private List<ConsultaMedica> ListaConsultaMedica;
 
     public Long getIdPet() {
         return idPet;
@@ -100,11 +100,12 @@ public class Pet implements Serializable {
         this.cliente = cliente;
     }
 
-    public List<Consulta> getConsulta() {
-        return consultas;
+    public List<ConsultaMedica> getListaConsultaMedica() {
+        return ListaConsultaMedica;
     }
 
-    public void setConsulta(List<Consulta> consulta) {
-        this.consultas = consulta;
+    public void setListaConsultaMedica(List<ConsultaMedica> ListaConsultaMedica) {
+        this.ListaConsultaMedica = ListaConsultaMedica;
     }
+
 }
