@@ -1,0 +1,7 @@
+CREATE TABLE tb_cartao (long_idCartao BIGINT AUTO_INCREMENT NOT NULL UNIQUE, str_bandeira VARCHAR(255), date_dataValidade DATE, str_numero VARCHAR(255), PRIMARY KEY (long_idCartao))
+CREATE TABLE tb_consulta (lon_id BIGINT AUTO_INCREMENT NOT NULL UNIQUE, dat_dataMarcada DATE, str_diagnostico VARCHAR(100), str_status INTEGER, PRIMARY KEY (lon_id))
+CREATE TABLE tb_endereco (lon_id BIGINT AUTO_INCREMENT NOT NULL, str_bairro VARCHAR(60) NOT NULL, str_cep VARCHAR(9) NOT NULL, str_complemento VARCHAR(60), str_logradouro VARCHAR(60) NOT NULL, int_numero INTEGER, PRIMARY KEY (lon_id))
+CREATE TABLE tb_exame (lon_id BIGINT AUTO_INCREMENT NOT NULL, str_descricao VARCHAR(100), str_nome VARCHAR(60), str_tipo VARCHAR(60), dbl_valor DOUBLE, PRIMARY KEY (lon_id))
+CREATE TABLE tb_usuario (lon_id BIGINT AUTO_INCREMENT NOT NULL, DTYPE VARCHAR(31), str_email VARCHAR(60) NOT NULL UNIQUE, str_login VARCHAR(60) NOT NULL UNIQUE, str_nome VARCHAR(60) NOT NULL, str_senha VARCHAR(16) NOT NULL, enum_especialidadeFuncionario INTEGER, str_crmv VARCHAR(60) NOT NULL UNIQUE, str_especialidade VARCHAR(60) NOT NULL, PRIMARY KEY (lon_id))
+CREATE TABLE tb_animal (lon_id BIGINT AUTO_INCREMENT NOT NULL, str_nome VARCHAR(60), boo_pedegree TINYINT(1) default 0 NOT NULL, flt_peso FLOAT NOT NULL, str_raca VARCHAR(60) NOT NULL, PRIMARY KEY (lon_id))
+CREATE TABLE tb_servico (lon_id BIGINT AUTO_INCREMENT NOT NULL UNIQUE, str_nome VARCHAR(255) NOT NULL UNIQUE, dbl_valor DOUBLE NOT NULL UNIQUE, PRIMARY KEY (lon_id))

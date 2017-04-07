@@ -3,10 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package com.sistema.aplicacao;
 
-import com.sistema.model.Cartao;
-import java.util.Calendar;
+import com.sistema.model.Veterinario;
+import com.sistema.model.Consulta;
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -14,75 +16,42 @@ import javax.persistence.Persistence;
 
 /**
  *
- * @author Jonathan Romualdo
+ * @author Luis Henrique
  */
-public class CrudCartao {
-    
+public class CrudVeterinario {
+
     private static EntityManagerFactory EMF = null;
     private static EntityManager EM = null;
     private static EntityTransaction et = null;
     
-    public static void main(String[] args){
-        Calendar calendario = Calendar.getInstance();
-        calendario.set(2018, 7, 17);
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
         
-        Cartao cartao = new Cartao("Visa", "1234568790123456", calendario.getTime());
+        Veterinario vet = new Veterinario();
         
-        inserirCartao(cartao);
+        List<Consulta> listaConsultas = null;
         
-        Cartao cartaoResultado = consultarCartao(Long.parseLong("1"));
+        //terminar inserir
         
-        System.out.println("Bandeira: " + cartaoResultado.getBandeira());
-        System.out.println("Numero: " + cartaoResultado.getNumero());
-        System.out.println("Validade: " + cartaoResultado.getDataValidade());
+        //consultar
         
-        //atualizarCartao(cartao);
+        //atualizar
         
-        cartao.setBandeira("Master");
+        //deletar
         
-        atualizarCartao(cartao);     
-        
-        System.out.println("Bandeira: " + cartaoResultado.getBandeira());
-        
-        //deletarCartao(cartao);
-        
-        deletarCartao(cartao);
-        
-        
+        //consultar
     }
     
-    public static void inserirCartao(Cartao cartao){
+    public static void inserirVeterinario(Veterinario veterinario){
         EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
         EM = EMF.createEntityManager();
         et  = EM.getTransaction();
         
         try{ 
             et.begin();
-            EM.persist(cartao);
-            et.commit();
-        } catch (Exception ex) {
-            if (et != null && et.isActive()) {
-                et.rollback();
-            }
-        } finally {
-            if (EM != null) {
-                EM.close();
-            }
-            if (EMF != null) {
-                EMF.close();
-            }
-        }
-    
-    }
-    
-    public static void atualizarCartao(Cartao cartao){
-        EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
-        EM = EMF.createEntityManager();
-        et  = EM.getTransaction();
-        
-        try{ 
-            et.begin();
-            EM.merge(cartao);
+            EM.persist(veterinario);
             et.commit();
         } catch (Exception ex) {
             if (et != null && et.isActive()) {
@@ -98,14 +67,14 @@ public class CrudCartao {
         }
     }
     
-    public static void deletarCartao(Cartao cartao){
+    public static void atualizarVeterinario(Veterinario veterinario){
         EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
         EM = EMF.createEntityManager();
-        et  = EM.getTransaction();
+        et  = EM.getTransaction(); 
         
         try{ 
             et.begin();
-            EM.remove(cartao);
+            EM.merge(veterinario);
             et.commit();
         } catch (Exception ex) {
             if (et != null && et.isActive()) {
@@ -120,19 +89,16 @@ public class CrudCartao {
             }
         }
     }
-    
-    public static Cartao consultarCartao(Long idCartao){
+
+    public static void deletarVeterinario(Veterinario veterinario){
         EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
         EM = EMF.createEntityManager();
-        et  = EM.getTransaction();
-        
-        Cartao cartaoResultado = null;
+        et  = EM.getTransaction(); 
         
         try{ 
             et.begin();
-            cartaoResultado = EM.find(Cartao.class, idCartao);
+            EM.remove(veterinario);
             et.commit();
-            
         } catch (Exception ex) {
             if (et != null && et.isActive()) {
                 et.rollback();
@@ -146,7 +112,29 @@ public class CrudCartao {
             }
         }
         
-        return cartaoResultado;
+    }
+ 
+    public static void consultarVeterinario(Long idVeterinario){
+        EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
+        EM = EMF.createEntityManager();
+        et  = EM.getTransaction(); 
+        
+        try{ 
+            et.begin();
+            EM.find(Veterinario.class, idVeterinario);
+            et.commit();
+        } catch (Exception ex) {
+            if (et != null && et.isActive()) {
+                et.rollback();
+            }
+        } finally {
+            if (EM != null) {
+                EM.close();
+            }
+            if (EMF != null) {
+                EMF.close();
+            }
+        }
     }
     
 }
