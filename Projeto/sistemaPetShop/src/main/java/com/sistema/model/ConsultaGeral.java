@@ -26,20 +26,33 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tb_consulta_geral")
 @DiscriminatorValue(value = "ger")
-@PrimaryKeyJoinColumn(name = "id_consulta_geral", referencedColumnName = "id_consulta") 
+@PrimaryKeyJoinColumn(name = "id_consulta_geral", referencedColumnName = "id_consulta")
 @Access(AccessType.FIELD)
-public class ConsultaGeral extends Consulta implements Serializable{
-    
-    
+public class ConsultaGeral extends Consulta implements Serializable {
+
     // Relacionamento Servico
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "fk_servico", referencedColumnName = "id_servico")
     private Servico servico;
-    
+
     // Relacionamento Funcionario
     @ManyToOne(fetch = FetchType.LAZY, optional = true)
     @JoinColumn(name = "fk_funcionario", referencedColumnName = "id_funcionario")
     private Funcionario funcionario;
-    
-    
+
+    public Servico getServico() {
+        return servico;
+    }
+
+    public void setServico(Servico servico) {
+        this.servico = servico;
+    }
+
+    public Funcionario getFuncionario() {
+        return funcionario;
+    }
+
+    public void setFuncionario(Funcionario funcionario) {
+        this.funcionario = funcionario;
+    }
 }

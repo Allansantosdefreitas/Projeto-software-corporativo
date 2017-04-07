@@ -31,7 +31,7 @@ public class Veterinario extends Usuario implements Serializable {
     @Column(name = "str_crmv", nullable = false, length = 60, unique = true)
     private String crmv;
 
-    @Enumerated(EnumType.STRING)
+    //@Enumerated(EnumType.STRING)
     @Column(name = "str_especialidade", nullable = false, length = 60)
     private String especialidade;
 

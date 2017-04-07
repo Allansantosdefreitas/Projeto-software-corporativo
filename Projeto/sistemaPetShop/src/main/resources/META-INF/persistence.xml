@@ -3,7 +3,10 @@
   <persistence-unit name="sistemapetshopPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>com.sistema.model.Cartao</class>
+    <class>com.sistema.model.Cliente</class>
     <class>com.sistema.model.Consulta</class>
+    <class>com.sistema.model.ConsultaGeral</class>
+    <class>com.sistema.model.ConsultaMedica</class>
     <class>com.sistema.model.Endereco</class>
     <class>com.sistema.model.Exame</class>
     <class>com.sistema.model.Funcionario</class>
