@@ -18,9 +18,7 @@ import javax.persistence.Persistence;
  */
 public class CrudCartao {
     
-    private static EntityManagerFactory EMF = null;
-    private static EntityManager EM = null;
-    private static EntityTransaction et = null;
+    private final static EntityManagerFactory EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
     
     public static void main(String[] args){
         Calendar calendario = Calendar.getInstance();
@@ -52,97 +50,84 @@ public class CrudCartao {
     }
     
     public static void inserirCartao(Cartao cartao){
-        EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
-        EM = EMF.createEntityManager();
-        et  = EM.getTransaction();
-        
-        try{ 
+        EntityManager em = null;
+        EntityTransaction et = null;
+
+        try {
+            em = EMF.createEntityManager();
+            et = em.getTransaction();
+            
             et.begin();
-            EM.persist(cartao);
+            em.persist(cartao);
             et.commit();
         } catch (Exception ex) {
             if (et != null && et.isActive()) {
                 et.rollback();
             }
         } finally {
-            if (EM != null) {
-                EM.close();
-            }
-            if (EMF != null) {
-                EMF.close();
+            if (em != null) {
+                em.close();
             }
         }
     
     }
     
     public static void atualizarCartao(Cartao cartao){
-        EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
-        EM = EMF.createEntityManager();
-        et  = EM.getTransaction();
-        
-        try{ 
+        EntityManager em = null;
+        EntityTransaction et = null;
+
+        try {
+            em = EMF.createEntityManager();
+            et = em.getTransaction();
+            
             et.begin();
-            EM.merge(cartao);
+            em.merge(cartao);
             et.commit();
         } catch (Exception ex) {
             if (et != null && et.isActive()) {
                 et.rollback();
             }
         } finally {
-            if (EM != null) {
-                EM.close();
-            }
-            if (EMF != null) {
-                EMF.close();
+            if (em != null) {
+                em.close();
             }
         }
     }
     
     public static void deletarCartao(Cartao cartao){
-        EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
-        EM = EMF.createEntityManager();
-        et  = EM.getTransaction();
-        
-        try{ 
+        EntityManager em = null;
+        EntityTransaction et = null;
+
+        try {
+            em = EMF.createEntityManager();
+            et = em.getTransaction();
+            
             et.begin();
-            EM.remove(cartao);
+            em.remove(cartao);
             et.commit();
         } catch (Exception ex) {
             if (et != null && et.isActive()) {
                 et.rollback();
             }
         } finally {
-            if (EM != null) {
-                EM.close();
-            }
-            if (EMF != null) {
-                EMF.close();
+            if (em != null) {
+                em.close();
             }
         }
     }
     
     public static Cartao consultarCartao(Long idCartao){
-        EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
-        EM = EMF.createEntityManager();
-        et  = EM.getTransaction();
+        EntityManager em = null;
         
         Cartao cartaoResultado = null;
-        
-        try{ 
-            et.begin();
-            cartaoResultado = EM.find(Cartao.class, idCartao);
-            et.commit();
-            
-        } catch (Exception ex) {
-            if (et != null && et.isActive()) {
-                et.rollback();
-            }
+
+        try {
+            em = EMF.createEntityManager();
+
+            cartaoResultado = em.find(Cartao.class, idCartao);    
         } finally {
-            if (EM != null) {
-                EM.close();
-            }
-            if (EMF != null) {
-                EMF.close();
+            if (em != null) {
+                em.close();
             }
         }
         

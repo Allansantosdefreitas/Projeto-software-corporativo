@@ -17,9 +17,7 @@ import javax.persistence.Persistence;
  */
 public class CrudExame {
 
-    private static EntityManagerFactory EMF = null;
-    private static EntityManager EM = null;
-    private static EntityTransaction et = null;
+    private final static EntityManagerFactory EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
 
     /**
      * @param args the command line arguments
@@ -31,94 +29,82 @@ public class CrudExame {
     }
     
     public static void inserirExame(Exame exame){
-        EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
-        EM = EMF.createEntityManager();
-        et  = EM.getTransaction();
-        
-        try{ 
+        EntityManager em = null;
+        EntityTransaction et = null;
+
+        try {
+            em = EMF.createEntityManager();
+            et = em.getTransaction();
+            
             et.begin();
-            EM.persist(exame);
+            em.persist(exame);
             et.commit();
         } catch (Exception ex) {
             if (et != null && et.isActive()) {
                 et.rollback();
             }
         } finally {
-            if (EM != null) {
-                EM.close();
-            }
-            if (EMF != null) {
-                EMF.close();
+            if (em != null) {
+                em.close();
             }
         }
     }
     
     public static void atualizarExame(Exame exame){
-        EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
-        EM = EMF.createEntityManager();
-        et  = EM.getTransaction(); 
-        
-        try{ 
+        EntityManager em = null;
+        EntityTransaction et = null;
+
+        try {
+            em = EMF.createEntityManager();
+            et = em.getTransaction();
+            
             et.begin();
-            EM.merge(exame);
+            em.merge(exame);
             et.commit();
         } catch (Exception ex) {
             if (et != null && et.isActive()) {
                 et.rollback();
             }
         } finally {
-            if (EM != null) {
-                EM.close();
-            }
-            if (EMF != null) {
-                EMF.close();
+            if (em != null) {
+                em.close();
             }
         }
     }
 
     public static void deletarExame(Exame exame){
-        EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
-        EM = EMF.createEntityManager();
-        et  = EM.getTransaction(); 
-        
-        try{ 
+        EntityManager em = null;
+        EntityTransaction et = null;
+
+        try {
+            em = EMF.createEntityManager();
+            et = em.getTransaction();
+            
             et.begin();
-            EM.remove(exame);
+            em.remove(exame);
             et.commit();
         } catch (Exception ex) {
             if (et != null && et.isActive()) {
                 et.rollback();
             }
         } finally {
-            if (EM != null) {
-                EM.close();
-            }
-            if (EMF != null) {
-                EMF.close();
+            if (em != null) {
+                em.close();
             }
         }
         
     }
  
     public static void buscarExame(Long idExame){
-        EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
-        EM = EMF.createEntityManager();
-        et  = EM.getTransaction(); 
-        
-        try{ 
-            et.begin();
-            EM.find(Exame.class, idExame);
-            et.commit();
-        } catch (Exception ex) {
-            if (et != null && et.isActive()) {
-                et.rollback();
-            }
+        EntityManager em = null;
+
+        try {
+            em = EMF.createEntityManager();
+
+            em.find(Exame.class, idExame);
         } finally {
-            if (EM != null) {
-                EM.close();
-            }
-            if (EMF != null) {
-                EMF.close();
+            if (em != null) {
+                em.close();
             }
         }
     }

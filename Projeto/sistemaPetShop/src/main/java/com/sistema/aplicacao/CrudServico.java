@@ -18,9 +18,7 @@ import javax.persistence.Persistence;
  */
 public class CrudServico {
 
-    private static EntityManagerFactory EMF = null;
-    private static EntityManager EM = null;
-    private static EntityTransaction et = null;
+    private final static EntityManagerFactory EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
     
     /**
      * @param args the command line arguments
@@ -37,94 +35,83 @@ public class CrudServico {
     }
     
     public static void inserirServico(Servico servico){
-        EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
-        EM = EMF.createEntityManager();
-        et  = EM.getTransaction();
-        
-        try{ 
+        EntityManager em = null;
+        EntityTransaction et = null;
+
+        try {
+            em = EMF.createEntityManager();
+            et = em.getTransaction();
+            
             et.begin();
-            EM.persist(servico);
+            em.persist(servico);
             et.commit();
         } catch (Exception ex) {
             if (et != null && et.isActive()) {
                 et.rollback();
             }
         } finally {
-            if (EM != null) {
-                EM.close();
-            }
-            if (EMF != null) {
-                EMF.close();
+            if (em != null) {
+                em.close();
             }
         }
     }
     
     public static void atualizarServico(Servico servico){
-        EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
-        EM = EMF.createEntityManager();
-        et  = EM.getTransaction(); 
-        
-        try{ 
+        EntityManager em = null;
+        EntityTransaction et = null;
+
+        try {
+            em = EMF.createEntityManager();
+            et = em.getTransaction();
+            
             et.begin();
-            EM.merge(servico);
+            em.merge(servico);
             et.commit();
         } catch (Exception ex) {
             if (et != null && et.isActive()) {
                 et.rollback();
             }
         } finally {
-            if (EM != null) {
-                EM.close();
-            }
-            if (EMF != null) {
-                EMF.close();
+            if (em != null) {
+                em.close();
             }
         }
     }
 
     public static void deletarServico(Servico servico){
-        EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
-        EM = EMF.createEntityManager();
-        et  = EM.getTransaction(); 
-        
-        try{ 
+        EntityManager em = null;
+        EntityTransaction et = null;
+
+        try {
+            em = EMF.createEntityManager();
+            et = em.getTransaction();
+            
             et.begin();
-            EM.remove(servico);
+            em.remove(servico);
             et.commit();
         } catch (Exception ex) {
             if (et != null && et.isActive()) {
                 et.rollback();
             }
         } finally {
-            if (EM != null) {
-                EM.close();
-            }
-            if (EMF != null) {
-                EMF.close();
+            if (em != null) {
+                em.close();
             }
         }
         
     }
  
     public static void consultarServico(Long idServico){
-        EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
-        EM = EMF.createEntityManager();
-        et  = EM.getTransaction(); 
-        
-        try{ 
-            et.begin();
-            EM.find(Servico.class, idServico);
-            et.commit();
-        } catch (Exception ex) {
-            if (et != null && et.isActive()) {
-                et.rollback();
-            }
+        EntityManager em = null;
+        EntityTransaction et = null;
+
+        try {
+            em = EMF.createEntityManager();
+
+            em.find(Servico.class, idServico);
         } finally {
-            if (EM != null) {
-                EM.close();
-            }
-            if (EMF != null) {
-                EMF.close();
+            if (em != null) {
+                em.close();
             }
         }
     }

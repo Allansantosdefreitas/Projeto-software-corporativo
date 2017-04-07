@@ -20,9 +20,7 @@ import javax.persistence.Persistence;
  */
 public class CrudVeterinario {
 
-    private static EntityManagerFactory EMF = null;
-    private static EntityManager EM = null;
-    private static EntityTransaction et = null;
+    private final static EntityManagerFactory EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
     
     /**
      * @param args the command line arguments
@@ -45,94 +43,82 @@ public class CrudVeterinario {
     }
     
     public static void inserirVeterinario(Veterinario veterinario){
-        EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
-        EM = EMF.createEntityManager();
-        et  = EM.getTransaction();
-        
-        try{ 
+        EntityManager em = null;
+        EntityTransaction et = null;
+
+        try {
+            em = EMF.createEntityManager();
+            et = em.getTransaction();
+            
             et.begin();
-            EM.persist(veterinario);
+            em.persist(veterinario);
             et.commit();
         } catch (Exception ex) {
             if (et != null && et.isActive()) {
                 et.rollback();
             }
         } finally {
-            if (EM != null) {
-                EM.close();
-            }
-            if (EMF != null) {
-                EMF.close();
+            if (em != null) {
+                em.close();
             }
         }
     }
     
     public static void atualizarVeterinario(Veterinario veterinario){
-        EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
-        EM = EMF.createEntityManager();
-        et  = EM.getTransaction(); 
-        
-        try{ 
+        EntityManager em = null;
+        EntityTransaction et = null;
+
+        try {
+            em = EMF.createEntityManager();
+            et = em.getTransaction();
+            
             et.begin();
-            EM.merge(veterinario);
+            em.merge(veterinario);
             et.commit();
         } catch (Exception ex) {
             if (et != null && et.isActive()) {
                 et.rollback();
             }
         } finally {
-            if (EM != null) {
-                EM.close();
-            }
-            if (EMF != null) {
-                EMF.close();
+            if (em != null) {
+                em.close();
             }
         }
     }
 
     public static void deletarVeterinario(Veterinario veterinario){
-        EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
-        EM = EMF.createEntityManager();
-        et  = EM.getTransaction(); 
-        
-        try{ 
+        EntityManager em = null;
+        EntityTransaction et = null;
+
+        try {
+            em = EMF.createEntityManager();
+            et = em.getTransaction();
+            
             et.begin();
-            EM.remove(veterinario);
+            em.remove(veterinario);
             et.commit();
         } catch (Exception ex) {
             if (et != null && et.isActive()) {
                 et.rollback();
             }
         } finally {
-            if (EM != null) {
-                EM.close();
-            }
-            if (EMF != null) {
-                EMF.close();
+            if (em != null) {
+                em.close();
             }
         }
         
     }
  
     public static void consultarVeterinario(Long idVeterinario){
-        EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
-        EM = EMF.createEntityManager();
-        et  = EM.getTransaction(); 
-        
-        try{ 
-            et.begin();
-            EM.find(Veterinario.class, idVeterinario);
-            et.commit();
-        } catch (Exception ex) {
-            if (et != null && et.isActive()) {
-                et.rollback();
-            }
+        EntityManager em = null;
+
+        try {
+            em = EMF.createEntityManager();
+
+            em.find(Veterinario.class, idVeterinario);
         } finally {
-            if (EM != null) {
-                EM.close();
-            }
-            if (EMF != null) {
-                EMF.close();
+            if (em != null) {
+                em.close();
             }
         }
     }

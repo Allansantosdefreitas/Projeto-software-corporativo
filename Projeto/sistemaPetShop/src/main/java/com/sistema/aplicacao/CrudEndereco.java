@@ -17,9 +17,7 @@ import javax.persistence.Persistence;
  */
 public class CrudEndereco {
 
-    private static EntityManagerFactory EMF = null;
-    private static EntityManager EM = null;
-    private static EntityTransaction et = null;
+    private final static EntityManagerFactory EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
 
     /**
      * @param args the command line arguments
@@ -31,94 +29,82 @@ public class CrudEndereco {
     }
     
     public static void inserirEndereco(Endereco endereco){
-        EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
-        EM = EMF.createEntityManager();
-        et  = EM.getTransaction();
-        
-        try{ 
+        EntityManager em = null;
+        EntityTransaction et = null;
+
+        try {
+            em = EMF.createEntityManager();
+            et = em.getTransaction();
+            
             et.begin();
-            EM.persist(endereco);
+            em.persist(endereco);
             et.commit();
         } catch (Exception ex) {
             if (et != null && et.isActive()) {
                 et.rollback();
             }
         } finally {
-            if (EM != null) {
-                EM.close();
-            }
-            if (EMF != null) {
-                EMF.close();
+            if (em != null) {
+                em.close();
             }
         }
     }
     
     public static void atualizarEndereco(Endereco endereco){
-        EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
-        EM = EMF.createEntityManager();
-        et  = EM.getTransaction(); 
-        
-        try{ 
+        EntityManager em = null;
+        EntityTransaction et = null;
+
+        try {
+            em = EMF.createEntityManager();
+            et = em.getTransaction();
+            
             et.begin();
-            EM.merge(endereco);
+            em.merge(endereco);
             et.commit();
         } catch (Exception ex) {
             if (et != null && et.isActive()) {
                 et.rollback();
             }
         } finally {
-            if (EM != null) {
-                EM.close();
-            }
-            if (EMF != null) {
-                EMF.close();
+            if (em != null) {
+                em.close();
             }
         }
     }
 
     public static void deletarEndereco(Endereco endereco){
-        EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
-        EM = EMF.createEntityManager();
-        et  = EM.getTransaction(); 
-        
-        try{ 
+        EntityManager em = null;
+        EntityTransaction et = null;
+
+        try {
+            em = EMF.createEntityManager();
+            et = em.getTransaction();
+            
             et.begin();
-            EM.remove(endereco);
+            em.remove(endereco);
             et.commit();
         } catch (Exception ex) {
             if (et != null && et.isActive()) {
                 et.rollback();
             }
         } finally {
-            if (EM != null) {
-                EM.close();
-            }
-            if (EMF != null) {
-                EMF.close();
+            if (em != null) {
+                em.close();
             }
         }
         
     }
  
     public static void consultarEndereco(Long idEndereco){
-        EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
-        EM = EMF.createEntityManager();
-        et  = EM.getTransaction(); 
-        
-        try{ 
-            et.begin();
-            EM.find(Endereco.class, idEndereco);
-            et.commit();
-        } catch (Exception ex) {
-            if (et != null && et.isActive()) {
-                et.rollback();
-            }
+        EntityManager em = null;
+
+        try {
+            em = EMF.createEntityManager();
+
+            em.find(Endereco.class, idEndereco);
         } finally {
-            if (EM != null) {
-                EM.close();
-            }
-            if (EMF != null) {
-                EMF.close();
+            if (em != null) {
+                em.close();
             }
         }
     }
