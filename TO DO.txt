@@ -1,15 +1,17 @@
 ----------------------------------CRUD: DOING
+Ajeitar a apresentação dos croods
+"Tem que clicar num botão e pegar tudo! Armaria!!!"
 
-Cliente (OK)
+Cliente (OK) BRONCA
 Endereco (CRUD)
-Cartao (CRUD)
-Pet (OK)
+Cartao (CRUD) BRONCA
+Pet (CRUD)
 Veterinario (OK)
-Exame (CRUD)
-ConsultaMedica (OK)
+Exame (CRUD) BRONCA
+ConsultaMedica (CRUD)
 ConsultaGeral (CRUD)
 Funcionario (OK)
-Servico (CRUD)
+Servico (CRUD) BRONCA
 
 -----------------------------------MAPPING
 Usuario (Ok)

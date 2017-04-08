@@ -28,7 +28,7 @@ public class CrudCartao {
         Cartao cartao = new Cartao("Visa", "2001-2002-2003", calendario.getTime());
         
         // Inserir ------------------------------------ OK
-        //inserirCartao(cartao);
+        inserirCartao(cartao);
         
         // Consultar ------------------------------------ OK
         Cartao cartaoResultado = consultarCartao(Long.parseLong("2"));
@@ -38,10 +38,10 @@ public class CrudCartao {
         System.out.println("Validade: " + cartaoResultado.getDataValidade());
 
         // Atualizar ------------------------------- OK
-//        cartaoResultado.setBandeira("Master Card");
-//        atualizarCartao(cartaoResultado);
-//        System.out.println("Bandeira: " + cartaoResultado.getBandeira());
-//        
+        cartaoResultado.setBandeira("Master Card");
+        atualizarCartao(cartaoResultado);
+        System.out.println("Bandeira: " + cartaoResultado.getBandeira());
+   
         // Deletar ------------------------------------ NOK
         deletarCartao(cartaoResultado);
    

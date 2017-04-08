@@ -32,7 +32,7 @@ public class CrudPet {
 
         try {
             idPet = inserirPet();
-            pet = consultarPet(idPet);
+            pet = consultarPet(Long.parseLong("2"));
 
             if (pet != null) {
 

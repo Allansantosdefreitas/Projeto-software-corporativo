@@ -37,9 +37,9 @@ public class CrudConsultaMedica {
         ConsultaMedica consulta;
         
         try{
-            idConsultaMedica = inserirConsultaMedica();
+            //idConsultaMedica = inserirConsultaMedica();
             
-            consulta = buscarConsultaMedica(idConsultaMedica);
+            consulta = buscarConsultaMedica(Long.parseLong("2"));
             
             if(consulta != null){
                 System.out.println(consulta.getExame());
@@ -50,6 +50,8 @@ public class CrudConsultaMedica {
                 consulta.setDiagnostico("Muita Água e muita comida");
                 consulta.setStatus(StatusConsulta.CONCLUIDA);
                 
+                // Atualizar ---------------------------------------
+                consulta.setDiagnostico("o fim é a morte");
                 atualizarConsultaMedica(consulta);
             }
             
