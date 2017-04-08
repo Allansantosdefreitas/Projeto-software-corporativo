@@ -24,7 +24,8 @@ public class CrudEndereco {
      */
     public static void main(String[] args) {
         
-        Endereco endereco = new Endereco();
+        //Endereco endereco = new Endereco("Rua A", 404, "not found", "400-400", "undefined", cliente);
+        //Endereco endereco = new Endereco();
         
     }
     

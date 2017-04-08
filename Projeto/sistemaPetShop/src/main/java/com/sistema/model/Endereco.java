@@ -45,6 +45,17 @@ public class Endereco implements Serializable {
     @OneToOne(mappedBy = "endereco", optional = false, fetch = FetchType.LAZY)
     private Usuario usuario;
 
+    public Endereco(){
+        
+    }
+    public Endereco(String logradouro, Integer numero, String complemento, String cep, String bairro, Usuario usuario) {
+        this.logradouro = logradouro;
+        this.numero = numero;
+        this.complemento = complemento;
+        this.cep = cep;
+        this.bairro = bairro;
+        this.usuario = usuario;
+    }
     
     // getters e Setters -----------------------------
     public Long getIdEndereco() {

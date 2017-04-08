@@ -43,7 +43,7 @@ public class Servico implements Serializable {
     // Relacionamento Consulta
     @OneToMany (mappedBy = "servico", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = false)
     //@JoinColumn (name = "fk_consulta_geral", referencedColumnName = "id_consulta_geral")
-    private List<Consulta> listaConsulta;
+    private List<ConsultaGeral> listaConsultaGeral;
 
     
     // getters e Setters -----------------------------
@@ -71,12 +71,14 @@ public class Servico implements Serializable {
         this.valor = valor;
     }
 
-    public List<Consulta> getListaConsulta() {
-        return listaConsulta;
+    public List<ConsultaGeral> getListaConsultaGeral() {
+        return listaConsultaGeral;
     }
 
-    public void setListaConsulta(List<Consulta> listaConsulta) {
-        this.listaConsulta = listaConsulta;
+    public void setListaConsultaGeral(List<ConsultaGeral> listaConsultaGeral) {
+        this.listaConsultaGeral = listaConsultaGeral;
     }
+
+
     
 }

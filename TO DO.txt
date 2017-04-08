@@ -1,22 +1,4 @@
-MAPPING:
-
-
-Usuario (Ok)
-Cliente (ok)
-Endereco (ok)
-Cartao (ok)
-Pet (ok)
-Veterinario (ok)
-Exame (ok)
-ConsultaMedica (ok)
-
-ConsultaGeral (ok)
-Funcionario (ok)
-Servico (ok)
-
-
-CRUD: DOING
-
+----------------------------------CRUD: DOING
 
 Cliente ()
 Endereco
@@ -28,3 +10,16 @@ ConsultaMedica
 ConsultaGeral
 Funcionario
 Servico
+
+-----------------------------------MAPPING
+Usuario (Ok)
+Cliente (ok)
+Endereco (ok)
+Cartao (ok)
+Pet (ok)
+Veterinario (ok)
+Exame (ok)
+ConsultaMedica (ok)
+ConsultaGeral (ok)
+Funcionario (ok)
+Servico (ok)

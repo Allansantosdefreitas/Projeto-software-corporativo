@@ -7,6 +7,8 @@ package com.sistema.aplicacao;
 
 import com.sistema.model.Cartao;
 import com.sistema.model.Cliente;
+import com.sistema.model.Endereco;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -30,18 +32,23 @@ public class CrudCliente {
         Calendar calendario = Calendar.getInstance();
         calendario.set(2018, 7, 17);
         
-        Cartao cartao = new Cartao("Visa", "1234568790123456", calendario.getTime());
-        
-        List<Cartao> listaCartao = null;
+        // Cartao
+        Cartao cartao = new Cartao("Visa", "1999-2001-2003", calendario.getTime());
+        // ListaCartao
+        List<Cartao> listaCartao = new ArrayList<Cartao>();
         listaCartao.add(cartao);
                
-        cliente.setNome("Kirk");
+        // Endereco
+        Endereco endereco = new Endereco("Rua A", 404, "próximo à Evil Corp", "400-400", "Várzea", cliente);
+        
+        cliente.setNome("James T. Kirk");
         cliente.setCartao(listaCartao);
         cliente.setEmail("kirk@capitao.com");
         cliente.setLogin("kirkCapitao");
         cliente.setSenha("melhorCapitao");
+        cliente.setEndereco(endereco);
         
-        inserirCliente(cliente);
+       inserirCliente(cliente);
         
         consultarCliente(Long.valueOf('1'));
         
@@ -50,11 +57,12 @@ public class CrudCliente {
         
         atualizarCliente(cliente);
         
-        //deletarCliente(cliente);
+        deletarCliente(cliente);
         
     }
     
-    public static void inserirCliente(Cliente cliente){
+    
+    public static void inserirCliente(Cliente cliente){ /* :) */
         EntityManager em = null;
         EntityTransaction et = null;
 
