@@ -18,47 +18,44 @@ import javax.persistence.Persistence;
  * @author Jonathan Romualdo
  */
 public class CrudCartao {
-    
+
     private final static EntityManagerFactory EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
-    
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         Calendar calendario = Calendar.getInstance();
         calendario.set(2018, 7, 17);
+
+        Cartao cartao = new Cartao("Visa", "2001-2002-2003", calendario.getTime());
         
-        Cartao cartao = new Cartao("Visa", "1234568790123456", calendario.getTime());
-//        Cliente cliente = new Cliente();
-//        cliente.setEmail(email);
-        
+        // Inserir ------------------------------------ OK
         inserirCartao(cartao);
         
-        Cartao cartaoResultado = consultarCartao(Long.parseLong("1"));
-        
+        // Consultar ------------------------------------ OK
+        Cartao cartaoResultado = consultarCartao(Long.parseLong("2"));
+
         System.out.println("Bandeira: " + cartaoResultado.getBandeira());
         System.out.println("Numero: " + cartaoResultado.getNumero());
         System.out.println("Validade: " + cartaoResultado.getDataValidade());
-        
-        atualizarCartao(cartao);
-        
-        cartao.setBandeira("Master");
-        
-        atualizarCartao(cartao);     
-        
+
+        // Atualizar ------------------------------- OK
+        cartaoResultado.setBandeira("Master Card");
+        atualizarCartao(cartaoResultado);
         System.out.println("Bandeira: " + cartaoResultado.getBandeira());
         
-        deletarCartao(cartao);
-        
-        //deletarCartao(cartao);
-          
+        // Deletar ------------------------------------ NOK
+        deletarCartao(cartaoResultado);
+   
+
     }
-    
-    public static void inserirCartao(Cartao cartao){
+
+    public static void inserirCartao(Cartao cartao) {
         EntityManager em = null;
         EntityTransaction et = null;
 
         try {
             em = EMF.createEntityManager();
             et = em.getTransaction();
-            
+
             et.begin();
             em.persist(cartao);
             et.commit();
@@ -71,17 +68,17 @@ public class CrudCartao {
                 em.close();
             }
         }
-    
+
     }
-    
-    public static void atualizarCartao(Cartao cartao){
+
+    public static void atualizarCartao(Cartao cartao) {
         EntityManager em = null;
         EntityTransaction et = null;
 
         try {
             em = EMF.createEntityManager();
             et = em.getTransaction();
-            
+
             et.begin();
             em.merge(cartao);
             et.commit();
@@ -95,15 +92,15 @@ public class CrudCartao {
             }
         }
     }
-    
-    public static void deletarCartao(Cartao cartao){
+
+    public static void deletarCartao(Cartao cartao) {
         EntityManager em = null;
         EntityTransaction et = null;
 
         try {
             em = EMF.createEntityManager();
             et = em.getTransaction();
-            
+
             et.begin();
             em.remove(cartao);
             et.commit();
@@ -117,23 +114,23 @@ public class CrudCartao {
             }
         }
     }
-    
-    public static Cartao consultarCartao(Long idCartao){
+
+    public static Cartao consultarCartao(Long idCartao) {
         EntityManager em = null;
-        
+
         Cartao cartaoResultado = null;
 
         try {
             em = EMF.createEntityManager();
 
-            cartaoResultado = em.find(Cartao.class, idCartao);    
+            cartaoResultado = em.find(Cartao.class, idCartao);
         } finally {
             if (em != null) {
                 em.close();
             }
         }
-        
+
         return cartaoResultado;
     }
-    
+
 }

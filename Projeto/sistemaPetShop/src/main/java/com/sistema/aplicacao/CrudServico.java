@@ -30,7 +30,7 @@ public class CrudServico {
         
         Servico servico = new Servico();
         servico.setNome("Banho");
-        servico.setValor(70.00);
+        servico.setValor(100.00);
         
         List<ConsultaGeral> listaConsultaGeral = new ArrayList<ConsultaGeral>();
         servico.setListaConsultaGeral(listaConsultaGeral);
@@ -47,10 +47,10 @@ public class CrudServico {
         //atualizar --------------------- OK
         servicoResultado.setNome("Tosa");
         servicoResultado.setValor(100.00);
-        atualizarServico(servico);
+        atualizarServico(servicoResultado);
         
-        //remover 
-        
+        //remover -------------------------- NOK
+        deletarServico(servicoResultado);
         
     }
     

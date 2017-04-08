@@ -6,6 +6,9 @@
 package com.sistema.aplicacao;
 
 import com.sistema.model.ConsultaGeral;
+import com.sistema.model.EspecialidadeFuncionario;
+import com.sistema.model.Funcionario;
+import com.sistema.model.Servico;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -24,7 +27,38 @@ public class CrudConsultaGeral {
      */
     public static void main(String[] args) {
         
-        ConsultaGeral consulta = new ConsultaGeral();
+        ConsultaGeral consultaGeral = new ConsultaGeral();
+        
+        
+        // Inserir ------------------------------------ OK
+        // Serviço  
+        Servico servico = new Servico();
+        servico.setNome("Tosa");
+        servico.setValor(300.00);
+        
+        // Funcionário
+        Funcionario funcionario = new Funcionario();
+        funcionario.setEspecialidadeFuncionario(EspecialidadeFuncionario.TOSADOR);
+        funcionario.setNome("João das Nevis");
+        funcionario.setEmail("joao@gmail.com");
+        funcionario.setLogin("joaonevis7");
+        funcionario.setSenha("12345678");
+        
+        //consultaGeral.setDataMarcada(dataMarcada);
+        consultaGeral.setServico(servico);
+        consultaGeral.setFuncionario(funcionario);
+        
+        //inserirConsulta(consultaGeral);
+        
+        // Consultar --------------------------------------- falta sobrescrever o toString
+        ConsultaGeral consultaGeralResultado = buscarConsulta(Long.parseLong("1") );
+
+        System.out.println("Funcionario: " + consultaGeralResultado.getFuncionario() );
+        System.out.println("Serviço: " + consultaGeralResultado.getServico() );
+      
+        
+        
+        
         
     }
     
@@ -95,18 +129,20 @@ public class CrudConsultaGeral {
         
     }
  
-    public static void buscarConsulta(Long idConsultaGeral){
+    public static ConsultaGeral buscarConsulta(Long idConsultaGeral){
         EntityManager em = null;
-
+        ConsultaGeral consultaGeralResultado = null;
+        
         try {
             em = EMF.createEntityManager();
             
-            em.find(ConsultaGeral.class, idConsultaGeral);
+            consultaGeralResultado = em.find(ConsultaGeral.class, idConsultaGeral);
         } finally {
             if (em != null) {
                 em.close();
             }
         }
+        return consultaGeralResultado;
     }
     
 }

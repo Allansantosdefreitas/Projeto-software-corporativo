@@ -2,21 +2,14 @@
 
 Cliente (OK)
 Endereco
-<<<<<<< HEAD
-Cartao
-Pet
-Veterinario
-Exame (CRU)
-=======
-Cartao (OK)
+Cartao (CRU)
 Pet (OK)
 Veterinario (OK)
-Exame 
->>>>>>> d89a111e0a03b9369bdaa77e0e4b44ccd31bd6e4
+Exame (CRU)
 ConsultaMedica
 ConsultaGeral
 Funcionario
-Servico (CR)
+Servico (CRU)
 
 -----------------------------------MAPPING
 Usuario (Ok)

@@ -40,7 +40,7 @@ public class Cartao implements Serializable {
     private Date dataValidade;
     
     // Relacionamento Cliente
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = true)
     @JoinColumn (name = "fk_cliente", referencedColumnName = "id_cliente")
     private Cliente cliente;
 

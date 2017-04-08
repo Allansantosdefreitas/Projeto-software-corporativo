@@ -55,4 +55,6 @@ public class ConsultaGeral extends Consulta implements Serializable {
     public void setFuncionario(Funcionario funcionario) {
         this.funcionario = funcionario;
     }
+    
+    
 }
