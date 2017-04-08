@@ -1,32 +1,15 @@
 ----------------------------------CRUD: DOING
 
 Cliente (OK)
-Endereco
-Cartao (CRU)
+Endereco (CRUD)
+Cartao (CRUD)
 Pet (OK)
 Veterinario (OK)
-<<<<<<< HEAD
-Exame (CRU)
-ConsultaMedica
-ConsultaGeral
-Funcionario
-Servico (CRU)
-=======
-<<<<<<< HEAD
-Exame (OK) (+-)
+Exame (CRUD)
 ConsultaMedica (OK)
-ConsultaGeral
+ConsultaGeral (CRUD)
 Funcionario (OK)
-Servico (OK) (+-)
-=======
-Exame 
->>>>>>> d89a111e0a03b9369bdaa77e0e4b44ccd31bd6e4
-ConsultaMedica
-ConsultaGeral
-Funcionario
-Servico (CR)
->>>>>>> 3bf65fbd88187f4aebe56c8887d4df46c2fb81dc
->>>>>>> 44f0bc7c6594981318f0163af77e2fda1d67427b
+Servico (CRUD)
 
 -----------------------------------MAPPING
 Usuario (Ok)

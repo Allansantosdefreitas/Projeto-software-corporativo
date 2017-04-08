@@ -33,7 +33,7 @@ public class CrudConsultaGeral {
         // Inserir ------------------------------------ OK
         // Serviço  
         Servico servico = new Servico();
-        servico.setNome("Tosa");
+        servico.setNome("Banho");
         servico.setValor(300.00);
         
         // Funcionário
@@ -48,19 +48,25 @@ public class CrudConsultaGeral {
         consultaGeral.setServico(servico);
         consultaGeral.setFuncionario(funcionario);
         
-        //inserirConsulta(consultaGeral);
+        inserirConsulta(consultaGeral);
         
-        // Consultar --------------------------------------- falta sobrescrever o toString
+        // Consultar --------------------------------------- OK
         ConsultaGeral consultaGeralResultado = buscarConsulta(Long.parseLong("1") );
 
-        System.out.println("Funcionario: " + consultaGeralResultado.getFuncionario() );
-        System.out.println("Serviço: " + consultaGeralResultado.getServico() );
-      
-        // Atualizar ----- parei aqui
+        System.out.println("Funcionario: " + consultaGeralResultado.getFuncionario().getNome() );
+        System.out.println("Serviço: " + consultaGeralResultado.getServico().getNome() );
         
         
         
-        
+        // Atualizar ---------------------------------------- OK
+//        Servico servicoNovo = new Servico();
+//        servico.setNome("Banho");
+//        servico.setValor(80.00);
+        consultaGeralResultado.setServico(servico);
+        atualizarConsulta(consultaGeralResultado);
+          
+        // Deletar ------------------------------------------
+        deletarConsulta(consultaGeralResultado);
     }
     
     public static void inserirConsulta(ConsultaGeral consulta){  
@@ -114,9 +120,10 @@ public class CrudConsultaGeral {
         try {
             em = EMF.createEntityManager();
             et = em.getTransaction();
+            ConsultaGeral consultaGeralRemove = em.merge(consulta);
             
             et.begin();
-            em.remove(consulta);
+            em.remove(consultaGeralRemove);
             et.commit();
         } catch (Exception ex) {
             if (et != null && et.isActive()) {

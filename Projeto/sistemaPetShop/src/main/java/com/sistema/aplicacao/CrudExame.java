@@ -41,7 +41,7 @@ public class CrudExame {
         System.out.println("Descrição: " + exameResultado.getDescricao() );
         System.out.println("Valor: " + exameResultado.getValor() );
         
-        //Atualizar ----------------------------- OK
+//        //Atualizar ----------------------------- OK
         System.out.println("atualizar");
         exameResultado.setValor(600.00);
         atualizarExame(exameResultado);
@@ -104,9 +104,10 @@ public class CrudExame {
         try {
             em = EMF.createEntityManager();
             et = em.getTransaction();
+            Exame exameRemover = em.merge(exame);
             
             et.begin();
-            em.remove(exame);
+            em.remove(exameRemover);
             et.commit();
         } catch (Exception ex) {
             if (et != null && et.isActive()) {
