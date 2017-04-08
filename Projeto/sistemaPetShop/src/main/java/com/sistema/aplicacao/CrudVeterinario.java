@@ -35,28 +35,28 @@ public class CrudVeterinario {
      */
     public static void main(String[] args) {
         
-        Long idVeternario;
+        Long idVeternario = 8l;
         Veterinario veterinario;
         
         try {
 
-            idVeternario = inserirVeterinario();
+            //idVeternario = inserirVeterinario();
             
             veterinario = consultarVeterinario(idVeternario);
             
-            if(veterinario != null){
-                System.out.println(veterinario.getNome());
-                System.out.println(veterinario.getCrmv());
-                System.out.println(veterinario.getEmail());
-                System.out.println(veterinario.getEspecialidade());
-                
-                veterinario.setNome("Diferente");
-                veterinario.setEmail("diferente@dif.com");
-            
-                atualizarVeterinario(veterinario);
-            }
+//            if(veterinario != null){
+//                System.out.println(veterinario.getNome());
+//                System.out.println(veterinario.getCrmv());
+//                System.out.println(veterinario.getEmail());
+//                System.out.println(veterinario.getEspecialidade());
+//                
+//                veterinario.setNome("Diferente");
+//                veterinario.setEmail("diferente@dif.com");
+//            
+//                atualizarVeterinario(veterinario);
+//            }
     
-            //deletarVeterinario(veterinario, em, et);
+            deletarVeterinario(veterinario);
             
         } finally {
             EMF.close();
@@ -119,15 +119,18 @@ public class CrudVeterinario {
         try {
             em = EMF.createEntityManager();
             et = em.getTransaction();
+            
+            Veterinario veterinarioRemove = em.merge(veterinario);
 
             et.begin();
-            em.remove(veterinario);
+            em.remove(veterinarioRemove);
             et.commit();
             System.out.println("Veterinario excluido!");
         } catch (Exception ex) {
             if (et != null && et.isActive()) {
                 et.rollback();
             }
+            System.out.println("Ocorreu um erro ao deletar o dado. Error: " + ex.getMessage());
         } finally {
             if (em != null) {
                 em.close();

@@ -114,8 +114,10 @@ public class CrudCliente {
             em = EMF.createEntityManager();
             et = em.getTransaction();
             
+            Cliente clienteRemove = em.merge(cliente);
+            
             et.begin();
-            em.remove(cliente);
+            em.remove(clienteRemove);
             et.commit();
         } catch (Exception ex) {
             if (et != null && et.isActive()) {

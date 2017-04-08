@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.sistema.aplicacao;
 
 import com.sistema.model.Cliente;
@@ -22,53 +21,49 @@ import javax.persistence.Persistence;
 public class CrudPet {
 
     private final static EntityManagerFactory EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
-    
+
     /**
      * @param args the command line arguments
      */
-    
     public static void main(String[] args) {
-        
+
         Pet pet;
         Long idPet;
-        
-        try{
-        
+
+        try {
             idPet = inserirPet();
-            
             pet = consultarPet(idPet);
-            
-            if(pet != null){
-                
+
+            if (pet != null) {
+
                 System.out.println(pet.getNome());
                 System.out.println(pet.getPedegree());
                 System.out.println(pet.getRaca());
-            
+
                 pet.setNome("Dogão");
                 pet.setPedegree(Boolean.FALSE);
                 pet.setRaca("Vira-lata");
-                atualizarPet(pet);    
+                atualizarPet(pet);
             }
-            
+
             deletarPet(pet);
-            
-        }finally{
+
+        } finally {
             EMF.close();
         }
- 
+
     }
-    
-    
-    public static Long inserirPet(){
+
+    public static Long inserirPet() {
         EntityManager em = null;
         EntityTransaction et = null;
-        
+
         Pet pet = preencherPet();
 
         try {
             em = EMF.createEntityManager();
             et = em.getTransaction();
-            
+
             et.begin();
             em.persist(pet);
             et.commit();
@@ -81,18 +76,18 @@ public class CrudPet {
                 em.close();
             }
         }
-        
+
         return pet.getIdPet();
     }
-    
-    public static void atualizarPet(Pet pet){
+
+    public static void atualizarPet(Pet pet) {
         EntityManager em = null;
         EntityTransaction et = null;
 
         try {
             em = EMF.createEntityManager();
             et = em.getTransaction();
-            
+
             et.begin();
             em.merge(pet);
             et.commit();
@@ -107,7 +102,7 @@ public class CrudPet {
         }
     }
 
-    public static void deletarPet(Pet pet){
+    public static void deletarPet(Pet pet) {
         EntityManager em = null;
         EntityTransaction et = null;
 
@@ -115,8 +110,10 @@ public class CrudPet {
             em = EMF.createEntityManager();
             et = em.getTransaction();
             
+            Pet petRemove = em.merge(pet);
+
             et.begin();
-            em.remove(pet);
+            em.remove(petRemove);
             et.commit();
         } catch (Exception ex) {
             if (et != null && et.isActive()) {
@@ -127,12 +124,12 @@ public class CrudPet {
                 em.close();
             }
         }
-        
+
     }
- 
-    public static Pet consultarPet(Long idPet){
+
+    public static Pet consultarPet(Long idPet) {
         EntityManager em = null;
-        
+
         Pet pet = null;
 
         try {
@@ -144,55 +141,54 @@ public class CrudPet {
                 em.close();
             }
         }
-        
+
         return pet;
     }
-    
+
     /*
      * -----------------------------------------------------------
      * | Área destinada a preencher os dados para o veterinario. |
      * -----------------------------------------------------------
      */
-    
-    public static Pet preencherPet(){
-        Float peso = 24f;   
+    public static Pet preencherPet() {
+        Float peso = 24f;
         Cliente cliente = preencheCliente();
         Pet pet = new Pet();
-        
+
         pet.setCliente(cliente);
         pet.setNome("Tótó");
         pet.setPedegree(Boolean.TRUE);
         pet.setPeso(peso);
         pet.setRaca("Labrador");
-        
+
         return pet;
     }
-    
-    private static Cliente preencheCliente(){
-               
+
+    private static Cliente preencheCliente() {
+
         Cliente cliente = new Cliente();
         Endereco endereco = preencherEndereco(cliente);
- 
+
         cliente.setEmail("cliente2@cli.com");
         cliente.setEndereco(endereco);
         cliente.setLogin("cliente_gastador2");
         cliente.setNome("Cliente cli");
         cliente.setSenha("cliente123");
-        
+
         return cliente;
     }
-    
-    private static Endereco preencherEndereco(Usuario usuario){
-        
+
+    private static Endereco preencherEndereco(Usuario usuario) {
+
         Endereco endereco = new Endereco();
-        
+
         endereco.setBairro("Bairro");
         endereco.setCep("12763818");
         endereco.setComplemento("Perto dali");
         endereco.setLogradouro("Avenida");
         endereco.setNumero(222);
         endereco.setUsuario(usuario);
-        
+
         return endereco;
     }
 }

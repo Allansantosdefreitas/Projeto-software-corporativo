@@ -5,11 +5,11 @@ Endereco
 Cartao (OK)
 Pet (OK)
 Veterinario (OK)
-Exame 
-ConsultaMedica
+Exame (OK) (+-)
+ConsultaMedica (OK)
 ConsultaGeral
-Funcionario
-Servico
+Funcionario (OK)
+Servico (OK) (+-)
 
 -----------------------------------MAPPING
 Usuario (Ok)
