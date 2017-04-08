@@ -31,7 +31,7 @@ public class Servico implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "lon_id", nullable = false, unique = true)
+    @Column(name = "id_servico", nullable = false, unique = true)
     private Long idServico;
 
     @Column(name = "str_nome", nullable = false)
@@ -45,7 +45,6 @@ public class Servico implements Serializable {
     //@JoinColumn (name = "fk_consulta_geral", referencedColumnName = "id_consulta_geral")
     private List<ConsultaGeral> listaConsultaGeral;
 
-    
     // getters e Setters -----------------------------
     public Long getIdServico() {
         return idServico;

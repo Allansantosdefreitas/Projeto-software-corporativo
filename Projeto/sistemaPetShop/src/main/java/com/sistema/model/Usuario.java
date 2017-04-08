@@ -31,7 +31,7 @@ public abstract class Usuario implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_usuario", nullable = false)
+    @Column(name = "id_usuario")
     protected Long idUsuario; // O id é herdado pelos filhos
 
     @Column(name = "str_nome", length = 60, nullable = false)

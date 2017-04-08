@@ -34,6 +34,14 @@ public class Funcionario extends Usuario implements Serializable{
     // Relacionamento ConsultaGeral
     @OneToMany(mappedBy = "funcionario", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = false)
     private List<ConsultaGeral> listaConsultaGeral;
+
+    public List<ConsultaGeral> getListaConsultaGeral() {
+        return listaConsultaGeral;
+    }
+
+    public void setListaConsultaGeral(List<ConsultaGeral> listaConsultaGeral) {
+        this.listaConsultaGeral = listaConsultaGeral;
+    }
     
     
     // getters e Setters -----------------------------
