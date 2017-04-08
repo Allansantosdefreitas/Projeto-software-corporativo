@@ -100,9 +100,11 @@ public class CrudCartao {
         try {
             em = EMF.createEntityManager();
             et = em.getTransaction();
-
+            
+            Cartao cartaoRemove = em.merge(cartao);
+            
             et.begin();
-            em.remove(cartao);
+            em.remove(cartaoRemove);
             et.commit();
         } catch (Exception ex) {
             if (et != null && et.isActive()) {
