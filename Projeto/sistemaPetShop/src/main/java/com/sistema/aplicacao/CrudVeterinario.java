@@ -49,13 +49,13 @@ public class CrudVeterinario {
                 System.out.println(veterinario.getCrmv());
                 System.out.println(veterinario.getEmail());
                 System.out.println(veterinario.getEspecialidade());
+                
+                veterinario.setNome("Diferente");
+                veterinario.setEmail("diferente@dif.com");
+            
+                atualizarVeterinario(veterinario);
             }
-            
-            veterinario.setNome("Diferente");
-            veterinario.setEmail("diferente@dif.com");
-            
-            atualizarVeterinario(veterinario);
-            
+    
             //deletarVeterinario(veterinario, em, et);
             
         } finally {

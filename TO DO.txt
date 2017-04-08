@@ -1,11 +1,11 @@
 ----------------------------------CRUD: DOING
 
-Cliente ()
+Cliente (OK)
 Endereco
-Cartao
-Pet
-Veterinario
-Exame
+Cartao (OK)
+Pet (OK)
+Veterinario (OK)
+Exame 
 ConsultaMedica
 ConsultaGeral
 Funcionario
