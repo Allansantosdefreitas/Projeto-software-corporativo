@@ -52,7 +52,7 @@ public class CrudCliente {
         
         consultarCliente(Long.valueOf('1'));
         
-        cliente.setNome("Spock");
+        //cliente.setNome("Spock");
         cliente.setEmail("spock@capitaoEnterprise.com");
         
         atualizarCliente(cliente);

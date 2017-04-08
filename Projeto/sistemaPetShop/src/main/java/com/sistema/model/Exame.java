@@ -40,13 +40,25 @@ public class Exame implements Serializable {
 
     @Column(name = "dbl_valor", unique = false)
     private Double valor;
-    
+
     // Relacionamento ConsultaMedica
-    @OneToMany (mappedBy = "exame", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = false)
-    @JoinColumn (name = "fk_consulta_medica", referencedColumnName = "id_consulta_medica")
+    @OneToMany(mappedBy = "exame", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = false)
+    @JoinColumn(name = "fk_consulta_medica", referencedColumnName = "id_consulta_medica")
     private List<ConsultaMedica> listaConsultaMedica;
 
     
+    public Exame(){
+        
+    }
+    
+    public Exame(String nome, String tipo, String descricao, Double valor, List<ConsultaMedica> listaConsultaMedica) {
+        this.nome = nome;
+        this.tipo = tipo;
+        this.descricao = descricao;
+        this.valor = valor;
+        this.listaConsultaMedica = listaConsultaMedica;
+    }
+
     // getters e Setters -----------------------------
     public Long getIdExame() {
         return idExame;
@@ -95,7 +107,5 @@ public class Exame implements Serializable {
     public void setListaConsultaMedica(List<ConsultaMedica> listaConsultaMedica) {
         this.listaConsultaMedica = listaConsultaMedica;
     }
-    
-  
 
 }
