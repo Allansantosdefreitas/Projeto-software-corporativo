@@ -6,7 +6,10 @@
 
 package com.sistema.aplicacao;
 
+import com.sistema.model.ConsultaGeral;
 import com.sistema.model.Servico;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -25,13 +28,30 @@ public class CrudServico {
      */
     public static void main(String[] args) {
         
-        //inserir
+        Servico servico = new Servico();
+        servico.setNome("Banho");
+        servico.setValor(70.00);
         
-        //consultar
+        List<ConsultaGeral> listaConsultaGeral = new ArrayList<ConsultaGeral>();
+        servico.setListaConsultaGeral(listaConsultaGeral);
         
-        //remover
+        //inserir ------------------------ OK
+        inserirServico(servico);
         
-        //atualizar
+        //consultar ------------------- OK
+        Servico servicoResultado = consultarServico(Long.parseLong("1"));
+         
+        System.out.println("Nome: " + servicoResultado.getNome() );
+        System.out.println("Valor: " + servicoResultado.getValor());
+        
+        //atualizar --------------------- OK
+        servicoResultado.setNome("Tosa");
+        servicoResultado.setValor(100.00);
+        atualizarServico(servico);
+        
+        //remover 
+        
+        
     }
     
     public static void inserirServico(Servico servico){
@@ -101,19 +121,20 @@ public class CrudServico {
         
     }
  
-    public static void consultarServico(Long idServico){
+    public static Servico consultarServico(Long idServico){
         EntityManager em = null;
         EntityTransaction et = null;
-
+        Servico servicoResultado = null;
         try {
             em = EMF.createEntityManager();
 
-            em.find(Servico.class, idServico);
+            servicoResultado = em.find(Servico.class, idServico);
         } finally {
             if (em != null) {
                 em.close();
             }
         }
+        return servicoResultado;
     }
     
 }

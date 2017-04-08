@@ -8,7 +8,7 @@ CREATE TABLE tb_endereco (id_endereco BIGINT AUTO_INCREMENT NOT NULL, str_bairro
 CREATE TABLE tb_exame (id_exame BIGINT AUTO_INCREMENT NOT NULL, str_descricao VARCHAR(100), str_nome VARCHAR(60), str_tipo VARCHAR(60), dbl_valor DOUBLE, PRIMARY KEY (id_exame))
 CREATE TABLE tb_funcionario (id_funcionario BIGINT NOT NULL, enum_especialidadeFuncionario VARCHAR(255), PRIMARY KEY (id_funcionario))
 CREATE TABLE tb_pet (id_pet BIGINT AUTO_INCREMENT NOT NULL, str_nome VARCHAR(60), boo_pedegree TINYINT(1) default 0 NOT NULL, flt_peso FLOAT NOT NULL, str_raca VARCHAR(60) NOT NULL, fk_cliente BIGINT, PRIMARY KEY (id_pet))
-CREATE TABLE tb_servico (lon_id BIGINT AUTO_INCREMENT NOT NULL UNIQUE, str_nome VARCHAR(255) NOT NULL UNIQUE, dbl_valor DOUBLE NOT NULL UNIQUE, PRIMARY KEY (lon_id))
+CREATE TABLE tb_servico (lon_id BIGINT AUTO_INCREMENT NOT NULL UNIQUE, str_nome VARCHAR(255) NOT NULL, dbl_valor DOUBLE NOT NULL, PRIMARY KEY (lon_id))
 CREATE TABLE tb_Veterinario (id_veterinario BIGINT NOT NULL, str_crmv VARCHAR(60) NOT NULL UNIQUE, str_especialidade VARCHAR(60) NOT NULL, PRIMARY KEY (id_veterinario))
 ALTER TABLE tb_cartao ADD CONSTRAINT FK_tb_cartao_fk_cliente FOREIGN KEY (fk_cliente) REFERENCES tb_usuario (id_usuario)
 ALTER TABLE tb_usuario ADD CONSTRAINT FK_tb_usuario_fk_endereco FOREIGN KEY (fk_endereco) REFERENCES tb_endereco (id_endereco)

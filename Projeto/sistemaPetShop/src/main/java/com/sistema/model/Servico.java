@@ -34,10 +34,10 @@ public class Servico implements Serializable {
     @Column(name = "lon_id", nullable = false, unique = true)
     private Long idServico;
 
-    @Column(name = "str_nome", nullable = false, unique = true)
+    @Column(name = "str_nome", nullable = false)
     private String nome;
 
-    @Column(name = "dbl_valor", nullable = false, unique = true)
+    @Column(name = "dbl_valor", nullable = false)
     private Double valor;
     
     // Relacionamento Consulta

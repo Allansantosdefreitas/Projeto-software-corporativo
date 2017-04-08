@@ -5,7 +5,10 @@
  */
 package com.sistema.aplicacao;
 
+import com.sistema.model.ConsultaMedica;
 import com.sistema.model.Exame;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -24,7 +27,28 @@ public class CrudExame {
      */
     public static void main(String[] args) {
         
-        Exame exame = new Exame();
+        List<ConsultaMedica> listaConsultaMedica = new ArrayList<ConsultaMedica>();
+        Exame exame = new Exame("Ultrasonografia", "teste", "radiografia em geral", 200.00, listaConsultaMedica);
+        
+        // Inserir ----------------------- OK
+        inserirExame(exame);
+  
+        //Consultar --------------------- OK
+        Exame exameResultado = consultarExame(Long.parseLong("2"));
+          
+        System.out.println("Nome: " +  exameResultado.getNome() );
+        System.out.println("Tipo: " + exameResultado.getTipo() );
+        System.out.println("Descrição: " + exameResultado.getDescricao() );
+        System.out.println("Valor: " + exameResultado.getValor() );
+        
+        //Atualizar ----------------------------- OK
+        System.out.println("atualizar");
+        exameResultado.setValor(600.00);
+        atualizarExame(exameResultado);
+        System.out.println("Valor: " + exameResultado.getValor() );
+        
+        // Deletar ------------------------------ NOK
+        deletarExame(exameResultado);
         
     }
     
@@ -71,6 +95,7 @@ public class CrudExame {
             }
         }
     }
+      
 
     public static void deletarExame(Exame exame){
         EntityManager em = null;
@@ -95,17 +120,22 @@ public class CrudExame {
         
     }
  
-    public static void buscarExame(Long idExame){
+    public static Exame consultarExame(Long idExame){
         EntityManager em = null;
-
+        Exame exameResultado = null;
         try {
             em = EMF.createEntityManager();
 
-            em.find(Exame.class, idExame);
+            exameResultado = em.find(Exame.class, idExame);
         } finally {
             if (em != null) {
                 em.close();
             }
         }
+        
+        return exameResultado;
     }
+     
+    
+    
 }

@@ -5,11 +5,11 @@ Endereco
 Cartao
 Pet
 Veterinario
-Exame
+Exame (CRU)
 ConsultaMedica
 ConsultaGeral
 Funcionario
-Servico
+Servico (CR)
 
 -----------------------------------MAPPING
 Usuario (Ok)
