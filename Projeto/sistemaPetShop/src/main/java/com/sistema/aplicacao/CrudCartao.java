@@ -6,6 +6,7 @@
 package com.sistema.aplicacao;
 
 import com.sistema.model.Cartao;
+import com.sistema.model.Cliente;
 import java.util.Calendar;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -25,6 +26,8 @@ public class CrudCartao {
         calendario.set(2018, 7, 17);
         
         Cartao cartao = new Cartao("Visa", "1234568790123456", calendario.getTime());
+//        Cliente cliente = new Cliente();
+//        cliente.setEmail(email);
         
         inserirCartao(cartao);
         
@@ -34,7 +37,7 @@ public class CrudCartao {
         System.out.println("Numero: " + cartaoResultado.getNumero());
         System.out.println("Validade: " + cartaoResultado.getDataValidade());
         
-        //atualizarCartao(cartao);
+        atualizarCartao(cartao);
         
         cartao.setBandeira("Master");
         
@@ -42,11 +45,10 @@ public class CrudCartao {
         
         System.out.println("Bandeira: " + cartaoResultado.getBandeira());
         
-        //deletarCartao(cartao);
-        
         deletarCartao(cartao);
         
-        
+        //deletarCartao(cartao);
+          
     }
     
     public static void inserirCartao(Cartao cartao){
