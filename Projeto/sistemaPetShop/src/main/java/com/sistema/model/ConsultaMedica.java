@@ -8,6 +8,7 @@ package com.sistema.model;
 import java.io.Serializable;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -24,7 +25,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tb_consulta_medica")
 @DiscriminatorValue(value = "med")
-@PrimaryKeyJoinColumn(name = "id_consulta_medica" )
+@PrimaryKeyJoinColumn(name = "id_consulta_medica", referencedColumnName = "id_consulta" )
 @Access(AccessType.FIELD)
 public class ConsultaMedica extends Consulta implements Serializable{
     
@@ -32,17 +33,17 @@ public class ConsultaMedica extends Consulta implements Serializable{
     private String diagnostico;
     
     // Relacionamento Pet
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_pet", referencedColumnName = "id_pet")
     private Pet pet;
     
     // Relacionamento Veterinario
-    @ManyToOne(fetch = FetchType.LAZY, optional = true)
-    @JoinColumn (name = "fk_veterinario", referencedColumnName = "id_veterinario")
+    @ManyToOne(fetch = FetchType.LAZY, optional = true, cascade = CascadeType.ALL)
+    @JoinColumn (name = "fk_veterinario", referencedColumnName = "id_usuario")
     private Veterinario veterinario;
     
     // Relacionamento Exame
-    @ManyToOne(fetch = FetchType.LAZY, optional = true)
+    @ManyToOne(fetch = FetchType.LAZY, optional = true, cascade = CascadeType.ALL)
     @JoinColumn (name = "fk_exame", referencedColumnName = "id_exame")
     private Exame exame;
 

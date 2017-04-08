@@ -31,7 +31,7 @@ public class Servico implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "lon_id", nullable = false, unique = true)
+    @Column(name = "id_servico", nullable = false, unique = true)
     private Long idServico;
 
     @Column(name = "str_nome", nullable = false, unique = true)
@@ -43,7 +43,7 @@ public class Servico implements Serializable {
     // Relacionamento Consulta
     @OneToMany (mappedBy = "servico", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = false)
     //@JoinColumn (name = "fk_consulta_geral", referencedColumnName = "id_consulta_geral")
-    private List<Consulta> listaConsulta;
+    private List<ConsultaGeral> listaConsulta;
 
     
     // getters e Setters -----------------------------
@@ -71,11 +71,11 @@ public class Servico implements Serializable {
         this.valor = valor;
     }
 
-    public List<Consulta> getListaConsulta() {
+    public List<ConsultaGeral> getListaConsulta() {
         return listaConsulta;
     }
 
-    public void setListaConsulta(List<Consulta> listaConsulta) {
+    public void setListaConsulta(List<ConsultaGeral> listaConsulta) {
         this.listaConsulta = listaConsulta;
     }
     

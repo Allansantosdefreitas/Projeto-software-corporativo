@@ -3,6 +3,7 @@ package com.sistema.model;
 import java.io.Serializable;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -42,7 +43,7 @@ public class Endereco implements Serializable {
     private String bairro;
 
     // Relacionamento Usuario
-    @OneToOne(mappedBy = "endereco", optional = false, fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "endereco", optional = false, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Usuario usuario;
 
     

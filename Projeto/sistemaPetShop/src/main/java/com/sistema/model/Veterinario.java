@@ -7,11 +7,10 @@ package com.sistema.model;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -36,8 +35,8 @@ public class Veterinario extends Usuario implements Serializable {
     private String especialidade;
 
     // Relacionamento ConsultaMedica
-    @OneToMany(fetch = FetchType.LAZY, orphanRemoval = false)
-    @JoinColumn(name = "fk_consulta", referencedColumnName = "id_consulta_medica")
+    @OneToMany(mappedBy = "veterinario", fetch = FetchType.LAZY, orphanRemoval = false, cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_consulta", referencedColumnName = "id_consulta", nullable = true)
     private List<ConsultaMedica> ListaConsultaMedica;
 
     
