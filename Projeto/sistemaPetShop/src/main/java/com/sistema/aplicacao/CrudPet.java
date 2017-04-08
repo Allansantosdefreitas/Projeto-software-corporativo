@@ -6,7 +6,10 @@
 
 package com.sistema.aplicacao;
 
+import com.sistema.model.Cliente;
+import com.sistema.model.Endereco;
 import com.sistema.model.Pet;
+import com.sistema.model.Usuario;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -25,19 +28,42 @@ public class CrudPet {
      */
     
     public static void main(String[] args) {
-        //inserir
         
-        //consultar
+        Pet pet;
+        Long idPet;
         
-        //remover
+        try{
         
-        //atualizar
+            idPet = inserirPet();
+            
+            pet = consultarPet(idPet);
+            
+            if(pet != null){
+                
+                System.out.println(pet.getNome());
+                System.out.println(pet.getPedegree());
+                System.out.println(pet.getRaca());
+            
+                pet.setNome("Dogão");
+                pet.setPedegree(Boolean.FALSE);
+                pet.setRaca("Vira-lata");
+                atualizarPet(pet);    
+            }
+            
+            deletarPet(pet);
+            
+        }finally{
+            EMF.close();
+        }
+ 
     }
     
     
-    public static void inserirPet(Pet pet){
+    public static Long inserirPet(){
         EntityManager em = null;
         EntityTransaction et = null;
+        
+        Pet pet = preencherPet();
 
         try {
             em = EMF.createEntityManager();
@@ -55,6 +81,8 @@ public class CrudPet {
                 em.close();
             }
         }
+        
+        return pet.getIdPet();
     }
     
     public static void atualizarPet(Pet pet){
@@ -102,17 +130,69 @@ public class CrudPet {
         
     }
  
-    public static void consultarPet(Long idPet){
+    public static Pet consultarPet(Long idPet){
         EntityManager em = null;
+        
+        Pet pet = null;
 
         try {
             em = EMF.createEntityManager();
 
-            em.find(Pet.class, idPet);
+            pet = em.find(Pet.class, idPet);
         } finally {
             if (em != null) {
                 em.close();
             }
         }
+        
+        return pet;
+    }
+    
+    /*
+     * -----------------------------------------------------------
+     * | Área destinada a preencher os dados para o veterinario. |
+     * -----------------------------------------------------------
+     */
+    
+    public static Pet preencherPet(){
+        Float peso = 24f;   
+        Cliente cliente = preencheCliente();
+        Pet pet = new Pet();
+        
+        pet.setCliente(cliente);
+        pet.setNome("Tótó");
+        pet.setPedegree(Boolean.TRUE);
+        pet.setPeso(peso);
+        pet.setRaca("Labrador");
+        
+        return pet;
+    }
+    
+    private static Cliente preencheCliente(){
+               
+        Cliente cliente = new Cliente();
+        Endereco endereco = preencherEndereco(cliente);
+ 
+        cliente.setEmail("cliente2@cli.com");
+        cliente.setEndereco(endereco);
+        cliente.setLogin("cliente_gastador2");
+        cliente.setNome("Cliente cli");
+        cliente.setSenha("cliente123");
+        
+        return cliente;
+    }
+    
+    private static Endereco preencherEndereco(Usuario usuario){
+        
+        Endereco endereco = new Endereco();
+        
+        endereco.setBairro("Bairro");
+        endereco.setCep("12763818");
+        endereco.setComplemento("Perto dali");
+        endereco.setLogradouro("Avenida");
+        endereco.setNumero(222);
+        endereco.setUsuario(usuario);
+        
+        return endereco;
     }
 }
