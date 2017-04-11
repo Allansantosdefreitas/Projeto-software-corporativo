@@ -9,6 +9,9 @@ import com.sistema.model.ConsultaGeral;
 import com.sistema.model.EspecialidadeFuncionario;
 import com.sistema.model.Funcionario;
 import com.sistema.model.Servico;
+import com.sistema.model.StatusConsulta;
+import java.time.Instant;
+import java.util.Date;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -16,9 +19,10 @@ import javax.persistence.Persistence;
 
 /**
  *
- * @author Jonathan Romualdo
+ * @author Allan Santos, Jonathan Romualdo
  */
 public class CrudConsultaGeral {
+    /*FUNCIONANDO OK!!!*/
     
     private final static EntityManagerFactory EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
 
@@ -26,59 +30,48 @@ public class CrudConsultaGeral {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-        ConsultaGeral consultaGeral = new ConsultaGeral();
-        
-        
-        // Inserir ------------------------------------ OK
-        // Serviço  
-        Servico servico = new Servico();
-        servico.setNome("Banho");
-        servico.setValor(300.00);
-        
-        // Funcionário
-        Funcionario funcionario = new Funcionario();
-        funcionario.setEspecialidadeFuncionario(EspecialidadeFuncionario.TOSADOR);
-        funcionario.setNome("João das Nevis");
-        funcionario.setEmail("joao@gmail.com");
-        funcionario.setLogin("joaonevis7");
-        funcionario.setSenha("12345678");
-        
-        //consultaGeral.setDataMarcada(dataMarcada);
-        consultaGeral.setServico(servico);
-        consultaGeral.setFuncionario(funcionario);
-        
-        inserirConsulta(consultaGeral);
-        
-        // Consultar --------------------------------------- OK
-        ConsultaGeral consultaGeralResultado = buscarConsulta(Long.parseLong("1") );
+        Long idConsultaGeral;
+        ConsultaGeral consultaGeral;
 
-        System.out.println("Funcionario: " + consultaGeralResultado.getFuncionario().getNome() );
-        System.out.println("Serviço: " + consultaGeralResultado.getServico().getNome() );
-        
-        
-        
-        // Atualizar ---------------------------------------- OK
-//        Servico servicoNovo = new Servico();
-//        servico.setNome("Banho");
-//        servico.setValor(80.00);
-        consultaGeralResultado.setServico(servico);
-        atualizarConsulta(consultaGeralResultado);
-          
-        // Deletar ------------------------------------------
-        deletarConsulta(consultaGeralResultado);
+        try {
+            //inserir ----------------------------- OK
+            idConsultaGeral = inserirConsulta();
+
+            //consultar ----------------------------- OK
+            consultaGeral = buscarConsulta(idConsultaGeral);
+
+            if (consultaGeral != null) {
+
+                System.out.println("Funcionario: " + consultaGeral.getFuncionario().getNome());
+                System.out.println("Serviço: " + consultaGeral.getServico().getNome());
+
+                consultaGeral.setStatus(StatusConsulta.CONCLUIDA);
+                
+                //atualizar ----------------------------- OK
+                atualizarConsulta(consultaGeral);
+            }
+            
+            //deletar ----------------------------- OK
+            deletarConsulta(consultaGeral);
+
+        } finally {
+            EMF.close();
+        }
+   
     }
-    
-    public static void inserirConsulta(ConsultaGeral consulta){  
+
+    public static Long inserirConsulta() {
         EntityManager em = null;
         EntityTransaction et = null;
+
+        ConsultaGeral consultaGeral = preencheConsultaGeral();
 
         try {
             em = EMF.createEntityManager();
             et = em.getTransaction();
-            
+
             et.begin();
-            em.persist(consulta);
+            em.persist(consultaGeral);
             et.commit();
         } catch (Exception ex) {
             if (et != null && et.isActive()) {
@@ -89,16 +82,18 @@ public class CrudConsultaGeral {
                 em.close();
             }
         }
+
+        return consultaGeral.getIdConsulta();
     }
-    
-    public static void atualizarConsulta(ConsultaGeral consulta){
+
+    public static void atualizarConsulta(ConsultaGeral consulta) {
         EntityManager em = null;
         EntityTransaction et = null;
 
         try {
             em = EMF.createEntityManager();
             et = em.getTransaction();
-            
+
             et.begin();
             em.merge(consulta);
             et.commit();
@@ -113,7 +108,7 @@ public class CrudConsultaGeral {
         }
     }
 
-    public static void deletarConsulta(ConsultaGeral consulta){
+    public static void deletarConsulta(ConsultaGeral consulta) {
         EntityManager em = null;
         EntityTransaction et = null;
 
@@ -121,7 +116,7 @@ public class CrudConsultaGeral {
             em = EMF.createEntityManager();
             et = em.getTransaction();
             ConsultaGeral consultaGeralRemove = em.merge(consulta);
-            
+
             et.begin();
             em.remove(consultaGeralRemove);
             et.commit();
@@ -134,16 +129,16 @@ public class CrudConsultaGeral {
                 em.close();
             }
         }
-        
+
     }
- 
-    public static ConsultaGeral buscarConsulta(Long idConsultaGeral){
+
+    public static ConsultaGeral buscarConsulta(Long idConsultaGeral) {
         EntityManager em = null;
         ConsultaGeral consultaGeralResultado = null;
-        
+
         try {
             em = EMF.createEntityManager();
-            
+
             consultaGeralResultado = em.find(ConsultaGeral.class, idConsultaGeral);
         } finally {
             if (em != null) {
@@ -152,5 +147,45 @@ public class CrudConsultaGeral {
         }
         return consultaGeralResultado;
     }
+
+    /*
+     * -----------------------------------------------------------
+     * | Área destinada a preencher os dados para o CONSULTA GERAL. |
+     * -----------------------------------------------------------
+     */
     
+    public static ConsultaGeral preencheConsultaGeral() {
+        ConsultaGeral consultaGeral = new ConsultaGeral();
+        Servico servico = preencheServico();
+        Funcionario funcionario = preencheFuncionario();
+
+        consultaGeral.setDataMarcada(Date.from(Instant.now()));
+        consultaGeral.setServico(servico);
+        consultaGeral.setFuncionario(funcionario);
+        consultaGeral.setStatus(StatusConsulta.CONSULTADA);
+
+        return consultaGeral;
+    }
+
+    public static Servico preencheServico() {
+        Servico servico = new Servico();
+
+        servico.setNome("Banho");
+        servico.setValor(300.00);
+
+        return servico;
+    }
+
+    public static Funcionario preencheFuncionario() {
+        Funcionario funcionario = new Funcionario();
+
+        funcionario.setEspecialidadeFuncionario(EspecialidadeFuncionario.TOSADOR);
+        funcionario.setNome("João das Nevis");
+        funcionario.setEmail("joao@gmail.com");
+        funcionario.setLogin("joaonevis7");
+        funcionario.setSenha("12345678");
+
+        return funcionario;
+    }
+
 }

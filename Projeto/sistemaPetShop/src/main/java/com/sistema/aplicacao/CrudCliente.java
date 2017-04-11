@@ -21,6 +21,7 @@ import javax.persistence.Persistence;
  * @author Jonathan Romualdo
  */
 public class CrudCliente {
+    /*FUNCIONANDO OK!!!*/
 
     private final static EntityManagerFactory EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
 
@@ -28,48 +29,43 @@ public class CrudCliente {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Cliente cliente = new Cliente();
-        Calendar calendario = Calendar.getInstance();
-        calendario.set(2018, 7, 17);
+        Long idCliente;
+        Cliente cliente;
 
-        // Inserir ------------------------------------------------- OK
-        // Cartao
-        Cartao cartao = new Cartao("Visa", "1999-2001-2003", calendario.getTime());
-        // ListaCartao
-        List<Cartao> listaCartao = new ArrayList<Cartao>();
-        listaCartao.add(cartao);
+        try {
+            //inserir ----------------------------- OK
+            idCliente = inserirCliente();
 
-        // Endereco
-        Endereco endereco = new Endereco("Rua A", 404, "próximo à Evil Corp", "400-400", "Várzea", cliente);
+            //consultar ----------------------------- OK
+            cliente = consultarCliente(idCliente);
 
-        cliente.setNome("James T. Kirk");
-        cliente.setCartao(listaCartao);
-        cliente.setEmail("kirk@capitao.com");
-        cliente.setLogin("kirkCapitao");
-        cliente.setSenha("melhorCapitao");
-        cliente.setEndereco(endereco);
+            if (cliente != null) {
 
-        //inserirCliente(cliente);
-        Cliente clienteResultado = new Cliente();
-        clienteResultado = consultarCliente(Long.parseLong("10"));
+                System.out.println("Nome: " + cliente.getNome());
+                System.out.println("Email: " + cliente.getEmail());
 
-        System.out.println("Nome: " + clienteResultado.getNome());
-        System.out.println("Email: " + clienteResultado.getEmail());
+                cliente.setNome("Spock");
+                cliente.setEmail("spock@capitaoEnterprise.com");
 
-//       
-        cliente.setNome("Spock");
-        cliente.setEmail("spock@capitaoEnterprise.com");
+                //atualizar ----------------------------- OK
+                atualizarCliente(cliente);
+            }
+            
+            //deletar ----------------------------- OK
+            deletarCliente(cliente);
 
-        atualizarCliente(cliente);
-
-        deletarCliente(cliente);
+        } finally {
+            EMF.close();
+        }
 
     }
 
-    public static void inserirCliente(Cliente cliente) {
+    public static Long inserirCliente() {
         /* :) */
         EntityManager em = null;
         EntityTransaction et = null;
+
+        Cliente cliente = preencheCliente();
 
         try {
             em = EMF.createEntityManager();
@@ -87,6 +83,8 @@ public class CrudCliente {
                 em.close();
             }
         }
+
+        return cliente.getIdUsuario();
     }
 
     public static void atualizarCliente(Cliente cliente) {
@@ -150,6 +148,51 @@ public class CrudCliente {
             }
         }
         return clienteResultado;
+    }
+
+    /*
+     * -----------------------------------------------------------
+     * | Área destinada a preencher os dados para o CLIENTE. |
+     * -----------------------------------------------------------
+     */
+    public static Cliente preencheCliente() {
+        Cliente cliente = new Cliente();
+        Endereco endereco = preencherEndereco(cliente);
+        Cartao cartao = preencheCartao();
+
+        List<Cartao> listaCartao = new ArrayList<>();
+        listaCartao.add(cartao);
+
+        cliente.setNome("James T. Kirk");
+        cliente.setCartao(listaCartao);
+        cliente.setEmail("kirk@capitao.com");
+        cliente.setLogin("kirkCapitao");
+        cliente.setSenha("melhorCapitao");
+        cliente.setEndereco(endereco);
+
+        return cliente;
+    }
+
+    public static Endereco preencherEndereco(Cliente cliente) {
+        Endereco endereco = new Endereco();
+
+        endereco.setBairro("Várzea");
+        endereco.setCep("400-400");
+        endereco.setComplemento("próximo à Evil Corp");
+        endereco.setLogradouro("Rua A");
+        endereco.setNumero(404);
+        endereco.setUsuario(cliente);
+
+        return endereco;
+    }
+
+    public static Cartao preencheCartao() {
+        Calendar calendario = Calendar.getInstance();
+        calendario.set(2018, 7, 17);
+
+        Cartao cartao = new Cartao("Visa", "1999-2002-2003", calendario.getTime());
+
+        return cartao;
     }
 
 }

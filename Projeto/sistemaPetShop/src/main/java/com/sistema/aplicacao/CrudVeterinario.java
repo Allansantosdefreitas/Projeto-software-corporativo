@@ -24,9 +24,10 @@ import javax.persistence.Persistence;
 
 /**
  *
- * @author Luis Henrique
+ * @author Jonathan Romualdo, Luis Henrique
  */
 public class CrudVeterinario {
+    /*FUNCIONANDO OK!!!*/
 
     private final static EntityManagerFactory EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
 
@@ -35,27 +36,31 @@ public class CrudVeterinario {
      */
     public static void main(String[] args) {
         
-        Long idVeternario = 8l;
+        Long idVeternario;
         Veterinario veterinario;
         
         try {
 
-            //idVeternario = inserirVeterinario();
+            //inserir ------------------------ OK
+            idVeternario = inserirVeterinario();
             
+            //consultar ------------------------ OK
             veterinario = consultarVeterinario(idVeternario);
             
-//            if(veterinario != null){
-//                System.out.println(veterinario.getNome());
-//                System.out.println(veterinario.getCrmv());
-//                System.out.println(veterinario.getEmail());
-//                System.out.println(veterinario.getEspecialidade());
-//                
-//                veterinario.setNome("Diferente");
-//                veterinario.setEmail("diferente@dif.com");
-//            
-//                atualizarVeterinario(veterinario);
-//            }
+            if(veterinario != null){
+                System.out.println(veterinario.getNome());
+                System.out.println(veterinario.getCrmv());
+                System.out.println(veterinario.getEmail());
+                System.out.println(veterinario.getEspecialidade());
+                
+                veterinario.setNome("Diferente");
+                veterinario.setEmail("diferente@dif.com");
+            
+                //atualizar ------------------------ OK
+                atualizarVeterinario(veterinario);
+            }
     
+            //deletar ------------------------ OK
             deletarVeterinario(veterinario);
             
         } finally {

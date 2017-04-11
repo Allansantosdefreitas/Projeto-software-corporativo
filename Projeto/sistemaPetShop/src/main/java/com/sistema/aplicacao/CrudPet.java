@@ -16,10 +16,11 @@ import javax.persistence.Persistence;
 
 /**
  *
- * @author Luis Henrique
+ * @author Jonathan Romualdo, Luis Henrique
  */
 public class CrudPet {
-
+    /*FUNCIONANDO OK!!!*/
+    
     private final static EntityManagerFactory EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
 
     /**
@@ -31,8 +32,11 @@ public class CrudPet {
         Long idPet;
 
         try {
+            //inserir ------------------------ OK
             idPet = inserirPet();
-            pet = consultarPet(Long.parseLong("2"));
+            
+            //consultar ------------------------ OK
+            pet = consultarPet(idPet);
 
             if (pet != null) {
 
@@ -43,9 +47,12 @@ public class CrudPet {
                 pet.setNome("Dogão");
                 pet.setPedegree(Boolean.FALSE);
                 pet.setRaca("Vira-lata");
+                
+                //atualizar ------------------------ OK
                 atualizarPet(pet);
             }
 
+            //deletar ------------------------ OK
             deletarPet(pet);
 
         } finally {
@@ -147,7 +154,7 @@ public class CrudPet {
 
     /*
      * -----------------------------------------------------------
-     * | Área destinada a preencher os dados para o veterinario. |
+     * | Área destinada a preencher os dados para o PET. |
      * -----------------------------------------------------------
      */
     public static Pet preencherPet() {

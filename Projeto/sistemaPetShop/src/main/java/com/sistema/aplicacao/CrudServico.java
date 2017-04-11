@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.sistema.aplicacao;
 
 import com.sistema.model.ConsultaGeral;
@@ -17,51 +16,58 @@ import javax.persistence.Persistence;
 
 /**
  *
- * @author Luis Henrique
+ * @author Luis Henrique, Jonathan Romualdo
  */
 public class CrudServico {
+    /*FUNCIONANDO OK!!!*/
 
     private final static EntityManagerFactory EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
-    
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-        Servico servico = new Servico();
-        servico.setNome("Banho");
-        servico.setValor(100.00);
-        
-        List<ConsultaGeral> listaConsultaGeral = new ArrayList<ConsultaGeral>();
-        servico.setListaConsultaGeral(listaConsultaGeral);
-        
-        //inserir ------------------------ OK
-        inserirServico(servico);
-        
-        //consultar ------------------- OK
-        Servico servicoResultado = consultarServico(Long.parseLong("1"));
-         
-        System.out.println("Nome: " + servicoResultado.getNome() );
-        System.out.println("Valor: " + servicoResultado.getValor());
-        
-        //atualizar --------------------- OK
-        servicoResultado.setNome("Tosa");
-        servicoResultado.setValor(100.00);
-        atualizarServico(servicoResultado);
-        
-        //remover -------------------------- NOK
-        deletarServico(servicoResultado);
-        
+
+        Long idServico;
+        Servico servicoResultado;
+
+        try {
+            //inserir ------------------------ OK
+            idServico = inserirServico();
+
+            //consultar ------------------- OK
+            servicoResultado = consultarServico(idServico);
+
+            if (servicoResultado != null) {
+
+                System.out.println("Nome: " + servicoResultado.getNome());
+                System.out.println("Valor: " + servicoResultado.getValor());
+
+                servicoResultado.setNome("Tosa");
+                servicoResultado.setValor(100.00);
+                
+                //atualizar --------------------- OK
+                atualizarServico(servicoResultado);
+                
+                //remover -------------------------- OK
+                deletarServico(servicoResultado);
+            }
+
+        } finally {
+            EMF.close();
+        }
     }
-    
-    public static void inserirServico(Servico servico){
+
+    public static Long inserirServico() {
         EntityManager em = null;
         EntityTransaction et = null;
+
+        Servico servico = preencherServico();
 
         try {
             em = EMF.createEntityManager();
             et = em.getTransaction();
-            
+
             et.begin();
             em.persist(servico);
             et.commit();
@@ -74,16 +80,18 @@ public class CrudServico {
                 em.close();
             }
         }
+
+        return servico.getIdServico();
     }
-    
-    public static void atualizarServico(Servico servico){
+
+    public static void atualizarServico(Servico servico) {
         EntityManager em = null;
         EntityTransaction et = null;
 
         try {
             em = EMF.createEntityManager();
             et = em.getTransaction();
-            
+
             et.begin();
             em.merge(servico);
             et.commit();
@@ -98,7 +106,7 @@ public class CrudServico {
         }
     }
 
-    public static void deletarServico(Servico servico){
+    public static void deletarServico(Servico servico) {
         EntityManager em = null;
         EntityTransaction et = null;
 
@@ -106,8 +114,10 @@ public class CrudServico {
             em = EMF.createEntityManager();
             et = em.getTransaction();
             
+            Servico servicoRemove = em.merge(servico);
+
             et.begin();
-            em.remove(servico);
+            em.remove(servicoRemove);
             et.commit();
         } catch (Exception ex) {
             if (et != null && et.isActive()) {
@@ -118,10 +128,10 @@ public class CrudServico {
                 em.close();
             }
         }
-        
+
     }
- 
-    public static Servico consultarServico(Long idServico){
+
+    public static Servico consultarServico(Long idServico) {
         EntityManager em = null;
         EntityTransaction et = null;
         Servico servicoResultado = null;
@@ -136,5 +146,24 @@ public class CrudServico {
         }
         return servicoResultado;
     }
+
+    /*
+     * -----------------------------------------------------------
+     * | Área destinada a preencher os dados para o SERVIÇO. |
+     * -----------------------------------------------------------
+     */
     
+    public static Servico preencherServico() {
+
+        List<ConsultaGeral> listaConsultaGeral = new ArrayList<>();
+
+        Servico servico = new Servico();
+
+        servico.setNome("Banho");
+        servico.setValor(100.00);
+        servico.setListaConsultaGeral(listaConsultaGeral);
+
+        return servico;
+    }
+
 }

@@ -15,7 +15,6 @@ import com.sistema.model.Usuario;
 import com.sistema.model.Veterinario;
 import java.time.Instant;
 import java.util.Date;
-import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -23,9 +22,10 @@ import javax.persistence.Persistence;
 
 /**
  *
- * @author Luis Henrique
+ * @author Jonathan Romualdo, Luis Henrique
  */
 public class CrudConsultaMedica {
+    /*FUNCIONANDO OK!!!*/
 
     private final static EntityManagerFactory EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
 
@@ -37,9 +37,11 @@ public class CrudConsultaMedica {
         ConsultaMedica consulta;
         
         try{
-            //idConsultaMedica = inserirConsultaMedica();
+            //inserir ----------------------------- OK
+            idConsultaMedica = inserirConsultaMedica();
             
-            consulta = buscarConsultaMedica(Long.parseLong("2"));
+            //buscar ----------------------------- OK
+            consulta = buscarConsultaMedica(idConsultaMedica);
             
             if(consulta != null){
                 System.out.println(consulta.getExame());
@@ -49,12 +51,13 @@ public class CrudConsultaMedica {
                 
                 consulta.setDiagnostico("Muita Água e muita comida");
                 consulta.setStatus(StatusConsulta.CONCLUIDA);
-                
-                // Atualizar ---------------------------------------
                 consulta.setDiagnostico("o fim é a morte");
+                
+                //atualizar ----------------------------- OK
                 atualizarConsultaMedica(consulta);
             }
             
+            //deletar ----------------------------- OK
             deletarConsultaMedica(consulta);
             
         }finally{
@@ -156,7 +159,7 @@ public class CrudConsultaMedica {
     
     /*
      * -----------------------------------------------------------
-     * | Área destinada a preencher os dados para o veterinario. |
+     * | Área destinada a preencher os dados para o CONSULTA MEDICA. |
      * -----------------------------------------------------------
      */
 

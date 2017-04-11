@@ -6,7 +6,6 @@
 package com.sistema.aplicacao;
 
 import com.sistema.model.Cartao;
-import com.sistema.model.Cliente;
 import java.util.Calendar;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -18,39 +17,48 @@ import javax.persistence.Persistence;
  * @author Jonathan Romualdo
  */
 public class CrudCartao {
+    /*FUNCIONANDO OK!!!*/
 
     private final static EntityManagerFactory EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
 
     public static void main(String[] args) {
-        Calendar calendario = Calendar.getInstance();
-        calendario.set(2018, 7, 17);
 
-        Cartao cartao = new Cartao("Visa", "2001-2002-2003", calendario.getTime());
-        
-        // Inserir ------------------------------------ OK
-        inserirCartao(cartao);
-        
-        // Consultar ------------------------------------ OK
-        Cartao cartaoResultado = consultarCartao(Long.parseLong("2"));
+        Long idCartao;
+        Cartao cartao;
 
-        System.out.println("Bandeira: " + cartaoResultado.getBandeira());
-        System.out.println("Numero: " + cartaoResultado.getNumero());
-        System.out.println("Validade: " + cartaoResultado.getDataValidade());
+        try {
+            // Inserir ------------------------------------ OK
+            idCartao = inserirCartao();
 
-        // Atualizar ------------------------------- OK
-        cartaoResultado.setBandeira("Master Card");
-        atualizarCartao(cartaoResultado);
-        System.out.println("Bandeira: " + cartaoResultado.getBandeira());
-   
-        // Deletar ------------------------------------ NOK
-        deletarCartao(cartaoResultado);
-   
+            // Consultar ------------------------------------ OK
+            cartao = consultarCartao(idCartao);
+
+            if (cartao != null) {
+
+                System.out.println("Bandeira: " + cartao.getBandeira());
+                System.out.println("Numero: " + cartao.getNumero());
+                System.out.println("Validade: " + cartao.getDataValidade());
+
+                cartao.setBandeira("Master Card");
+
+                // Atualizar ------------------------------- OK
+                atualizarCartao(cartao);
+            }
+
+            // Deletar ------------------------------------ NOK
+            deletarCartao(cartao);
+            
+        } finally {
+            EMF.close();
+        }
 
     }
 
-    public static void inserirCartao(Cartao cartao) {
+    public static Long inserirCartao() {
         EntityManager em = null;
         EntityTransaction et = null;
+
+        Cartao cartao = preencheCartao();
 
         try {
             em = EMF.createEntityManager();
@@ -69,6 +77,7 @@ public class CrudCartao {
             }
         }
 
+        return cartao.getIdCartao();
     }
 
     public static void atualizarCartao(Cartao cartao) {
@@ -100,9 +109,9 @@ public class CrudCartao {
         try {
             em = EMF.createEntityManager();
             et = em.getTransaction();
-            
+
             Cartao cartaoRemove = em.merge(cartao);
-            
+
             et.begin();
             em.remove(cartaoRemove);
             et.commit();
@@ -133,6 +142,21 @@ public class CrudCartao {
         }
 
         return cartaoResultado;
+    }
+
+    /*
+     * -----------------------------------------------------------
+     * | Área destinada a preencher os dados para o CARTAO. |
+     * -----------------------------------------------------------
+     */
+    
+    public static Cartao preencheCartao() {
+        Calendar calendario = Calendar.getInstance();
+        calendario.set(2018, 7, 17);
+
+        Cartao cartao = new Cartao("Visa", "2001-2002-2003", calendario.getTime());
+
+        return cartao;
     }
 
 }

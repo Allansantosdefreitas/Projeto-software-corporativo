@@ -24,9 +24,10 @@ import javax.persistence.Persistence;
 
 /**
  *
- * @author Aluno
+ * @author Jonathan Romualdo
  */
 public class CrudFuncionario {
+    /*FUNCIONANDO OK!!!*/
 
     private final static EntityManagerFactory EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
     
@@ -38,8 +39,10 @@ public class CrudFuncionario {
         Funcionario funcionario;
         
         try{
+            //inserir ------------------------ OK
             idFuncionario = inserirFuncionario();
             
+            //consultar ------------------------ OK
             funcionario = consultarFuncionario(idFuncionario);
             
             if(funcionario != null){
@@ -53,10 +56,12 @@ public class CrudFuncionario {
                 funcionario.setNome("NovoFuncionario fun");
                 funcionario.setEspecialidadeFuncionario(EspecialidadeFuncionario.BANHISTA);
                 
+                //atualizar ------------------------ OK
                 atualizarFuncionario(funcionario);
             }
             
-//            deletarFuncionario(funcionario);
+            //deltar ------------------------ OK
+            deletarFuncionario(funcionario);
         } finally{
             EMF.close();
         }
@@ -155,7 +160,7 @@ public class CrudFuncionario {
          
     /*
      * -----------------------------------------------------------
-     * | Área destinada a preencher os dados para o veterinario. |
+     * | Área destinada a preencher os dados para o FUNCIONARIO. |
      * -----------------------------------------------------------
      */
 

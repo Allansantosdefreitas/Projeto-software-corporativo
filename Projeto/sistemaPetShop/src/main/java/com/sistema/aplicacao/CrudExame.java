@@ -16,9 +16,10 @@ import javax.persistence.Persistence;
 
 /**
  *
- * @author Henrique
+ * @author Henrique, Jonathan Romualdo
  */
 public class CrudExame {
+    /*FUNCIONANDO OK!!!*/
 
     private final static EntityManagerFactory EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
 
@@ -26,40 +27,50 @@ public class CrudExame {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-        List<ConsultaMedica> listaConsultaMedica = new ArrayList<ConsultaMedica>();
-        Exame exame = new Exame("Ultrasonografia", "teste", "radiografia em geral", 200.00, listaConsultaMedica);
-        
-        // Inserir ----------------------- OK
-        inserirExame(exame);
-  
-        //Consultar --------------------- OK
-        Exame exameResultado = consultarExame(Long.parseLong("2"));
-          
-        System.out.println("Nome: " +  exameResultado.getNome() );
-        System.out.println("Tipo: " + exameResultado.getTipo() );
-        System.out.println("Descrição: " + exameResultado.getDescricao() );
-        System.out.println("Valor: " + exameResultado.getValor() );
-        
-//        //Atualizar ----------------------------- OK
-        System.out.println("atualizar");
-        exameResultado.setValor(600.00);
-        atualizarExame(exameResultado);
-        System.out.println("Valor: " + exameResultado.getValor() );
-        
-        // Deletar ------------------------------ NOK
-        deletarExame(exameResultado);
-        
+
+        Long idExame;
+        Exame exame;
+
+        try {
+            // Inserir ----------------------- OK
+            idExame = inserirExame();
+
+            //Consultar --------------------- OK
+            exame = consultarExame(idExame);
+
+            if (exame != null) {
+                System.out.println("Nome: " + exame.getNome());
+                System.out.println("Tipo: " + exame.getTipo());
+                System.out.println("Descrição: " + exame.getDescricao());
+                System.out.println("Valor: " + exame.getValor());
+
+//        
+                System.out.println("atualizar");
+                exame.setValor(600.00);
+
+                //Atualizar ----------------------------- OK
+                atualizarExame(exame);
+            }
+
+            // Deletar ------------------------------ NOK
+            deletarExame(exame);
+
+        } finally {
+            EMF.close();
+        }
+
     }
-    
-    public static void inserirExame(Exame exame){
+
+    public static Long inserirExame() {
         EntityManager em = null;
         EntityTransaction et = null;
+
+        Exame exame = preencherExame();
 
         try {
             em = EMF.createEntityManager();
             et = em.getTransaction();
-            
+
             et.begin();
             em.persist(exame);
             et.commit();
@@ -72,16 +83,18 @@ public class CrudExame {
                 em.close();
             }
         }
+
+        return exame.getIdExame();
     }
-    
-    public static void atualizarExame(Exame exame){
+
+    public static void atualizarExame(Exame exame) {
         EntityManager em = null;
         EntityTransaction et = null;
 
         try {
             em = EMF.createEntityManager();
             et = em.getTransaction();
-            
+
             et.begin();
             em.merge(exame);
             et.commit();
@@ -95,9 +108,8 @@ public class CrudExame {
             }
         }
     }
-      
 
-    public static void deletarExame(Exame exame){
+    public static void deletarExame(Exame exame) {
         EntityManager em = null;
         EntityTransaction et = null;
 
@@ -105,7 +117,7 @@ public class CrudExame {
             em = EMF.createEntityManager();
             et = em.getTransaction();
             Exame exameRemover = em.merge(exame);
-            
+
             et.begin();
             em.remove(exameRemover);
             et.commit();
@@ -118,10 +130,10 @@ public class CrudExame {
                 em.close();
             }
         }
-        
+
     }
- 
-    public static Exame consultarExame(Long idExame){
+
+    public static Exame consultarExame(Long idExame) {
         EntityManager em = null;
         Exame exameResultado = null;
         try {
@@ -133,9 +145,27 @@ public class CrudExame {
                 em.close();
             }
         }
-        
+
         return exameResultado;
     }
-     
-    
+
+    /*
+     * -----------------------------------------------------------
+     * | Área destinada a preencher os dados para o EXAME. |
+     * -----------------------------------------------------------
+     */
+    public static Exame preencherExame() {
+        List<ConsultaMedica> listaConsultaMedica = new ArrayList<>();
+
+        Exame exame = new Exame();
+
+        exame.setDescricao("Ultrasonografia");
+        exame.setListaConsultaMedica(listaConsultaMedica);
+        exame.setNome("teste");
+        exame.setTipo("radiografia em geral");
+        exame.setValor(200.00);
+
+        return exame;
+    }
+
 }
