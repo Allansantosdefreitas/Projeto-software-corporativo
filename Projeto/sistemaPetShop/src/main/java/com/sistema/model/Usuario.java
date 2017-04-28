@@ -17,6 +17,8 @@ import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.*;
+import org.hibernate.validator.constraints.*;
 
 /**
  *
@@ -33,16 +35,25 @@ public abstract class Usuario implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_usuario")
     protected Long idUsuario; // O id é herdado pelos filhos
-
+    
+    @NotNull
+    @Pattern(regexp = "\\p{Upper}{1}\\p{Lower}+", message = "Deve conter as iniciais maiúsculas")
     @Column(name = "str_nome", length = 60, nullable = false)
     private String nome;
-
+    
+    @Email
+    @Size(max=60)
     @Column(name = "str_email", length = 60, nullable = false, unique = true)
     private String email;
-
+    
+    @NotNull
+    @Size(max=60)
     @Column(name = "str_login", length = 60, nullable = false, unique = true)
     private String login;
-
+    
+    @NotBlank
+    @Size(min=8, max=16)
+    @Pattern(regexp="(?=.*\\p{Digit}).{8,16}")
     @Column(name = "str_senha", length = 16, nullable = false)
     private String senha;
 
