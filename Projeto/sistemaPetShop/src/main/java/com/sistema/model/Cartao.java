@@ -37,6 +37,7 @@ public class Cartao implements Serializable {
     @Column(name = "str_bandeira")
     private String bandeira;
 
+    @NotBlank
     @CreditCardNumber
     @Column(name = "str_numero")
     private String numero;

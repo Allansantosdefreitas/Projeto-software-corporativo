@@ -17,6 +17,7 @@ import javax.persistence.Persistence;
  * @author Jonathan Romualdo
  */
 public class CrudCartao {
+    
     /*FUNCIONANDO OK!!!*/
 
     private final static EntityManagerFactory EMF = Persistence.createEntityManagerFactory("sistemapetshopPU");
@@ -154,7 +155,7 @@ public class CrudCartao {
         Calendar calendario = Calendar.getInstance();
         calendario.set(2018, 7, 17);
 
-        Cartao cartao = new Cartao("Visa", "2001-2002-2003", calendario.getTime());
+        Cartao cartao = new Cartao("Visa", "4929293458709012", calendario.getTime());
 
         return cartao;
     }
