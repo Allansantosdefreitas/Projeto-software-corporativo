@@ -17,10 +17,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+import javax.validation.Valid;
 
 /**
  *
- * @author Jonathan Romualdo
+ * @author Jonathan Romualdo, Allan Santos
  */
 
 @Entity
@@ -31,11 +32,13 @@ import javax.persistence.Table;
 public class Cliente extends Usuario implements Serializable {
 
     // Relacionamento Cartao
+    @Valid
     @OneToMany (mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     @JoinColumn (name = "fk_cartao", referencedColumnName = "id_cartao", nullable = true)
     private List<Cartao> cartao;
     
     // Relacionamento Pet
+    @Valid
     @OneToMany (mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     @JoinColumn (name = "fk_pet", referencedColumnName = "id_pet")
     private List<Pet> listaPet;

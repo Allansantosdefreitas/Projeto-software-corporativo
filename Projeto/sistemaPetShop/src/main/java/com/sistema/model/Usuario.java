@@ -22,7 +22,7 @@ import org.hibernate.validator.constraints.*;
 
 /**
  *
- * @author Luis Henrique, allanfreitas
+ * @author Jonathan Romualdo, Luis Henrique, allanfreitas
  * 
  */
 @Entity
