@@ -20,8 +20,8 @@ import org.dbunit.operation.DatabaseOperation;
 class DbUnitUtil {
 
     /* Trocar URL toda vez */
-    private static final String XML_FILE = "C:\\Users\\Allan Santos\\Documents\\"
-            + "Repos\\projeto-software-corporativo\\Projeto\\sistemaPetShop\\src\\main\\resources\\dbunit";
+    private static final String XML_FILE = "C:\\Users\\Henrique\\Documents\\"+
+            "Projeto-software-corporativo\\Projeto\\sistemaPetShop\\src\\main\\resources\\dbunit";
 
     @SuppressWarnings("UseSpecificCatch")
     public static void inserirDados() {
