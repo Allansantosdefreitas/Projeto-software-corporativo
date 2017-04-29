@@ -174,8 +174,6 @@ public class CrudVeterinario {
         Endereco endereco = preencherEndereco(veterinario);
         List<ConsultaMedica> listaConsultaMedica = preencheConsulta(veterinario);
         
-        Long id = 1l;
-        
         veterinario.setCrmv("crmvPadraoTeste123");
         veterinario.setEmail("veterinario@vet.com");
         veterinario.setEndereco(endereco);
@@ -184,7 +182,6 @@ public class CrudVeterinario {
         veterinario.setLogin("melhorVeterinario123");
         veterinario.setNome("Veterinário Severino");
         veterinario.setSenha("veterinario1234");
-        //veterinario.setIdUsuario(id);
         
         return veterinario;
     }
