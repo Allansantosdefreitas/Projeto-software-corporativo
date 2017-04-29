@@ -17,11 +17,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+import org.hibernate.validator.constraints.NotBlank;
 
 /**
  *
  * @author allanfreitas
  */
+
 @Entity
 @Table(name = "tb_consulta_medica")
 @DiscriminatorValue(value = "med")
@@ -29,6 +31,7 @@ import javax.persistence.Table;
 @Access(AccessType.FIELD)
 public class ConsultaMedica extends Consulta implements Serializable{
     
+    @NotBlank
     @Column(name = "str_diagnostico", nullable = false, length = 400)
     private String diagnostico;
     

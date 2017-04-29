@@ -12,10 +12,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.NotBlank;
 
 /**
  *
- * @author Jonathan Romualdo
+ * @author Jonathan Romualdo, allanfreitas 
  */
 @Entity
 @Table(name = "tb_endereco")
@@ -27,18 +29,28 @@ public class Endereco implements Serializable {
     @Column(name = "id_endereco", nullable = false, unique = false)
     private Long idEndereco;
 
+    @NotBlank
+    @Size(max=60)
     @Column(name = "str_logradouro", nullable = false, length = 60)
     private String logradouro;
 
+    @NotBlank
     @Column(name = "int_numero", nullable = true)
     private Integer numero;
 
+    @NotBlank
+    @Size(max=60)
     @Column(name = "str_complemento", length = 60, nullable = true)
     private String complemento;
 
+    @NotBlank
+    @Size(max=9)
+    // falta colocar pattern de cep
     @Column(name = "str_cep", length = 9, nullable = false)
     private String cep;
 
+    @NotBlank
+    @Size(max=60)
     @Column(name = "str_bairro", length = 60, nullable = false)
     private String bairro;
 

@@ -14,10 +14,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
+import javax.validation.constraints.Future;
+import javax.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.CreditCardNumber;
+import org.hibernate.validator.constraints.NotBlank;
 
 /**
  *
- * @author Jonathan Romualdo
+ * @author Jonathan Romualdo, allanfreitas
  */
 @Entity
 @Table(name = "tb_cartao")
@@ -29,12 +33,16 @@ public class Cartao implements Serializable {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long idCartao;
 
+    @NotBlank
     @Column(name = "str_bandeira")
     private String bandeira;
 
+    @CreditCardNumber
     @Column(name = "str_numero")
     private String numero;
 
+    @NotNull
+    @Future
     @Column(name = "date_dataValidade")
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataValidade;
