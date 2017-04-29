@@ -44,7 +44,7 @@ public class ServicoTest {
 
     @Before
     public void setUp() {
-        emf = Persistence.createEntityManagerFactory("exemplo_12");
+        emf = Persistence.createEntityManagerFactory("sistemapetshopPU");
         DbUnitUtil.inserirDados();
 
         em = emf.createEntityManager();

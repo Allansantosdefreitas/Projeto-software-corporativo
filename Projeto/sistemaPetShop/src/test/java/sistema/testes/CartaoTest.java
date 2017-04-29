@@ -22,6 +22,7 @@ import static org.junit.Assert.*;
  *
  * @author Usuario
  */
+
 public class CartaoTest {
 
     private static EntityManagerFactory emf;
@@ -45,7 +46,7 @@ public class CartaoTest {
 
     @Before
     public void setUp() {
-        emf = Persistence.createEntityManagerFactory("exemplo_12");
+        emf = Persistence.createEntityManagerFactory("sistemapetshopPU"); // nome da PU
         DbUnitUtil.inserirDados();
 
         em = emf.createEntityManager();

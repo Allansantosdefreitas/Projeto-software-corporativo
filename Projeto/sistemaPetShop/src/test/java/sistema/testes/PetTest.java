@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -43,7 +44,7 @@ public class PetTest {
 
     @Before
     public void setUp() {
-        emf = Persistence.createEntityManagerFactory("exemplo_12");
+        emf = Persistence.createEntityManagerFactory("sistemapetshopPU");
         DbUnitUtil.inserirDados();
 
         em = emf.createEntityManager();
