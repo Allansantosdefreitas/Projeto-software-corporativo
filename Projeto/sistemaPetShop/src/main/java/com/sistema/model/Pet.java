@@ -44,7 +44,6 @@ public class Pet implements Serializable {
     @Column(name = "boo_pedegree", nullable = false)
     private Boolean pedegree;
     
-    
     // Relacionamento Cliente
     @ManyToOne(fetch = FetchType.LAZY, optional = true, cascade = CascadeType.ALL)
     @JoinColumn (name = "fk_cliente", referencedColumnName = "id_cliente")

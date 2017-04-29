@@ -1,7 +1,5 @@
-<!-- EXEMPLO GIT DISCIPLINA -->
 <?xml version="1.0" encoding="UTF-8"?>
-<dataset>    
-    
+<dataset>        
     <!-- Endereco id = 1 (Nova Morada) --> 
     <tb_endereco id_endereco="1" str_logradouro="Casa1" int_numero="123" str_complemento="Exemplo endereco 1" str_cep="032146594" str_bairro="Nova Morada"/>
     <!-- Endereco id = 2 (Aldeia) --> 

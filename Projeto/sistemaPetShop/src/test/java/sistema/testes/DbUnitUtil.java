@@ -17,11 +17,11 @@ import org.dbunit.operation.DatabaseOperation;
  *
  * @author Jonathan Romualdo, Allan Santos
  */
-class DbUnitUtil {
+public class DbUnitUtil {
 
     /* Trocar URL toda vez */
     private static final String XML_FILE = "C:\\Users\\Henrique\\Documents\\"+
-            "Projeto-software-corporativo\\Projeto\\sistemaPetShop\\src\\main\\resources\\dbunit";
+            "Projeto-software-corporativo\\Projeto\\sistemaPetShop\\src\\main\\resources\\dbunit\\dataset.xml";
 
     @SuppressWarnings("UseSpecificCatch")
     public static void inserirDados() {
