@@ -23,6 +23,7 @@ import javax.persistence.Table;
  *
  * @author allanfreitas
  */
+
 @Entity
 @Table(name = "tb_consulta_geral")
 @DiscriminatorValue(value = "ger")

@@ -22,7 +22,8 @@ import org.hibernate.validator.constraints.*;
 
 /**
  *
- * @author Jonathan Romualdo
+ * @author Luis Henrique, allanfreitas
+ * 
  */
 @Entity
 @Table(name = "tb_usuario")
@@ -36,17 +37,18 @@ public abstract class Usuario implements Serializable {
     @Column(name = "id_usuario")
     protected Long idUsuario; // O id é herdado pelos filhos
     
-    @NotNull
+    @NotBlank
     @Pattern(regexp = "\\p{Upper}{1}\\p{Lower}+", message = "Deve conter as iniciais maiúsculas")
     @Column(name = "str_nome", length = 60, nullable = false)
     private String nome;
     
+    @NotNull
     @Email
     @Size(max=60)
     @Column(name = "str_email", length = 60, nullable = false, unique = true)
     private String email;
     
-    @NotNull
+    @NotBlank
     @Size(max=60)
     @Column(name = "str_login", length = 60, nullable = false, unique = true)
     private String login;

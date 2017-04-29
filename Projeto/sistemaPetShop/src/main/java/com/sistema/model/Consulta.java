@@ -16,10 +16,11 @@ import javax.persistence.InheritanceType;
 
 import javax.persistence.Table;
 import javax.persistence.Temporal;
+import org.hibernate.validator.constraints.NotBlank;
 
 /**
  *
- * @author Jonathan Romualdo
+ * @author Jonathan Romualdo, allanfreitas
  */
 @Entity
 @Table(name = "tb_consulta")
@@ -33,10 +34,13 @@ public abstract class Consulta implements Serializable {
     @Column(name = "id_consulta", nullable = false, unique = true)
     protected Long idConsulta; // O id é herdado pelas subclasses
 
+    
+    @NotBlank
     @Column(name = "dat_dataMarcada")
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataMarcada;
 
+    @NotBlank
     @Column(name = "str_status", length = 60)
     private StatusConsulta status;
     
