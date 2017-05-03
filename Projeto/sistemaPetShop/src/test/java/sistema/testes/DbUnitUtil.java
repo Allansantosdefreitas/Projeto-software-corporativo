@@ -19,9 +19,7 @@ import org.dbunit.operation.DatabaseOperation;
  */
 public class DbUnitUtil {
 
-    /* Trocar URL toda vez */
-    private static final String XML_FILE = "C:\\Users\\Henrique\\Documents\\"+
-            "Projeto-software-corporativo\\Projeto\\sistemaPetShop\\src\\main\\resources\\dbunit\\dataset.xml";
+    private static final String XML_FILE = "/dbunit/dataset.xml";
 
     @SuppressWarnings("UseSpecificCatch")
     public static void inserirDados() {
@@ -43,6 +41,7 @@ public class DbUnitUtil {
             
             DatabaseOperation.CLEAN_INSERT.execute(db_conn, dataSet);
         } catch (Exception ex) {
+            System.out.println("---------------------- ERROR: " + ex.getMessage());
             throw new RuntimeException(ex.getMessage(), ex);
         } finally {
             try {
