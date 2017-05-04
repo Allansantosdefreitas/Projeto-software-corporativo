@@ -4,8 +4,6 @@ import com.sistema.model.ConsultaGeral;
 import com.sistema.model.Servico;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -24,7 +22,6 @@ import static org.junit.Assert.*;
 public class ServicoTest {
 
     private static EntityManagerFactory emf;
-    private static Logger logger;
     private EntityManager em;
     private EntityTransaction et;
 
@@ -33,8 +30,6 @@ public class ServicoTest {
 
     @BeforeClass
     public static void setUpClass() {
-        logger = Logger.getGlobal();
-        logger.setLevel(Level.INFO);
     }
 
     @AfterClass
@@ -57,8 +52,8 @@ public class ServicoTest {
         try {
             et.commit();
         } catch (Exception ex) {
-            logger.log(Level.SEVERE, ex.getMessage());
-
+            System.out.println("ERROR: " + ex.getMessage());
+            
             if (et.isActive()) {
                 et.rollback();
             }

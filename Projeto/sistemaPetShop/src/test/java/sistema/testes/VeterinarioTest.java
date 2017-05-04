@@ -11,8 +11,6 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -31,7 +29,6 @@ import static org.junit.Assert.*;
 public class VeterinarioTest {
 
     private static EntityManagerFactory emf;
-    private static Logger logger;
     private EntityManager em;
     private EntityTransaction et;
 
@@ -40,8 +37,6 @@ public class VeterinarioTest {
 
     @BeforeClass
     public static void setUpClass() {
-        logger = Logger.getGlobal();
-        logger.setLevel(Level.INFO);
     }
 
     @AfterClass
@@ -62,9 +57,9 @@ public class VeterinarioTest {
     @After
     public void tearDown() {
         try {
-            et.commit();
+            
         } catch (Exception ex) {
-            logger.log(Level.SEVERE, ex.getMessage());
+            System.out.println("ERROR: " + ex.getMessage());
 
             if (et.isActive()) {
                 et.rollback();
@@ -130,23 +125,24 @@ public class VeterinarioTest {
         cliente.setSenha("cliente123");
 
         em.persist(veterinario);
+        et.commit();
         
         assertNotNull(veterinario.getIdUsuario());
     }
 
     @Test
     public void criaVeterinarioInvalidoTeste() {
-
+        assertTrue(true);
     }
 
     @Test
     public void atualizaVeterinarioValidoTeste() {
-
+        assertTrue(true);
     }
 
     @Test
     public void atualizaVeterinarioInvalidoTeste() {
-
+        assertTrue(true);
     }
 
 }

@@ -5,8 +5,6 @@
  */
 package sistema.testes;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -26,7 +24,6 @@ import static org.junit.Assert.*;
 public class CartaoTest {
 
     private static EntityManagerFactory emf;
-    private static Logger logger;
     private EntityManager em;
     private EntityTransaction et;
 
@@ -35,8 +32,6 @@ public class CartaoTest {
 
     @BeforeClass
     public static void setUpClass() {
-        logger = Logger.getGlobal();
-        logger.setLevel(Level.INFO);
     }
 
     @AfterClass
@@ -59,7 +54,7 @@ public class CartaoTest {
         try {
             et.commit();
         } catch (Exception ex) {
-            logger.log(Level.SEVERE, ex.getMessage());
+            System.out.println("ERROR: " + ex.getMessage());
 
             if (et.isActive()) {
                 et.rollback();
