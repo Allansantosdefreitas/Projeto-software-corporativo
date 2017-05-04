@@ -30,7 +30,7 @@ public class EnderecoTest {
     private static EntityManagerFactory emf;
     private EntityManager em;
     private EntityTransaction et;
-
+    
     public EnderecoTest() {
     }
 
@@ -74,7 +74,6 @@ public class EnderecoTest {
     public void criaEnderecoValidoTeste() {
         Endereco endereco = new Endereco();
         Cliente cliente = new Cliente();
-
         List<Pet> listaPet = new ArrayList<>();
 
         cliente.setListaPet(listaPet);
@@ -92,9 +91,71 @@ public class EnderecoTest {
         endereco.setUsuario(cliente);
 
         em.persist(endereco);
+        et.commit();
         
         assertNotNull(endereco.getIdEndereco());
         
+    }
+    
+    public void criaEnderecoInvalidoTeste() {
+        Endereco enderecoInvalido = new Endereco();
+        Cliente cliente = new Cliente();
+
+        List<Pet> listaPet = new ArrayList<>();
+
+        cliente.setListaPet(listaPet);
+        cliente.setEmail("cliente@cli.com");
+        cliente.setEndereco(enderecoInvalido);
+        cliente.setLogin("Cliente");
+        cliente.setNome("Cliente cli");
+        cliente.setSenha("cliente123");
+
+        enderecoInvalido.setBairro("Aquele Bairro");
+        enderecoInvalido.setCep("12345678");
+        enderecoInvalido.setComplemento("Perto daquele Restaurante");
+        enderecoInvalido.setLogradouro("Avenida");
+        enderecoInvalido.setNumero(123);
+        enderecoInvalido.setUsuario(null);//Vazio
+
+        em.persist(enderecoInvalido);
+        et.commit();
+        
+        assertNull(enderecoInvalido.getIdEndereco());
+        
+    }
+    
+    @Test
+    public void atualizaEnderecoValidoTeste() {
+        Endereco enderecoAtt = new Endereco();
+        Endereco endereco = new Endereco();
+        Cliente cliente = new Cliente();
+        List<Pet> listaPet = new ArrayList<>();
+
+        cliente.setListaPet(listaPet);
+        cliente.setEmail("cliente@cli.com");
+        cliente.setEndereco(endereco);
+        cliente.setLogin("Cliente");
+        cliente.setNome("Cliente cli");
+        cliente.setSenha("cliente123");
+
+        endereco.setBairro("Aquele Bairro");
+        endereco.setCep("12345678");
+        endereco.setComplemento("Perto daquele Restaurante");
+        endereco.setLogradouro("Avenida");
+        endereco.setNumero(123);
+        endereco.setUsuario(cliente);
+        
+        enderecoAtt = endereco;
+        enderecoAtt.setNumero(546);
+        em.merge(enderecoAtt);
+        et.commit();
+        
+        assertEquals(new Long(546), new Long(enderecoAtt.getNumero()));
+    }
+
+    @Test
+    public void atualizaEnderecoInvalidoTeste() {
+        //assertTrue(true);
     }
 
 

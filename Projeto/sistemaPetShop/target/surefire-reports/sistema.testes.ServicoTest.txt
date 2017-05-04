@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: sistema.testes.ServicoTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 4.446 sec <<< FAILURE!
-criaServicoValidoTest(sistema.testes.ServicoTest)  Time elapsed: 0.771 sec  <<< FAILURE!
+Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 9.34 sec <<< FAILURE!
+criaServicoValidoTest(sistema.testes.ServicoTest)  Time elapsed: 1.416 sec  <<< FAILURE!
 java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:86)
 	at org.junit.Assert.assertTrue(Assert.java:41)
