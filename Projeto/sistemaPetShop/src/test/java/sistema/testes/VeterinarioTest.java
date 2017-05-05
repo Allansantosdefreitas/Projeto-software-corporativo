@@ -15,6 +15,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -57,7 +59,7 @@ public class VeterinarioTest {
     @After
     public void tearDown() {
         try {
-            
+
         } catch (Exception ex) {
             System.out.println("ERROR: " + ex.getMessage());
 
@@ -111,7 +113,7 @@ public class VeterinarioTest {
 
         listaConsultas.add(consulta);
 
-        Float peso = 24f;      
+        Float peso = 24f;
         pet.setCliente(cliente);
         pet.setNome("Tótó");
         pet.setPedegree(Boolean.TRUE);
@@ -126,13 +128,8 @@ public class VeterinarioTest {
 
         em.persist(veterinario);
         et.commit();
-        
-        assertNotNull(veterinario.getIdUsuario());
-    }
 
-    @Test
-    public void criaVeterinarioInvalidoTeste() {
-        assertTrue(true);
+        assertNotNull(veterinario.getIdUsuario());
     }
 
     @Test
@@ -141,8 +138,74 @@ public class VeterinarioTest {
     }
 
     @Test
+    public void deletaVeterinarioTeste() {
+
+        Query query = em.createQuery("from Veterinario v where v.crmv like :crmv", Veterinario.class);
+        query.setParameter("crmv", "54214554");
+        Veterinario veterinario = (Veterinario) query.getSingleResult();
+
+        em.remove(veterinario);
+        et.commit();
+
+        veterinario = em.find(Veterinario.class, veterinario.getIdUsuario());
+
+        assertNull(veterinario);
+    }
+
+    @Test
+    public void criaVeterinarioInvalidoTeste() {
+        assertTrue(true);
+    }
+
+    @Test
     public void atualizaVeterinarioInvalidoTeste() {
         assertTrue(true);
     }
 
+    @Test
+    public void selectJpqlQueryTeste() {
+        assertTrue(true);
+    }
+
+    @Test
+    public void selectJpqlNamedQueryTeste() {
+        
+        
+        
+        
+        assertTrue(true);
+    }
+
+    @Test
+    public void selectSqlNativeQueryTeste() {
+        assertTrue(true);
+    }
+
+    @Test
+    public void selectSqlNativeNamedQueryTeste() {
+        
+        TypedQuery<Veterinario> query = em.createNamedQuery("Veterinario.PorEspecialidade", Veterinario.class);
+        query.setParameter(1, "Cardiaco");
+        
+        List<Veterinario> listaVeterinarios = query.getResultList();
+
+        for (Veterinario veterinario : listaVeterinarios) {
+            assertTrue(veterinario.getEspecialidade().startsWith("Cardiaco"));
+        }
+
+        assertEquals(1, listaVeterinarios.size());
+        
+        assertTrue(true);
+    }
+
+    @Test
+    public void atualizaVeterinarioQueryTeste() {
+        assertTrue(true);
+    }
+
+    @Test
+    public void deletaVeterinarioQueryTeste() {
+
+        assertTrue(true);
+    }
 }

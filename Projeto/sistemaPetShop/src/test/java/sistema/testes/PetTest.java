@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -91,6 +92,8 @@ public class PetTest {
         endereco.setUsuario(cliente);
 
         em.persist(pet);
+        et.commit();
+        
         assertNotNull(pet.getIdPet());
 
     }
@@ -108,6 +111,22 @@ public class PetTest {
     @Test
     public void atualizaPetInvalidotest() {
 
+    }
+    
+    @Test
+    public void deletaPetTeste(){
+        String qlString = "from Pet p where p.idPet like 1";
+        
+        Query query = em.createQuery(qlString);
+//        query.setParameter("id", 1);
+        Pet pet = (Pet) query.getSingleResult();
+
+        em.remove(pet);
+        
+
+        pet = em.find(Pet.class, pet.getIdPet());
+
+        assertNull(pet);
     }
 
 }

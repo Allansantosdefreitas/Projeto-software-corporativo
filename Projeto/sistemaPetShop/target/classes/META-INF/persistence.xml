@@ -21,6 +21,7 @@
       <property name="javax.persistence.jdbc.password" value="root"/>
       <property name="eclipselink.logging.level" value="FINE"/>
       <property name="eclipselink.ddl-generation" value="create-tables"/>
+      <property name="eclipselink.jpa.uppercase-column-names" value="true"/>
       <!--<property name="eclipselink.application-location" value="C:\Users\Allan Santos\Documents\Repos\projeto-software-corporativo\Projeto\sistemaPetShop\src\main\resources\DDL"/>
       <property name="eclipselink.ddl-generation.output-mode" value="both"/>
       <property name="eclipselink.create-ddl-jdbc-file-name" value="create.sql"/>

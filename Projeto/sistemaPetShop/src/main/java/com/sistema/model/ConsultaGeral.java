@@ -34,13 +34,13 @@ public class ConsultaGeral extends Consulta implements Serializable {
 
     // Relacionamento Servico
     @Valid
-    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "fk_servico", referencedColumnName = "id_servico")
     private Servico servico;
 
     // Relacionamento Funcionario
     @Valid
-    @ManyToOne(fetch = FetchType.LAZY, optional = true, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "fk_funcionario", referencedColumnName = "id_funcionario")
     private Funcionario funcionario;
 

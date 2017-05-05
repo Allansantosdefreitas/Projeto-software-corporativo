@@ -1,8 +1,16 @@
 -------------------------------------------------------------------------------
 Test set: sistema.testes.PetTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 8.021 sec <<< FAILURE!
 criaPetValidotest(sistema.testes.PetTest)  Time elapsed: 2.342 sec  <<< FAILURE!
+=======
+<<<<<<< HEAD
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 19.881 sec
+=======
+Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 7.465 sec <<< FAILURE!
+criaPetValidotest(sistema.testes.PetTest)  Time elapsed: 1.905 sec  <<< FAILURE!
+>>>>>>> 182fe2841f8d85cb90c62ceaca46309ee5ed4e4d
 java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:86)
 	at org.junit.Assert.assertTrue(Assert.java:41)
@@ -42,3 +50,4 @@ java.lang.AssertionError
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+>>>>>>> 7e0c318664e6da9fd058b006d4e7c01946585e6c
