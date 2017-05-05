@@ -1,6 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: sistema.testes.VeterinarioTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 7.118 sec <<< FAILURE!
 selectSqlNativeNamedQueryTeste(sistema.testes.VeterinarioTest)  Time elapsed: 7.039 sec  <<< ERROR!
 javax.persistence.PersistenceException: Exception [EclipseLink-6044] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.QueryException
@@ -68,3 +69,6 @@ Query: ReadAllQuery(name="Veterinario.PorEspecialidade" referenceClass=Veterinar
 	at org.eclipse.persistence.internal.jpa.QueryImpl.executeReadQuery(QueryImpl.java:258)
 	at org.eclipse.persistence.internal.jpa.QueryImpl.getResultList(QueryImpl.java:469)
 	... 34 more
+=======
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.687 sec
+>>>>>>> 7e0c318664e6da9fd058b006d4e7c01946585e6c
