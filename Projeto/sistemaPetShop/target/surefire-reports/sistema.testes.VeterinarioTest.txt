@@ -1,17 +1,15 @@
 -------------------------------------------------------------------------------
 Test set: sistema.testes.VeterinarioTest
 -------------------------------------------------------------------------------
-Tests run: 8, Failures: 0, Errors: 8, Skipped: 0, Time elapsed: 9.1 sec <<< FAILURE!
-atualizaVeterinarioValidoTeste(sistema.testes.VeterinarioTest)  Time elapsed: 2.87 sec  <<< ERROR!
-java.lang.RuntimeException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+Tests run: 8, Failures: 0, Errors: 8, Skipped: 0, Time elapsed: 0.078 sec <<< FAILURE!
+atualizaVeterinarioValidoTeste(sistema.testes.VeterinarioTest)  Time elapsed: 0.016 sec  <<< ERROR!
+java.lang.RuntimeException: tb_consulta_medica
 	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:45)
 	at sistema.testes.VeterinarioTest.setUp(VeterinarioTest.java:50)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
+	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
@@ -34,57 +32,25 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
+	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
 	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
-	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
-	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
-	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
-	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
-	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
-	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
-	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
-	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
-	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
-	at java.sql.DriverManager.getConnection(DriverManager.java:664)
-	at java.sql.DriverManager.getConnection(DriverManager.java:247)
-	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:29)
+Caused by: org.dbunit.dataset.NoSuchTableException: tb_consulta_medica
+	at org.dbunit.database.DatabaseDataSet.getTableMetaData(DatabaseDataSet.java:305)
+	at org.dbunit.operation.DeleteAllOperation.execute(DeleteAllOperation.java:109)
+	at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79)
+	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:42)
 	... 33 more
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
-	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:589)
-	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:213)
-	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
-	... 48 more
-atualizaVeterinarioValidoTeste(sistema.testes.VeterinarioTest)  Time elapsed: 2.874 sec  <<< ERROR!
+atualizaVeterinarioValidoTeste(sistema.testes.VeterinarioTest)  Time elapsed: 0.016 sec  <<< ERROR!
 java.lang.NullPointerException
 	at sistema.testes.VeterinarioTest.tearDown(VeterinarioTest.java:68)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
+	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
@@ -106,22 +72,20 @@ java.lang.NullPointerException
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
+	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
 	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-criaVeterinarioValidoTeste(sistema.testes.VeterinarioTest)  Time elapsed: 2.038 sec  <<< ERROR!
-java.lang.RuntimeException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+criaVeterinarioValidoTeste(sistema.testes.VeterinarioTest)  Time elapsed: 0.016 sec  <<< ERROR!
+java.lang.RuntimeException: tb_consulta_medica
 	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:45)
 	at sistema.testes.VeterinarioTest.setUp(VeterinarioTest.java:50)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
+	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
@@ -144,57 +108,25 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
+	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
 	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
-	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
-	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
-	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
-	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
-	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
-	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
-	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
-	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
-	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
-	at java.sql.DriverManager.getConnection(DriverManager.java:664)
-	at java.sql.DriverManager.getConnection(DriverManager.java:247)
-	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:29)
+Caused by: org.dbunit.dataset.NoSuchTableException: tb_consulta_medica
+	at org.dbunit.database.DatabaseDataSet.getTableMetaData(DatabaseDataSet.java:305)
+	at org.dbunit.operation.DeleteAllOperation.execute(DeleteAllOperation.java:109)
+	at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79)
+	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:42)
 	... 33 more
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
-	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:589)
-	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:213)
-	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
-	... 48 more
-criaVeterinarioValidoTeste(sistema.testes.VeterinarioTest)  Time elapsed: 2.038 sec  <<< ERROR!
+criaVeterinarioValidoTeste(sistema.testes.VeterinarioTest)  Time elapsed: 0.016 sec  <<< ERROR!
 java.lang.NullPointerException
 	at sistema.testes.VeterinarioTest.tearDown(VeterinarioTest.java:68)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
+	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
@@ -216,22 +148,20 @@ java.lang.NullPointerException
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
+	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
 	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-atualizaVeterinarioInvalidoTeste(sistema.testes.VeterinarioTest)  Time elapsed: 2.059 sec  <<< ERROR!
-java.lang.RuntimeException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+atualizaVeterinarioInvalidoTeste(sistema.testes.VeterinarioTest)  Time elapsed: 0.015 sec  <<< ERROR!
+java.lang.RuntimeException: tb_consulta_medica
 	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:45)
 	at sistema.testes.VeterinarioTest.setUp(VeterinarioTest.java:50)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
+	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
@@ -254,57 +184,25 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
+	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
 	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
-	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
-	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
-	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
-	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
-	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
-	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
-	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
-	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
-	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
-	at java.sql.DriverManager.getConnection(DriverManager.java:664)
-	at java.sql.DriverManager.getConnection(DriverManager.java:247)
-	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:29)
+Caused by: org.dbunit.dataset.NoSuchTableException: tb_consulta_medica
+	at org.dbunit.database.DatabaseDataSet.getTableMetaData(DatabaseDataSet.java:305)
+	at org.dbunit.operation.DeleteAllOperation.execute(DeleteAllOperation.java:109)
+	at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79)
+	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:42)
 	... 33 more
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
-	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:589)
-	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:213)
-	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
-	... 48 more
-atualizaVeterinarioInvalidoTeste(sistema.testes.VeterinarioTest)  Time elapsed: 2.059 sec  <<< ERROR!
+atualizaVeterinarioInvalidoTeste(sistema.testes.VeterinarioTest)  Time elapsed: 0.015 sec  <<< ERROR!
 java.lang.NullPointerException
 	at sistema.testes.VeterinarioTest.tearDown(VeterinarioTest.java:68)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
+	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
@@ -326,22 +224,20 @@ java.lang.NullPointerException
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
+	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
 	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-criaVeterinarioInvalidoTeste(sistema.testes.VeterinarioTest)  Time elapsed: 2.053 sec  <<< ERROR!
-java.lang.RuntimeException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+criaVeterinarioInvalidoTeste(sistema.testes.VeterinarioTest)  Time elapsed: 0.016 sec  <<< ERROR!
+java.lang.RuntimeException: tb_consulta_medica
 	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:45)
 	at sistema.testes.VeterinarioTest.setUp(VeterinarioTest.java:50)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
+	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
@@ -364,57 +260,25 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
+	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
 	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
-	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036)
-	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338)
-	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232)
-	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265)
-	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064)
-	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790)
-	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
-	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395)
-	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
-	at java.sql.DriverManager.getConnection(DriverManager.java:664)
-	at java.sql.DriverManager.getConnection(DriverManager.java:247)
-	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:29)
+Caused by: org.dbunit.dataset.NoSuchTableException: tb_consulta_medica
+	at org.dbunit.database.DatabaseDataSet.getTableMetaData(DatabaseDataSet.java:305)
+	at org.dbunit.operation.DeleteAllOperation.execute(DeleteAllOperation.java:109)
+	at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79)
+	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:42)
 	... 33 more
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
-	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
-	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
-	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
-	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
-	at java.net.Socket.connect(Socket.java:589)
-	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:213)
-	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297)
-	... 48 more
-criaVeterinarioInvalidoTeste(sistema.testes.VeterinarioTest)  Time elapsed: 2.054 sec  <<< ERROR!
+criaVeterinarioInvalidoTeste(sistema.testes.VeterinarioTest)  Time elapsed: 0.016 sec  <<< ERROR!
 java.lang.NullPointerException
 	at sistema.testes.VeterinarioTest.tearDown(VeterinarioTest.java:68)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
+	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
@@ -436,7 +300,7 @@ java.lang.NullPointerException
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
+	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
 	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)

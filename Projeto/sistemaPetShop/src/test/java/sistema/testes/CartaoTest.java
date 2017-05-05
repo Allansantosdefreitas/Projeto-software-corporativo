@@ -15,12 +15,13 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import com.sistema.model.Cartao;
+import java.util.Calendar;
 
 /**
  *
  * @author Usuario
  */
-
 public class CartaoTest {
 
     private static EntityManagerFactory emf;
@@ -64,6 +65,38 @@ public class CartaoTest {
             em = null;
             et = null;
         }
+    }
+
+    @Test
+    public void criarCartaoValidoTest() {
+        Cartao cartao = new Cartao();
+        cartao.setBandeira("Visa Electron");
+        cartao.setNumero("5559293458709012");
+        
+        Calendar calendario = Calendar.getInstance();
+        calendario.set(2019, 5, 5);
+        
+        cartao.setDataValidade(calendario.getTime());
+        em.persist(cartao);
+        
+        et.commit();
+        assertNotNull(cartao.getIdCartao());
+    }
+    
+    @Test
+    public void criarCartaoInvalidoTest() {
+        Cartao cartao = new Cartao();
+        cartao.setBandeira("Visa Electron");
+        cartao.setNumero("5559293458709012");
+        
+        Calendar calendario = Calendar.getInstance();
+        calendario.set(2019, 5, 5);
+        
+        cartao.setDataValidade(calendario.getTime());
+        em.persist(cartao);
+        
+        et.commit();
+        assertNotNull(cartao.getIdCartao());
     }
 
 }

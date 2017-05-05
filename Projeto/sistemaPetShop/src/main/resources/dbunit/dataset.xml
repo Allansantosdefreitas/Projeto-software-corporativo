@@ -23,6 +23,9 @@
     <tb_cartao id_cartao="2" str_bandeira="Visa" str_numero="1648253458709222" date_dataValidade="2019-10-25" fk_cliente="1"/>
     <!-- Cartao id = 3 (Master) --> 
     <tb_cartao id_cartao="3" str_bandeira="Master" str_numero="1119293456750468" date_dataValidade="2017-11-25" fk_cliente="1"/>
+    <!-- Cartao id = 4 (Maestro) --> 
+    <tb_cartao id_cartao="4" str_bandeira="Maestro" str_numero="9999293456750468" date_dataValidade="2019-10-22" fk_cliente="1"/>
+    
     
     <!-- Servico id = 1 (Tosa) --> 
     <tb_servico id_servico="1" str_nome="Tosa" dbl_valor="40"/>

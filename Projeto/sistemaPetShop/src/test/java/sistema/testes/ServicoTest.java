@@ -50,7 +50,7 @@ public class ServicoTest {
     @After
     public void tearDown() {
         try {
-            et.commit();
+            
         } catch (Exception ex) {
             System.out.println("ERROR: " + ex.getMessage());
             
@@ -74,6 +74,7 @@ public class ServicoTest {
         servico.setListaConsultaGeral(listaConsultaGeral);
 
         em.persist(servico);
+        et.commit();
         assertNotNull(servico.getIdServico());
     }
 
