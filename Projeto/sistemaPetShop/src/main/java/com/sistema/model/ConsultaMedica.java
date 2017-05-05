@@ -17,6 +17,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotBlank;
 
 /**
@@ -32,6 +33,7 @@ import org.hibernate.validator.constraints.NotBlank;
 public class ConsultaMedica extends Consulta implements Serializable{
     
     @NotBlank
+    @Size(max=400)
     @Column(name = "str_diagnostico", nullable = false, length = 400)
     private String diagnostico;
     

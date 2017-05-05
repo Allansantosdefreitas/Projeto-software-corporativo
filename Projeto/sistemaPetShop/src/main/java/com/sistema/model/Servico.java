@@ -18,6 +18,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.NotBlank;
 
 /**
  *
@@ -33,14 +35,16 @@ public class Servico implements Serializable {
     @Column(name = "id_servico", nullable = false, unique = true)
     private Long idServico;
 
+    @NotBlank
     @Column(name = "str_nome", nullable = false)
     private String nome;
 
+    @NotBlank
     @Column(name = "dbl_valor", nullable = false)
     private Double valor;
-    
+
     // Relacionamento Consulta
-    @OneToMany (mappedBy = "servico", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = false)
+    @OneToMany(mappedBy = "servico", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = false)
     //@JoinColumn (name = "fk_consulta_geral", referencedColumnName = "id_consulta_geral")
     private List<ConsultaGeral> listaConsultaGeral;
 
@@ -77,6 +81,4 @@ public class Servico implements Serializable {
         this.listaConsultaGeral = listaConsultaGeral;
     }
 
-
-    
 }

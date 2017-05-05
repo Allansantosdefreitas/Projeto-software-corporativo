@@ -34,7 +34,6 @@ public abstract class Consulta implements Serializable {
     @Column(name = "id_consulta", nullable = false, unique = true)
     protected Long idConsulta; // O id é herdado pelas subclasses
 
-    
     @NotBlank
     @Column(name = "dat_dataMarcada")
     @Temporal(javax.persistence.TemporalType.DATE)

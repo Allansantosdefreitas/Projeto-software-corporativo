@@ -14,6 +14,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.NotBlank;
 
 /**
  *
@@ -29,15 +31,22 @@ public class Exame implements Serializable {
     @Column(name = "id_exame", nullable = false)
     private Long idExame;
 
+    @NotBlank
+    @Size(max=60)
     @Column(name = "str_nome", length = 60, unique = false)
     private String nome;
 
+    @NotBlank
+    @Size(max=60)
     @Column(name = "str_tipo", length = 60, unique = false)
     private String tipo;
 
+    @NotBlank
+    @Size(max=100)
     @Column(name = "str_descricao", length = 100, unique = false)
     private String descricao;
 
+    @NotBlank
     @Column(name = "dbl_valor", unique = false)
     private Double valor;
 

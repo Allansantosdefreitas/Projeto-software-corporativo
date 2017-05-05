@@ -32,13 +32,13 @@ import javax.validation.Valid;
 public class Cliente extends Usuario implements Serializable {
 
     // Relacionamento Cartao
-    @Valid
+    //@Valid
     @OneToMany (mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     @JoinColumn (name = "fk_cartao", referencedColumnName = "id_cartao", nullable = true)
     private List<Cartao> cartao;
     
     // Relacionamento Pet
-    @Valid
+    //@Valid
     @OneToMany (mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     @JoinColumn (name = "fk_pet", referencedColumnName = "id_pet")
     private List<Pet> listaPet;

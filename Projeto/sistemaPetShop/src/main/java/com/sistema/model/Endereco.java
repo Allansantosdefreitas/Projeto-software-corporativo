@@ -34,7 +34,7 @@ public class Endereco implements Serializable {
     @Column(name = "str_logradouro", nullable = false, length = 60)
     private String logradouro;
 
-    //@NotBlank
+    @NotBlank
     @Column(name = "int_numero", nullable = true)
     private Integer numero;
 

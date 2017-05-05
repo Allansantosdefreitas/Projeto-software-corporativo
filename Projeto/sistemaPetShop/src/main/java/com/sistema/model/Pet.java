@@ -18,6 +18,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.NotBlank;
 
 /**
  *
@@ -32,29 +34,33 @@ public class Pet implements Serializable {
     @Column(name = "id_pet")
     private Long idPet;
 
+    @NotBlank
+    @Size(max=60)
     @Column(name = "str_nome", nullable = true, length = 60)
     private String nome;
 
+    @NotBlank
     @Column(name = "flt_peso", nullable = false)
     private Float peso;
 
+    @Size(max=60)
     @Column(name = "str_raca", nullable = false, length = 60)
     private String raca;
 
+    @NotBlank
     @Column(name = "boo_pedegree", nullable = false)
     private Boolean pedegree;
-    
+
     // Relacionamento Cliente
     @ManyToOne(fetch = FetchType.LAZY, optional = true, cascade = CascadeType.ALL)
-    @JoinColumn (name = "fk_cliente", referencedColumnName = "id_cliente")
+    @JoinColumn(name = "fk_cliente", referencedColumnName = "id_cliente")
     private Cliente cliente;
-    
+
     // Relacionamento ConsultaMedica
-    @OneToMany (mappedBy = "pet", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
-    @JoinColumn (name = "fk_consulta_medica", referencedColumnName = "id_consulta_medica")
+    @OneToMany(mappedBy = "pet", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    @JoinColumn(name = "fk_consulta_medica", referencedColumnName = "id_consulta_medica")
     private List<ConsultaMedica> ListaConsultaMedica;
 
-    
     // getters e Setters -----------------------------
     public Long getIdPet() {
         return idPet;
@@ -95,7 +101,7 @@ public class Pet implements Serializable {
     public void setPedegree(Boolean pedegree) {
         this.pedegree = pedegree;
     }
-    
+
     public Cliente getCliente() {
         return cliente;
     }
