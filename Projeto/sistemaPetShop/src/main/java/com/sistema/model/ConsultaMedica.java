@@ -40,19 +40,19 @@ public class ConsultaMedica extends Consulta implements Serializable{
     
     // Relacionamento Pet
     @Valid
-    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "fk_pet", referencedColumnName = "id_pet")
     private Pet pet;
     
     // Relacionamento Veterinario
     @Valid
-    @ManyToOne(fetch = FetchType.LAZY, optional = true, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.PERSIST)
     @JoinColumn (name = "fk_veterinario", referencedColumnName = "id_usuario")
     private Veterinario veterinario;
     
     // Relacionamento Exame
     @Valid
-    @ManyToOne(fetch = FetchType.LAZY, optional = true, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.PERSIST)
     @JoinColumn (name = "fk_exame", referencedColumnName = "id_exame")
     private Exame exame;
 

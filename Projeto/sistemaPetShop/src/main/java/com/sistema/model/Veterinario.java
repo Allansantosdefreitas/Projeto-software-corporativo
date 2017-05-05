@@ -13,6 +13,8 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
+import javax.persistence.NamedNativeQueries;
+import javax.persistence.NamedNativeQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
@@ -26,6 +28,17 @@ import javax.validation.Valid;
 @Table(name = "tb_Veterinario")
 @DiscriminatorValue(value = "vet")
 @PrimaryKeyJoinColumn(name = "id_veterinario", referencedColumnName = "id_usuario") 
+@NamedNativeQueries(
+        {
+            @NamedNativeQuery(name = "Veterinario.PorNome", 
+            query = "select v from Veterinario v where v.nome like :nome order by v.nome",
+            resultClass = Veterinario.class),
+            
+            @NamedNativeQuery(name = "Veterinario.PorEspecialidade",
+            query = "select id_veterinario, str_crmv, str_especialidade from sistemapet.tb_veterinario where str_especialidade like ? order by str_crmv;",
+            resultClass = Veterinario.class)
+        }
+)
 public class Veterinario extends Usuario implements Serializable {
 
     @Column(name = "str_crmv", nullable = false, length = 60, unique = true)
