@@ -16,6 +16,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import com.sistema.model.Cartao;
+import com.sistema.model.Cliente;
+import java.math.BigDecimal;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Set;
@@ -58,6 +60,9 @@ public class CartaoTest {
 
     @Before
     public void setUp() {
+        logger = Logger.getGlobal();
+        logger.setLevel(Level.INFO);
+
         emf = Persistence.createEntityManagerFactory("sistemapetshopPU"); // nome da PU
         DbUnitUtil.inserirDados();
 
@@ -69,9 +74,9 @@ public class CartaoTest {
     @After
     public void tearDown() {
         try {
-            et.commit();
+            //et.commit();
         } catch (Exception ex) {
-            System.out.println("ERROR: " + ex.getMessage());
+            logger.log(Level.SEVERE, ex.getMessage());
 
             if (et.isActive()) {
                 et.rollback();
@@ -81,6 +86,7 @@ public class CartaoTest {
             em = null;
             et = null;
         }
+
     }
 
     // OK
@@ -100,6 +106,32 @@ public class CartaoTest {
         assertNotNull(cartao.getIdCartao());
     }
 
+    // OK
+    @Test
+    public void criarCartaoValidoQueryTest() {
+
+        Cartao cartao = new Cartao();
+        Cliente cliente = new Cliente();
+        cartao.setBandeira("American Express");
+
+        Calendar calendario = Calendar.getInstance();
+        calendario.set(2020, 6, 12);
+
+        cartao.setDataValidade(calendario.getTime());
+        cartao.setNumero("5559293778809012");
+
+        TypedQuery<Cliente> query = em.createQuery("FROM Cliente c WHERE c.idUsuario = :idCliente", Cliente.class);
+        query.setParameter("idCliente", 1L);
+        cliente = (Cliente)query.getSingleResult();
+        
+        em.persist(cartao);
+//        assertNotNull(comprador.getId());
+        et.commit();
+        assertNotNull(cartao.getIdCartao());
+        assertNotNull(cliente.getIdUsuario());
+
+    }
+
     /* FAIL */
     @Test
     public void criarCartaoInvalidoTest() {
@@ -110,13 +142,14 @@ public class CartaoTest {
         try {
             cartao = new Cartao();
             cartao.setBandeira("VISA");
-            cartao.setNumero(""); // Invalido
+            cartao.setNumero(null); // Invalido
             calendario = Calendar.getInstance();
             calendario.set(2015, 5, 5);
             cartao.setDataValidade(calendario.getTime()); // Data inválida (não é futura)
 
             em.persist(cartao);
             et.commit();
+
             assertTrue(false); // Se chegar aqui, o teste falhou
         } catch (ConstraintViolationException ex) {
             Logger.getGlobal().info(ex.getMessage());
@@ -159,24 +192,21 @@ public class CartaoTest {
 //        }
 //    }
 
-     /* FAIL */
+    /* OK */
     @Test
     public void deletarCartaoTest() {
-        
+
         Logger.getGlobal().log(Level.INFO, "deletarCartaoTest");
         TypedQuery<Cartao> query = em.createQuery("SELECT c FROM Cartao c WHERE c.numero like :numeroCartao", Cartao.class);
         query.setParameter("numeroCartao", "1119293458709222");
         Cartao cartao = query.getSingleResult();
-        
-        em.remove(cartao);
-        
-        //em.flush();
-        //et.commit();
-       
-        assertNull(cartao.getIdCartao());
 
-      
-     
+        em.remove(cartao);
+        et.commit();
+
+        cartao = em.find(Cartao.class, cartao.getIdCartao());
+        assertNull(cartao);
+
     }
 
 }

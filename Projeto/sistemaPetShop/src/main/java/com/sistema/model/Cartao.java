@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -39,6 +40,7 @@ public class Cartao implements Serializable {
     private String bandeira;
 
     @NotBlank
+    @NotNull
     @CreditCardNumber
     @Column(name = "str_numero")
     private String numero;
@@ -51,7 +53,7 @@ public class Cartao implements Serializable {
     
     // Relacionamento Cliente
     @Valid
-    @ManyToOne(fetch = FetchType.LAZY, optional = true)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = true)
     @JoinColumn (name = "fk_cliente", referencedColumnName = "id_cliente")
     private Cliente cliente;
 

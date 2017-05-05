@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="2" name="sistema.testes.CartaoTest" time="7.555" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="sistema.testes.CartaoTest" time="4.556" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_101\jre\bin"/>
@@ -14,7 +14,7 @@
     <property name="user.country" value="BR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="Service Pack 1"/>
-    <property name="test" value="sistema.testes.CartaoTest"/>
+    <property name="test" value="sistema.testes.CartaoTest#deletarCartaoTest"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="user.dir" value="C:\Users\allanfreitas\Documents\Projeto-software-corporativo\Projeto\sistemaPetShop"/>
     <property name="java.runtime.version" value="1.8.0_101-b13"/>
@@ -45,7 +45,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_101\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=sistema.testes.CartaoTest -Dmaven.ext.class.path=C:\Program Files\NetBeans 8.2\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 surefire:test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=sistema.testes.CartaoTest#deletarCartaoTest -Dmaven.ext.class.path=C:\Program Files\NetBeans 8.2\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 surefire:test"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="pt"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -62,163 +62,5 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="sistema.testes.CartaoTest" name="deletarCartaoTest" time="3.329">
-    <failure message="expected null, but was:&lt;1&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected null, but was:&lt;1&gt;
-	at org.junit.Assert.fail(Assert.java:88)
-	at org.junit.Assert.failNotNull(Assert.java:664)
-	at org.junit.Assert.assertNull(Assert.java:646)
-	at org.junit.Assert.assertNull(Assert.java:656)
-	at sistema.testes.CartaoTest.deletarCartaoTest(CartaoTest.java:176)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-</failure>
-    <system-out>[EL Config]: metadata: 2017-05-05 12:15:33.35--ServerSession(156545103)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to one mapping element [field endereco] is being defaulted to: class com.sistema.model.Endereco.
-[EL Config]: metadata: 2017-05-05 12:15:33.365--ServerSession(156545103)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field listaConsultaGeral] is being defaulted to: class com.sistema.model.ConsultaGeral.
-[EL Config]: metadata: 2017-05-05 12:15:33.365--ServerSession(156545103)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field exame] is being defaulted to: class com.sistema.model.Exame.
-[EL Config]: metadata: 2017-05-05 12:15:33.365--ServerSession(156545103)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field veterinario] is being defaulted to: class com.sistema.model.Veterinario.
-[EL Config]: metadata: 2017-05-05 12:15:33.365--ServerSession(156545103)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field pet] is being defaulted to: class com.sistema.model.Pet.
-[EL Config]: metadata: 2017-05-05 12:15:33.365--ServerSession(156545103)--Thread(Thread[main,5,main])--The access type for the persistent class [class com.sistema.model.Veterinario] is set to [FIELD].
-[EL Config]: metadata: 2017-05-05 12:15:33.365--ServerSession(156545103)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field ListaConsultaMedica] is being defaulted to: class com.sistema.model.ConsultaMedica.
-[EL Config]: metadata: 2017-05-05 12:15:33.365--ServerSession(156545103)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field cliente] is being defaulted to: class com.sistema.model.Cliente.
-[EL Config]: metadata: 2017-05-05 12:15:33.365--ServerSession(156545103)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field listaConsultaGeral] is being defaulted to: class com.sistema.model.ConsultaGeral.
-[EL Config]: metadata: 2017-05-05 12:15:33.365--ServerSession(156545103)--Thread(Thread[main,5,main])--The access type for the persistent class [class com.sistema.model.Pet] is set to [FIELD].
-[EL Config]: metadata: 2017-05-05 12:15:33.365--ServerSession(156545103)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field cliente] is being defaulted to: class com.sistema.model.Cliente.
-[EL Config]: metadata: 2017-05-05 12:15:33.365--ServerSession(156545103)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field ListaConsultaMedica] is being defaulted to: class com.sistema.model.ConsultaMedica.
-[EL Config]: metadata: 2017-05-05 12:15:33.365--ServerSession(156545103)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field funcionario] is being defaulted to: class com.sistema.model.Funcionario.
-[EL Config]: metadata: 2017-05-05 12:15:33.365--ServerSession(156545103)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field servico] is being defaulted to: class com.sistema.model.Servico.
-[EL Config]: metadata: 2017-05-05 12:15:33.365--ServerSession(156545103)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field listaConsultaMedica] is being defaulted to: class com.sistema.model.ConsultaMedica.
-[EL Config]: metadata: 2017-05-05 12:15:33.365--ServerSession(156545103)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field cartao] is being defaulted to: class com.sistema.model.Cartao.
-[EL Config]: metadata: 2017-05-05 12:15:33.365--ServerSession(156545103)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field listaPet] is being defaulted to: class com.sistema.model.Pet.
-[EL Config]: metadata: 2017-05-05 12:15:33.365--ServerSession(156545103)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to one mapping element [field usuario] is being defaulted to: class com.sistema.model.Usuario.
-[EL Config]: metadata: 2017-05-05 12:15:33.365--ServerSession(156545103)--Thread(Thread[main,5,main])--The alias name for the entity class [class com.sistema.model.Consulta] is being defaulted to: Consulta.
-[EL Config]: metadata: 2017-05-05 12:15:33.396--ServerSession(156545103)--Thread(Thread[main,5,main])--The alias name for the entity class [class com.sistema.model.Funcionario] is being defaulted to: Funcionario.
-[EL Config]: metadata: 2017-05-05 12:15:33.396--ServerSession(156545103)--Thread(Thread[main,5,main])--The alias name for the entity class [class com.sistema.model.Usuario] is being defaulted to: Usuario.
-[EL Config]: metadata: 2017-05-05 12:15:33.396--ServerSession(156545103)--Thread(Thread[main,5,main])--The alias name for the entity class [class com.sistema.model.ConsultaMedica] is being defaulted to: ConsultaMedica.
-[EL Config]: metadata: 2017-05-05 12:15:33.396--ServerSession(156545103)--Thread(Thread[main,5,main])--The alias name for the entity class [class com.sistema.model.Veterinario] is being defaulted to: Veterinario.
-[EL Config]: metadata: 2017-05-05 12:15:33.396--ServerSession(156545103)--Thread(Thread[main,5,main])--The alias name for the entity class [class com.sistema.model.Cartao] is being defaulted to: Cartao.
-[EL Config]: metadata: 2017-05-05 12:15:33.396--ServerSession(156545103)--Thread(Thread[main,5,main])--The alias name for the entity class [class com.sistema.model.Servico] is being defaulted to: Servico.
-[EL Config]: metadata: 2017-05-05 12:15:33.396--ServerSession(156545103)--Thread(Thread[main,5,main])--The alias name for the entity class [class com.sistema.model.Pet] is being defaulted to: Pet.
-[EL Config]: metadata: 2017-05-05 12:15:33.396--ServerSession(156545103)--Thread(Thread[main,5,main])--The alias name for the entity class [class com.sistema.model.ConsultaGeral] is being defaulted to: ConsultaGeral.
-[EL Config]: metadata: 2017-05-05 12:15:33.396--ServerSession(156545103)--Thread(Thread[main,5,main])--The alias name for the entity class [class com.sistema.model.Exame] is being defaulted to: Exame.
-[EL Config]: metadata: 2017-05-05 12:15:33.396--ServerSession(156545103)--Thread(Thread[main,5,main])--The alias name for the entity class [class com.sistema.model.Cliente] is being defaulted to: Cliente.
-[EL Config]: metadata: 2017-05-05 12:15:33.396--ServerSession(156545103)--Thread(Thread[main,5,main])--The alias name for the entity class [class com.sistema.model.Endereco] is being defaulted to: Endereco.
-[EL Info]: 2017-05-05 12:15:35.85--ServerSession(156545103)--Thread(Thread[main,5,main])--EclipseLink, version: Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd
-[EL Fine]: connection: 2017-05-05 12:15:35.865--Thread(Thread[main,5,main])--Detected database platform: org.eclipse.persistence.platform.database.MySQLPlatform
-[EL Config]: connection: 2017-05-05 12:15:35.881--ServerSession(156545103)--Connection(107075722)--Thread(Thread[main,5,main])--connecting(DatabaseLogin(
-	platform=&gt;MySQLPlatform
-	user name=&gt; &quot;root&quot;
-	datasource URL=&gt; &quot;jdbc:mysql://localhost:3306/sistemapet?zeroDateTimeBehavior=convertToNull&quot;
-))
-[EL Config]: connection: 2017-05-05 12:15:35.912--ServerSession(156545103)--Connection(1336418989)--Thread(Thread[main,5,main])--Connected: jdbc:mysql://localhost:3306/sistemapet?zeroDateTimeBehavior=convertToNull
-	User: root@localhost
-	Database: MySQL  Version: 5.7.18-log
-	Driver: MySQL Connector Java  Version: mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )
-[EL Warning]: metadata: 2017-05-05 12:15:35.928--ServerSession(156545103)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [usuario] for the entity class [class com.sistema.model.Endereco] since weaving was not enabled or did not occur.
-[EL Warning]: metadata: 2017-05-05 12:15:35.928--ServerSession(156545103)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [endereco] for the entity class [class com.sistema.model.Usuario] since weaving was not enabled or did not occur.
-[EL Warning]: metadata: 2017-05-05 12:15:35.943--ServerSession(156545103)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [cliente] for the entity class [class com.sistema.model.Pet] since weaving was not enabled or did not occur.
-[EL Warning]: metadata: 2017-05-05 12:15:35.943--ServerSession(156545103)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [funcionario] for the entity class [class com.sistema.model.ConsultaGeral] since weaving was not enabled or did not occur.
-[EL Warning]: metadata: 2017-05-05 12:15:35.943--ServerSession(156545103)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [servico] for the entity class [class com.sistema.model.ConsultaGeral] since weaving was not enabled or did not occur.
-[EL Warning]: metadata: 2017-05-05 12:15:35.943--ServerSession(156545103)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [exame] for the entity class [class com.sistema.model.ConsultaMedica] since weaving was not enabled or did not occur.
-[EL Warning]: metadata: 2017-05-05 12:15:35.943--ServerSession(156545103)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [veterinario] for the entity class [class com.sistema.model.ConsultaMedica] since weaving was not enabled or did not occur.
-[EL Warning]: metadata: 2017-05-05 12:15:35.943--ServerSession(156545103)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [pet] for the entity class [class com.sistema.model.ConsultaMedica] since weaving was not enabled or did not occur.
-[EL Warning]: metadata: 2017-05-05 12:15:35.943--ServerSession(156545103)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [cliente] for the entity class [class com.sistema.model.Cartao] since weaving was not enabled or did not occur.
-[EL Info]: connection: 2017-05-05 12:15:35.959--ServerSession(156545103)--Thread(Thread[main,5,main])--file:/C:/Users/allanfreitas/Documents/Projeto-software-corporativo/Projeto/sistemaPetShop/target/classes/_sistemapetshopPU login successful
-[EL Fine]: sql: 2017-05-05 12:15:36.241--ServerSession(156545103)--Connection(1336418989)--Thread(Thread[main,5,main])--SELECT id_cartao, str_bandeira, date_dataValidade, str_numero, fk_cliente FROM tb_cartao WHERE str_numero LIKE ?
-	bind =&gt; [1119293458709222]
-[EL Fine]: sql: 2017-05-05 12:15:36.241--ServerSession(156545103)--Connection(1336418989)--Thread(Thread[main,5,main])--SELECT t0.id_usuario, t0.disc_usuario, t0.str_email, t0.str_login, t0.str_nome, t0.str_senha, t0.fk_endereco, t1.id_cliente FROM tb_usuario t0, tb_cliente t1 WHERE ((t0.id_usuario = ?) AND ((t1.id_cliente = t0.id_usuario) AND (t0.disc_usuario = ?)))
-	bind =&gt; [1, cli]
-[EL Fine]: sql: 2017-05-05 12:15:36.241--ServerSession(156545103)--Connection(1336418989)--Thread(Thread[main,5,main])--SELECT id_endereco, str_bairro, str_cep, str_complemento, str_logradouro, int_numero FROM tb_endereco WHERE (id_endereco = ?)
-	bind =&gt; [1]
-[EL Fine]: sql: 2017-05-05 12:15:36.241--ServerSession(156545103)--Connection(1336418989)--Thread(Thread[main,5,main])--SELECT DISTINCT disc_usuario FROM tb_usuario WHERE (fk_endereco = ?)
-	bind =&gt; [1]
-[EL Fine]: sql: 2017-05-05 12:15:36.241--ServerSession(156545103)--Connection(1336418989)--Thread(Thread[main,5,main])--SELECT t0.id_usuario, t0.disc_usuario, t0.str_email, t0.str_login, t0.str_nome, t0.str_senha, t0.fk_endereco, t1.id_cliente FROM tb_usuario t0, tb_cliente t1 WHERE ((t0.fk_endereco = ?) AND ((t1.id_cliente = t0.id_usuario) AND (t0.disc_usuario = ?)))
-	bind =&gt; [1, cli]
-[EL Fine]: sql: 2017-05-05 12:15:36.257--ClientSession(1353406178)--Connection(1336418989)--Thread(Thread[main,5,main])--DELETE FROM tb_cartao WHERE (id_cartao = ?)
-	bind =&gt; [1]
-</system-out>
-    <system-err>mai 05, 2017 12:15:35 PM org.hibernate.validator.internal.util.Version &lt;clinit&gt;
-INFO: HV000001: Hibernate Validator 5.1.3.Final
-mai 05, 2017 12:15:36 PM sistema.testes.CartaoTest deletarCartaoTest
-INFORMAÇÕES: deletarCartaoTest
-</system-err>
-  </testcase>
-  <testcase classname="sistema.testes.CartaoTest" name="criarCartaoValidoTest" time="2.184"/>
-  <testcase classname="sistema.testes.CartaoTest" name="criarCartaoInvalidoTest" time="1.954">
-    <failure type="java.lang.AssertionError">java.lang.AssertionError
-	at org.junit.Assert.fail(Assert.java:86)
-	at org.junit.Assert.assertTrue(Assert.java:41)
-	at org.junit.Assert.assertTrue(Assert.java:52)
-	at sistema.testes.CartaoTest.criarCartaoInvalidoTest(CartaoTest.java:120)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-</failure>
-    <system-out>[EL Fine]: sql: 2017-05-05 12:15:40.379--ClientSession(74633460)--Connection(1336418989)--Thread(Thread[main,5,main])--INSERT INTO tb_cartao (str_bandeira, date_dataValidade, str_numero, fk_cliente) VALUES (?, ?, ?, ?)
-	bind =&gt; [VISA, 2015-06-05, , null]
-[EL Fine]: sql: 2017-05-05 12:15:40.426--ClientSession(74633460)--Connection(1336418989)--Thread(Thread[main,5,main])--SELECT LAST_INSERT_ID()
-ERROR: 
-Exception Description: No transaction is currently active
-</system-out>
-  </testcase>
+  <testcase classname="sistema.testes.CartaoTest" name="deletarCartaoTest" time="4.498"/>
 </testsuite>

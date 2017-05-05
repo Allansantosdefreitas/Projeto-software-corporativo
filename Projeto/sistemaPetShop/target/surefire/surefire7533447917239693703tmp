@@ -1,0 +1,12 @@
+#surefire
+#Fri May 05 14:41:37 GFT 2017
+jpda.address=54971
+maven.ext.class.path=C\:\\Program Files\\NetBeans 8.2\\java\\maven-nblib\\netbeans-eventspy.jar
+file.encoding=UTF-8
+jpda.listen=true
+forkMode=once
+user.dir=C\:\\Users\\allanfreitas\\Documents\\Projeto-software-corporativo\\Projeto\\sistemaPetShop
+localRepository=C\:\\Users\\allanfreitas\\.m2\\repository
+test=sistema.testes.CartaoTest\#deletarCartaoTest
+basedir=C\:\\Users\\allanfreitas\\Documents\\Projeto-software-corporativo\\Projeto\\sistemaPetShop
+maven.surefire.debug=-Xdebug -Xrunjdwp\:transport\=dt_socket,server\=n,address\=54971
