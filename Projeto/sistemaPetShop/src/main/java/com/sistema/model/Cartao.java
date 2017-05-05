@@ -53,7 +53,7 @@ public class Cartao implements Serializable {
     
     // Relacionamento Cliente
     @Valid
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = true)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST, optional = true)
     @JoinColumn (name = "fk_cliente", referencedColumnName = "id_cliente")
     private Cliente cliente;
 

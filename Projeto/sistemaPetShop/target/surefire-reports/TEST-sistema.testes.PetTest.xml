@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="1" name="sistema.testes.PetTest" time="7.465" errors="0" skipped="0">
+<testsuite tests="4" failures="1" name="sistema.testes.PetTest" time="8.021" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_101\jre\bin"/>
@@ -61,7 +61,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="sistema.testes.PetTest" name="criaPetValidotest" time="1.905">
+  <testcase classname="sistema.testes.PetTest" name="criaPetValidotest" time="2.342">
     <failure type="java.lang.AssertionError">java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:86)
 	at org.junit.Assert.assertTrue(Assert.java:41)
@@ -102,20 +102,20 @@
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </failure>
-    <system-out>[EL Fine]: sql: 2017-05-05 13:27:27.66--ClientSession(332405156)--Connection(522082506)--Thread(Thread[main,5,main])--INSERT INTO tb_endereco (str_bairro, str_cep, str_complemento, str_logradouro, int_numero) VALUES (?, ?, ?, ?, ?)
+    <system-out>[EL Fine]: sql: 2017-05-05 16:42:51.43--ClientSession(2061424899)--Connection(522082506)--Thread(Thread[main,5,main])--INSERT INTO tb_endereco (str_bairro, str_cep, str_complemento, str_logradouro, int_numero) VALUES (?, ?, ?, ?, ?)
 	bind =&gt; [Bairro, 12763818, Perto dali, Avenida, 222]
-[EL Fine]: sql: 2017-05-05 13:27:27.66--ClientSession(332405156)--Connection(522082506)--Thread(Thread[main,5,main])--SELECT LAST_INSERT_ID()
-[EL Fine]: sql: 2017-05-05 13:27:27.66--ClientSession(332405156)--Connection(522082506)--Thread(Thread[main,5,main])--INSERT INTO tb_usuario (str_email, str_login, str_nome, str_senha, fk_endereco, disc_usuario) VALUES (?, ?, ?, ?, ?, ?)
-	bind =&gt; [cliente2@cli.com, cliente_gastador2, Cliente cli, cliente123, 6, cli]
-[EL Fine]: sql: 2017-05-05 13:27:27.66--ClientSession(332405156)--Connection(522082506)--Thread(Thread[main,5,main])--SELECT LAST_INSERT_ID()
-[EL Fine]: sql: 2017-05-05 13:27:27.66--ClientSession(332405156)--Connection(522082506)--Thread(Thread[main,5,main])--INSERT INTO tb_pet (str_nome, boo_pedegree, flt_peso, str_raca, fk_cliente) VALUES (?, ?, ?, ?, ?)
-	bind =&gt; [Tótó, true, 24.0, Labrador, 6]
-[EL Fine]: sql: 2017-05-05 13:27:27.66--ClientSession(332405156)--Connection(522082506)--Thread(Thread[main,5,main])--SELECT LAST_INSERT_ID()
-[EL Fine]: sql: 2017-05-05 13:27:27.66--ClientSession(332405156)--Connection(522082506)--Thread(Thread[main,5,main])--INSERT INTO tb_cliente (id_cliente) VALUES (?)
-	bind =&gt; [6]
+[EL Fine]: sql: 2017-05-05 16:42:51.43--ClientSession(2061424899)--Connection(522082506)--Thread(Thread[main,5,main])--SELECT LAST_INSERT_ID()
+[EL Fine]: sql: 2017-05-05 16:42:51.445--ClientSession(2061424899)--Connection(522082506)--Thread(Thread[main,5,main])--INSERT INTO tb_usuario (str_email, str_login, str_nome, str_senha, fk_endereco, disc_usuario) VALUES (?, ?, ?, ?, ?, ?)
+	bind =&gt; [cliente2@cli.com, cliente_gastador2, Cliente cli, cliente123, 10, cli]
+[EL Fine]: sql: 2017-05-05 16:42:51.445--ClientSession(2061424899)--Connection(522082506)--Thread(Thread[main,5,main])--SELECT LAST_INSERT_ID()
+[EL Fine]: sql: 2017-05-05 16:42:51.445--ClientSession(2061424899)--Connection(522082506)--Thread(Thread[main,5,main])--INSERT INTO tb_pet (str_nome, boo_pedegree, flt_peso, str_raca, fk_cliente) VALUES (?, ?, ?, ?, ?)
+	bind =&gt; [Tótó, true, 24.0, Labrador, 11]
+[EL Fine]: sql: 2017-05-05 16:42:51.445--ClientSession(2061424899)--Connection(522082506)--Thread(Thread[main,5,main])--SELECT LAST_INSERT_ID()
+[EL Fine]: sql: 2017-05-05 16:42:51.445--ClientSession(2061424899)--Connection(522082506)--Thread(Thread[main,5,main])--INSERT INTO tb_cliente (id_cliente) VALUES (?)
+	bind =&gt; [11]
 </system-out>
   </testcase>
-  <testcase classname="sistema.testes.PetTest" name="atualizaPetValidotest" time="1.468"/>
-  <testcase classname="sistema.testes.PetTest" name="criaPetInvalidotest" time="2.107"/>
-  <testcase classname="sistema.testes.PetTest" name="atualizaPetInvalidotest" time="1.985"/>
+  <testcase classname="sistema.testes.PetTest" name="atualizaPetValidotest" time="1.904"/>
+  <testcase classname="sistema.testes.PetTest" name="criaPetInvalidotest" time="1.872"/>
+  <testcase classname="sistema.testes.PetTest" name="atualizaPetInvalidotest" time="1.903"/>
 </testsuite>

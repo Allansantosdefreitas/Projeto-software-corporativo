@@ -1,0 +1,24 @@
+
+create: 
+	valido(em), 
+	invalido(em e validator.validate() ),
+	valido(typed query e em)
+update: 
+	invalido( TypedQuery create query para obter e flush() )
+
+Cartao:
+	create: valido (em), valido (em com query)
+	update: 
+	delete
+
+
+---meta 16h
+
+
+query string (native query)
+insert inv em
+update val e inv (em)
+
+
+update via query (OK)
+delete via query (OK) 

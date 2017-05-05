@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="0" name="sistema.testes.ServicoTest" time="6.737" errors="0" skipped="0">
+<testsuite tests="4" failures="0" name="sistema.testes.ServicoTest" time="10.115" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_101\jre\bin"/>
@@ -61,8 +61,8 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="sistema.testes.ServicoTest" name="atualizaServicoInvalidoTest" time="1.795"/>
-  <testcase classname="sistema.testes.ServicoTest" name="criaServicoValidoTest" time="2.015"/>
-  <testcase classname="sistema.testes.ServicoTest" name="atualizaServicoValidoTest" time="1.346"/>
-  <testcase classname="sistema.testes.ServicoTest" name="criaServicoInvalidoTest" time="1.581"/>
+  <testcase classname="sistema.testes.ServicoTest" name="atualizaServicoInvalidoTest" time="2.078"/>
+  <testcase classname="sistema.testes.ServicoTest" name="criaServicoValidoTest" time="3.759"/>
+  <testcase classname="sistema.testes.ServicoTest" name="atualizaServicoValidoTest" time="1.669"/>
+  <testcase classname="sistema.testes.ServicoTest" name="criaServicoInvalidoTest" time="2.609"/>
 </testsuite>

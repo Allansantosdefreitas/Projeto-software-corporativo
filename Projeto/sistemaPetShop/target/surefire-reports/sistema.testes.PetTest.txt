@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: sistema.testes.PetTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 7.465 sec <<< FAILURE!
-criaPetValidotest(sistema.testes.PetTest)  Time elapsed: 1.905 sec  <<< FAILURE!
+Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 8.021 sec <<< FAILURE!
+criaPetValidotest(sistema.testes.PetTest)  Time elapsed: 2.342 sec  <<< FAILURE!
 java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:86)
 	at org.junit.Assert.assertTrue(Assert.java:41)
