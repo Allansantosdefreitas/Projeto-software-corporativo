@@ -18,6 +18,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.Valid;
 import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -44,6 +45,7 @@ public class Servico implements Serializable {
     private Double valor;
 
     // Relacionamento Consulta
+    @Valid
     @OneToMany(mappedBy = "servico", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = false)
     //@JoinColumn (name = "fk_consulta_geral", referencedColumnName = "id_consulta_geral")
     private List<ConsultaGeral> listaConsultaGeral;

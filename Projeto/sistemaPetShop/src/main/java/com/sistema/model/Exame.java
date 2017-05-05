@@ -14,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.Valid;
 import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -31,6 +32,7 @@ public class Exame implements Serializable {
     @Column(name = "id_exame", nullable = false)
     private Long idExame;
 
+    
     @NotBlank
     @Size(max=60)
     @Column(name = "str_nome", length = 60, unique = false)
@@ -51,6 +53,7 @@ public class Exame implements Serializable {
     private Double valor;
 
     // Relacionamento ConsultaMedica
+    @Valid
     @OneToMany(mappedBy = "exame", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = false)
     @JoinColumn(name = "fk_consulta_medica", referencedColumnName = "id_consulta_medica")
     private List<ConsultaMedica> listaConsultaMedica;

@@ -16,6 +16,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+import javax.validation.Valid;
 
 /**
  *
@@ -35,6 +36,7 @@ public class Veterinario extends Usuario implements Serializable {
     private String especialidade;
 
     // Relacionamento ConsultaMedica
+    @Valid
     @OneToMany(mappedBy = "veterinario", fetch = FetchType.LAZY, orphanRemoval = false, cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_consulta", referencedColumnName = "id_consulta", nullable = true)
     private List<ConsultaMedica> ListaConsultaMedica;

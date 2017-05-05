@@ -14,6 +14,7 @@ import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+import javax.validation.Valid;
 
 /**
  *
@@ -32,6 +33,7 @@ public class Funcionario extends Usuario implements Serializable{
     private EspecialidadeFuncionario especialidadeFuncionario;
     
     // Relacionamento ConsultaGeral
+    @Valid
     @OneToMany(mappedBy = "funcionario", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = false)
     private List<ConsultaGeral> listaConsultaGeral;
 

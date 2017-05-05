@@ -18,6 +18,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.Valid;
 import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -52,11 +53,13 @@ public class Pet implements Serializable {
     private Boolean pedegree;
 
     // Relacionamento Cliente
+    @Valid
     @ManyToOne(fetch = FetchType.LAZY, optional = true, cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_cliente", referencedColumnName = "id_cliente")
     private Cliente cliente;
 
     // Relacionamento ConsultaMedica
+    @Valid
     @OneToMany(mappedBy = "pet", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     @JoinColumn(name = "fk_consulta_medica", referencedColumnName = "id_consulta_medica")
     private List<ConsultaMedica> ListaConsultaMedica;

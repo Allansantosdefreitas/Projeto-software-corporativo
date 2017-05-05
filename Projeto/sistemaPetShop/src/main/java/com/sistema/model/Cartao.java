@@ -14,6 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
+import javax.validation.Valid;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.CreditCardNumber;
@@ -49,6 +50,7 @@ public class Cartao implements Serializable {
     private Date dataValidade;
     
     // Relacionamento Cliente
+    @Valid
     @ManyToOne(fetch = FetchType.LAZY, optional = true)
     @JoinColumn (name = "fk_cliente", referencedColumnName = "id_cliente")
     private Cliente cliente;

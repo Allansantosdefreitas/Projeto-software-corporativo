@@ -17,6 +17,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+import javax.validation.Valid;
 import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -38,16 +39,19 @@ public class ConsultaMedica extends Consulta implements Serializable{
     private String diagnostico;
     
     // Relacionamento Pet
+    @Valid
     @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_pet", referencedColumnName = "id_pet")
     private Pet pet;
     
     // Relacionamento Veterinario
+    @Valid
     @ManyToOne(fetch = FetchType.LAZY, optional = true, cascade = CascadeType.ALL)
     @JoinColumn (name = "fk_veterinario", referencedColumnName = "id_usuario")
     private Veterinario veterinario;
     
     // Relacionamento Exame
+    @Valid
     @ManyToOne(fetch = FetchType.LAZY, optional = true, cascade = CascadeType.ALL)
     @JoinColumn (name = "fk_exame", referencedColumnName = "id_exame")
     private Exame exame;
