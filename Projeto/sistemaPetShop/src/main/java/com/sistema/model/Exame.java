@@ -12,6 +12,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.NamedNativeQueries;
+import javax.persistence.NamedNativeQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.Valid;
@@ -25,6 +27,17 @@ import org.hibernate.validator.constraints.NotBlank;
 @Entity
 @Table(name = "tb_exame")
 @Access(AccessType.FIELD)
+@NamedNativeQueries(
+        {
+            @NamedNativeQuery(name = "Exame.PorNome", 
+            query = "select e from Exame e where e.nome like :nome order by e.nome",
+            resultClass = Exame.class),
+            
+            @NamedNativeQuery(name = "Exame.PorTipo",
+            query = "select id_exame, str_nome, str_tipo, dbl_valor from sistemapet.tb_exame where str_tipo like ? ;",
+            resultClass = Exame.class)
+        }
+)
 public class Exame implements Serializable {
 
     @Id

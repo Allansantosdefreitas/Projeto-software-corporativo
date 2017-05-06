@@ -1,8 +1,0 @@
-#surefire
-#Fri May 05 13:50:33 GFT 2017
-maven.ext.class.path=C\:\\Program Files\\NetBeans 8.2\\java\\maven-nblib\\netbeans-eventspy.jar
-user.dir=C\:\\Users\\jonathanpereira\\Documents\\SourceTree\\Projetos Facul\\Projeto\\sistemaPetShop
-file.encoding=UTF-8
-localRepository=C\:\\Users\\jonathanpereira\\.m2\\repository
-basedir=C\:\\Users\\jonathanpereira\\Documents\\SourceTree\\Projetos Facul\\Projeto\\sistemaPetShop
-test=sistema.testes.VeterinarioTest

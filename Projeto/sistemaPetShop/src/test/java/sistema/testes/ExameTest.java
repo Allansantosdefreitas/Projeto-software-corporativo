@@ -6,10 +6,13 @@
 package sistema.testes;
 
 import com.sistema.model.Exame;
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -83,6 +86,8 @@ public class ExameTest {
         
     }
     
+    /*
+    @Test
     public void criaEnderecoInvalidoTeste() {
         Exame exameInvalido = new Exame();
         double valor = 70;
@@ -90,7 +95,7 @@ public class ExameTest {
         exameInvalido.setNome("Dentario");
         exameInvalido.setDescricao("Examina a arcada dentaria");
         exameInvalido.setTipo("Dental");
-        exameInvalido.setValor(valor);
+        exameInvalido.setValor(null);
 
         em.persist(exameInvalido);
         et.commit();
@@ -98,35 +103,26 @@ public class ExameTest {
         assertNull(exameInvalido.getIdExame());
         
     }
+    */
     
+    /*
     @Test
     public void atualizaEnderecoValidoTeste() {
-        Endereco enderecoAtt = new Endereco();
-        Endereco endereco = new Endereco();
-        Cliente cliente = new Cliente();
-        List<Pet> listaPet = new ArrayList<>();
-
-        cliente.setListaPet(listaPet);
-        cliente.setEmail("cliente@cli.com");
-        cliente.setEndereco(endereco);
-        cliente.setLogin("Cliente");
-        cliente.setNome("Cliente cli");
-        cliente.setSenha("cliente123");
-
-        endereco.setBairro("Aquele Bairro");
-        endereco.setCep("12345678");
-        endereco.setComplemento("Perto daquele Restaurante");
-        endereco.setLogradouro("Avenida");
-        endereco.setNumero(123);
-        endereco.setUsuario(cliente);
+        Exame exameAtt = new Exame();
         
-        enderecoAtt = endereco;
-        enderecoAtt.setNumero(546);
-        em.merge(endereco);
+        exameAtt.setNome("Oral");
+        exameAtt.setDescricao("Examina a arcada dentaria");
+        exameAtt.setTipo("Dental");
+        exameAtt.setValor(new Double(90));
+        
+        em.merge(exameAtt);
         et.commit();
         
-        assertEquals(new Long(546), new Long(enderecoAtt.getNumero()));
+        exameAtt = em.find(Exame.class, exameAtt.getIdExame());
+        
+        assertEquals("Oral", exameAtt.getNome());
     }
+    */
 
     /*@Test
     public void atualizaEnderecoInvalidoTeste() {
@@ -159,16 +155,16 @@ public class ExameTest {
     
     @Test
     public void deletaEnderecoTeste(){
-        Query query = em.createQuery("from Endereco e where e.logradouro like :logradouro ", Endereco.class);
-        query.setParameter("logradouro", "Casa3");
-        Endereco endereco = (Endereco) query.getSingleResult();
+        Query query = em.createQuery("from Exame e where e.nome like :nome ", Exame.class);
+        query.setParameter("nome", "Cardiovascular");
+        Exame exame = (Exame) query.getSingleResult();
 
-        em.remove(endereco);
+        em.remove(exame);
         et.commit();
 
-        endereco = em.find(Endereco.class, endereco.getIdEndereco());
+        exame = em.find(Exame.class, exame.getIdExame());
 
-        assertNull(endereco);
+        assertNull(exame);
         
         assertTrue(true);
     }
@@ -193,12 +189,12 @@ public class ExameTest {
 
     @Test
     public void selectSqlNativeNamedQueryTeste() {
-        TypedQuery<Endereco> query = em.createNamedQuery("Endereco.PorLogradouro", Endereco.class);
-        query.setParameter(1,"Casa3");
+        TypedQuery<Exame> query = em.createNamedQuery("Exame.PorTipo", Exame.class);
+        query.setParameter(1,"Cirurgico");
         
-        List<Endereco> listaEnderecos = query.getResultList();
+        List<Exame> listaExames = query.getResultList();
 
-        assertEquals(1, listaEnderecos.size());
+        assertEquals(1, listaExames.size());
         
         assertTrue(true);
     }

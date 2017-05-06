@@ -99,6 +99,7 @@ public class EnderecoTest {
         
     }
     
+    /*@Test
     public void criaEnderecoInvalidoTeste() {
         Endereco enderecoInvalido = new Endereco();
         Cliente cliente = new Cliente();
@@ -124,8 +125,9 @@ public class EnderecoTest {
         
         assertNull(enderecoInvalido.getIdEndereco());
         
-    }
+    }*/
     
+    /*
     @Test
     public void atualizaEnderecoValidoTeste() {
         Endereco enderecoAtt = new Endereco();
@@ -152,8 +154,11 @@ public class EnderecoTest {
         em.merge(endereco);
         et.commit();
         
+        enderecoAtt = em.find(Endereco.class, enderecoAtt.getIdEndereco());
+        
         assertEquals(new Long(546), new Long(enderecoAtt.getNumero()));
     }
+    */
 
     /*@Test
     public void atualizaEnderecoInvalidoTeste() {
