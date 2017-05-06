@@ -7,6 +7,20 @@ Projeto da disciplina de Desenvolvimento de Software Corporativo
 - BD criado pelo JPA
 - Deve ter um estado conhecido antes dos testes (DBUnit)
 
++ Classes (falta create e update inválido)):
+  - CartaoTest (ok) 
+  - ClienteTest (ok, falta delete via query e native query)
+  - ConsultaGeralTest (ok, falta upddate via query)
+  - ConsultaMedicaTest
+  - EnderecoTest
+  - FuncionarioTest
+  - PetTest
+  - ServicoTest
+  - VeterinarioTest
+  - "Criar validador próprio"
+
+
+
 + Testar:
 	- 1- Insert, Update, delete (via em)
 	- 2- Select (JPQL)
