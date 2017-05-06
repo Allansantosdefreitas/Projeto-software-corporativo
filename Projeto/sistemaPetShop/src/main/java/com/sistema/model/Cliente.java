@@ -14,6 +14,10 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
+import javax.persistence.NamedNativeQueries;
+import javax.persistence.NamedNativeQuery;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
@@ -29,6 +33,23 @@ import javax.validation.Valid;
 @DiscriminatorValue(value = "cli")
 @PrimaryKeyJoinColumn(name = "id_cliente", referencedColumnName = "id_usuario") 
 @Access(AccessType.FIELD)
+@NamedQueries(
+        {
+            @NamedQuery(
+                    name = "Cliente.PorId",
+                    query = "SELECT c FROM Cliente c WHERE c.idUsuario = ?1"
+            )
+        }
+)
+@NamedNativeQueries(
+        {
+            @NamedNativeQuery(
+                name = "Cliente.PorLoginSQL",
+                query = "SELECT id_usuario, str_email, str_login, str_nome, str_senha, fk_endereco "
+                        + "FROM sistemapet.tb_cliente where str_login like ? ;",
+                resultClass = Cliente.class)
+        }
+)
 public class Cliente extends Usuario implements Serializable {
 
     // Relacionamento Cartao

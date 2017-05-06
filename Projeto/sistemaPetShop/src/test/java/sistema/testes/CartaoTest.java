@@ -102,10 +102,10 @@ public class CartaoTest {
 
         cartao.setDataValidade(calendario.getTime());
         em.persist(cartao);
+        em.flush();
+        //et.commit();
 
-        et.commit();
-
-        cartao = em.find(Cartao.class, cartao.getIdCartao());
+        //cartao = em.find(Cartao.class, cartao.getIdCartao());
         assertNotNull(cartao.getIdCartao());
     }
 
@@ -129,9 +129,10 @@ public class CartaoTest {
         cliente = (Cliente) query.getSingleResult();
 
         em.persist(cartao);
-        et.commit();
+        em.flush();
+        //et.commit();
 
-        cartao = em.find(Cartao.class, cartao.getIdCartao());
+        //cartao = em.find(Cartao.class, cartao.getIdCartao());
         cliente = em.find(Cliente.class, cliente.getIdUsuario());
 
         assertNotNull(cartao.getIdCartao());
