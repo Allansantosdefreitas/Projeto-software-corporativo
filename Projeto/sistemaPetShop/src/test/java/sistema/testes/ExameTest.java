@@ -5,6 +5,7 @@
  */
 package sistema.testes;
 
+import com.sistema.model.Cliente;
 import com.sistema.model.Exame;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -16,6 +17,12 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import com.sistema.model.Endereco;
+import com.sistema.model.Pet;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 /**
  *

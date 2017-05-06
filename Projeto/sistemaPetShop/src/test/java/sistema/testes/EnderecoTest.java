@@ -99,6 +99,7 @@ public class EnderecoTest {
         
     }
     
+    @Test
     public void criaEnderecoInvalidoTeste() {
         Endereco enderecoInvalido = new Endereco();
         Cliente cliente = new Cliente();
