@@ -16,6 +16,10 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedNativeQueries;
+import javax.persistence.NamedNativeQuery;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.Valid;
@@ -29,6 +33,18 @@ import org.hibernate.validator.constraints.NotBlank;
 @Entity
 @Table(name = "tb_servico")
 @Access(AccessType.FIELD)
+@NamedQueries(
+        {
+            @NamedQuery(name = "Servico.PorNome", 
+            query = "from Servico s where s.nome like :nome order by s.nome")
+        }
+)
+@NamedNativeQueries(
+    {
+        @NamedNativeQuery(name = "Servico.PorPreco",
+        query = "select ser.str_nome, ser.dbl_valor from tb_servico ser where ser.dbl_valor like ?")
+    }
+)
 public class Servico implements Serializable {
 
     @Id
@@ -37,7 +53,7 @@ public class Servico implements Serializable {
     private Long idServico;
 
     @NotBlank
-    @Column(name = "str_nome", nullable = false)
+    @Column(name = "str_nome", nullable = false, unique = false)
     private String nome;
 
     @NotBlank

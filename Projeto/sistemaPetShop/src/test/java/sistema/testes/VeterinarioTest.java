@@ -178,7 +178,7 @@ public class VeterinarioTest {
         assertNull(veterinario);
     }
 
-    @Test /*NÂO FUNCIONA*/
+    @Test /*NÂO FUNCIONA */
     public void criaVeterinarioInvalidoTeste() {
         List<ConsultaMedica> listaConsultas = new ArrayList<>();
         Veterinario veterinario = new Veterinario();
@@ -246,7 +246,7 @@ public class VeterinarioTest {
         
     }
 
-    @Test /*NÂO FUNCIONA*/
+    @Test /*NÂO FUNCIONA */
     public void atualizaVeterinarioInvalidoTeste() {
         assertTrue(true);
     }
@@ -273,7 +273,7 @@ public class VeterinarioTest {
         assertNotNull(veterinario);
     }
 
-    @Test /* NÃO FUNCIONA*/
+    @Test /* NÃO FUNCIONA */
     public void selectSqlNativeQueryTeste() {
         
         String sql = "select vet.str_crmv, vet.str_especialidade from tb_veterinario vet join tb_usuario user on vet.id_veterinario = user.id_usuario order by user.str_login";
@@ -317,13 +317,19 @@ public class VeterinarioTest {
         assertEquals(0, query.getResultList().size());
     }
 
-    @Test
+    @Test /* NÃO FUNCIONA */
     public void deletaVeterinarioQueryTeste() {
         
         String sql = "delete from Veterinario v where v.crmv = 54214554";
+        String sql2 = "delete from Usuario u where u.idUsuario = 3";
+        String sql3 = "delete from ConsultaMedica conm where conm.veterinario = 3";
         
         Query query = em.createQuery(sql);
+        Query query2 = em.createQuery(sql2);
+        Query query3 = em.createQuery(sql2);
         
+        query3.executeUpdate();
+        query2.executeUpdate();
         query.executeUpdate();
         
         Veterinario veterinario = em.find(Veterinario.class, 3L);
