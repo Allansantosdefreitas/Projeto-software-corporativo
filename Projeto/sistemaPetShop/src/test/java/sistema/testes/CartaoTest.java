@@ -137,30 +137,57 @@ public class CartaoTest {
     }
     
     
-    @Test
-    public void criarCartaoInvalidoEmTest() {
-        
-        Cartao cartao = new Cartao();
-        Calendar calendar = GregorianCalendar.getInstance();
-        Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
-
-        Calendar calendario = Calendar.getInstance();
-        calendario.set(2010, 6, 12); 
-        
-        cartao.setBandeira(null); // Inválido
-        cartao.setDataValidade(calendario.getTime());// Data inválida, pois é passada
-        cartao.setNumero("5559293778809777");
-       
-        Set<ConstraintViolation<Cartao>> constraintViolations = validator.validate(cartao);
-
-        if (logger.isLoggable(Level.INFO)) {
-            for (ConstraintViolation violation : constraintViolations) {
-                Logger.getGlobal().log(Level.INFO, "{0}.{1}: {2}", new Object[]{violation.getRootBeanClass(), violation.getPropertyPath(), violation.getMessage()});
-            }
-        }
-
-        assertEquals(2, constraintViolations.size());
-    }
+// fazendo ainda  
+//    public void atualizarCartaoValidoNativeQueryTest() {
+//        
+//        Logger.getGlobal().log(Level.INFO, "atualizarCartaoValido");
+//        
+//        TypedQuery<Usuario> query = em.createQuery("SELECT u FROM Usuario u WHERE u.cpf like :cpf", Usuario.class);
+//        query.setParameter("cpf", "787.829.223-06");
+//        Usuario usuario = query.getSingleResult();
+//        usuario.setSenha("testando1234");
+//
+//        try {
+//            em.flush();
+//            assertTrue(false);
+//        } catch (ConstraintViolationException ex) {
+//            Set<ConstraintViolation<?>> constraintViolations = ex.getConstraintViolations();
+//
+//            if (logger.isLoggable(Level.INFO)) {
+//                for (ConstraintViolation violation : constraintViolations) {
+//                    Logger.getGlobal().log(Level.INFO, "{0}.{1}: {2}", new Object[]{violation.getRootBeanClass(), violation.getPropertyPath(), violation.getMessage()});
+//                }
+//            }
+//
+//            assertEquals(1, constraintViolations.size());
+//        }
+//    }
+  
+    
+//    @Test
+//    public void criarCartaoInvalidoEmTest() {
+//        
+//        Cartao cartao = new Cartao();
+//        Calendar calendar = GregorianCalendar.getInstance();
+//        Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
+//
+//        Calendar calendario = Calendar.getInstance();
+//        calendario.set(2010, 6, 12); 
+//        
+//        cartao.setBandeira(null); // Inválido
+//        cartao.setDataValidade(calendario.getTime());// Data inválida, pois é passada
+//        cartao.setNumero("5559293778809777");
+//       
+//        Set<ConstraintViolation<Cartao>> constraintViolations = validator.validate(cartao);
+//
+//        if (logger.isLoggable(Level.INFO)) {
+//            for (ConstraintViolation violation : constraintViolations) {
+//                Logger.getGlobal().log(Level.INFO, "{0}.{1}: {2}", new Object[]{violation.getRootBeanClass(), violation.getPropertyPath(), violation.getMessage()});
+//            }
+//        }
+//
+//        assertEquals(2, constraintViolations.size());
+//    }
 
 //    /* FAIL */
 //    @Test
@@ -196,6 +223,7 @@ public class CartaoTest {
 //            assertNull(cartao.getIdCartao());
 //        }
 //    }
+    
     
 
 //    @Test
