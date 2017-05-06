@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="sistema.testes.PetTest" time="50.868" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="sistema.testes.ConsultaGeralTest" time="6.078" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_60\jre\bin"/>
@@ -14,7 +14,7 @@
     <property name="user.country" value="BR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
-    <property name="test" value="sistema.testes.PetTest"/>
+    <property name="test" value="sistema.testes.ConsultaGeralTest#deletarConsultaGeralQueryTest"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="user.dir" value="C:\Users\Allan Santos\Documents\Repos\projeto-software-corporativo\Projeto\sistemaPetShop"/>
     <property name="java.runtime.version" value="1.8.0_60-b27"/>
@@ -45,7 +45,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_60\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=sistema.testes.PetTest -Dmaven.ext.class.path=C:\Program Files\NetBeans 8.2\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 surefire:test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=sistema.testes.ConsultaGeralTest#deletarConsultaGeralQueryTest -Dmaven.ext.class.path=C:\Program Files\NetBeans 8.2\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 surefire:test"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="pt"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -62,9 +62,5 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="sistema.testes.PetTest" name="criaPetValidotest" time="10.406"/>
-  <testcase classname="sistema.testes.PetTest" name="atualizaPetValidotest" time="13.065"/>
-  <testcase classname="sistema.testes.PetTest" name="criaPetInvalidotest" time="4.697"/>
-  <testcase classname="sistema.testes.PetTest" name="deletaPetTeste" time="12.768"/>
-  <testcase classname="sistema.testes.PetTest" name="atualizaPetInvalidotest" time="9.796"/>
+  <testcase classname="sistema.testes.ConsultaGeralTest" name="deletarConsultaGeralQueryTest" time="5.969"/>
 </testsuite>
