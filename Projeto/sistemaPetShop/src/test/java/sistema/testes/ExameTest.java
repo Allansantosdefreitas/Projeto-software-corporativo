@@ -7,6 +7,8 @@ package sistema.testes;
 
 import com.sistema.model.Exame;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -170,21 +172,54 @@ public class ExameTest {
     }
 
     @Test
-    public void selectJpqlQueryTeste() {
-        
-        assertTrue(true);
+    public void deletarExameEmTest() {
+
+        Logger.getGlobal().log(Level.INFO, "deletarExameTest");
+        TypedQuery<Exame> query = em.createQuery("SELECT e FROM Exame e WHERE e.nome like :nome", Exame.class);
+        query.setParameter("nome", "Geral");
+        Exame exame = query.getSingleResult();
+
+        em.remove(exame);
+        em.flush();
+
+        exame = em.find(Exame.class, exame.getIdExame());
+        assertNull(exame);
+
     }
 
+    
+    /* 
     @Test
-    public void selectJpqlNamedQueryTeste() {
-        
-        assertTrue(true);
-    }
+    public void deletarExameQueryTest() {
 
-    @Test
-    public void selectSqlNativeQueryTeste() {
+        Logger.getGlobal().log(Level.INFO, "deletarExameTest");
+        Long id = 1L;
+        Query query = em.createQuery("DELETE FROM Exame AS e WHERE e.idExame = ?1");
+        query.setParameter(1, id);
+        query.executeUpdate();
+
+        Exame exame = em.find(Exame.class, id);
+        assertNull(exame);
         
-        assertTrue(true);
+    }
+    */
+    
+    /* OK */
+    @Test
+    public void atualizarExameQueryTest() {
+        Logger.getGlobal().log(Level.INFO, "atualizarExameQueryTest");
+        
+        Long id = 2L;
+        Query query = em.createQuery("UPDATE Exame AS e SET e.nome = ?1 WHERE e.idExame = ?2");
+        
+        query.setParameter(1, "Respiratorio");
+        query.setParameter(2, id);
+        query.executeUpdate();
+        
+        Exame exame = em.find(Exame.class, id);
+        
+        assertEquals("Respiratorio", exame.getNome());
+     
     }
 
     @Test

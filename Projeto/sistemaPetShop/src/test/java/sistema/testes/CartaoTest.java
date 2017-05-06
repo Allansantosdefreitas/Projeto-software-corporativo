@@ -307,7 +307,4 @@ public class CartaoTest {
         assertEquals(bandeira, cartao.getBandeira());
      
     }
-    
-    
-
 }

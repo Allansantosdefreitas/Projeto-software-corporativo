@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="0" name="sistema.testes.EnderecoTest" time="10.631" errors="0" skipped="0">
+<testsuite tests="5" failures="0" name="sistema.testes.FuncionarioTest" time="13.201" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_101\jre\bin"/>
@@ -14,7 +14,7 @@
     <property name="user.country" value="BR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
-    <property name="test" value="sistema.testes.EnderecoTest"/>
+    <property name="test" value="sistema.testes.FuncionarioTest"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="user.dir" value="C:\Users\Henrique\Documents\Projeto-software-corporativo\Projeto\sistemaPetShop"/>
     <property name="java.runtime.version" value="1.8.0_101-b13"/>
@@ -45,7 +45,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_101\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=sistema.testes.EnderecoTest -Dmaven.ext.class.path=C:\Program Files\NetBeans 8.1\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 surefire:test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=sistema.testes.FuncionarioTest -Dmaven.ext.class.path=C:\Program Files\NetBeans 8.1\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 surefire:test"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="pt"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -62,8 +62,9 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="sistema.testes.EnderecoTest" name="deletaEnderecoTeste" time="5.658"/>
-  <testcase classname="sistema.testes.EnderecoTest" name="criaEnderecoValidoTeste" time="1.8"/>
-  <testcase classname="sistema.testes.EnderecoTest" name="atualizarFuncionarioQueryTest" time="1.503"/>
-  <testcase classname="sistema.testes.EnderecoTest" name="selectSqlNativeNamedQueryTeste" time="1.529"/>
+  <testcase classname="sistema.testes.FuncionarioTest" name="deletaFuncionarioTeste" time="6.428"/>
+  <testcase classname="sistema.testes.FuncionarioTest" name="deletarFuncionarioEmTest" time="1.418"/>
+  <testcase classname="sistema.testes.FuncionarioTest" name="deletarFuncionarioQueryTest" time="2.203"/>
+  <testcase classname="sistema.testes.FuncionarioTest" name="atualizarFuncionarioQueryTest" time="1.701"/>
+  <testcase classname="sistema.testes.FuncionarioTest" name="criaFuncionarioValidoTeste" time="1.317"/>
 </testsuite>
