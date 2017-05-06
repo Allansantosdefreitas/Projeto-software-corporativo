@@ -28,11 +28,7 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name = "tb_exame")
 @Access(AccessType.FIELD)
 @NamedNativeQueries(
-        {
-            @NamedNativeQuery(name = "Exame.PorNome", 
-            query = "select e from Exame e where e.nome like :nome order by e.nome",
-            resultClass = Exame.class),
-            
+        {    
             @NamedNativeQuery(name = "Exame.PorTipo",
             query = "select id_exame, str_nome, str_tipo, dbl_valor from sistemapet.tb_exame where str_tipo like ? ;",
             resultClass = Exame.class)

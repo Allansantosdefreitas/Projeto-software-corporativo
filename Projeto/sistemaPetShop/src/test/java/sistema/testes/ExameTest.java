@@ -70,7 +70,7 @@ public class ExameTest {
     }
     
     @Test
-    public void criaEnderecoValidoTeste() {
+    public void criaExameValidoTeste() {
         Exame exame = new Exame();
         double valor = 70;
         
@@ -88,7 +88,7 @@ public class ExameTest {
     
     /*
     @Test
-    public void criaEnderecoInvalidoTeste() {
+    public void criaExameInvalidoTeste() {
         Exame exameInvalido = new Exame();
         double valor = 70;
         
@@ -107,7 +107,7 @@ public class ExameTest {
     
     /*
     @Test
-    public void atualizaEnderecoValidoTeste() {
+    public void atualizaExameValidoTeste() {
         Exame exameAtt = new Exame();
         
         exameAtt.setNome("Oral");
@@ -125,7 +125,7 @@ public class ExameTest {
     */
 
     /*@Test
-    public void atualizaEnderecoInvalidoTeste() {
+    public void atualizaExameInvalidoTeste() {
         Endereco enderecoAtt = new Endereco();
         Endereco endereco = new Endereco();
         Cliente cliente = new Cliente();
@@ -154,7 +154,7 @@ public class ExameTest {
     }*/
     
     @Test
-    public void deletaEnderecoTeste(){
+    public void deletaExameTeste(){
         Query query = em.createQuery("from Exame e where e.nome like :nome ", Exame.class);
         query.setParameter("nome", "Cardiovascular");
         Exame exame = (Exame) query.getSingleResult();
