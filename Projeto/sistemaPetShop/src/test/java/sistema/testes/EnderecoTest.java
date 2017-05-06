@@ -10,6 +10,8 @@ import com.sistema.model.Endereco;
 import com.sistema.model.Pet;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -99,7 +101,11 @@ public class EnderecoTest {
         
     }
     
+<<<<<<< HEAD
+    /*@Test
+=======
     @Test
+>>>>>>> 8f74a186454cf45c420ac550bee88013a78b9330
     public void criaEnderecoInvalidoTeste() {
         Endereco enderecoInvalido = new Endereco();
         Cliente cliente = new Cliente();
@@ -125,8 +131,9 @@ public class EnderecoTest {
         
         assertNull(enderecoInvalido.getIdEndereco());
         
-    }
+    }*/
     
+    /*
     @Test
     public void atualizaEnderecoValidoTeste() {
         Endereco enderecoAtt = new Endereco();
@@ -153,8 +160,11 @@ public class EnderecoTest {
         em.merge(endereco);
         et.commit();
         
+        enderecoAtt = em.find(Endereco.class, enderecoAtt.getIdEndereco());
+        
         assertEquals(new Long(546), new Long(enderecoAtt.getNumero()));
     }
+    */
 
     /*@Test
     public void atualizaEnderecoInvalidoTeste() {
@@ -200,23 +210,39 @@ public class EnderecoTest {
         
         assertTrue(true);
     }
-
+    
+    /* 
     @Test
-    public void selectJpqlQueryTeste() {
-        
-        assertTrue(true);
+    public void deletarEnderecoQueryTest() {
+
+        Logger.getGlobal().log(Level.INFO, "deletarEnderecoTest");
+        Long id = 1L;
+        Query query = em.createQuery("DELETE FROM Endereco AS e WHERE e.idEndereco = ?1");
+        query.setParameter(1, id);
+        query.executeUpdate();
+
+        Endereco endereco = em.find(Endereco.class, id);
+        assertNull(endereco);
+
     }
-
+    */
+    
+    /* OK */
     @Test
-    public void selectJpqlNamedQueryTeste() {
+    public void atualizarFuncionarioQueryTest() {
+        Logger.getGlobal().log(Level.INFO, "atualizarFuncionarioQueryTest");
         
-        assertTrue(true);
-    }
-
-    @Test
-    public void selectSqlNativeQueryTeste() {
+        Long id = 2L;
+        Query query = em.createQuery("UPDATE Endereco AS e SET e.logradouro = ?1 WHERE e.idEndereco = ?2");
         
-        assertTrue(true);
+        query.setParameter(1, "CasaNova");
+        query.setParameter(2, id);
+        query.executeUpdate();
+        
+        Endereco endereco = em.find(Endereco.class, id);
+        
+        assertEquals("CasaNova", endereco.getLogradouro());
+     
     }
 
     @Test

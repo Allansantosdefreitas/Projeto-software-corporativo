@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: sistema.testes.ExameTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.321 sec
+=======
 Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.435 sec
+>>>>>>> 8f74a186454cf45c420ac550bee88013a78b9330

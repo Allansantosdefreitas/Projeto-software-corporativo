@@ -1,6 +1,9 @@
 -------------------------------------------------------------------------------
 Test set: sistema.testes.EnderecoTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.626 sec
+=======
 Tests run: 8, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 77.153 sec <<< FAILURE!
 criaEnderecoInvalidoTeste(sistema.testes.EnderecoTest)  Time elapsed: 4.169 sec  <<< ERROR!
 javax.persistence.RollbackException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DatabaseException
@@ -103,3 +106,4 @@ Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationExce
 	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2062)
 	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:890)
 	... 65 more
+>>>>>>> 8f74a186454cf45c420ac550bee88013a78b9330

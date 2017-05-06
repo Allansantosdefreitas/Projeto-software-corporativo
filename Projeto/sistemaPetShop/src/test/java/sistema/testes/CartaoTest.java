@@ -262,6 +262,8 @@ public class CartaoTest {
         assertEquals(bandeira, cartao.getBandeira());
 
     }
+<<<<<<< HEAD
+=======
     
     
     @Test
@@ -303,4 +305,5 @@ public class CartaoTest {
     }
 
 
+>>>>>>> 8f74a186454cf45c420ac550bee88013a78b9330
 }
