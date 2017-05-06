@@ -101,7 +101,11 @@ public class EnderecoTest {
         
     }
     
+<<<<<<< HEAD
     /*@Test
+=======
+    @Test
+>>>>>>> 8f74a186454cf45c420ac550bee88013a78b9330
     public void criaEnderecoInvalidoTeste() {
         Endereco enderecoInvalido = new Endereco();
         Cliente cliente = new Cliente();

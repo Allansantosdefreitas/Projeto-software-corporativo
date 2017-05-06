@@ -17,9 +17,13 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import com.sistema.model.Cartao;
 import com.sistema.model.Cliente;
+import com.sistema.model.Endereco;
+import com.sistema.model.Pet;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,7 +33,6 @@ import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import javax.validation.Validation;
 import javax.validation.Validator;
-
 
 /**
  *
@@ -99,10 +102,10 @@ public class CartaoTest {
 
         cartao.setDataValidade(calendario.getTime());
         em.persist(cartao);
+        em.flush();
+        //et.commit();
 
-        et.commit();
-
-        cartao = em.find(Cartao.class, cartao.getIdCartao());
+        //cartao = em.find(Cartao.class, cartao.getIdCartao());
         assertNotNull(cartao.getIdCartao());
     }
 
@@ -126,9 +129,10 @@ public class CartaoTest {
         cliente = (Cliente) query.getSingleResult();
 
         em.persist(cartao);
-        et.commit();
+        em.flush();
+        //et.commit();
 
-        cartao = em.find(Cartao.class, cartao.getIdCartao());
+        //cartao = em.find(Cartao.class, cartao.getIdCartao());
         cliente = em.find(Cliente.class, cliente.getIdUsuario());
 
         assertNotNull(cartao.getIdCartao());
@@ -136,105 +140,58 @@ public class CartaoTest {
 
     }
     
+    @Test
+    public void atualizarCartaoValidoEmTest() {
+        
+        Long id = 1L;
+        Cartao cartao = em.find(Cartao.class, id);
+       
+        cartao.setBandeira("Dinners Club");
+
+        Calendar calendario = Calendar.getInstance();
+        calendario.set(2030, 6, 12);
+
+        cartao.setDataValidade(calendario.getTime());
+        cartao.setNumero("8886763778809012");
+        
+        em.merge(cartao);
+        et.commit();
+        
+        cartao = em.find(Cartao.class, id);
+        assertNotNull(cartao.getIdCartao());    
+    }
     
-// fazendo ainda  
-//    public void atualizarCartaoValidoNativeQueryTest() {
-//        
-//        Logger.getGlobal().log(Level.INFO, "atualizarCartaoValido");
-//        
-//        TypedQuery<Usuario> query = em.createQuery("SELECT u FROM Usuario u WHERE u.cpf like :cpf", Usuario.class);
-//        query.setParameter("cpf", "787.829.223-06");
-//        Usuario usuario = query.getSingleResult();
-//        usuario.setSenha("testando1234");
-//
-//        try {
-//            em.flush();
-//            assertTrue(false);
-//        } catch (ConstraintViolationException ex) {
-//            Set<ConstraintViolation<?>> constraintViolations = ex.getConstraintViolations();
-//
-//            if (logger.isLoggable(Level.INFO)) {
-//                for (ConstraintViolation violation : constraintViolations) {
-//                    Logger.getGlobal().log(Level.INFO, "{0}.{1}: {2}", new Object[]{violation.getRootBeanClass(), violation.getPropertyPath(), violation.getMessage()});
-//                }
-//            }
-//
-//            assertEquals(1, constraintViolations.size());
-//        }
-//    }
-  
     
+    
+
+    // NÃO PEGA :(
 //    @Test
 //    public void criarCartaoInvalidoEmTest() {
-//        
 //        Cartao cartao = new Cartao();
-//        Calendar calendar = GregorianCalendar.getInstance();
-//        Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
+//        Cliente cliente = new Cliente();
+//        cartao.setBandeira("Dinners Club");
 //
 //        Calendar calendario = Calendar.getInstance();
-//        calendario.set(2010, 6, 12); 
+//        calendario.set(2005, 6, 12);
+//
+//        cartao.setDataValidade(null);  // Data inválida, anterior
+//        cartao.setNumero(null); // Número cartão inválido
+//
+//        em.persist(cartao);
+//        et.commit();
 //        
-//        cartao.setBandeira(null); // Inválido
-//        cartao.setDataValidade(calendario.getTime());// Data inválida, pois é passada
-//        cartao.setNumero("5559293778809777");
-//       
-//        Set<ConstraintViolation<Cartao>> constraintViolations = validator.validate(cartao);
-//
-//        if (logger.isLoggable(Level.INFO)) {
-//            for (ConstraintViolation violation : constraintViolations) {
-//                Logger.getGlobal().log(Level.INFO, "{0}.{1}: {2}", new Object[]{violation.getRootBeanClass(), violation.getPropertyPath(), violation.getMessage()});
-//            }
-//        }
-//
-//        assertEquals(2, constraintViolations.size());
-//    }
-
-//    /* FAIL */
-//    @Test
-//    public void criarCartaoInvalidoEmTestOLD() {
-//
-//        Cartao cartao = null;
-//        Calendar calendario = null;
-//
-//        try {
-//            cartao = new Cartao();
-//            cartao.setBandeira("VISA");
-//            cartao.setNumero(null); // Invalido
-//            calendario = Calendar.getInstance();
-//            calendario.set(2015, 5, 5);
-//            cartao.setDataValidade(calendario.getTime()); // Data inválida (não é futura)
-//
-//            em.persist(cartao);
-//            et.commit();
-//
-//            assertTrue(false); // Se chegar aqui, o teste falhou
-//        } catch (ConstraintViolationException ex) {
-//            Logger.getGlobal().info(ex.getMessage());
-//
-//            Set<ConstraintViolation<?>> constraintViolations = ex.getConstraintViolations();
-//
-//            if (logger.isLoggable(Level.INFO)) {
-//                for (ConstraintViolation violation : constraintViolations) {
-//                    Logger.getGlobal().log(Level.INFO, "{0}.{1}: {2}", new Object[]{violation.getRootBeanClass(), violation.getPropertyPath(), violation.getMessage()});
-//                }
-//            }
-//
-//            assertEquals(2, constraintViolations.size());
-//            assertNull(cartao.getIdCartao());
-//        }
+//        Long id = 1L;
+//        cartao = em.find(Cartao.class, id);
+//        assertNull(cartao.getIdCartao());
 //    }
     
-    
-
+    // NÃO PEGA :(
 //    @Test
 //    public void atualizarCartaoInvalido() {
 //        
-//        Logger.getGlobal().log(Level.INFO, "atualizarCartaoInvalido");
-//        
-//        TypedQuery<Usuario> query = em.createQuery("SELECT u FROM Usuario u WHERE u.cpf like :cpf", Usuario.class);
-//        query.setParameter("cpf", "787.829.223-06");
-//        Usuario usuario = query.getSingleResult();
-//        usuario.setSenha("testando1234");
+//        Long id = 1L;
+//        Cartao cartao = em.find(Cartao.class, id);
+//        cartao.setBandeira(null); // Inválido
 //
 //        try {
 //            em.flush();
@@ -251,7 +208,7 @@ public class CartaoTest {
 //            assertEquals(1, constraintViolations.size());
 //        }
 //    }
-//
+
 
     /* OK */
     // Cartao
@@ -271,7 +228,6 @@ public class CartaoTest {
 
     }
 
-    
     /* OK */
     @Test
     public void deletarCartaoQueryTest() {
@@ -286,25 +242,68 @@ public class CartaoTest {
         assertNull(cartao);
 
     }
-    
-    
+
     /* OK */
     @Test
     public void atualizarCartaoQueryTest() {
         Logger.getGlobal().log(Level.INFO, "atualizarCartaoQueryTest");
-        
+
         Long id = 1L;
         Query query = em.createQuery("UPDATE Cartao AS c SET c.bandeira = ?1 WHERE c.idCartao = ?2");
-        
+
         String bandeira = "Master Card";
-        
+
         query.setParameter(1, bandeira);
         query.setParameter(2, id);
         query.executeUpdate();
-        
+
         Cartao cartao = em.find(Cartao.class, id);
-        
+
         assertEquals(bandeira, cartao.getBandeira());
-     
+
     }
+<<<<<<< HEAD
+=======
+    
+    
+    @Test
+    public void selectSqlNativeNamedQueryTest() {
+        TypedQuery<Cartao> query = em.createNamedQuery("Cartao.PorBandeiraSQL", Cartao.class);
+        query.setParameter(1,"Visa");
+        
+        List<Cartao> listaCartao = query.getResultList();
+
+        assertEquals(1, listaCartao.size()); // Retonra apenas 1 cartão
+        
+    }
+    
+    @Test
+    public void selectNamedQueryTest() {
+        Long id = 2L;
+        TypedQuery<Cartao> query = em.createNamedQuery("Cartao.PorId", Cartao.class);
+        
+        query.setParameter(1, id);
+        Cartao cartao = query.getSingleResult();
+        
+        assertEquals(cartao.getIdCartao(), id); // Pegou o id
+        
+    }
+    
+    @Test
+    public void selectNativeQueryTest() {
+        Long idCliente = 1L;
+        Query query = em.createNativeQuery("SELECT id_cartao, str_bandeira, date_dataValidade, str_numero, "
+                + "fk_cliente FROM tb_cartao WHERE fk_cliente = ?1", Cartao.class);
+        
+        
+        query.setParameter(1, idCliente);
+        List<Cartao> listaCartao = query.getResultList();
+
+        int cartoes_cliente_1 = 4;
+        assertEquals(listaCartao.size(), cartoes_cliente_1); 
+        
+    }
+
+
+>>>>>>> 8f74a186454cf45c420ac550bee88013a78b9330
 }

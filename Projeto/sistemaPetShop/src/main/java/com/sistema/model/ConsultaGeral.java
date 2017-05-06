@@ -15,6 +15,8 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
@@ -30,6 +32,14 @@ import javax.validation.Valid;
 @DiscriminatorValue(value = "ger")
 @PrimaryKeyJoinColumn(name = "id_consulta_geral", referencedColumnName = "id_consulta")
 @Access(AccessType.FIELD)
+@NamedQueries(
+        {
+            @NamedQuery(
+                    name = "ConsultaGeral.PorId",
+                    query = "SELECT c FROM ConsultaGeral c WHERE c.idConsulta = ?1"
+            )
+        }
+)
 public class ConsultaGeral extends Consulta implements Serializable {
 
     // Relacionamento Servico

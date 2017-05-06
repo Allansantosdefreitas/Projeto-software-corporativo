@@ -15,6 +15,8 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.NamedNativeQueries;
 import javax.persistence.NamedNativeQuery;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
@@ -28,16 +30,17 @@ import javax.validation.Valid;
 @Table(name = "tb_Veterinario")
 @DiscriminatorValue(value = "vet")
 @PrimaryKeyJoinColumn(name = "id_veterinario", referencedColumnName = "id_usuario") 
-@NamedNativeQueries(
+@NamedQueries(
         {
-            @NamedNativeQuery(name = "Veterinario.PorNome", 
-            query = "select v from Veterinario v where v.nome like :nome order by v.nome",
-            resultClass = Veterinario.class),
-            
-            @NamedNativeQuery(name = "Veterinario.PorEspecialidade",
-            query = "select id_veterinario, str_crmv, str_especialidade from sistemapet.tb_veterinario where str_especialidade like ? order by str_crmv;",
-            resultClass = Veterinario.class)
+            @NamedQuery(name = "Veterinario.PorNome", 
+            query = "from Veterinario v where v.nome like :nome order by v.nome")
         }
+)
+@NamedNativeQueries(
+    {
+        @NamedNativeQuery(name = "Veterinario.PorEspecialidade",
+        query = "select id_veterinario, str_crmv, str_especialidade from tb_veterinario where str_especialidade like ? order by str_crmv;")
+    }
 )
 public class Veterinario extends Usuario implements Serializable {
 
