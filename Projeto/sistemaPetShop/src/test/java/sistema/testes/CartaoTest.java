@@ -23,20 +23,17 @@ import java.util.GregorianCalendar;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
-import org.junit.FixMethodOrder;
-import org.junit.runners.MethodSorters;
+import javax.validation.Validation;
+import javax.validation.Validator;
+
 
 /**
  *
  * @author Usuario
- *
- * 1- Insert, Update, delete (via em) 2- Select (JPQL) query string named query
- * ex.: "checar qtde valores etc." 3- Select (SQL native query) query string
- * named query recuperar objetos Recuperar objetos e valor ex.: "checar qtde
- * valores etc." 4- Update, delete (via query)
  *
  */
 public class CartaoTest {
@@ -74,7 +71,7 @@ public class CartaoTest {
     @After
     public void tearDown() {
         try {
-            //et.commit();
+            et.commit();
         } catch (Exception ex) {
             logger.log(Level.SEVERE, ex.getMessage());
 
@@ -90,8 +87,9 @@ public class CartaoTest {
     }
 
     // OK
+    // Cartao
     @Test
-    public void criarCartaoValidoTest() {
+    public void criarCartaoValidoEmTest() {
         Cartao cartao = new Cartao();
         cartao.setBandeira("Visa Electron");
         cartao.setNumero("5559293458709012");
@@ -103,10 +101,13 @@ public class CartaoTest {
         em.persist(cartao);
 
         et.commit();
+
+        cartao = em.find(Cartao.class, cartao.getIdCartao());
         assertNotNull(cartao.getIdCartao());
     }
 
     // OK
+    // Cartao, Cliente
     @Test
     public void criarCartaoValidoQueryTest() {
 
@@ -122,55 +123,86 @@ public class CartaoTest {
 
         TypedQuery<Cliente> query = em.createQuery("FROM Cliente c WHERE c.idUsuario = :idCliente", Cliente.class);
         query.setParameter("idCliente", 1L);
-        cliente = (Cliente)query.getSingleResult();
-        
+        cliente = (Cliente) query.getSingleResult();
+
         em.persist(cartao);
-//        assertNotNull(comprador.getId());
         et.commit();
+
+        cartao = em.find(Cartao.class, cartao.getIdCartao());
+        cliente = em.find(Cliente.class, cliente.getIdUsuario());
+
         assertNotNull(cartao.getIdCartao());
         assertNotNull(cliente.getIdUsuario());
 
     }
-
-    /* FAIL */
+    
+    
     @Test
-    public void criarCartaoInvalidoTest() {
+    public void criarCartaoInvalidoEmTest() {
+        
+        Cartao cartao = new Cartao();
+        Calendar calendar = GregorianCalendar.getInstance();
+        Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
 
-        Cartao cartao = null;
-        Calendar calendario = null;
+        Calendar calendario = Calendar.getInstance();
+        calendario.set(2010, 6, 12); 
+        
+        cartao.setBandeira(null); // Inválido
+        cartao.setDataValidade(calendario.getTime());// Data inválida, pois é passada
+        cartao.setNumero("5559293778809777");
+       
+        Set<ConstraintViolation<Cartao>> constraintViolations = validator.validate(cartao);
 
-        try {
-            cartao = new Cartao();
-            cartao.setBandeira("VISA");
-            cartao.setNumero(null); // Invalido
-            calendario = Calendar.getInstance();
-            calendario.set(2015, 5, 5);
-            cartao.setDataValidade(calendario.getTime()); // Data inválida (não é futura)
-
-            em.persist(cartao);
-            et.commit();
-
-            assertTrue(false); // Se chegar aqui, o teste falhou
-        } catch (ConstraintViolationException ex) {
-            Logger.getGlobal().info(ex.getMessage());
-
-            Set<ConstraintViolation<?>> constraintViolations = ex.getConstraintViolations();
-
-            if (logger.isLoggable(Level.INFO)) {
-                for (ConstraintViolation violation : constraintViolations) {
-                    Logger.getGlobal().log(Level.INFO, "{0}.{1}: {2}", new Object[]{violation.getRootBeanClass(), violation.getPropertyPath(), violation.getMessage()});
-                }
+        if (logger.isLoggable(Level.INFO)) {
+            for (ConstraintViolation violation : constraintViolations) {
+                Logger.getGlobal().log(Level.INFO, "{0}.{1}: {2}", new Object[]{violation.getRootBeanClass(), violation.getPropertyPath(), violation.getMessage()});
             }
-
-            assertEquals(2, constraintViolations.size());
-            assertNull(cartao.getIdCartao());
         }
 
+        assertEquals(2, constraintViolations.size());
     }
 
+//    /* FAIL */
 //    @Test
-//    public void t05_atualizarCompradorInvalido() {
-//        Logger.getGlobal().log(Level.INFO, "t05_criarCompradorInvalido");
+//    public void criarCartaoInvalidoEmTestOLD() {
+//
+//        Cartao cartao = null;
+//        Calendar calendario = null;
+//
+//        try {
+//            cartao = new Cartao();
+//            cartao.setBandeira("VISA");
+//            cartao.setNumero(null); // Invalido
+//            calendario = Calendar.getInstance();
+//            calendario.set(2015, 5, 5);
+//            cartao.setDataValidade(calendario.getTime()); // Data inválida (não é futura)
+//
+//            em.persist(cartao);
+//            et.commit();
+//
+//            assertTrue(false); // Se chegar aqui, o teste falhou
+//        } catch (ConstraintViolationException ex) {
+//            Logger.getGlobal().info(ex.getMessage());
+//
+//            Set<ConstraintViolation<?>> constraintViolations = ex.getConstraintViolations();
+//
+//            if (logger.isLoggable(Level.INFO)) {
+//                for (ConstraintViolation violation : constraintViolations) {
+//                    Logger.getGlobal().log(Level.INFO, "{0}.{1}: {2}", new Object[]{violation.getRootBeanClass(), violation.getPropertyPath(), violation.getMessage()});
+//                }
+//            }
+//
+//            assertEquals(2, constraintViolations.size());
+//            assertNull(cartao.getIdCartao());
+//        }
+//    }
+    
+
+//    @Test
+//    public void atualizarCartaoInvalido() {
+//        
+//        Logger.getGlobal().log(Level.INFO, "atualizarCartaoInvalido");
+//        
 //        TypedQuery<Usuario> query = em.createQuery("SELECT u FROM Usuario u WHERE u.cpf like :cpf", Usuario.class);
 //        query.setParameter("cpf", "787.829.223-06");
 //        Usuario usuario = query.getSingleResult();
@@ -191,10 +223,12 @@ public class CartaoTest {
 //            assertEquals(1, constraintViolations.size());
 //        }
 //    }
+//
 
     /* OK */
+    // Cartao
     @Test
-    public void deletarCartaoTest() {
+    public void deletarCartaoEmTest() {
 
         Logger.getGlobal().log(Level.INFO, "deletarCartaoTest");
         TypedQuery<Cartao> query = em.createQuery("SELECT c FROM Cartao c WHERE c.numero like :numeroCartao", Cartao.class);
@@ -208,5 +242,44 @@ public class CartaoTest {
         assertNull(cartao);
 
     }
+
+    
+    /* OK */
+    @Test
+    public void deletarCartaoQueryTest() {
+
+        Logger.getGlobal().log(Level.INFO, "deletarCartaoTest");
+        Long id = 1L;
+        Query query = em.createQuery("DELETE FROM Cartao AS c WHERE c.idCartao = ?1");
+        query.setParameter(1, id);
+        query.executeUpdate();
+
+        Cartao cartao = em.find(Cartao.class, id);
+        assertNull(cartao);
+
+    }
+    
+    
+    /* OK */
+    @Test
+    public void atualizarCartaoQueryTest() {
+        Logger.getGlobal().log(Level.INFO, "atualizarCartaoQueryTest");
+        
+        Long id = 1L;
+        Query query = em.createQuery("UPDATE Cartao AS c SET c.bandeira = ?1 WHERE c.idCartao = ?2");
+        
+        String bandeira = "Master Card";
+        
+        query.setParameter(1, bandeira);
+        query.setParameter(2, id);
+        query.executeUpdate();
+        
+        Cartao cartao = em.find(Cartao.class, id);
+        
+        assertEquals(bandeira, cartao.getBandeira());
+     
+    }
+    
+    
 
 }

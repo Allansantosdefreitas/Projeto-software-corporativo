@@ -2,10 +2,15 @@
 Test set: sistema.testes.PetTest
 -------------------------------------------------------------------------------
 <<<<<<< HEAD
+Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 8.021 sec <<< FAILURE!
+criaPetValidotest(sistema.testes.PetTest)  Time elapsed: 2.342 sec  <<< FAILURE!
+=======
+<<<<<<< HEAD
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 19.881 sec
 =======
 Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 7.465 sec <<< FAILURE!
 criaPetValidotest(sistema.testes.PetTest)  Time elapsed: 1.905 sec  <<< FAILURE!
+>>>>>>> 182fe2841f8d85cb90c62ceaca46309ee5ed4e4d
 java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:86)
 	at org.junit.Assert.assertTrue(Assert.java:41)

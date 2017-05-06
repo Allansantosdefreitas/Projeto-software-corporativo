@@ -113,7 +113,7 @@ public class EnderecoTest {
         cliente.setSenha("cliente123");
 
         enderecoInvalido.setBairro("Aquele Bairro");
-        enderecoInvalido.setCep("12345678");
+        enderecoInvalido.setCep(null);//valor muito grande
         enderecoInvalido.setComplemento("Perto daquele Restaurante");
         enderecoInvalido.setLogradouro("Avenida");
         enderecoInvalido.setNumero(123);
