@@ -13,6 +13,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedNativeQueries;
+import javax.persistence.NamedNativeQuery;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.validation.Valid;
@@ -28,6 +32,29 @@ import org.hibernate.validator.constraints.NotBlank;
 @Entity
 @Table(name = "tb_cartao")
 @Access(AccessType.FIELD)
+@NamedQueries(
+        {
+            @NamedQuery(
+                    name = "Cartao.PorId",
+                    query = "SELECT c FROM Cartao c WHERE c.idCartao = ?1"
+            )
+        }
+)
+@NamedNativeQueries(
+        {
+            @NamedNativeQuery(
+                name = "Cartao.PorBandeiraSQL",
+                query = "SELECT id_cartao, str_bandeira, date_dataValidade, str_numero "
+                        + "FROM sistemapet.tb_cartao where str_bandeira like ? ;",
+                resultClass = Cartao.class),
+        
+            @NamedNativeQuery(
+                name = "Cartao.PorIdSQL",
+                query = "SELECT id_cartao, str_bandeira, date_dataValidade, str_numero, fk_cliente "
+                        + "FROM sistemapet.tb_cartao WHERE str_bandeira id_cartao = ? ;",
+                resultClass = Cartao.class),
+        }
+)
 public class Cartao implements Serializable {
 
     @Id
@@ -36,6 +63,7 @@ public class Cartao implements Serializable {
     private Long idCartao;
 
     @NotBlank
+    @NotNull
     @Column(name = "str_bandeira")
     private String bandeira;
 

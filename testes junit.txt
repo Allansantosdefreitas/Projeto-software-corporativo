@@ -17,8 +17,12 @@ Cartao:
 
 query string (native query)
 insert inv em
-update val e inv (em)
+update inv (em)
 
-
+update val (OK) 
 update via query (OK)
 delete via query (OK) 
+
+Select: 
+NamedQuery
+nativeNamedQuery
