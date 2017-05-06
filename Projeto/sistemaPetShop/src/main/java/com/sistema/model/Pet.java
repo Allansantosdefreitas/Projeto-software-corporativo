@@ -16,6 +16,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedNativeQueries;
+import javax.persistence.NamedNativeQuery;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.Valid;
@@ -29,6 +33,18 @@ import org.hibernate.validator.constraints.NotBlank;
  */
 @Entity
 @Table(name = "tb_pet")
+@NamedQueries(
+        {
+            @NamedQuery(name = "Pet.PorNome", 
+            query = "from Pet p where p.nome like :nome order by p.nome")
+        }
+)
+@NamedNativeQueries(
+    {
+        @NamedNativeQuery(name = "Pet.PorRaca",
+        query = "select * from tb_pet pet where pet.str_raca like ?")
+    }
+)
 public class Pet implements Serializable {
 
     @Id

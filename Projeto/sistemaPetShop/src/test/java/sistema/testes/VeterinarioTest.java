@@ -297,7 +297,7 @@ public class VeterinarioTest {
     }
 
     @Test /* FUNCIONA */
-    public void atualizaVeterinarioQueryTeste() {
+    public void atualizaVeterinarioEmTeste() {
         
         Query query = em.createNamedQuery("Veterinario.PorNome", Veterinario.class);
         query.setParameter("nome", "Jonathan%");
@@ -315,6 +315,21 @@ public class VeterinarioTest {
         em.flush();
         
         assertEquals(0, query.getResultList().size());
+    }
+    
+    @Test /* NÃO FUNCIONA */
+    public void atualizaVeterinarioQueryTeste() {
+
+        Query query = em.createQuery("UPDATE Veterinario vet SET vet.crmv = '64629264' WHERE vet.crmv like '54214554' ");
+
+        String crmv = "64629264";
+        
+        query.executeUpdate();
+
+        Veterinario veterinario = em.find(Veterinario.class, 3L);
+
+        assertEquals(crmv, veterinario.getCrmv());
+        
     }
 
     @Test /* NÃO FUNCIONA */

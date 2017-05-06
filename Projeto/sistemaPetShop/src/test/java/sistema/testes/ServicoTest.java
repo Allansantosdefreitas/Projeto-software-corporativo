@@ -183,9 +183,20 @@ public class ServicoTest {
         assertEquals(1, listaServicos.size());
     }
     
-    @Test /* NÃO FUNCIONA */
+    @Test /* FUNCIONA */
     public void atualizaServicoQueryTeste(){
-        
+        Long id = 3L;
+        Query query = em.createQuery("UPDATE Servico ser SET ser.valor = ?1 WHERE ser.idServico = ?2");
+
+        Double novoValor = 87.99;
+
+        query.setParameter(1, novoValor);
+        query.setParameter(2, id);
+        query.executeUpdate();
+
+        Servico servico = em.find(Servico.class, id);
+
+        assertEquals(novoValor, servico.getValor());
     }
     
     @Test /* NÃO FUNCIONA */

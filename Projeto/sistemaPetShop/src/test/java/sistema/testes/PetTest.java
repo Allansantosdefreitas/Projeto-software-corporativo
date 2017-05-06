@@ -3,14 +3,13 @@ package sistema.testes;
 import com.sistema.model.Cliente;
 import com.sistema.model.Endereco;
 import com.sistema.model.Pet;
-import java.util.Set;
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
-import javax.validation.ConstraintViolation;
-import javax.validation.ConstraintViolationException;
+import javax.persistence.TypedQuery;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -67,8 +66,7 @@ public class PetTest {
         }
     }
 
-    @Test
-    /* FUNCIONA */
+    @Test /* FUNCIONA */
     public void criaPetValidotest() {
         Endereco endereco = new Endereco();
         Cliente cliente = new Cliente();
@@ -97,178 +95,169 @@ public class PetTest {
 
         em.persist(pet);
         em.flush();
-
+        
         assertNotNull(pet.getIdPet());
 
     }
 
-    @Test
-    /* NÃO FUNCIONA */
+    @Test /* NÃO FUNCIONA */
     public void criaPetInvalidoTest() {
         Endereco endereco = new Endereco();
         Cliente cliente = new Cliente();
         Pet pet = new Pet();
 
-        try {
-            Float peso = 24f;
+        Float peso = 24f;
 
-            pet.setCliente(null); //INVÁLIDO
-            pet.setNome("Tótó");
-            pet.setPedegree(null);
-            pet.setPeso(peso);
-            pet.setRaca("Labrador");
+        pet.setCliente(cliente);
+        pet.setNome("Tótó");
+        pet.setPedegree(Boolean.TRUE);
+        pet.setPeso(peso);
+        pet.setRaca("Labrador");
 
-            cliente.setEmail("cliente2@cli.com");
-            cliente.setEndereco(endereco); //Inválido
-            cliente.setLogin("cliente_gastador2");
-            cliente.setNome("Cliente cli");
-            cliente.setSenha("cliente123");
+        cliente.setEmail("cliente2@cli.com");
+        cliente.setEndereco(endereco);
+        cliente.setLogin("cliente_gastador2");
+        cliente.setNome("Cliente cli");
+        cliente.setSenha("cliente123");
 
-            endereco.setBairro("Bairro");
-            endereco.setCep("12763818");
-            endereco.setComplemento("Perto dali");
-            endereco.setLogradouro("Avenida");
-            endereco.setNumero(222);
-            endereco.setUsuario(cliente);
+        endereco.setBairro("Bairro");
+        endereco.setCep("12763818");
+        endereco.setComplemento("Perto dali");
+        endereco.setLogradouro("Avenida");
+        endereco.setNumero(222);
+        endereco.setUsuario(cliente);
 
-            em.persist(pet);
-            em.flush();
-
-            assertTrue(false);
-        } catch (ConstraintViolationException ex) {
-//            Logger.getGlobal().info(ex.getMessage());
-
-            Set<ConstraintViolation<?>> constraintViolations = ex.getConstraintViolations();
-
-            assertEquals(1, constraintViolations.size());
-            assertNull(pet.getIdPet());
-        }
+        em.persist(pet);
+        em.flush();
+        
+        assertNotNull(pet.getIdPet());
     }
 
-    @Test
-    /* FUNCIONA */
+    @Test /* FUNCIONA */
     public void atualizaPetValidoTest() {
-        Query query = em.createNamedQuery("Servico.PorNome", Servico.class);
-        query.setParameter("nome", "Entrega de racao%");
+        Query query = em.createNamedQuery("Pet.PorNome", Pet.class);
+        query.setParameter("nome", "Mia%");
 
-        Servico servico = em.find(Servico.class, 3L);
+        Pet pet = em.find(Pet.class, 2L);
 
-        assertNotNull(servico.getIdServico());
+        assertNotNull(pet.getIdPet());
 
         em.clear();
 
-        servico.setNome("Entrega de racao em domicilio");
-        servico.setValor(300.0);
+        pet.setNome("Miava agora late");
+        pet.setRaca("Uma nova raça");
 
-        em.merge(servico);
+        em.merge(pet);
         em.flush();
         em.clear();
 
-        em.find(Servico.class, servico.getIdServico());
+        em.find(Pet.class, pet.getIdPet());
 
         assertEquals(1, query.getResultList().size());
     }
 
-    @Test
-    /* NÃO FUNCIONA */
+    @Test /* NÃO FUNCIONA */
     public void atualizaPetInvalidoTest() {
 
     }
 
-    @Test
-    /* FUNCIONA */
+    @Test /* FUNCIONA */
     public void deletaPetEmTest() {
-        Query query = em.createQuery("from Servico s where s.idServico like :id", Servico.class);
+        Query query = em.createQuery("from Pet p where p.idPet like :id", Pet.class);
         query.setParameter("id", 1);
-        Servico servico = (Servico) query.getSingleResult();
+        Pet pet = (Pet) query.getSingleResult();
 
-        em.remove(servico);
+        em.remove(pet);
         em.flush();
-        //et.commit();
 
-        servico = em.find(Servico.class, servico.getIdServico());
+        pet = em.find(Pet.class, pet.getIdPet());
 
-        assertNull(servico);
+        assertNull(pet);
     }
 
-    @Test
-    /* FUNCIONA */
+    @Test /* FUNCIONA */
     public void selectJpqlQueryTeste() {
-        String sql = "from Servico s where s.valor >= 50";
+        String sql = "from Pet p where p.peso >= 15.25";
 
-        TypedQuery<Servico> query = em.createQuery(sql, Servico.class);
+        TypedQuery<Pet> query = em.createQuery(sql, Pet.class);
 
-        List<Servico> servico = query.getResultList();
+        List<Pet> pet = query.getResultList();
 
-        for (int i = 0; i < servico.size(); i++) {
-            assertNotNull(servico.get(i).getIdServico());
+        for (int i = 0; i < pet.size(); i++) {
+            assertNotNull(pet.get(i).getIdPet());
         }
 
-        assertEquals(2, servico.size());
+        assertEquals(2, pet.size());
     }
 
-    @Test
-    /* FUNCIONA */
+    @Test /* FUNCIONA */
     public void selectJpqlNamedQueryTeste() {
-        TypedQuery<Servico> query = em.createNamedQuery("Servico.PorNome", Servico.class);
-        query.setParameter("nome", "Banho%");
+        TypedQuery<Pet> query = em.createNamedQuery("Pet.PorNome", Pet.class);
+        query.setParameter("nome", "Mia%");
 
-        List<Servico> listaServicos = query.getResultList();
+        List<Pet> listaPets = query.getResultList();
 
-        for (Servico servico1 : listaServicos) {
-            assertNotNull(servico1.getIdServico());
+        for (Pet pet : listaPets) {
+            assertNotNull(pet.getIdPet());
         }
 
-        assertEquals(2, listaServicos.size());
+        assertEquals(1, listaPets.size());
     }
 
-    @Test
-    /* NÃO FUNCIONA */
+    @Test /* FUNCIONA */
     public void selectNativeQueryTeste() {
-        String sql = "select ser.str_nome, ser.dbl_valor from tb_servico ser where ser.dbl_valor >= 40 order by ser.str_nome";
-        Query query = em.createNativeQuery(sql, Servico.class);
+        String sql = "select * from tb_pet pet where pet.fk_cliente = 1 order by pet.str_nome";
+        Query query = em.createNativeQuery(sql, Pet.class);
 
-        List<Servico> listaServicos = (List<Servico>) query.getResultList();
+        List<Pet> listaPets = (List<Pet>) query.getResultList();
 
-        for (Servico servico : listaServicos) {
-            assertNotNull(servico.getIdServico());
+        for (Pet servico : listaPets) {
+            assertNotNull(servico.getIdPet());
         }
-
-        assertEquals(3, listaServicos.size());
+        
+        assertEquals(2, listaPets.size());
     }
 
-    @Test
-    /* FUNCIONA */
+    @Test /* FUNCIONA */
     public void selectNativeNamedQueryTeste() {
         Query query;
-        query = em.createNamedQuery("Servico.PorPreco");
-        query.setParameter(1, "90");
+        query = em.createNamedQuery("Pet.PorRaca");
+        query.setParameter(1, "Dog%");
 
         List<Object[]> listaServicos = query.getResultList();
 
         assertEquals(1, listaServicos.size());
     }
+    
+    @Test /* FUNCIONA */
+    public void atualizaPetQueryTeste(){
+        Long id = 2L;
+        Query query = em.createQuery("UPDATE Pet pet SET pet.nome = ?1 WHERE pet.idPet <= ?2");
 
-    @Test
-    /* NÃO FUNCIONA */
-    public void atualizaPetQueryTeste() {
+        String novoNome = "Novo Pet";
 
-    }
-
-    @Test
-    /* NÃO FUNCIONA */
-    public void deletaPetQuerytTeste() {
-        String sql = "delete from Servico ser where ser.idServico = 3";
-        String sql2 = "delete from ConsultaGeral cong where cong.servico = 3";
-
-        Query query = em.createQuery(sql);
-        Query query2 = em.createQuery(sql2);
-
-        query2.executeUpdate();
+        query.setParameter(1, novoNome);
+        query.setParameter(2, id);
         query.executeUpdate();
 
-        Servico servico = em.find(Servico.class, 3L);
+        Pet pet = em.find(Pet.class, id);
 
+        assertEquals(novoNome, pet.getNome());
+    }
+    
+    @Test /* NÃO FUNCIONA */
+    public void deletaPetQuerytTeste(){
+        String sql = "delete from Servico ser where ser.idServico = 3";
+        String sql2 = "delete from ConsultaGeral cong where cong.servico = 3";
+        
+        Query query = em.createQuery(sql);
+        Query query2 = em.createQuery(sql2);
+        
+        query2.executeUpdate();
+        query.executeUpdate();
+        
+        Pet servico = em.find(Pet.class, 3L);
+        
         assertNull(servico);
     }
 
