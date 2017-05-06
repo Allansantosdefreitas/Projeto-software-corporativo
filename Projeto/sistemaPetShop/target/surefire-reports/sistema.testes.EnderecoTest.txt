@@ -1,6 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: sistema.testes.EnderecoTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 6, Failures: 0, Errors: 6, Skipped: 0, Time elapsed: 0.119 sec <<< FAILURE!
 atualizaEnderecoInvalidoTeste(sistema.testes.EnderecoTest)  Time elapsed: 0.02 sec  <<< ERROR!
 java.lang.RuntimeException: tb_consulta_medica
@@ -230,3 +231,6 @@ java.lang.NullPointerException
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+=======
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 18.288 sec
+>>>>>>> dd9792602f1621463aada7fa98ede740d877fc85

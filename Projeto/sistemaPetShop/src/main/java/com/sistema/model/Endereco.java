@@ -10,6 +10,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedNativeQueries;
+import javax.persistence.NamedNativeQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
@@ -22,6 +24,17 @@ import org.hibernate.validator.constraints.NotBlank;
 @Entity
 @Table(name = "tb_endereco")
 @Access(AccessType.FIELD)
+@NamedNativeQueries(
+        {
+            @NamedNativeQuery(name = "Endereco.PorBairro", 
+            query = "select e from Endereco e where e.bairro like :bairro order by e.bairro",
+            resultClass = Endereco.class),
+            
+            @NamedNativeQuery(name = "Endereco.PorLogradouro",
+            query = "select id_endereco, str_logradouro, int_numero, str_cep from sistemapet.tb_endereco where str_logradouro like ? ;",
+            resultClass = Endereco.class)
+        }
+)
 public class Endereco implements Serializable {
 
     @Id

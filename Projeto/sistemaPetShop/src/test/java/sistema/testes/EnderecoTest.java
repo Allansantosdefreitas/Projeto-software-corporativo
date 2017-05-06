@@ -14,6 +14,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -111,7 +113,7 @@ public class EnderecoTest {
         cliente.setSenha("cliente123");
 
         enderecoInvalido.setBairro("Aquele Bairro");
-        enderecoInvalido.setCep("12345678");
+        enderecoInvalido.setCep(null);//valor muito grande
         enderecoInvalido.setComplemento("Perto daquele Restaurante");
         enderecoInvalido.setLogradouro("Avenida");
         enderecoInvalido.setNumero(123);
@@ -147,16 +149,85 @@ public class EnderecoTest {
         
         enderecoAtt = endereco;
         enderecoAtt.setNumero(546);
-        em.merge(enderecoAtt);
+        em.merge(endereco);
         et.commit();
         
         assertEquals(new Long(546), new Long(enderecoAtt.getNumero()));
     }
 
-    @Test
+    /*@Test
     public void atualizaEnderecoInvalidoTeste() {
-        //assertTrue(true);
+        Endereco enderecoAtt = new Endereco();
+        Endereco endereco = new Endereco();
+        Cliente cliente = new Cliente();
+        List<Pet> listaPet = new ArrayList<>();
+
+        cliente.setListaPet(listaPet);
+        cliente.setEmail("cliente@cli.com");
+        cliente.setEndereco(endereco);
+        cliente.setLogin("Cliente");
+        cliente.setNome("Cliente cli");
+        cliente.setSenha("cliente123");
+
+        endereco.setBairro("Aquele Bairro");
+        endereco.setCep("123456789");
+        endereco.setComplemento("Perto daquele Restaurante");
+        endereco.setLogradouro("Avenida");
+        endereco.setNumero(123);
+        endereco.setUsuario(cliente);
+        
+        enderecoAtt = endereco;
+        enderecoAtt.setCep("546852741987");//Cep muito grande
+        em.merge(enderecoAtt);
+        et.commit();
+        
+        assertNotEquals(endereco.getCep(), enderecoAtt.getCep());
+    }*/
+    
+    @Test
+    public void deletaEnderecoTeste(){
+        Query query = em.createQuery("from Endereco e where e.logradouro like :logradouro ", Endereco.class);
+        query.setParameter("logradouro", "Casa3");
+        Endereco endereco = (Endereco) query.getSingleResult();
+
+        em.remove(endereco);
+        et.commit();
+
+        endereco = em.find(Endereco.class, endereco.getIdEndereco());
+
+        assertNull(endereco);
+        
+        assertTrue(true);
     }
 
+    @Test
+    public void selectJpqlQueryTeste() {
+        
+        assertTrue(true);
+    }
+
+    @Test
+    public void selectJpqlNamedQueryTeste() {
+        
+        assertTrue(true);
+    }
+
+    @Test
+    public void selectSqlNativeQueryTeste() {
+        
+        assertTrue(true);
+    }
+
+    @Test
+    public void selectSqlNativeNamedQueryTeste() {
+        TypedQuery<Endereco> query = em.createNamedQuery("Endereco.PorLogradouro", Endereco.class);
+        query.setParameter(1,"Casa3");
+        
+        List<Endereco> listaEnderecos = query.getResultList();
+
+        assertEquals(1, listaEnderecos.size());
+        
+        assertTrue(true);
+    }
 
 }
