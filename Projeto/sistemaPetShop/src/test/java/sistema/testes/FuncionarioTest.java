@@ -155,7 +155,7 @@ public class FuncionarioTest {
         Funcionario funcionario = query.getSingleResult();
 
         em.remove(funcionario);
-        et.commit();
+        em.flush();
 
         funcionario = em.find(Funcionario.class, funcionario.getIdUsuario());
         assertNull(funcionario);

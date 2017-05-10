@@ -317,7 +317,7 @@ public class VeterinarioTest {
         assertEquals(0, query.getResultList().size());
     }
     
-    @Test /* NÃO FUNCIONA */
+    @Test /* FUNCIONA */
     public void atualizaVeterinarioQueryTeste() {
 
         Query query = em.createQuery("UPDATE Veterinario vet SET vet.crmv = '64629264' WHERE vet.crmv like '54214554' ");

@@ -95,13 +95,13 @@ public class EnderecoTest {
         endereco.setUsuario(cliente);
 
         em.persist(endereco);
-        et.commit();
+        em.flush();
         
         assertNotNull(endereco.getIdEndereco());
         
     }
     
-<<<<<<< HEAD
+/*<<<<<<< HEAD*/
     /*@Test
 =======
     @Test
@@ -202,7 +202,7 @@ public class EnderecoTest {
         Endereco endereco = (Endereco) query.getSingleResult();
 
         em.remove(endereco);
-        et.commit();
+        em.flush();
 
         endereco = em.find(Endereco.class, endereco.getIdEndereco());
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="sistema.testes.CartaoTest" time="7.144" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="sistema.testes.CartaoTest" time="13.985" errors="1" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_60\jre\bin"/>
-    <property name="java.vm.version" value="25.60-b23"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_65\jre\bin"/>
+    <property name="java.vm.version" value="25.65-b01"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=";"/>
@@ -14,53 +14,178 @@
     <property name="user.country" value="BR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
-    <property name="test" value="sistema.testes.CartaoTest#atualizarCartaoValidoEmTest"/>
+    <property name="test" value="sistema.testes.CartaoTest#criarCartaoInvalidoEmTest"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\Allan Santos\Documents\Repos\projeto-software-corporativo\Projeto\sistemaPetShop"/>
-    <property name="java.runtime.version" value="1.8.0_60-b27"/>
+    <property name="user.dir" value="C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\sistemaPetShop"/>
+    <property name="java.runtime.version" value="1.8.0_65-b17"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_60\jre\lib\endorsed"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_65\jre\lib\endorsed"/>
     <property name="os.arch" value="amd64"/>
-    <property name="java.io.tmpdir" value="C:\Users\ALLANS~1\AppData\Local\Temp\"/>
+    <property name="java.io.tmpdir" value="C:\Users\Usuario\AppData\Local\Temp\"/>
     <property name="line.separator" value="
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
-    <property name="os.name" value="Windows 10"/>
-    <property name="maven.ext.class.path" value="C:\Program Files\NetBeans 8.2\java\maven-nblib\netbeans-eventspy.jar"/>
-    <property name="classworlds.conf" value="C:\Program Files\NetBeans 8.2\java\maven\bin\m2.conf"/>
+    <property name="os.name" value="Windows 8.1"/>
+    <property name="maven.ext.class.path" value="C:\Program Files\NetBeans 8.1\java\maven-nblib\netbeans-eventspy.jar"/>
+    <property name="classworlds.conf" value="C:\Program Files\NetBeans 8.1\java\maven\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_60\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;c:\Program Files (x86)\Intel\iCLS Client\;c:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_60\bin;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\nodejs\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\mingw-w64\x86_64-6.2.0-win32-seh-rt_v5-rev1\mingw64\bin;C:\TDM-GCC-64\bin;C:\Program Files\TortoiseHg\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files (x86)\Skype\Phone\;C:\Program Files (x86)\BaseX\bin;C:\Program Files\nodejs\;C:\Users\Allan Santos\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\Allan Santos\AppData\Local\Programs\MiKTeX 2.9\miktex\bin\x64\;C:\Users\Allan Santos\AppData\Roaming\npm;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_65\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Live\Shared;C:\cygwin64\bin;C:\MinGW\bin;C:\MinGW\msys\1.0\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 &amp; MySQL Utilities 1.5\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 &amp; MySQL Utilities 1.5\Doctrine extensions for PHP\;C:\Program Files (x86)\BaseX\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\HashiCorp\Vagrant\bin;C:\Program Files\TortoiseHg\;C:\Program Files\MiKTeX 2.9\miktex\bin\x64\;C:\Program Files (x86)\Skype\Phone\;c:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;c:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Users\Usuario\AppData\Roaming\npm;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="10.0"/>
-    <property name="user.home" value="C:\Users\Allan Santos"/>
+    <property name="os.version" value="6.3"/>
+    <property name="jpda.listen" value="true"/>
+    <property name="jpda.address" value="49922"/>
+    <property name="user.home" value="C:\Users\Usuario"/>
     <property name="user.timezone" value="America/Sao_Paulo"/>
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
     <property name="java.specification.version" value="1.8"/>
     <property name="file.encoding" value="UTF-8"/>
-    <property name="user.name" value="Allan Santos"/>
-    <property name="java.class.path" value="C:\Program Files\NetBeans 8.2\java\maven\boot\plexus-classworlds-2.4.jar"/>
+    <property name="user.name" value="Usuario"/>
+    <property name="java.class.path" value="C:\Program Files\NetBeans 8.1\java\maven\boot\plexus-classworlds-2.4.jar"/>
+    <property name="maven.surefire.debug" value="-Xdebug -Xrunjdwp:transport=dt_socket,server=n,address=49922"/>
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_60\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=sistema.testes.CartaoTest#atualizarCartaoValidoEmTest -Dmaven.ext.class.path=C:\Program Files\NetBeans 8.2\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 surefire:test"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_65\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=sistema.testes.CartaoTest#criarCartaoInvalidoEmTest -DforkMode=once -Dmaven.surefire.debug=-Xdebug -Xrunjdwp:transport=dt_socket,server=n,address=49922 -Djpda.listen=true -Djpda.address=49922 -Dmaven.ext.class.path=C:\Program Files\NetBeans 8.1\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 surefire:test"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="pt"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
     <property name="java.vm.info" value="mixed mode"/>
-    <property name="java.version" value="1.8.0_60"/>
-    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_60\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
-    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_60\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_60\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_60\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_60\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_60\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_60\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_60\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_60\jre\classes"/>
+    <property name="java.version" value="1.8.0_65"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_65\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_65\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_65\jre\classes"/>
     <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="maven.home" value="C:\Program Files\NetBeans 8.2\java\maven"/>
+    <property name="maven.home" value="C:\Program Files\NetBeans 8.1\java\maven"/>
     <property name="file.separator" value="\"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="forkMode" value="once"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="sistema.testes.CartaoTest" name="atualizarCartaoValidoEmTest" time="7.066"/>
+  <testcase classname="sistema.testes.CartaoTest" name="criarCartaoInvalidoEmTest" time="13.766">
+    <error message="Unable to instantiate Configuration." type="javax.validation.ValidationException">javax.validation.ValidationException: Unable to instantiate Configuration.
+	at javax.validation.Validation$GenericBootstrapImpl.configure(Validation.java:279)
+	at javax.validation.Validation.buildDefaultValidatorFactory(Validation.java:110)
+	at com.sistema.model.Cartao.validar(Cartao.java:101)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.eclipse.persistence.internal.security.PrivilegedAccessHelper.invokeMethod(PrivilegedAccessHelper.java:409)
+	at org.eclipse.persistence.internal.jpa.metadata.listeners.EntityListener.invokeMethod(EntityListener.java:326)
+	at org.eclipse.persistence.internal.jpa.metadata.listeners.EntityClassListener.invokeMethod(EntityClassListener.java:75)
+	at org.eclipse.persistence.internal.jpa.metadata.listeners.EntityListener.prePersist(EntityListener.java:449)
+	at org.eclipse.persistence.descriptors.DescriptorEventManager.notifyListener(DescriptorEventManager.java:748)
+	at org.eclipse.persistence.descriptors.DescriptorEventManager.notifyEJB30Listeners(DescriptorEventManager.java:684)
+	at org.eclipse.persistence.descriptors.DescriptorEventManager.executeEvent(DescriptorEventManager.java:229)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.registerNewObjectClone(UnitOfWorkImpl.java:4316)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.registerNotRegisteredNewObjectForPersist(UnitOfWorkImpl.java:4293)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.registerNotRegisteredNewObjectForPersist(RepeatableWriteUnitOfWork.java:518)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.registerNewObjectForPersist(UnitOfWorkImpl.java:4235)
+	at org.eclipse.persistence.internal.jpa.EntityManagerImpl.persist(EntityManagerImpl.java:496)
+	at sistema.testes.CartaoTest.criarCartaoInvalidoEmTest(CartaoTest.java:186)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:45)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+Caused by: javax.validation.ValidationException: HV000183: Unable to load &apos;javax.el.ExpressionFactory&apos;. Check that you have the EL dependencies on the classpath
+	at org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator.&lt;init&gt;(ResourceBundleMessageInterpolator.java:172)
+	at org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator.&lt;init&gt;(ResourceBundleMessageInterpolator.java:118)
+	at org.hibernate.validator.internal.engine.ConfigurationImpl.&lt;init&gt;(ConfigurationImpl.java:110)
+	at org.hibernate.validator.internal.engine.ConfigurationImpl.&lt;init&gt;(ConfigurationImpl.java:86)
+	at org.hibernate.validator.HibernateValidator.createGenericConfiguration(HibernateValidator.java:41)
+	at javax.validation.Validation$GenericBootstrapImpl.configure(Validation.java:276)
+	... 52 more
+</error>
+    <system-out>[EL Config]: metadata: 2017-05-06 11:10:37.324--ServerSession(739973450)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to one mapping element [field endereco] is being defaulted to: class com.sistema.model.Endereco.
+[EL Config]: metadata: 2017-05-06 11:10:37.355--ServerSession(739973450)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field listaConsultaGeral] is being defaulted to: class com.sistema.model.ConsultaGeral.
+[EL Config]: metadata: 2017-05-06 11:10:37.355--ServerSession(739973450)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field exame] is being defaulted to: class com.sistema.model.Exame.
+[EL Config]: metadata: 2017-05-06 11:10:37.355--ServerSession(739973450)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field veterinario] is being defaulted to: class com.sistema.model.Veterinario.
+[EL Config]: metadata: 2017-05-06 11:10:37.355--ServerSession(739973450)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field pet] is being defaulted to: class com.sistema.model.Pet.
+[EL Config]: metadata: 2017-05-06 11:10:37.355--ServerSession(739973450)--Thread(Thread[main,5,main])--The access type for the persistent class [class com.sistema.model.Veterinario] is set to [FIELD].
+[EL Config]: metadata: 2017-05-06 11:10:37.355--ServerSession(739973450)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field ListaConsultaMedica] is being defaulted to: class com.sistema.model.ConsultaMedica.
+[EL Config]: metadata: 2017-05-06 11:10:37.355--ServerSession(739973450)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field cliente] is being defaulted to: class com.sistema.model.Cliente.
+[EL Config]: metadata: 2017-05-06 11:10:37.355--ServerSession(739973450)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field listaConsultaGeral] is being defaulted to: class com.sistema.model.ConsultaGeral.
+[EL Config]: metadata: 2017-05-06 11:10:37.355--ServerSession(739973450)--Thread(Thread[main,5,main])--The access type for the persistent class [class com.sistema.model.Pet] is set to [FIELD].
+[EL Config]: metadata: 2017-05-06 11:10:37.371--ServerSession(739973450)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field cliente] is being defaulted to: class com.sistema.model.Cliente.
+[EL Config]: metadata: 2017-05-06 11:10:37.371--ServerSession(739973450)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field ListaConsultaMedica] is being defaulted to: class com.sistema.model.ConsultaMedica.
+[EL Config]: metadata: 2017-05-06 11:10:37.371--ServerSession(739973450)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field funcionario] is being defaulted to: class com.sistema.model.Funcionario.
+[EL Config]: metadata: 2017-05-06 11:10:37.371--ServerSession(739973450)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field servico] is being defaulted to: class com.sistema.model.Servico.
+[EL Config]: metadata: 2017-05-06 11:10:37.371--ServerSession(739973450)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field listaConsultaMedica] is being defaulted to: class com.sistema.model.ConsultaMedica.
+[EL Config]: metadata: 2017-05-06 11:10:37.371--ServerSession(739973450)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field cartao] is being defaulted to: class com.sistema.model.Cartao.
+[EL Config]: metadata: 2017-05-06 11:10:37.371--ServerSession(739973450)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field listaPet] is being defaulted to: class com.sistema.model.Pet.
+[EL Config]: metadata: 2017-05-06 11:10:37.371--ServerSession(739973450)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to one mapping element [field usuario] is being defaulted to: class com.sistema.model.Usuario.
+[EL Config]: metadata: 2017-05-06 11:10:37.371--ServerSession(739973450)--Thread(Thread[main,5,main])--The alias name for the entity class [class com.sistema.model.Consulta] is being defaulted to: Consulta.
+[EL Config]: metadata: 2017-05-06 11:10:37.433--ServerSession(739973450)--Thread(Thread[main,5,main])--The alias name for the entity class [class com.sistema.model.Funcionario] is being defaulted to: Funcionario.
+[EL Config]: metadata: 2017-05-06 11:10:37.433--ServerSession(739973450)--Thread(Thread[main,5,main])--The alias name for the entity class [class com.sistema.model.Usuario] is being defaulted to: Usuario.
+[EL Config]: metadata: 2017-05-06 11:10:37.433--ServerSession(739973450)--Thread(Thread[main,5,main])--The alias name for the entity class [class com.sistema.model.ConsultaMedica] is being defaulted to: ConsultaMedica.
+[EL Config]: metadata: 2017-05-06 11:10:37.433--ServerSession(739973450)--Thread(Thread[main,5,main])--The alias name for the entity class [class com.sistema.model.Veterinario] is being defaulted to: Veterinario.
+[EL Config]: metadata: 2017-05-06 11:10:37.433--ServerSession(739973450)--Thread(Thread[main,5,main])--The alias name for the entity class [class com.sistema.model.Cartao] is being defaulted to: Cartao.
+[EL Config]: metadata: 2017-05-06 11:10:37.433--ServerSession(739973450)--Thread(Thread[main,5,main])--The alias name for the entity class [class com.sistema.model.Servico] is being defaulted to: Servico.
+[EL Config]: metadata: 2017-05-06 11:10:37.433--ServerSession(739973450)--Thread(Thread[main,5,main])--The alias name for the entity class [class com.sistema.model.Pet] is being defaulted to: Pet.
+[EL Config]: metadata: 2017-05-06 11:10:37.433--ServerSession(739973450)--Thread(Thread[main,5,main])--The alias name for the entity class [class com.sistema.model.ConsultaGeral] is being defaulted to: ConsultaGeral.
+[EL Config]: metadata: 2017-05-06 11:10:37.433--ServerSession(739973450)--Thread(Thread[main,5,main])--The alias name for the entity class [class com.sistema.model.Exame] is being defaulted to: Exame.
+[EL Config]: metadata: 2017-05-06 11:10:37.433--ServerSession(739973450)--Thread(Thread[main,5,main])--The alias name for the entity class [class com.sistema.model.Cliente] is being defaulted to: Cliente.
+[EL Config]: metadata: 2017-05-06 11:10:37.449--ServerSession(739973450)--Thread(Thread[main,5,main])--The alias name for the entity class [class com.sistema.model.Endereco] is being defaulted to: Endereco.
+[EL Info]: 2017-05-06 11:10:43.855--ServerSession(739973450)--Thread(Thread[main,5,main])--EclipseLink, version: Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd
+[EL Fine]: connection: 2017-05-06 11:10:43.918--Thread(Thread[main,5,main])--Detected database platform: org.eclipse.persistence.platform.database.MySQLPlatform
+[EL Config]: connection: 2017-05-06 11:10:43.933--ServerSession(739973450)--Connection(1528574692)--Thread(Thread[main,5,main])--connecting(DatabaseLogin(
+	platform=&gt;MySQLPlatform
+	user name=&gt; &quot;root&quot;
+	datasource URL=&gt; &quot;jdbc:mysql://localhost:3306/sistemapet?zeroDateTimeBehavior=convertToNull&quot;
+))
+[EL Config]: connection: 2017-05-06 11:10:43.949--ServerSession(739973450)--Connection(356347252)--Thread(Thread[main,5,main])--Connected: jdbc:mysql://localhost:3306/sistemapet?zeroDateTimeBehavior=convertToNull
+	User: root@localhost
+	Database: MySQL  Version: 5.7.10-log
+	Driver: MySQL Connector Java  Version: mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )
+[EL Warning]: metadata: 2017-05-06 11:10:43.965--ServerSession(739973450)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [endereco] for the entity class [class com.sistema.model.Usuario] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2017-05-06 11:10:43.996--ServerSession(739973450)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [funcionario] for the entity class [class com.sistema.model.ConsultaGeral] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2017-05-06 11:10:43.996--ServerSession(739973450)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [servico] for the entity class [class com.sistema.model.ConsultaGeral] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2017-05-06 11:10:43.996--ServerSession(739973450)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [usuario] for the entity class [class com.sistema.model.Endereco] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2017-05-06 11:10:43.996--ServerSession(739973450)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [cliente] for the entity class [class com.sistema.model.Cartao] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2017-05-06 11:10:43.996--ServerSession(739973450)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [exame] for the entity class [class com.sistema.model.ConsultaMedica] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2017-05-06 11:10:43.996--ServerSession(739973450)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [veterinario] for the entity class [class com.sistema.model.ConsultaMedica] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2017-05-06 11:10:43.996--ServerSession(739973450)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [pet] for the entity class [class com.sistema.model.ConsultaMedica] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2017-05-06 11:10:43.996--ServerSession(739973450)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [cliente] for the entity class [class com.sistema.model.Pet] since weaving was not enabled or did not occur.
+[EL Info]: connection: 2017-05-06 11:10:44.137--ServerSession(739973450)--Thread(Thread[main,5,main])--file:/C:/Users/Usuario/Documents/Projetos_Github/SourceTree_Projetos/DSC_Allan/Projeto/sistemaPetShop/target/classes/_sistemapetshopPU login successful
+</system-out>
+    <system-err>mai 06, 2017 11:10:42 AM org.hibernate.validator.internal.util.Version &lt;clinit&gt;
+INFO: HV000001: Hibernate Validator 5.1.3.Final
+mai 06, 2017 11:10:49 AM sistema.testes.CartaoTest tearDown
+GRAVE: Transaction rolled back because transaction was set to RollbackOnly.
+</system-err>
+  </testcase>
 </testsuite>

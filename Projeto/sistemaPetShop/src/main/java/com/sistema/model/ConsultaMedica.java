@@ -15,6 +15,10 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedNativeQueries;
+import javax.persistence.NamedNativeQuery;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.validation.Valid;
@@ -31,6 +35,18 @@ import org.hibernate.validator.constraints.NotBlank;
 @DiscriminatorValue(value = "med")
 @PrimaryKeyJoinColumn(name = "id_consulta_medica", referencedColumnName = "id_consulta" )
 @Access(AccessType.FIELD)
+@NamedQueries(
+        {
+            @NamedQuery(name = "ConsultaMedica.PorDiagnostico", 
+            query = "from ConsultaMedica conm where conm.diagnostico like :nome order by conm.diagnostico")
+        }
+)
+@NamedNativeQueries(
+    {
+        @NamedNativeQuery(name = "ConsultaMedica.PorDiagnosticoNamed",
+        query = "select * from tb_consulta_medica where str_diagnostico like ?")
+    }
+)
 public class ConsultaMedica extends Consulta implements Serializable{
     
     @NotBlank

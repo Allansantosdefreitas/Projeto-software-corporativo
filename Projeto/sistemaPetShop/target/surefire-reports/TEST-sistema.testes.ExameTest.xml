@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<<<<<<< HEAD
-<testsuite tests="5" failures="0" name="sistema.testes.ExameTest" time="11.327" errors="0" skipped="0">
+<testsuite tests="10" failures="0" name="sistema.testes.ExameTest" time="4.303" errors="10" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_101\jre\bin"/>
-    <property name="java.vm.version" value="25.101-b13"/>
-=======
-<testsuite tests="7" failures="0" name="sistema.testes.ExameTest" time="13.435" errors="0" skipped="0">
-  <properties>
-    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_60\jre\bin"/>
-    <property name="java.vm.version" value="25.60-b23"/>
->>>>>>> 8f74a186454cf45c420ac550bee88013a78b9330
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_65\jre\bin"/>
+    <property name="java.vm.version" value="25.65-b01"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=";"/>
@@ -22,86 +14,46 @@
     <property name="user.country" value="BR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
-<<<<<<< HEAD
-    <property name="test" value="sistema.testes.ExameTest"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\Henrique\Documents\Projeto-software-corporativo\Projeto\sistemaPetShop"/>
-    <property name="java.runtime.version" value="1.8.0_101-b13"/>
+    <property name="user.dir" value="C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\sistemaPetShop"/>
+    <property name="java.runtime.version" value="1.8.0_65-b17"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_101\jre\lib\endorsed"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_65\jre\lib\endorsed"/>
     <property name="os.arch" value="amd64"/>
-    <property name="java.io.tmpdir" value="C:\Users\Henrique\AppData\Local\Temp\"/>
-=======
-    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\Allan Santos\Documents\Repos\projeto-software-corporativo\Projeto\sistemaPetShop"/>
-    <property name="java.runtime.version" value="1.8.0_60-b27"/>
-    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_60\jre\lib\endorsed"/>
-    <property name="os.arch" value="amd64"/>
-    <property name="java.io.tmpdir" value="C:\Users\ALLANS~1\AppData\Local\Temp\"/>
->>>>>>> 8f74a186454cf45c420ac550bee88013a78b9330
+    <property name="java.io.tmpdir" value="C:\Users\Usuario\AppData\Local\Temp\"/>
     <property name="line.separator" value="
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
-    <property name="os.name" value="Windows 10"/>
-<<<<<<< HEAD
+    <property name="os.name" value="Windows 8.1"/>
     <property name="maven.ext.class.path" value="C:\Program Files\NetBeans 8.1\java\maven-nblib\netbeans-eventspy.jar"/>
     <property name="classworlds.conf" value="C:\Program Files\NetBeans 8.1\java\maven\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_101\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 &amp; MySQL Utilities 1.5\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 &amp; MySQL Utilities 1.5\Doctrine extensions for PHP\;C:\WINDOWS\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Microsoft Emulator Manager\1.0\;C:\Program Files (x86)\nodejs\;C:\Program Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Skype\Phone\;C:\Users\Henrique\AppData\Roaming\npm;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;;."/>
-=======
-    <property name="maven.ext.class.path" value="C:\Program Files\NetBeans 8.2\java\maven-nblib\netbeans-eventspy.jar"/>
-    <property name="classworlds.conf" value="C:\Program Files\NetBeans 8.2\java\maven\bin\m2.conf"/>
-    <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_60\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;c:\Program Files (x86)\Intel\iCLS Client\;c:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_60\bin;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\nodejs\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\mingw-w64\x86_64-6.2.0-win32-seh-rt_v5-rev1\mingw64\bin;C:\TDM-GCC-64\bin;C:\Program Files\TortoiseHg\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files (x86)\Skype\Phone\;C:\Program Files (x86)\BaseX\bin;C:\Program Files\nodejs\;C:\Users\Allan Santos\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\Allan Santos\AppData\Local\Programs\MiKTeX 2.9\miktex\bin\x64\;C:\Users\Allan Santos\AppData\Roaming\npm;."/>
->>>>>>> 8f74a186454cf45c420ac550bee88013a78b9330
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_65\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Live\Shared;C:\cygwin64\bin;C:\MinGW\bin;C:\MinGW\msys\1.0\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 &amp; MySQL Utilities 1.5\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 &amp; MySQL Utilities 1.5\Doctrine extensions for PHP\;C:\Program Files (x86)\BaseX\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\HashiCorp\Vagrant\bin;C:\Program Files\TortoiseHg\;C:\Program Files\MiKTeX 2.9\miktex\bin\x64\;C:\Program Files (x86)\Skype\Phone\;c:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;c:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Users\Usuario\AppData\Roaming\npm;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="10.0"/>
-<<<<<<< HEAD
-    <property name="user.home" value="C:\Users\Henrique"/>
-    <property name="user.timezone" value="GMT-03:00"/>
-    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
-    <property name="java.specification.version" value="1.8"/>
-    <property name="file.encoding" value="UTF-8"/>
-    <property name="user.name" value="Henrique"/>
-    <property name="java.class.path" value="C:\Program Files\NetBeans 8.1\java\maven\boot\plexus-classworlds-2.4.jar"/>
-    <property name="java.vm.specification.version" value="1.8"/>
-    <property name="sun.arch.data.model" value="64"/>
-    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_101\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=sistema.testes.ExameTest -Dmaven.ext.class.path=C:\Program Files\NetBeans 8.1\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 surefire:test"/>
-=======
-    <property name="user.home" value="C:\Users\Allan Santos"/>
+    <property name="os.version" value="6.3"/>
+    <property name="user.home" value="C:\Users\Usuario"/>
     <property name="user.timezone" value="America/Sao_Paulo"/>
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
     <property name="java.specification.version" value="1.8"/>
     <property name="file.encoding" value="UTF-8"/>
-    <property name="user.name" value="Allan Santos"/>
-    <property name="java.class.path" value="C:\Program Files\NetBeans 8.2\java\maven\boot\plexus-classworlds-2.4.jar"/>
+    <property name="user.name" value="Usuario"/>
+    <property name="java.class.path" value="C:\Program Files\NetBeans 8.1\java\maven\boot\plexus-classworlds-2.4.jar"/>
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_60\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files\NetBeans 8.2\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 install"/>
->>>>>>> 8f74a186454cf45c420ac550bee88013a78b9330
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_65\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files\NetBeans 8.1\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 install"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="pt"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
     <property name="java.vm.info" value="mixed mode"/>
-<<<<<<< HEAD
-    <property name="java.version" value="1.8.0_101"/>
-    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_101\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
-    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_101\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_101\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_101\jre\classes"/>
+    <property name="java.version" value="1.8.0_65"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_65\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_65\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_65\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_65\jre\classes"/>
     <property name="java.vendor" value="Oracle Corporation"/>
     <property name="maven.home" value="C:\Program Files\NetBeans 8.1\java\maven"/>
-=======
-    <property name="java.version" value="1.8.0_60"/>
-    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_60\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
-    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_60\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_60\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_60\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_60\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_60\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_60\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_60\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_60\jre\classes"/>
-    <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="maven.home" value="C:\Program Files\NetBeans 8.2\java\maven"/>
->>>>>>> 8f74a186454cf45c420ac550bee88013a78b9330
     <property name="file.separator" value="\"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -109,19 +61,501 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-<<<<<<< HEAD
-  <testcase classname="sistema.testes.ExameTest" name="criaExameValidoTeste" time="4.533"/>
-  <testcase classname="sistema.testes.ExameTest" name="deletarExameEmTest" time="1.68"/>
-  <testcase classname="sistema.testes.ExameTest" name="deletaExameTeste" time="2.486"/>
-  <testcase classname="sistema.testes.ExameTest" name="atualizarExameQueryTest" time="1.294"/>
-  <testcase classname="sistema.testes.ExameTest" name="selectSqlNativeNamedQueryTeste" time="1.207"/>
-=======
-  <testcase classname="sistema.testes.ExameTest" name="deletaEnderecoTeste" time="2.349"/>
-  <testcase classname="sistema.testes.ExameTest" name="criaEnderecoValidoTeste" time="1.33"/>
-  <testcase classname="sistema.testes.ExameTest" name="atualizaEnderecoValidoTeste" time="1.718"/>
-  <testcase classname="sistema.testes.ExameTest" name="selectSqlNativeQueryTeste" time="2.963"/>
-  <testcase classname="sistema.testes.ExameTest" name="selectJpqlQueryTeste" time="1.761"/>
-  <testcase classname="sistema.testes.ExameTest" name="selectSqlNativeNamedQueryTeste" time="1.935"/>
-  <testcase classname="sistema.testes.ExameTest" name="selectJpqlNamedQueryTeste" time="1.379"/>
->>>>>>> 8f74a186454cf45c420ac550bee88013a78b9330
+  <testcase classname="sistema.testes.ExameTest" name="criaExameValidoTeste" time="0.738">
+    <error message="Exception processing table name=&apos;tb_usuario&apos;" type="java.lang.RuntimeException">java.lang.RuntimeException: Exception processing table name=&apos;tb_usuario&apos;
+	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:45)
+	at sistema.testes.ExameTest.setUp(ExameTest.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+Caused by: org.dbunit.DatabaseUnitException: Exception processing table name=&apos;tb_usuario&apos;
+	at org.dbunit.operation.AbstractBatchOperation.execute(AbstractBatchOperation.java:240)
+	at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79)
+	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:42)
+	... 33 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`sistemapet`.`tb_usuario`, CONSTRAINT `FK_tb_usuario_fk_endereco` FOREIGN KEY (`fk_endereco`) REFERENCES `tb_endereco` (`id_endereco`))
+	at sun.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.Util.getInstance(Util.java:360)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:971)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3887)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3823)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2435)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2582)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2530)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1907)
+	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1199)
+	at org.dbunit.database.statement.SimplePreparedStatement.addBatch(SimplePreparedStatement.java:80)
+	at org.dbunit.database.statement.AutomaticPreparedBatchStatement.addBatch(AutomaticPreparedBatchStatement.java:70)
+	at org.dbunit.operation.AbstractBatchOperation.execute(AbstractBatchOperation.java:224)
+	... 35 more
+</error>
+    <system-out>---------------------- ERROR: Exception processing table name=&apos;tb_usuario&apos;
+ERROR: null
+</system-out>
+  </testcase>
+  <testcase classname="sistema.testes.ExameTest" name="criaExameValidoTeste" time="0.738">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at sistema.testes.ExameTest.tearDown(ExameTest.java:75)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+</error>
+  </testcase>
+  <testcase classname="sistema.testes.ExameTest" name="deletarExameEmTest" time="1.295">
+    <error message="Exception processing table name=&apos;tb_usuario&apos;" type="java.lang.RuntimeException">java.lang.RuntimeException: Exception processing table name=&apos;tb_usuario&apos;
+	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:45)
+	at sistema.testes.ExameTest.setUp(ExameTest.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+Caused by: org.dbunit.DatabaseUnitException: Exception processing table name=&apos;tb_usuario&apos;
+	at org.dbunit.operation.AbstractBatchOperation.execute(AbstractBatchOperation.java:240)
+	at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79)
+	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:42)
+	... 33 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`sistemapet`.`tb_usuario`, CONSTRAINT `FK_tb_usuario_fk_endereco` FOREIGN KEY (`fk_endereco`) REFERENCES `tb_endereco` (`id_endereco`))
+	at sun.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.Util.getInstance(Util.java:360)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:971)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3887)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3823)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2435)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2582)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2530)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1907)
+	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1199)
+	at org.dbunit.database.statement.SimplePreparedStatement.addBatch(SimplePreparedStatement.java:80)
+	at org.dbunit.database.statement.AutomaticPreparedBatchStatement.addBatch(AutomaticPreparedBatchStatement.java:70)
+	at org.dbunit.operation.AbstractBatchOperation.execute(AbstractBatchOperation.java:224)
+	... 35 more
+</error>
+    <system-out>---------------------- ERROR: Exception processing table name=&apos;tb_usuario&apos;
+ERROR: null
+</system-out>
+  </testcase>
+  <testcase classname="sistema.testes.ExameTest" name="deletarExameEmTest" time="1.296">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at sistema.testes.ExameTest.tearDown(ExameTest.java:75)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+</error>
+  </testcase>
+  <testcase classname="sistema.testes.ExameTest" name="deletaExameTeste" time="0.658">
+    <error message="Exception processing table name=&apos;tb_endereco&apos;" type="java.lang.RuntimeException">java.lang.RuntimeException: Exception processing table name=&apos;tb_endereco&apos;
+	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:45)
+	at sistema.testes.ExameTest.setUp(ExameTest.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+Caused by: org.dbunit.DatabaseUnitException: Exception processing table name=&apos;tb_endereco&apos;
+	at org.dbunit.operation.AbstractBatchOperation.execute(AbstractBatchOperation.java:240)
+	at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79)
+	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:42)
+	... 33 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry &apos;1&apos; for key &apos;PRIMARY&apos;
+	at sun.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.Util.getInstance(Util.java:360)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:971)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3887)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3823)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2435)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2582)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2530)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1907)
+	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1199)
+	at org.dbunit.database.statement.SimplePreparedStatement.addBatch(SimplePreparedStatement.java:80)
+	at org.dbunit.database.statement.AutomaticPreparedBatchStatement.addBatch(AutomaticPreparedBatchStatement.java:70)
+	at org.dbunit.operation.AbstractBatchOperation.execute(AbstractBatchOperation.java:224)
+	... 35 more
+</error>
+    <system-out>---------------------- ERROR: Exception processing table name=&apos;tb_endereco&apos;
+ERROR: null
+</system-out>
+  </testcase>
+  <testcase classname="sistema.testes.ExameTest" name="deletaExameTeste" time="0.658">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at sistema.testes.ExameTest.tearDown(ExameTest.java:75)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+</error>
+  </testcase>
+  <testcase classname="sistema.testes.ExameTest" name="atualizarExameQueryTest" time="0.241">
+    <error message="Exception processing table name=&apos;tb_endereco&apos;" type="java.lang.RuntimeException">java.lang.RuntimeException: Exception processing table name=&apos;tb_endereco&apos;
+	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:45)
+	at sistema.testes.ExameTest.setUp(ExameTest.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+Caused by: org.dbunit.DatabaseUnitException: Exception processing table name=&apos;tb_endereco&apos;
+	at org.dbunit.operation.AbstractBatchOperation.execute(AbstractBatchOperation.java:240)
+	at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79)
+	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:42)
+	... 33 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry &apos;3&apos; for key &apos;PRIMARY&apos;
+	at sun.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.Util.getInstance(Util.java:360)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:971)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3887)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3823)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2435)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2582)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2530)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1907)
+	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1199)
+	at org.dbunit.database.statement.SimplePreparedStatement.addBatch(SimplePreparedStatement.java:80)
+	at org.dbunit.database.statement.AutomaticPreparedBatchStatement.addBatch(AutomaticPreparedBatchStatement.java:70)
+	at org.dbunit.operation.AbstractBatchOperation.execute(AbstractBatchOperation.java:224)
+	... 35 more
+</error>
+    <system-out>---------------------- ERROR: Exception processing table name=&apos;tb_endereco&apos;
+ERROR: null
+</system-out>
+  </testcase>
+  <testcase classname="sistema.testes.ExameTest" name="atualizarExameQueryTest" time="0.241">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at sistema.testes.ExameTest.tearDown(ExameTest.java:75)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+</error>
+  </testcase>
+  <testcase classname="sistema.testes.ExameTest" name="selectSqlNativeNamedQueryTeste" time="1.365">
+    <error message="Cannot delete or update a parent row: a foreign key constraint fails (`sistemapet`.`tb_cartao`, CONSTRAINT `FK_tb_cartao_fk_cliente` FOREIGN KEY (`fk_cliente`) REFERENCES `tb_usuario` (`id_usuario`))" type="java.lang.RuntimeException">java.lang.RuntimeException: Cannot delete or update a parent row: a foreign key constraint fails (`sistemapet`.`tb_cartao`, CONSTRAINT `FK_tb_cartao_fk_cliente` FOREIGN KEY (`fk_cliente`) REFERENCES `tb_usuario` (`id_usuario`))
+	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:45)
+	at sistema.testes.ExameTest.setUp(ExameTest.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`sistemapet`.`tb_cartao`, CONSTRAINT `FK_tb_cartao_fk_cliente` FOREIGN KEY (`fk_cliente`) REFERENCES `tb_usuario` (`id_usuario`))
+	at sun.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
+	at com.mysql.jdbc.Util.getInstance(Util.java:360)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:971)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3887)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3823)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2435)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2582)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2526)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2484)
+	at com.mysql.jdbc.StatementImpl.execute(StatementImpl.java:848)
+	at com.mysql.jdbc.StatementImpl.execute(StatementImpl.java:742)
+	at org.dbunit.database.statement.SimpleStatement.executeBatch(SimpleStatement.java:69)
+	at org.dbunit.operation.DeleteAllOperation.execute(DeleteAllOperation.java:126)
+	at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79)
+	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:42)
+	... 33 more
+</error>
+    <system-out>---------------------- ERROR: Cannot delete or update a parent row: a foreign key constraint fails (`sistemapet`.`tb_cartao`, CONSTRAINT `FK_tb_cartao_fk_cliente` FOREIGN KEY (`fk_cliente`) REFERENCES `tb_usuario` (`id_usuario`))
+ERROR: null
+</system-out>
+  </testcase>
+  <testcase classname="sistema.testes.ExameTest" name="selectSqlNativeNamedQueryTeste" time="1.367">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at sistema.testes.ExameTest.tearDown(ExameTest.java:75)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+</error>
+  </testcase>
 </testsuite>

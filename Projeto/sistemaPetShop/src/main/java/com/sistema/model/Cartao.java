@@ -17,9 +17,11 @@ import javax.persistence.NamedNativeQueries;
 import javax.persistence.NamedNativeQuery;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.validation.Valid;
+import javax.validation.Validation;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.CreditCardNumber;
@@ -64,11 +66,11 @@ public class Cartao implements Serializable {
 
     @NotBlank
     @NotNull
+    @ValidaBandeira
     @Column(name = "str_bandeira")
     private String bandeira;
 
     @NotBlank
-    @NotNull
     @CreditCardNumber
     @Column(name = "str_numero")
     private String numero;
@@ -94,6 +96,11 @@ public class Cartao implements Serializable {
         this.dataValidade = dataValidade;
     }  
 
+    @PrePersist
+    public void validar() {
+        Validation.buildDefaultValidatorFactory().getValidator().validate(this, Cartao.class);
+    }
+    
     // getters e Setters -----------------------------
     public Long getIdCartao() {
         return idCartao;

@@ -89,7 +89,7 @@ public class ExameTest {
         exame.setValor(valor);
 
         em.persist(exame);
-        et.commit();
+        em.flush();
         
         assertNotNull(exame.getIdExame());
         
@@ -169,7 +169,7 @@ public class ExameTest {
         Exame exame = (Exame) query.getSingleResult();
 
         em.remove(exame);
-        et.commit();
+        em.flush();
 
         exame = em.find(Exame.class, exame.getIdExame());
 
