@@ -4,6 +4,7 @@ br\com\sistemapetshop\model\ValidadorBandeira.class
 br\com\sistemapetshop\repository\NegocioServico.class
 br\com\sistemapetshop\model\Cartao.class
 br\com\sistemapetshop\model\ConsultaMedica.class
+br\com\sistemapetshop\bean\ServicoBean.class
 br\com\sistemapetshop\model\Funcionario.class
 br\com\sistemapetshop\model\Veterinario.class
 br\com\sistemapetshop\model\Endereco.class
