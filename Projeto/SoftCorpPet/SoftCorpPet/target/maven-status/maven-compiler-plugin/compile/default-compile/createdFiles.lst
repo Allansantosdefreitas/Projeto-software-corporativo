@@ -9,6 +9,7 @@ br\com\sistemapetshop\model\Funcionario.class
 br\com\sistemapetshop\model\Veterinario.class
 br\com\sistemapetshop\model\Endereco.class
 br\com\sistemapetshop\model\ValidaBandeira.class
+br\com\sistemapetshop\bean\NavegationBean.class
 br\com\sistemapetshop\model\Usuario.class
 br\com\sistemapetshop\controller\CadastroServico.class
 br\com\sistemapetshop\model\ConsultaGeral.class
