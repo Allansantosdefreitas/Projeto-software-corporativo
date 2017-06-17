@@ -9,13 +9,11 @@ br\com\sistemapetshop\model\Funcionario.class
 br\com\sistemapetshop\model\Veterinario.class
 br\com\sistemapetshop\model\Endereco.class
 br\com\sistemapetshop\model\ValidaBandeira.class
+br\com\sistemapetshop\bean\NavegationBean.class
 br\com\sistemapetshop\model\Usuario.class
-br\com\sistemapetshop\controller\CadastroServico.class
 br\com\sistemapetshop\model\ConsultaGeral.class
 br\com\sistemapetshop\model\Servico.class
 br\com\sistemapetshop\model\Consulta.class
-br\com\sistemapetshop\controller\RemoverServico.class
 br\com\sistemapetshop\model\Exame.class
-br\com\sistemapetshop\controller\AtualizarServico.class
 br\com\sistemapetshop\model\Pet.class
 br\com\sistemapetshop\model\StatusConsulta.class

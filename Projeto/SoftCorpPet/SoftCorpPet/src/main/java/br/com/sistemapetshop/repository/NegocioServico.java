@@ -6,106 +6,48 @@
 package br.com.sistemapetshop.repository;
 
 import br.com.sistemapetshop.model.Servico;
-import java.util.ArrayList;
-import java.util.List;
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
+import javax.ejb.TransactionManagement;
+import javax.ejb.TransactionManagementType;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceContextType;
 
 /**
  *
- * @author Usuario
+ * @author Jonathan Romualdo
  */
+@Stateless
+@LocalBean
+@TransactionManagement(TransactionManagementType.CONTAINER)
 public class NegocioServico {
-    
-    private final static EntityManagerFactory EMF = Persistence.createEntityManagerFactory("sistema_pet_pu");
 
-    public static Long inserirServico(Servico servico) {
-        EntityManager em = null;
-        EntityTransaction et = null;
+    @PersistenceContext(type = PersistenceContextType.TRANSACTION)
+    private EntityManager em;
 
-        try {
-            em = EMF.createEntityManager();
-            et = em.getTransaction();
-
-            et.begin();
-            em.persist(servico);
-            et.commit();
-        } catch (Exception ex) {
-            if (et != null && et.isActive()) {
-                et.rollback();
-            }
-        } finally {
-            if (em != null) {
-                em.close();
-            }
-        }
-
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    public Long inserirServico(Servico servico) {
+        em.persist(servico);
         return servico.getIdServico();
     }
 
-    public static void atualizarServico(Servico servico) {
-        EntityManager em = null;
-        EntityTransaction et = null;
-
-        try {
-            em = EMF.createEntityManager();
-            et = em.getTransaction();
-
-            et.begin();
-            em.merge(servico);
-            et.commit();
-        } catch (Exception ex) {
-            if (et != null && et.isActive()) {
-                et.rollback();
-            }
-        } finally {
-            if (em != null) {
-                em.close();
-            }
-        }
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    public void atualizarServico(Servico servico) {
+        em.merge(servico);
     }
 
-    public static void deletarServico(Servico servico) {
-        EntityManager em = null;
-        EntityTransaction et = null;
-
-        try {
-            em = EMF.createEntityManager();
-            et = em.getTransaction();
-            
-            Servico servicoRemove = em.merge(servico);
-
-            et.begin();
-            em.remove(servicoRemove);
-            et.commit();
-        } catch (Exception ex) {
-            if (et != null && et.isActive()) {
-                et.rollback();
-            }
-        } finally {
-            if (em != null) {
-                em.close();
-            }
-        }
-
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    public void deletarServico(Servico servico) {
+        em.merge(servico);
+        em.remove(servico);
     }
 
-    public static Servico consultarServico(Long idServico) {
-        EntityManager em = null;
-        Servico servicoResultado = null;
-
-        try {
-            em = EMF.createEntityManager();
-
-            servicoResultado = em.find(Servico.class, idServico);
-        } finally {
-            if (em != null) {
-                em.close();
-            }
-        }
-        return servicoResultado;
+    @TransactionAttribute(TransactionAttributeType.SUPPORTS)
+    public Servico consultarServico(Long idServico) {
+        return em.find(Servico.class, idServico);
     }
 
 }
