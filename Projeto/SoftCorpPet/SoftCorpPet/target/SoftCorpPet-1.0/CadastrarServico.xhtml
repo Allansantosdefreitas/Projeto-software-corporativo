@@ -40,12 +40,11 @@
                             <p:inputText id="valor" value="#{ServicoManagedBean.servico.valor}"/>                            
                         </p:panelGrid>
                         <br/>
-                        <p:commandButton value="Adicionar Servico" action="#{ServicoBean.adicionarServico()}" update="@form"></p:commandButton>
+                        <p:commandButton value="Adicionar Servico" action="#{ServicoManagedBean.adicionar()}" update="@form"></p:commandButton>
                     </p:fieldset>
                 </h:form>
             </ui:define>
         </ui:composition>
     </h:body>
-
 </html>
 

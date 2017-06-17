@@ -5,7 +5,9 @@
  */
 package br.com.sistemapetshop.repository;
 
-import br.com.sistemapetshop.model.Servico;
+import br.com.sistemapetshop.model.ConsultaGeral;
+import static br.com.sistemapetshop.model.Consulta_.idConsulta;
+import javax.ejb.Stateless;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
@@ -15,41 +17,41 @@ import javax.ejb.TransactionManagementType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+
 /**
  *
- * @author Jonathan Romualdo
+ * @author LuisHenrique
  */
 @Stateless
 @TransactionManagement(TransactionManagementType.CONTAINER)
-public class NegocioServico {
+public class NegocioConsultaGeral {
 
     @PersistenceContext(unitName = "corporativoPU")
     private EntityManager em;
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void inserirServico(Servico servico) {
-        em.persist(servico);
+    public void inserirConsultaGeral(ConsultaGeral consulta) {
+        em.persist(consulta);
     }
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void atualizarServico(Servico servico) {
-        em.merge(servico);
+    public void atualizarConsultaGeral(ConsultaGeral consulta) {
+        em.merge(consulta);
     }
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void deletarServico(Servico servico) {
-        em.remove(em);
+    public void deletarConsultaGeral(ConsultaGeral consulta) {
+        em.remove(consulta);
     }
 
     @TransactionAttribute(TransactionAttributeType.SUPPORTS)
-    public Servico consultarServico(Long idServico) {
-        return em.find(Servico.class, idServico);
+    public ConsultaGeral consultarServico(Long idServico) {
+        return em.find(ConsultaGeral.class, idConsulta);
     }
 
     @TransactionAttribute(TransactionAttributeType.SUPPORTS)
-    public List<Servico> listarServicos() {
+    public List<ConsultaGeral> listarConsultasGerais() {
 
-        return (List<Servico>) em.createQuery("From Servico s").getResultList();
+        return (List<ConsultaGeral>) em.createQuery("From Consulta c").getResultList();
     }
-
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="22" failures="0" name="sistema.testes.ConsultaMedicaTest" time="4.721" errors="22" skipped="0">
+<testsuite tests="11" failures="1" name="sistema.testes.ConsultaMedicaTest" time="36.636" errors="4" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_65\jre\bin"/>
@@ -15,12 +15,12 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\sistemaPetShop"/>
+    <property name="user.dir" value="C:\Users\LuisHenrique\Documents\Projeto-software-corporativo\Projeto\sistemaPetShop"/>
     <property name="java.runtime.version" value="1.8.0_65-b17"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_65\jre\lib\endorsed"/>
     <property name="os.arch" value="amd64"/>
-    <property name="java.io.tmpdir" value="C:\Users\Usuario\AppData\Local\Temp\"/>
+    <property name="java.io.tmpdir" value="C:\Users\LUISHE~1\AppData\Local\Temp\"/>
     <property name="line.separator" value="
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
@@ -29,17 +29,17 @@
     <property name="maven.ext.class.path" value="C:\Program Files\NetBeans 8.1\java\maven-nblib\netbeans-eventspy.jar"/>
     <property name="classworlds.conf" value="C:\Program Files\NetBeans 8.1\java\maven\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_65\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Live\Shared;C:\cygwin64\bin;C:\MinGW\bin;C:\MinGW\msys\1.0\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 &amp; MySQL Utilities 1.5\;C:\Program Files (x86)\MySQL\MySQL Fabric 1.5 &amp; MySQL Utilities 1.5\Doctrine extensions for PHP\;C:\Program Files (x86)\BaseX\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\HashiCorp\Vagrant\bin;C:\Program Files\TortoiseHg\;C:\Program Files\MiKTeX 2.9\miktex\bin\x64\;C:\Program Files (x86)\Skype\Phone\;c:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;c:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Users\Usuario\AppData\Roaming\npm;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_65\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files (x86)\BaseX\bin;C:\Program Files (x86)\Intel\OpenCL SDK\3.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\3.0\bin\x64;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files\MySQL\MySQL Utilities 1.6\;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="os.version" value="6.3"/>
-    <property name="user.home" value="C:\Users\Usuario"/>
-    <property name="user.timezone" value="America/Sao_Paulo"/>
+    <property name="user.home" value="C:\Users\LuisHenrique"/>
+    <property name="user.timezone" value="GMT-03:00"/>
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
     <property name="java.specification.version" value="1.8"/>
     <property name="file.encoding" value="UTF-8"/>
-    <property name="user.name" value="Usuario"/>
+    <property name="user.name" value="LuisHenrique"/>
     <property name="java.class.path" value="C:\Program Files\NetBeans 8.1\java\maven\boot\plexus-classworlds-2.4.jar"/>
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
@@ -61,10 +61,9 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="sistema.testes.ConsultaMedicaTest" name="atualizaConsultaMedicaEmTeste" time="1.073">
-    <error message="Exception processing table name=&apos;tb_cliente&apos;" type="java.lang.RuntimeException">java.lang.RuntimeException: Exception processing table name=&apos;tb_cliente&apos;
-	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:45)
-	at sistema.testes.ConsultaMedicaTest.setUp(ConsultaMedicaTest.java:57)
+  <testcase classname="sistema.testes.ConsultaMedicaTest" name="atualizaConsultaMedicaEmTeste" time="1.832">
+    <error message="[Ljava.lang.Object; cannot be cast to com.sistema.model.ConsultaMedica" type="java.lang.ClassCastException">java.lang.ClassCastException: [Ljava.lang.Object; cannot be cast to com.sistema.model.ConsultaMedica
+	at sistema.testes.ConsultaMedicaTest.atualizaConsultaMedicaEmTeste(ConsultaMedicaTest.java:260)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -72,7 +71,8 @@
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
@@ -97,13 +97,85 @@
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-Caused by: org.dbunit.DatabaseUnitException: Exception processing table name=&apos;tb_cliente&apos;
-	at org.dbunit.operation.AbstractBatchOperation.execute(AbstractBatchOperation.java:240)
-	at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79)
-	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:42)
-	... 33 more
-Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`sistemapet`.`tb_cliente`, CONSTRAINT `FK_tb_cliente_id_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `tb_usuario` (`id_usuario`))
-	at sun.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
+</error>
+    <system-out>[EL Fine]: sql: 2017-06-17 10:33:05.84--ClientSession(115816820)--Connection(1051927339)--Thread(Thread[main,5,main])--select * from tb_consulta_medica where str_diagnostico like ?
+	bind =&gt; [Exame%]
+</system-out>
+  </testcase>
+  <testcase classname="sistema.testes.ConsultaMedicaTest" name="deletaConsultaMedicaQueryTeste" time="2.744">
+    <error message="Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`sistemapet`.`tb_consulta_medica`, CONSTRAINT `FK_tb_consulta_medica_fk_veterinario` FOREIGN KEY (`fk_veterinario`) REFERENCES `tb_usuario` (`id_usuario`))
+Error Code: 1451
+Call: DELETE FROM tb_usuario USING tb_usuario, TL_tb_usuario WHERE tb_usuario.id_usuario = TL_tb_usuario.id_usuario
+Query: DeleteAllQuery(referenceClass=Usuario sql=&quot;DELETE FROM TL_tb_usuario&quot;)" type="javax.persistence.PersistenceException">javax.persistence.PersistenceException: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`sistemapet`.`tb_consulta_medica`, CONSTRAINT `FK_tb_consulta_medica_fk_veterinario` FOREIGN KEY (`fk_veterinario`) REFERENCES `tb_usuario` (`id_usuario`))
+Error Code: 1451
+Call: DELETE FROM tb_usuario USING tb_usuario, TL_tb_usuario WHERE tb_usuario.id_usuario = TL_tb_usuario.id_usuario
+Query: DeleteAllQuery(referenceClass=Usuario sql=&quot;DELETE FROM TL_tb_usuario&quot;)
+	at org.eclipse.persistence.internal.jpa.QueryImpl.executeUpdate(QueryImpl.java:308)
+	at sistema.testes.ConsultaMedicaTest.deletaConsultaMedicaQueryTeste(ConsultaMedicaTest.java:302)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+Caused by: Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`sistemapet`.`tb_consulta_medica`, CONSTRAINT `FK_tb_consulta_medica_fk_veterinario` FOREIGN KEY (`fk_veterinario`) REFERENCES `tb_usuario` (`id_usuario`))
+Error Code: 1451
+Call: DELETE FROM tb_usuario USING tb_usuario, TL_tb_usuario WHERE tb_usuario.id_usuario = TL_tb_usuario.id_usuario
+Query: DeleteAllQuery(referenceClass=Usuario sql=&quot;DELETE FROM TL_tb_usuario&quot;)
+	at org.eclipse.persistence.exceptions.DatabaseException.sqlException(DatabaseException.java:331)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:900)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeNoSelect(DatabaseAccessor.java:962)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.basicExecuteCall(DatabaseAccessor.java:631)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeCall(DatabaseAccessor.java:558)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.basicExecuteCall(AbstractSession.java:2002)
+	at org.eclipse.persistence.sessions.server.ClientSession.executeCall(ClientSession.java:298)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.executeCall(DatasourceCallQueryMechanism.java:242)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.deleteAllUsingTempTables(DatasourceCallQueryMechanism.java:169)
+	at org.eclipse.persistence.internal.queries.DatasourceCallQueryMechanism.deleteAll(DatasourceCallQueryMechanism.java:114)
+	at org.eclipse.persistence.queries.DeleteAllQuery.executeDatabaseQuery(DeleteAllQuery.java:201)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:899)
+	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:798)
+	at org.eclipse.persistence.queries.ModifyAllQuery.executeInUnitOfWork(ModifyAllQuery.java:148)
+	at org.eclipse.persistence.queries.DeleteAllQuery.executeInUnitOfWork(DeleteAllQuery.java:124)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2896)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1804)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1786)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1751)
+	at org.eclipse.persistence.internal.jpa.QueryImpl.executeUpdate(QueryImpl.java:298)
+	... 34 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`sistemapet`.`tb_consulta_medica`, CONSTRAINT `FK_tb_consulta_medica_fk_veterinario` FOREIGN KEY (`fk_veterinario`) REFERENCES `tb_usuario` (`id_usuario`))
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
 	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
@@ -115,19 +187,37 @@ Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationExce
 	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2582)
 	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2530)
 	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1907)
-	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1199)
-	at org.dbunit.database.statement.SimplePreparedStatement.addBatch(SimplePreparedStatement.java:80)
-	at org.dbunit.database.statement.AutomaticPreparedBatchStatement.addBatch(AutomaticPreparedBatchStatement.java:70)
-	at org.dbunit.operation.AbstractBatchOperation.execute(AbstractBatchOperation.java:224)
-	... 35 more
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2141)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2077)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2062)
+	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:890)
+	... 52 more
 </error>
-    <system-out>---------------------- ERROR: Exception processing table name=&apos;tb_cliente&apos;
-ERROR: null
+    <system-out>[EL Fine]: sql: 2017-06-17 10:33:08.327--ClientSession(551377008)--Connection(1051927339)--Thread(Thread[main,5,main])--CREATE TEMPORARY TABLE IF NOT EXISTS TL_tb_usuario (id_usuario BIGINT NOT NULL, disc_usuario VARCHAR(255), str_email VARCHAR(255), str_login VARCHAR(255), str_nome VARCHAR(255), str_senha VARCHAR(255), fk_endereco BIGINT, PRIMARY KEY (id_usuario))
+[EL Fine]: sql: 2017-06-17 10:33:08.328--ClientSession(551377008)--Connection(1051927339)--Thread(Thread[main,5,main])--INSERT INTO TL_tb_usuario (id_usuario) SELECT id_usuario FROM tb_usuario WHERE (id_usuario = ?)
+	bind =&gt; [3]
+[EL Fine]: sql: 2017-06-17 10:33:08.33--ClientSession(551377008)--Connection(1051927339)--Thread(Thread[main,5,main])--DELETE FROM tb_Veterinario USING tb_Veterinario, TL_tb_usuario WHERE tb_Veterinario.id_veterinario = TL_tb_usuario.id_usuario
+[EL Fine]: sql: 2017-06-17 10:33:08.396--ClientSession(551377008)--Connection(1051927339)--Thread(Thread[main,5,main])--DELETE FROM tb_funcionario USING tb_funcionario, TL_tb_usuario WHERE tb_funcionario.id_funcionario = TL_tb_usuario.id_usuario
+[EL Fine]: sql: 2017-06-17 10:33:08.407--ClientSession(551377008)--Connection(1051927339)--Thread(Thread[main,5,main])--DELETE FROM tb_cliente USING tb_cliente, TL_tb_usuario WHERE tb_cliente.id_cliente = TL_tb_usuario.id_usuario
+[EL Fine]: sql: 2017-06-17 10:33:08.445--ClientSession(551377008)--Connection(1051927339)--Thread(Thread[main,5,main])--DELETE FROM tb_usuario USING tb_usuario, TL_tb_usuario WHERE tb_usuario.id_usuario = TL_tb_usuario.id_usuario
+[EL Fine]: sql: 2017-06-17 10:33:08.514--ClientSession(551377008)--Thread(Thread[main,5,main])--SELECT 1
+[EL Fine]: sql: 2017-06-17 10:33:08.515--ClientSession(551377008)--Connection(1051927339)--Thread(Thread[main,5,main])--DELETE FROM TL_tb_usuario
+[EL Warning]: 2017-06-17 10:33:08.517--UnitOfWork(857825275)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`sistemapet`.`tb_consulta_medica`, CONSTRAINT `FK_tb_consulta_medica_fk_veterinario` FOREIGN KEY (`fk_veterinario`) REFERENCES `tb_usuario` (`id_usuario`))
+Error Code: 1451
+Call: DELETE FROM tb_usuario USING tb_usuario, TL_tb_usuario WHERE tb_usuario.id_usuario = TL_tb_usuario.id_usuario
+Query: DeleteAllQuery(referenceClass=Usuario sql=&quot;DELETE FROM TL_tb_usuario&quot;)
+ERROR: Transaction rolled back because transaction was set to RollbackOnly.
 </system-out>
   </testcase>
-  <testcase classname="sistema.testes.ConsultaMedicaTest" name="atualizaConsultaMedicaEmTeste" time="1.073">
-    <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at sistema.testes.ConsultaMedicaTest.tearDown(ConsultaMedicaTest.java:75)
+  <testcase classname="sistema.testes.ConsultaMedicaTest" name="atualizaConsultaMedicaValidoTeste" time="1.963"/>
+  <testcase classname="sistema.testes.ConsultaMedicaTest" name="criaConsultaMedicaValidoTeste" time="1.796"/>
+  <testcase classname="sistema.testes.ConsultaMedicaTest" name="deletaConsultaMedicaTeste" time="5.75"/>
+  <testcase classname="sistema.testes.ConsultaMedicaTest" name="atualizaConsultaMedicaQueryTeste" time="5.976">
+    <failure message="expected:&lt;Exame [realiz]ado&gt; but was:&lt;Exame [não efetu]ado&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;Exame [realiz]ado&gt; but was:&lt;Exame [não efetu]ado&gt;
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at sistema.testes.ConsultaMedicaTest.atualizaConsultaMedicaQueryTeste(ConsultaMedicaTest.java:286)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -135,44 +225,8 @@ ERROR: null
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
 	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-</error>
-  </testcase>
-  <testcase classname="sistema.testes.ConsultaMedicaTest" name="deletaConsultaMedicaQueryTeste" time="1.009">
-    <error message="Exception processing table name=&apos;tb_cliente&apos;" type="java.lang.RuntimeException">java.lang.RuntimeException: Exception processing table name=&apos;tb_cliente&apos;
-	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:45)
-	at sistema.testes.ConsultaMedicaTest.setUp(ConsultaMedicaTest.java:57)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
@@ -197,37 +251,48 @@ ERROR: null
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-Caused by: org.dbunit.DatabaseUnitException: Exception processing table name=&apos;tb_cliente&apos;
-	at org.dbunit.operation.AbstractBatchOperation.execute(AbstractBatchOperation.java:240)
-	at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79)
-	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:42)
-	... 33 more
-Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`sistemapet`.`tb_cliente`, CONSTRAINT `FK_tb_cliente_id_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `tb_usuario` (`id_usuario`))
-	at sun.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
-	at com.mysql.jdbc.Util.getInstance(Util.java:360)
-	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:971)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3887)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3823)
-	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2435)
-	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2582)
-	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2530)
-	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1907)
-	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1199)
-	at org.dbunit.database.statement.SimplePreparedStatement.addBatch(SimplePreparedStatement.java:80)
-	at org.dbunit.database.statement.AutomaticPreparedBatchStatement.addBatch(AutomaticPreparedBatchStatement.java:70)
-	at org.dbunit.operation.AbstractBatchOperation.execute(AbstractBatchOperation.java:224)
-	... 35 more
-</error>
-    <system-out>---------------------- ERROR: Exception processing table name=&apos;tb_cliente&apos;
-ERROR: null
+</failure>
+    <system-out>[EL Fine]: sql: 2017-06-17 10:33:23.98--ClientSession(1286172885)--Connection(1051927339)--Thread(Thread[main,5,main])--CREATE TEMPORARY TABLE IF NOT EXISTS TL_tb_consulta_medica (id_consulta_medica BIGINT NOT NULL, str_diagnostico VARCHAR(255), fk_exame BIGINT, fk_pet BIGINT, fk_veterinario BIGINT, PRIMARY KEY (id_consulta_medica))
+[EL Fine]: sql: 2017-06-17 10:33:24.068--ClientSession(1286172885)--Connection(1051927339)--Thread(Thread[main,5,main])--INSERT INTO TL_tb_consulta_medica (id_consulta_medica, str_diagnostico) SELECT t0.id_consulta, ? FROM tb_consulta t0, tb_consulta_medica t1 WHERE (t1.str_diagnostico LIKE ? AND ((t1.id_consulta_medica = t0.id_consulta) AND (t0.disc_consulta = ?)))
+	bind =&gt; [Exame realizado, Exame realizado, med]
+[EL Fine]: sql: 2017-06-17 10:33:24.068--ClientSession(1286172885)--Connection(1051927339)--Thread(Thread[main,5,main])--UPDATE tb_consulta_medica, TL_tb_consulta_medica SET tb_consulta_medica.str_diagnostico = TL_tb_consulta_medica.str_diagnostico WHERE tb_consulta_medica.id_consulta_medica = TL_tb_consulta_medica.id_consulta_medica
+[EL Fine]: sql: 2017-06-17 10:33:24.068--ClientSession(1286172885)--Connection(1051927339)--Thread(Thread[main,5,main])--DELETE FROM TL_tb_consulta_medica
+[EL Fine]: sql: 2017-06-17 10:33:24.076--ClientSession(1286172885)--Connection(1051927339)--Thread(Thread[main,5,main])--SELECT t0.id_consulta, t0.disc_consulta, t0.dat_dataMarcada, t0.str_status, t1.id_consulta_medica, t1.str_diagnostico, t1.fk_exame, t1.fk_pet, t1.fk_veterinario FROM tb_consulta t0, tb_consulta_medica t1 WHERE ((t0.id_consulta = ?) AND ((t1.id_consulta_medica = t0.id_consulta) AND (t0.disc_consulta = ?)))
+	bind =&gt; [4, med]
 </system-out>
   </testcase>
-  <testcase classname="sistema.testes.ConsultaMedicaTest" name="deletaConsultaMedicaQueryTeste" time="1.012">
-    <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at sistema.testes.ConsultaMedicaTest.tearDown(ConsultaMedicaTest.java:75)
+  <testcase classname="sistema.testes.ConsultaMedicaTest" name="selectSqlNativeQueryTeste" time="3.144">
+    <error message="Exception [EclipseLink-6044] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.QueryException
+Exception Description: The primary key read from the row [ArrayRecord(
+	tb_consulta_medica.id_consulta_medica =&gt; 3
+	tb_consulta_medica.str_diagnostico =&gt; Ta bom agora :V
+	tb_consulta_medica.fk_exame =&gt; 3
+	tb_consulta_medica.fk_pet =&gt; 1
+	tb_consulta_medica.fk_veterinario =&gt; 3
+	 =&gt; 3
+	 =&gt; vet
+	 =&gt; JonathanRomualdo@gmail.com
+	 =&gt; JonathanRomualdo
+	 =&gt; Jonathan Romualdo
+	 =&gt; 12345678
+	 =&gt; 2)] during the execution of the query was detected to be null.  Primary keys must not contain null.
+Query: ReadAllQuery(referenceClass=ConsultaMedica sql=&quot;select * from tb_consulta_medica conm join tb_usuario user on conm.fk_veterinario = user.id_usuario where conm.fk_veterinario = ?&quot;)" type="javax.persistence.PersistenceException">javax.persistence.PersistenceException: Exception [EclipseLink-6044] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.QueryException
+Exception Description: The primary key read from the row [ArrayRecord(
+	tb_consulta_medica.id_consulta_medica =&gt; 3
+	tb_consulta_medica.str_diagnostico =&gt; Ta bom agora :V
+	tb_consulta_medica.fk_exame =&gt; 3
+	tb_consulta_medica.fk_pet =&gt; 1
+	tb_consulta_medica.fk_veterinario =&gt; 3
+	 =&gt; 3
+	 =&gt; vet
+	 =&gt; JonathanRomualdo@gmail.com
+	 =&gt; JonathanRomualdo
+	 =&gt; Jonathan Romualdo
+	 =&gt; 12345678
+	 =&gt; 2)] during the execution of the query was detected to be null.  Primary keys must not contain null.
+Query: ReadAllQuery(referenceClass=ConsultaMedica sql=&quot;select * from tb_consulta_medica conm join tb_usuario user on conm.fk_veterinario = user.id_usuario where conm.fk_veterinario = ?&quot;)
+	at org.eclipse.persistence.internal.jpa.QueryImpl.getResultList(QueryImpl.java:480)
+	at sistema.testes.ConsultaMedicaTest.selectSqlNativeQueryTeste(ConsultaMedicaTest.java:231)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -235,7 +300,9 @@ ERROR: null
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
@@ -259,75 +326,65 @@ ERROR: null
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+Caused by: Exception [EclipseLink-6044] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.QueryException
+Exception Description: The primary key read from the row [ArrayRecord(
+	tb_consulta_medica.id_consulta_medica =&gt; 3
+	tb_consulta_medica.str_diagnostico =&gt; Ta bom agora :V
+	tb_consulta_medica.fk_exame =&gt; 3
+	tb_consulta_medica.fk_pet =&gt; 1
+	tb_consulta_medica.fk_veterinario =&gt; 3
+	 =&gt; 3
+	 =&gt; vet
+	 =&gt; JonathanRomualdo@gmail.com
+	 =&gt; JonathanRomualdo
+	 =&gt; Jonathan Romualdo
+	 =&gt; 12345678
+	 =&gt; 2)] during the execution of the query was detected to be null.  Primary keys must not contain null.
+Query: ReadAllQuery(referenceClass=ConsultaMedica sql=&quot;select * from tb_consulta_medica conm join tb_usuario user on conm.fk_veterinario = user.id_usuario where conm.fk_veterinario = ?&quot;)
+	at org.eclipse.persistence.exceptions.QueryException.nullPrimaryKeyInBuildingObject(QueryException.java:922)
+	at org.eclipse.persistence.internal.descriptors.ObjectBuilder.buildObject(ObjectBuilder.java:715)
+	at org.eclipse.persistence.internal.descriptors.ObjectBuilder.buildObject(ObjectBuilder.java:688)
+	at org.eclipse.persistence.queries.ObjectLevelReadQuery.buildObject(ObjectLevelReadQuery.java:795)
+	at org.eclipse.persistence.queries.ReadAllQuery.registerResultInUnitOfWork(ReadAllQuery.java:890)
+	at org.eclipse.persistence.queries.ReadAllQuery.executeObjectLevelReadQuery(ReadAllQuery.java:509)
+	at org.eclipse.persistence.queries.ObjectLevelReadQuery.executeDatabaseQuery(ObjectLevelReadQuery.java:1168)
+	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:899)
+	at org.eclipse.persistence.queries.ObjectLevelReadQuery.execute(ObjectLevelReadQuery.java:1127)
+	at org.eclipse.persistence.queries.ReadAllQuery.execute(ReadAllQuery.java:403)
+	at org.eclipse.persistence.queries.ObjectLevelReadQuery.executeInUnitOfWork(ObjectLevelReadQuery.java:1215)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2896)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1804)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1786)
+	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1751)
+	at org.eclipse.persistence.internal.jpa.QueryImpl.executeReadQuery(QueryImpl.java:258)
+	at org.eclipse.persistence.internal.jpa.QueryImpl.getResultList(QueryImpl.java:469)
+	... 34 more
 </error>
-  </testcase>
-  <testcase classname="sistema.testes.ConsultaMedicaTest" name="atualizaConsultaMedicaValidoTeste" time="0.306">
-    <error message="Exception processing table name=&apos;tb_endereco&apos;" type="java.lang.RuntimeException">java.lang.RuntimeException: Exception processing table name=&apos;tb_endereco&apos;
-	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:45)
-	at sistema.testes.ConsultaMedicaTest.setUp(ConsultaMedicaTest.java:57)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-Caused by: org.dbunit.DatabaseUnitException: Exception processing table name=&apos;tb_endereco&apos;
-	at org.dbunit.operation.AbstractBatchOperation.execute(AbstractBatchOperation.java:240)
-	at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79)
-	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:42)
-	... 33 more
-Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry &apos;2&apos; for key &apos;PRIMARY&apos;
-	at sun.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
-	at com.mysql.jdbc.Util.getInstance(Util.java:360)
-	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:971)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3887)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3823)
-	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2435)
-	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2582)
-	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2530)
-	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1907)
-	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1199)
-	at org.dbunit.database.statement.SimplePreparedStatement.addBatch(SimplePreparedStatement.java:80)
-	at org.dbunit.database.statement.AutomaticPreparedBatchStatement.addBatch(AutomaticPreparedBatchStatement.java:70)
-	at org.dbunit.operation.AbstractBatchOperation.execute(AbstractBatchOperation.java:224)
-	... 35 more
-</error>
-    <system-out>---------------------- ERROR: Exception processing table name=&apos;tb_endereco&apos;
-ERROR: null
+    <system-out>[EL Fine]: sql: 2017-06-17 10:33:27.212--ClientSession(676436987)--Connection(1051927339)--Thread(Thread[main,5,main])--select * from tb_consulta_medica conm join tb_usuario user on conm.fk_veterinario = user.id_usuario where conm.fk_veterinario = ?
+	bind =&gt; [3]
+[EL Warning]: 2017-06-17 10:33:27.22--UnitOfWork(1574798546)--Thread(Thread[main,5,main])--Exception [EclipseLink-6044] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.QueryException
+Exception Description: The primary key read from the row [ArrayRecord(
+	tb_consulta_medica.id_consulta_medica =&gt; 3
+	tb_consulta_medica.str_diagnostico =&gt; Ta bom agora :V
+	tb_consulta_medica.fk_exame =&gt; 3
+	tb_consulta_medica.fk_pet =&gt; 1
+	tb_consulta_medica.fk_veterinario =&gt; 3
+	 =&gt; 3
+	 =&gt; vet
+	 =&gt; JonathanRomualdo@gmail.com
+	 =&gt; JonathanRomualdo
+	 =&gt; Jonathan Romualdo
+	 =&gt; 12345678
+	 =&gt; 2)] during the execution of the query was detected to be null.  Primary keys must not contain null.
+Query: ReadAllQuery(referenceClass=ConsultaMedica sql=&quot;select * from tb_consulta_medica conm join tb_usuario user on conm.fk_veterinario = user.id_usuario where conm.fk_veterinario = ?&quot;)
+ERROR: Transaction rolled back because transaction was set to RollbackOnly.
 </system-out>
   </testcase>
-  <testcase classname="sistema.testes.ConsultaMedicaTest" name="atualizaConsultaMedicaValidoTeste" time="0.306">
-    <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at sistema.testes.ConsultaMedicaTest.tearDown(ConsultaMedicaTest.java:75)
+  <testcase classname="sistema.testes.ConsultaMedicaTest" name="selectJpqlQueryTeste" time="4.432"/>
+  <testcase classname="sistema.testes.ConsultaMedicaTest" name="selectSqlNativeNamedQueryTeste" time="2.169"/>
+  <testcase classname="sistema.testes.ConsultaMedicaTest" name="selectJpqlNamedQueryTeste" time="3.22">
+    <error message="[Ljava.lang.Object; cannot be cast to com.sistema.model.ConsultaMedica" type="java.lang.ClassCastException">java.lang.ClassCastException: [Ljava.lang.Object; cannot be cast to com.sistema.model.ConsultaMedica
+	at sistema.testes.ConsultaMedicaTest.selectJpqlNamedQueryTeste(ConsultaMedicaTest.java:218)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -335,7 +392,9 @@ ERROR: null
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
@@ -360,793 +419,9 @@ ERROR: null
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </error>
-  </testcase>
-  <testcase classname="sistema.testes.ConsultaMedicaTest" name="criaConsultaMedicaValidoTeste" time="0.175">
-    <error message="Cannot delete or update a parent row: a foreign key constraint fails (`sistemapet`.`tb_usuario`, CONSTRAINT `FK_tb_usuario_fk_endereco` FOREIGN KEY (`fk_endereco`) REFERENCES `tb_endereco` (`id_endereco`))" type="java.lang.RuntimeException">java.lang.RuntimeException: Cannot delete or update a parent row: a foreign key constraint fails (`sistemapet`.`tb_usuario`, CONSTRAINT `FK_tb_usuario_fk_endereco` FOREIGN KEY (`fk_endereco`) REFERENCES `tb_endereco` (`id_endereco`))
-	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:45)
-	at sistema.testes.ConsultaMedicaTest.setUp(ConsultaMedicaTest.java:57)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`sistemapet`.`tb_usuario`, CONSTRAINT `FK_tb_usuario_fk_endereco` FOREIGN KEY (`fk_endereco`) REFERENCES `tb_endereco` (`id_endereco`))
-	at sun.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
-	at com.mysql.jdbc.Util.getInstance(Util.java:360)
-	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:971)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3887)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3823)
-	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2435)
-	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2582)
-	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2526)
-	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2484)
-	at com.mysql.jdbc.StatementImpl.execute(StatementImpl.java:848)
-	at com.mysql.jdbc.StatementImpl.execute(StatementImpl.java:742)
-	at org.dbunit.database.statement.SimpleStatement.executeBatch(SimpleStatement.java:69)
-	at org.dbunit.operation.DeleteAllOperation.execute(DeleteAllOperation.java:126)
-	at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79)
-	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:42)
-	... 33 more
-</error>
-    <system-out>---------------------- ERROR: Cannot delete or update a parent row: a foreign key constraint fails (`sistemapet`.`tb_usuario`, CONSTRAINT `FK_tb_usuario_fk_endereco` FOREIGN KEY (`fk_endereco`) REFERENCES `tb_endereco` (`id_endereco`))
-ERROR: null
+    <system-out>[EL Fine]: sql: 2017-06-17 10:33:37.041--ClientSession(1322359657)--Connection(1051927339)--Thread(Thread[main,5,main])--select * from tb_consulta_medica where str_diagnostico like ?
+	bind =&gt; [Ta bom%]
 </system-out>
   </testcase>
-  <testcase classname="sistema.testes.ConsultaMedicaTest" name="criaConsultaMedicaValidoTeste" time="0.175">
-    <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at sistema.testes.ConsultaMedicaTest.tearDown(ConsultaMedicaTest.java:75)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-</error>
-  </testcase>
-  <testcase classname="sistema.testes.ConsultaMedicaTest" name="deletaConsultaMedicaTeste" time="0.147">
-    <error message="Exception processing table name=&apos;tb_endereco&apos;" type="java.lang.RuntimeException">java.lang.RuntimeException: Exception processing table name=&apos;tb_endereco&apos;
-	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:45)
-	at sistema.testes.ConsultaMedicaTest.setUp(ConsultaMedicaTest.java:57)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-Caused by: org.dbunit.DatabaseUnitException: Exception processing table name=&apos;tb_endereco&apos;
-	at org.dbunit.operation.AbstractBatchOperation.execute(AbstractBatchOperation.java:240)
-	at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79)
-	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:42)
-	... 33 more
-Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry &apos;1&apos; for key &apos;PRIMARY&apos;
-	at sun.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
-	at com.mysql.jdbc.Util.getInstance(Util.java:360)
-	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:971)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3887)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3823)
-	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2435)
-	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2582)
-	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2530)
-	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1907)
-	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1199)
-	at org.dbunit.database.statement.SimplePreparedStatement.addBatch(SimplePreparedStatement.java:80)
-	at org.dbunit.database.statement.AutomaticPreparedBatchStatement.addBatch(AutomaticPreparedBatchStatement.java:70)
-	at org.dbunit.operation.AbstractBatchOperation.execute(AbstractBatchOperation.java:224)
-	... 35 more
-</error>
-    <system-out>---------------------- ERROR: Exception processing table name=&apos;tb_endereco&apos;
-ERROR: null
-</system-out>
-  </testcase>
-  <testcase classname="sistema.testes.ConsultaMedicaTest" name="deletaConsultaMedicaTeste" time="0.147">
-    <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at sistema.testes.ConsultaMedicaTest.tearDown(ConsultaMedicaTest.java:75)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-</error>
-  </testcase>
-  <testcase classname="sistema.testes.ConsultaMedicaTest" name="atualizaConsultaMedicaQueryTeste" time="0.364">
-    <error message="Exception processing table name=&apos;tb_endereco&apos;" type="java.lang.RuntimeException">java.lang.RuntimeException: Exception processing table name=&apos;tb_endereco&apos;
-	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:45)
-	at sistema.testes.ConsultaMedicaTest.setUp(ConsultaMedicaTest.java:57)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-Caused by: org.dbunit.DatabaseUnitException: Exception processing table name=&apos;tb_endereco&apos;
-	at org.dbunit.operation.AbstractBatchOperation.execute(AbstractBatchOperation.java:240)
-	at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79)
-	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:42)
-	... 33 more
-Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry &apos;3&apos; for key &apos;PRIMARY&apos;
-	at sun.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
-	at com.mysql.jdbc.Util.getInstance(Util.java:360)
-	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:971)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3887)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3823)
-	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2435)
-	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2582)
-	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2530)
-	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1907)
-	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1199)
-	at org.dbunit.database.statement.SimplePreparedStatement.addBatch(SimplePreparedStatement.java:80)
-	at org.dbunit.database.statement.AutomaticPreparedBatchStatement.addBatch(AutomaticPreparedBatchStatement.java:70)
-	at org.dbunit.operation.AbstractBatchOperation.execute(AbstractBatchOperation.java:224)
-	... 35 more
-</error>
-    <system-out>---------------------- ERROR: Exception processing table name=&apos;tb_endereco&apos;
-ERROR: null
-</system-out>
-  </testcase>
-  <testcase classname="sistema.testes.ConsultaMedicaTest" name="atualizaConsultaMedicaQueryTeste" time="0.364">
-    <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at sistema.testes.ConsultaMedicaTest.tearDown(ConsultaMedicaTest.java:75)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-</error>
-  </testcase>
-  <testcase classname="sistema.testes.ConsultaMedicaTest" name="selectSqlNativeQueryTeste" time="0.254">
-    <error message="Cannot delete or update a parent row: a foreign key constraint fails (`sistemapet`.`tb_usuario`, CONSTRAINT `FK_tb_usuario_fk_endereco` FOREIGN KEY (`fk_endereco`) REFERENCES `tb_endereco` (`id_endereco`))" type="java.lang.RuntimeException">java.lang.RuntimeException: Cannot delete or update a parent row: a foreign key constraint fails (`sistemapet`.`tb_usuario`, CONSTRAINT `FK_tb_usuario_fk_endereco` FOREIGN KEY (`fk_endereco`) REFERENCES `tb_endereco` (`id_endereco`))
-	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:45)
-	at sistema.testes.ConsultaMedicaTest.setUp(ConsultaMedicaTest.java:57)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`sistemapet`.`tb_usuario`, CONSTRAINT `FK_tb_usuario_fk_endereco` FOREIGN KEY (`fk_endereco`) REFERENCES `tb_endereco` (`id_endereco`))
-	at sun.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
-	at com.mysql.jdbc.Util.getInstance(Util.java:360)
-	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:971)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3887)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3823)
-	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2435)
-	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2582)
-	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2526)
-	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2484)
-	at com.mysql.jdbc.StatementImpl.execute(StatementImpl.java:848)
-	at com.mysql.jdbc.StatementImpl.execute(StatementImpl.java:742)
-	at org.dbunit.database.statement.SimpleStatement.executeBatch(SimpleStatement.java:69)
-	at org.dbunit.operation.DeleteAllOperation.execute(DeleteAllOperation.java:126)
-	at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79)
-	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:42)
-	... 33 more
-</error>
-    <system-out>---------------------- ERROR: Cannot delete or update a parent row: a foreign key constraint fails (`sistemapet`.`tb_usuario`, CONSTRAINT `FK_tb_usuario_fk_endereco` FOREIGN KEY (`fk_endereco`) REFERENCES `tb_endereco` (`id_endereco`))
-ERROR: null
-</system-out>
-  </testcase>
-  <testcase classname="sistema.testes.ConsultaMedicaTest" name="selectSqlNativeQueryTeste" time="0.257">
-    <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at sistema.testes.ConsultaMedicaTest.tearDown(ConsultaMedicaTest.java:75)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-</error>
-  </testcase>
-  <testcase classname="sistema.testes.ConsultaMedicaTest" name="selectJpqlQueryTeste" time="0.178">
-    <error message="Exception processing table name=&apos;tb_endereco&apos;" type="java.lang.RuntimeException">java.lang.RuntimeException: Exception processing table name=&apos;tb_endereco&apos;
-	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:45)
-	at sistema.testes.ConsultaMedicaTest.setUp(ConsultaMedicaTest.java:57)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-Caused by: org.dbunit.DatabaseUnitException: Exception processing table name=&apos;tb_endereco&apos;
-	at org.dbunit.operation.AbstractBatchOperation.execute(AbstractBatchOperation.java:240)
-	at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79)
-	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:42)
-	... 33 more
-Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry &apos;1&apos; for key &apos;PRIMARY&apos;
-	at sun.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
-	at com.mysql.jdbc.Util.getInstance(Util.java:360)
-	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:971)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3887)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3823)
-	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2435)
-	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2582)
-	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2530)
-	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1907)
-	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1199)
-	at org.dbunit.database.statement.SimplePreparedStatement.addBatch(SimplePreparedStatement.java:80)
-	at org.dbunit.database.statement.AutomaticPreparedBatchStatement.addBatch(AutomaticPreparedBatchStatement.java:70)
-	at org.dbunit.operation.AbstractBatchOperation.execute(AbstractBatchOperation.java:224)
-	... 35 more
-</error>
-    <system-out>---------------------- ERROR: Exception processing table name=&apos;tb_endereco&apos;
-ERROR: null
-</system-out>
-  </testcase>
-  <testcase classname="sistema.testes.ConsultaMedicaTest" name="selectJpqlQueryTeste" time="0.179">
-    <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at sistema.testes.ConsultaMedicaTest.tearDown(ConsultaMedicaTest.java:75)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-</error>
-  </testcase>
-  <testcase classname="sistema.testes.ConsultaMedicaTest" name="selectSqlNativeNamedQueryTeste" time="0.286">
-    <error message="Exception processing table name=&apos;tb_endereco&apos;" type="java.lang.RuntimeException">java.lang.RuntimeException: Exception processing table name=&apos;tb_endereco&apos;
-	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:45)
-	at sistema.testes.ConsultaMedicaTest.setUp(ConsultaMedicaTest.java:57)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-Caused by: org.dbunit.DatabaseUnitException: Exception processing table name=&apos;tb_endereco&apos;
-	at org.dbunit.operation.AbstractBatchOperation.execute(AbstractBatchOperation.java:240)
-	at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79)
-	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:42)
-	... 33 more
-Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry &apos;3&apos; for key &apos;PRIMARY&apos;
-	at sun.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
-	at com.mysql.jdbc.Util.getInstance(Util.java:360)
-	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:971)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3887)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3823)
-	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2435)
-	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2582)
-	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2530)
-	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1907)
-	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1199)
-	at org.dbunit.database.statement.SimplePreparedStatement.addBatch(SimplePreparedStatement.java:80)
-	at org.dbunit.database.statement.AutomaticPreparedBatchStatement.addBatch(AutomaticPreparedBatchStatement.java:70)
-	at org.dbunit.operation.AbstractBatchOperation.execute(AbstractBatchOperation.java:224)
-	... 35 more
-</error>
-    <system-out>---------------------- ERROR: Exception processing table name=&apos;tb_endereco&apos;
-ERROR: null
-</system-out>
-  </testcase>
-  <testcase classname="sistema.testes.ConsultaMedicaTest" name="selectSqlNativeNamedQueryTeste" time="0.286">
-    <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at sistema.testes.ConsultaMedicaTest.tearDown(ConsultaMedicaTest.java:75)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-</error>
-  </testcase>
-  <testcase classname="sistema.testes.ConsultaMedicaTest" name="selectJpqlNamedQueryTeste" time="0.665">
-    <error message="Cannot delete or update a parent row: a foreign key constraint fails (`sistemapet`.`tb_veterinario`, CONSTRAINT `FK_tb_Veterinario_id_veterinario` FOREIGN KEY (`id_veterinario`) REFERENCES `tb_usuario` (`id_usuario`))" type="java.lang.RuntimeException">java.lang.RuntimeException: Cannot delete or update a parent row: a foreign key constraint fails (`sistemapet`.`tb_veterinario`, CONSTRAINT `FK_tb_Veterinario_id_veterinario` FOREIGN KEY (`id_veterinario`) REFERENCES `tb_usuario` (`id_usuario`))
-	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:45)
-	at sistema.testes.ConsultaMedicaTest.setUp(ConsultaMedicaTest.java:57)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`sistemapet`.`tb_veterinario`, CONSTRAINT `FK_tb_Veterinario_id_veterinario` FOREIGN KEY (`id_veterinario`) REFERENCES `tb_usuario` (`id_usuario`))
-	at sun.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
-	at com.mysql.jdbc.Util.getInstance(Util.java:360)
-	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:971)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3887)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3823)
-	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2435)
-	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2582)
-	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2526)
-	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2484)
-	at com.mysql.jdbc.StatementImpl.execute(StatementImpl.java:848)
-	at com.mysql.jdbc.StatementImpl.execute(StatementImpl.java:742)
-	at org.dbunit.database.statement.SimpleStatement.executeBatch(SimpleStatement.java:69)
-	at org.dbunit.operation.DeleteAllOperation.execute(DeleteAllOperation.java:126)
-	at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79)
-	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:42)
-	... 33 more
-</error>
-    <system-out>---------------------- ERROR: Cannot delete or update a parent row: a foreign key constraint fails (`sistemapet`.`tb_veterinario`, CONSTRAINT `FK_tb_Veterinario_id_veterinario` FOREIGN KEY (`id_veterinario`) REFERENCES `tb_usuario` (`id_usuario`))
-ERROR: null
-</system-out>
-  </testcase>
-  <testcase classname="sistema.testes.ConsultaMedicaTest" name="selectJpqlNamedQueryTeste" time="0.665">
-    <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at sistema.testes.ConsultaMedicaTest.tearDown(ConsultaMedicaTest.java:75)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-</error>
-  </testcase>
-  <testcase classname="sistema.testes.ConsultaMedicaTest" name="criaConsultaMedicaInvalidoTeste" time="0.254">
-    <error message="Cannot delete or update a parent row: a foreign key constraint fails (`sistemapet`.`tb_cartao`, CONSTRAINT `FK_tb_cartao_fk_cliente` FOREIGN KEY (`fk_cliente`) REFERENCES `tb_usuario` (`id_usuario`))" type="java.lang.RuntimeException">java.lang.RuntimeException: Cannot delete or update a parent row: a foreign key constraint fails (`sistemapet`.`tb_cartao`, CONSTRAINT `FK_tb_cartao_fk_cliente` FOREIGN KEY (`fk_cliente`) REFERENCES `tb_usuario` (`id_usuario`))
-	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:45)
-	at sistema.testes.ConsultaMedicaTest.setUp(ConsultaMedicaTest.java:57)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`sistemapet`.`tb_cartao`, CONSTRAINT `FK_tb_cartao_fk_cliente` FOREIGN KEY (`fk_cliente`) REFERENCES `tb_usuario` (`id_usuario`))
-	at sun.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377)
-	at com.mysql.jdbc.Util.getInstance(Util.java:360)
-	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:971)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3887)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3823)
-	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2435)
-	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2582)
-	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2526)
-	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2484)
-	at com.mysql.jdbc.StatementImpl.execute(StatementImpl.java:848)
-	at com.mysql.jdbc.StatementImpl.execute(StatementImpl.java:742)
-	at org.dbunit.database.statement.SimpleStatement.executeBatch(SimpleStatement.java:69)
-	at org.dbunit.operation.DeleteAllOperation.execute(DeleteAllOperation.java:126)
-	at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79)
-	at sistema.testes.DbUnitUtil.inserirDados(DbUnitUtil.java:42)
-	... 33 more
-</error>
-    <system-out>---------------------- ERROR: Cannot delete or update a parent row: a foreign key constraint fails (`sistemapet`.`tb_cartao`, CONSTRAINT `FK_tb_cartao_fk_cliente` FOREIGN KEY (`fk_cliente`) REFERENCES `tb_usuario` (`id_usuario`))
-ERROR: null
-</system-out>
-  </testcase>
-  <testcase classname="sistema.testes.ConsultaMedicaTest" name="criaConsultaMedicaInvalidoTeste" time="0.254">
-    <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at sistema.testes.ConsultaMedicaTest.tearDown(ConsultaMedicaTest.java:75)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-</error>
-  </testcase>
+  <testcase classname="sistema.testes.ConsultaMedicaTest" name="criaConsultaMedicaInvalidoTeste" time="3.609"/>
 </testsuite>

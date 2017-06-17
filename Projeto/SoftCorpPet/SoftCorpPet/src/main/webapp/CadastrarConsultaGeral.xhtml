@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="template/layout.xhtml">
+            <ui:define name="content">
+                <p:fieldset legend="Consultas" toggleable="true" toggleSpeed="500">
+                    <p:ajax event="toggle" listener="#{fieldsetView.handleToggle}"/>
+                    <h:form>
+                        <p:toolbar>
+                            <p:toolbarGroup>
+                                <p:commandButton value="Atualizar" action="#" update="@form" ></p:commandButton>
+                            </p:toolbarGroup>                    
+                        </p:toolbar>
+                        <p:dataTable id="valoresList" value="#{ConsultaGeralManagedBean.listarConsultas()}" var="consulta">
+                            <p:column headerText="Data">
+                                <h:outputText value="#{consulta.dataMarcada}"/>
+                            </p:column>
+                            <p:column headerText="status">
+                                <h:outputText value="#{consulta.status}"/>
+                            </p:column>
+                        </p:dataTable>
+                    </h:form>
+                </p:fieldset>
+                <br/>
+                <br/>
+                <h:form>
+                    <p:fieldset legend="Nova Consulta">
+                        <p:panelGrid>
+                            <h:outputLabel value="Data"/>
+                            <p:calendar id="data" value="#{ConsultaGeralManagedBean.consultaGeral.dataMarcada}"/>
+                            <br/>
+                            <h:outputLabel value="Status"/>
+                            <p:inputText id="status" value="#{ConsultaGeralManagedBean.consultaGeral.status}"/>
+                            <br/>
+                            <h:outputLabel value="Funcionario"/>
+                            <p:inputText id="Funcionario" value="#{ConsultaGeralManagedBean.consultaGeral.funcionario}"/>
+                            <br/>
+                            <h:outputLabel value="Servico"/>
+                            <p:inputText id="servico" value="#{ConsultaGeralManagedBean.consultaGeral.servico}"/>
+                        </p:panelGrid>
+                        <br/>
+                        <p:commandButton value="Adicionar Consulta" action="#{ConsultaGeralManagedBean.adicionar()}" update="@form"></p:commandButton>
+                    </p:fieldset>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
