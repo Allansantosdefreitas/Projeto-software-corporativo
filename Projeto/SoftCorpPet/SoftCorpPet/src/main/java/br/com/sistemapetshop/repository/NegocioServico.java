@@ -6,65 +6,51 @@
 package br.com.sistemapetshop.repository;
 
 import br.com.sistemapetshop.model.Servico;
-import java.util.ArrayList;
 import java.util.List;
-import javax.annotation.PostConstruct;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
 import javax.ejb.TransactionManagement;
 import javax.ejb.TransactionManagementType;
 import javax.persistence.EntityManager;
-import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceContextType;
 
 /**
  *
- * @author Usuario
+ * @author Jonathan Romualdo
  */
 @Stateless
 @TransactionManagement(TransactionManagementType.CONTAINER)
 public class NegocioServico {
 
-    
-    EntityManager et;
+    @PersistenceContext(unitName = "corporativoPU")
+    private EntityManager em;
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
     public void inserirServico(Servico servico) {
-        
-        et.persist(servico);
-
+        em.persist(servico);
     }
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
     public void atualizarServico(Servico servico) {
-
-        et.merge(servico);
-        
+        em.merge(servico);
     }
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
     public void deletarServico(Servico servico) {
-        
-        
-        et.remove(et);
-
+        em.remove(em);
     }
 
     @TransactionAttribute(TransactionAttributeType.SUPPORTS)
     public Servico consultarServico(Long idServico) {
-        
-        return et.find(Servico.class, idServico);
-        
+        return em.find(Servico.class, idServico);
     }
-    
+
     @TransactionAttribute(TransactionAttributeType.SUPPORTS)
     public List<Servico> listarServicos() {
-        List<Servico> listaServico;
-        
-        listaServico = et.createQuery("s FROM Servico s").getResultList();
-        
-        return listaServico;
-        
+
+        return (List<Servico>) em.createQuery("From Servico s").getResultList();
     }
 
 }

@@ -27,11 +27,10 @@ import javax.validation.Valid;
  *
  * @author Jonathan Romualdo, Allan Santos
  */
-
 @Entity
 @Table(name = "tb_cliente")
 @DiscriminatorValue(value = "cli")
-@PrimaryKeyJoinColumn(name = "id_cliente", referencedColumnName = "id_usuario") 
+@PrimaryKeyJoinColumn(name = "id_cliente", referencedColumnName = "id_usuario")
 @Access(AccessType.FIELD)
 @NamedQueries(
         {
@@ -44,24 +43,22 @@ import javax.validation.Valid;
 @NamedNativeQueries(
         {
             @NamedNativeQuery(
-                name = "Cliente.PorLoginSQL",
-                query = "SELECT id_usuario, str_email, str_login, str_nome, str_senha, fk_endereco "
-                        + "FROM sistemapet.tb_cliente where str_login like ? ;",
-                resultClass = Cliente.class)
+                    name = "Cliente.PorLoginSQL",
+                    query = "SELECT id_usuario, str_email, str_login, str_nome, str_senha, fk_endereco "
+                    + "FROM sistemapet.tb_cliente where str_login like ? ;",
+                    resultClass = Cliente.class)
         }
 )
 public class Cliente extends Usuario implements Serializable {
 
     // Relacionamento Cartao
     @Valid
-    @OneToMany (mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
-    @JoinColumn (name = "fk_cartao", referencedColumnName = "id_cartao", nullable = true)
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     private List<Cartao> cartao;
-    
+
     // Relacionamento Pet
     @Valid
-    @OneToMany (mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
-    @JoinColumn (name = "fk_pet", referencedColumnName = "id_pet")
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     private List<Pet> listaPet;
 
     // getters e Setters -----------------------------

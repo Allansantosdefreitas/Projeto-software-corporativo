@@ -28,10 +28,10 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name = "tb_exame")
 @Access(AccessType.FIELD)
 @NamedNativeQueries(
-        {    
+        {
             @NamedNativeQuery(name = "Exame.PorTipo",
-            query = "select id_exame, str_nome, str_tipo, dbl_valor from sistemapet.tb_exame where str_tipo like ? ;",
-            resultClass = Exame.class)
+                    query = "select id_exame, str_nome, str_tipo, dbl_valor from sistemapet.tb_exame where str_tipo like ? ;",
+                    resultClass = Exame.class)
         }
 )
 public class Exame implements Serializable {
@@ -41,19 +41,18 @@ public class Exame implements Serializable {
     @Column(name = "id_exame", nullable = false)
     private Long idExame;
 
-    
     @NotBlank
-    @Size(max=60)
+    @Size(max = 60)
     @Column(name = "str_nome", length = 60, unique = false)
     private String nome;
 
     @NotBlank
-    @Size(max=60)
+    @Size(max = 60)
     @Column(name = "str_tipo", length = 60, unique = false)
     private String tipo;
 
     @NotBlank
-    @Size(max=100)
+    @Size(max = 100)
     @Column(name = "str_descricao", length = 100, unique = false)
     private String descricao;
 
@@ -64,14 +63,12 @@ public class Exame implements Serializable {
     // Relacionamento ConsultaMedica
     @Valid
     @OneToMany(mappedBy = "exame", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = false)
-    @JoinColumn(name = "fk_consulta_medica", referencedColumnName = "id_consulta_medica")
     private List<ConsultaMedica> listaConsultaMedica;
 
-    
-    public Exame(){
-        
+    public Exame() {
+
     }
-    
+
     public Exame(String nome, String tipo, String descricao, Double valor, List<ConsultaMedica> listaConsultaMedica) {
         this.nome = nome;
         this.tipo = tipo;

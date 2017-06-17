@@ -29,18 +29,18 @@ import javax.validation.Valid;
 @Entity
 @Table(name = "tb_Veterinario")
 @DiscriminatorValue(value = "vet")
-@PrimaryKeyJoinColumn(name = "id_veterinario", referencedColumnName = "id_usuario") 
+@PrimaryKeyJoinColumn(name = "id_veterinario", referencedColumnName = "id_usuario")
 @NamedQueries(
         {
-            @NamedQuery(name = "Veterinario.PorNome", 
-            query = "from Veterinario v where v.nome like :nome order by v.nome")
+            @NamedQuery(name = "Veterinario.PorNome",
+                    query = "from Veterinario v where v.nome like :nome order by v.nome")
         }
 )
 @NamedNativeQueries(
-    {
-        @NamedNativeQuery(name = "Veterinario.PorEspecialidade",
-        query = "select id_veterinario, str_crmv, str_especialidade from tb_veterinario where str_especialidade like ? order by str_crmv;")
-    }
+        {
+            @NamedNativeQuery(name = "Veterinario.PorEspecialidade",
+                    query = "select id_veterinario, str_crmv, str_especialidade from tb_veterinario where str_especialidade like ? order by str_crmv;")
+        }
 )
 public class Veterinario extends Usuario implements Serializable {
 
@@ -54,10 +54,8 @@ public class Veterinario extends Usuario implements Serializable {
     // Relacionamento ConsultaMedica
     @Valid
     @OneToMany(mappedBy = "veterinario", fetch = FetchType.LAZY, orphanRemoval = false, cascade = CascadeType.ALL)
-    @JoinColumn(name = "fk_consulta", referencedColumnName = "id_consulta", nullable = true)
     private List<ConsultaMedica> ListaConsultaMedica;
 
-    
     // getters e Setters -----------------------------
     public String getCrmv() {
         return crmv;
@@ -82,6 +80,5 @@ public class Veterinario extends Usuario implements Serializable {
     public void setListaConsultaMedica(List<ConsultaMedica> ListaConsultaMedica) {
         this.ListaConsultaMedica = ListaConsultaMedica;
     }
-    
-    
+
 }

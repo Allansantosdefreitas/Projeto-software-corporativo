@@ -25,4 +25,15 @@
       <property name="javax.persistence.validation.group.pre-persist" value="javax.validation.groups.Default"/>
     </properties>
   </persistence-unit>
+  <persistence-unit name="corporativoPU" transaction-type="JTA">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <jta-data-source>java:app/sistemaPet</jta-data-source>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.schema-generation.database.action" value="none"/>
+      <property name="hibernate.show_sql" value="true"/>
+      <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+      <property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.SunOneJtaPlatform" />
+    </properties>
+  </persistence-unit>
 </persistence>

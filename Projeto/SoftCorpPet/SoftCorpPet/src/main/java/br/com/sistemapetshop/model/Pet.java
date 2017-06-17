@@ -79,7 +79,6 @@ public class Pet implements Serializable {
     // Relacionamento ConsultaMedica
     @Valid
     @OneToMany(mappedBy = "pet", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
-    @JoinColumn(name = "fk_consulta_medica", referencedColumnName = "id_consulta_medica")
     private List<ConsultaMedica> ListaConsultaMedica;
 
     // getters e Setters -----------------------------

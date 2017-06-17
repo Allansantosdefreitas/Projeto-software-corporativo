@@ -45,23 +45,22 @@ import org.hibernate.validator.constraints.NotBlank;
 @NamedNativeQueries(
         {
             @NamedNativeQuery(
-                name = "Cartao.PorBandeiraSQL",
-                query = "SELECT id_cartao, str_bandeira, date_dataValidade, str_numero "
-                        + "FROM sistemapet.tb_cartao where str_bandeira like ? ;",
-                resultClass = Cartao.class),
-        
+                    name = "Cartao.PorBandeiraSQL",
+                    query = "SELECT id_cartao, str_bandeira, date_dataValidade, str_numero "
+                    + "FROM sistemapet.tb_cartao where str_bandeira like ? ;",
+                    resultClass = Cartao.class),
+
             @NamedNativeQuery(
-                name = "Cartao.PorIdSQL",
-                query = "SELECT id_cartao, str_bandeira, date_dataValidade, str_numero, fk_cliente "
-                        + "FROM sistemapet.tb_cartao WHERE str_bandeira id_cartao = ? ;",
-                resultClass = Cartao.class),
-        }
+                    name = "Cartao.PorIdSQL",
+                    query = "SELECT id_cartao, str_bandeira, date_dataValidade, str_numero, fk_cliente "
+                    + "FROM sistemapet.tb_cartao WHERE str_bandeira id_cartao = ? ;",
+                    resultClass = Cartao.class),}
 )
 public class Cartao implements Serializable {
 
     @Id
     @Column(name = "id_cartao", unique = true, nullable = false)
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCartao;
 
     @NotBlank
@@ -80,11 +79,11 @@ public class Cartao implements Serializable {
     @Column(name = "date_dataValidade")
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataValidade;
-    
+
     // Relacionamento Cliente
     @Valid
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST, optional = true)
-    @JoinColumn (name = "fk_cliente", referencedColumnName = "id_cliente")
+    @JoinColumn(name = "fk_cliente", referencedColumnName = "id_cliente")
     private Cliente cliente;
 
     public Cartao() {
@@ -94,13 +93,13 @@ public class Cartao implements Serializable {
         this.bandeira = bandeira;
         this.numero = numero;
         this.dataValidade = dataValidade;
-    }  
+    }
 
     @PrePersist
     public void validar() {
         Validation.buildDefaultValidatorFactory().getValidator().validate(this, Cartao.class);
     }
-    
+
     // getters e Setters -----------------------------
     public Long getIdCartao() {
         return idCartao;
@@ -133,7 +132,7 @@ public class Cartao implements Serializable {
     public void setDataValidade(Date dataValidade) {
         this.dataValidade = dataValidade;
     }
-    
+
     public Cliente getCliente() {
         return cliente;
     }

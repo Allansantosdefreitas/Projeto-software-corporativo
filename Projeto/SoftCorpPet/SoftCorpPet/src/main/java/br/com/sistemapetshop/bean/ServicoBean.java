@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.sistemapetshop.bean;
 
 import br.com.sistemapetshop.model.Servico;
@@ -21,38 +16,27 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean(name = "ServicoManagedBean")
 @SessionScoped
 public class ServicoBean {
-    
+
     @EJB
-    NegocioServico negocioServico;
-    
-    Servico servico;
-    
-    ArrayList<Servico> listaServico;
-    
+    private NegocioServico negocioServico;
+
+    private Servico servico;
+
     @PostConstruct
-    public void constroi(){
-        Servico servico;
+    public void constroi() {
+        servico = new Servico();
     }
-    
-    
-    public List<Servico> listarServicos(){
-        
+
+    public List<Servico> listarServicos() {
         return negocioServico.listarServicos();
     }
-    
-    public void adicionar(){
-        
+
+    public void adicionar() {
         negocioServico.inserirServico(servico);
-      
     }
-    
-    public Servico getServico(){
+
+    public Servico getServico() {
         return servico;
     }
-    
-    
-    
-    
-    
-    
+
 }

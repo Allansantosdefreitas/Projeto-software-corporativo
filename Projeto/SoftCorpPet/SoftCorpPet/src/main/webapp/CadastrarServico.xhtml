@@ -18,7 +18,7 @@
                                 <p:commandButton value="Ver Servicos" action="#" update="@form" ></p:commandButton>
                             </p:toolbarGroup>                    
                         </p:toolbar>
-                        <p:dataTable id="valoresList" value="#{ServicoManagedBean.listarServicos}" var="servi">
+                        <p:dataTable id="valoresList" value="#{ServicoManagedBean.listarServicos()}" var="servi">
                             <p:column headerText="nome">
                                 <h:outputText value="#{servi.nome}"/>
                             </p:column>
