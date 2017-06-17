@@ -37,7 +37,7 @@ public class RemoverServico extends HttpServlet {
         
         Servico servico = (Servico) sessao.getAttribute("servico");
         
-        NegocioServico.deletarServico(servico);
+       // NegocioServico.deletarServico(servico);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

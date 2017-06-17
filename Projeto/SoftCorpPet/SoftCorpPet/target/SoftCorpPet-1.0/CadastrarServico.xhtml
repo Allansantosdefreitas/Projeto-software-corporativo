@@ -5,7 +5,7 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
-        <title>Cadastro de Serviços</title>
+        <title>Facelet Title</title>
     </h:head>
     <h:body>
         <ui:composition template="template/layout.xhtml">
@@ -18,12 +18,12 @@
                                 <p:commandButton value="Ver Servicos" action="#" update="@form" ></p:commandButton>
                             </p:toolbarGroup>                    
                         </p:toolbar>
-                        <p:dataTable id="valoresList" value="#{ServicoManagedBean.buscar()}" var="servico">
+                        <p:dataTable id="valoresList" value="#{ServicoManagedBean.listarServicos}" var="servi">
                             <p:column headerText="nome">
-                                <h:outputText value="#{servico.nome}"/>
+                                <h:outputText value="#{servi.nome}"/>
                             </p:column>
                             <p:column headerText="valor">
-                                <h:outputText value="#{servico.valor}"/>
+                                <h:outputText value="#{servi.valor}"/>
                             </p:column>
                         </p:dataTable>
                     </h:form>
@@ -34,13 +34,13 @@
                     <p:fieldset legend="Adiconar Serviço">
                         <p:panelGrid>
                             <h:outputLabel value="Nome"/>
-                            <p:inputText id="nome" value="#{ServicoBean.nome}"/>
+                            <p:inputText id="nome" value="#{ServicoManagedBean.servico.nome}"/>
                             <br/>
                             <h:outputLabel value="Valor"/>
-                            <p:inputText id="valor" value="#{ServicoBean.valor}"/>                            
+                            <p:inputText id="valor" value="#{ServicoManagedBean.servico.valor}"/>                            
                         </p:panelGrid>
                         <br/>
-                        <p:commandButton value="Adicionar Servico" action="#{ServicoManagedBean.adicionar()}" update="@form"></p:commandButton>
+                        <p:commandButton value="Adicionar Servico" action="#{ServicoBean.adicionarServico()}" update="@form"></p:commandButton>
                     </p:fieldset>
                 </h:form>
             </ui:define>

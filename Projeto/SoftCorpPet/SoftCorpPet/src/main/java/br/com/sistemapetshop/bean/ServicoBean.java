@@ -7,6 +7,8 @@ package br.com.sistemapetshop.bean;
 
 import br.com.sistemapetshop.model.Servico;
 import br.com.sistemapetshop.repository.NegocioServico;
+import java.util.ArrayList;
+import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
@@ -14,36 +16,43 @@ import javax.faces.bean.SessionScoped;
 
 /**
  *
- * @author Jonathan Romualdo
+ * @author Usuario
  */
 @ManagedBean(name = "ServicoManagedBean")
 @SessionScoped
 public class ServicoBean {
-
+    
     @EJB
     NegocioServico negocioServico;
     
     Servico servico;
     
+    ArrayList<Servico> listaServico;
+    
     @PostConstruct
-    public void contruir(){
-        servico = new Servico();
+    public void constroi(){
+        Servico servico;
+    }
+    
+    
+    public List<Servico> listarServicos(){
+        
+        return negocioServico.listarServicos();
     }
     
     public void adicionar(){
+        
         negocioServico.inserirServico(servico);
+      
     }
     
-    public void atualizar(){
-        negocioServico.atualizarServico(servico);
+    public Servico getServico(){
+        return servico;
     }
     
-    public void remover(){
-        negocioServico.deletarServico(servico);
-    }
     
-    public void buscar(){
-        negocioServico.consultarServico(servico.getIdServico());
-    }
+    
+    
+    
     
 }
