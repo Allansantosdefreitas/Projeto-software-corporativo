@@ -32,8 +32,6 @@ public class ServicoBean {
     @PostConstruct
     public void constroi(){
         Servico servico;
-        
-        List<Servico> listaServicos = listarServicos();
     }
     
     
@@ -48,8 +46,8 @@ public class ServicoBean {
       
     }
     
-    public List<Servico> getLista(){
-        return listaServico;
+    public Servico getServico(){
+        return servico;
     }
     
     

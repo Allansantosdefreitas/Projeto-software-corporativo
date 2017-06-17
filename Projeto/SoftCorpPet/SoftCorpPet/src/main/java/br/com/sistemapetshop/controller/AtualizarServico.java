@@ -39,7 +39,7 @@ public class AtualizarServico extends HttpServlet {
         servico.setNome("Banho Deluxe");
         servico.setValor(500.00);
         
-        NegocioServico.atualizarServico(servico);
+        //NegocioServico.atualizarServico(servico);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

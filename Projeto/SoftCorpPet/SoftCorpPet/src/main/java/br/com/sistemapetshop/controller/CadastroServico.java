@@ -51,7 +51,7 @@ public class CadastroServico extends HttpServlet {
         System.out.println("Nome: " + servico.getNome());
         System.out.println("Valor: " + servico.getValor());
 
-        NegocioServico.inserirServico(servico);
+       // NegocioServico.inserirServico(servico);
 
         sessao.setAttribute("servico", servico);
     }

@@ -18,7 +18,7 @@
                                 <p:commandButton value="Ver Servicos" action="#" update="@form" ></p:commandButton>
                             </p:toolbarGroup>                    
                         </p:toolbar>
-                        <p:dataTable id="valoresList" value="#{ServicoBean.listaServico}" var="servi">
+                        <p:dataTable id="valoresList" value="#{ServicoManagedBean.listarServicos}" var="servi">
                             <p:column headerText="nome">
                                 <h:outputText value="#{servi.nome}"/>
                             </p:column>
@@ -34,10 +34,10 @@
                     <p:fieldset legend="Adiconar Serviço">
                         <p:panelGrid>
                             <h:outputLabel value="Nome"/>
-                            <p:inputText id="nome" value="#{ServicoBean.nome}"/>
+                            <p:inputText id="nome" value="#{ServicoManagedBean.servico.nome}"/>
                             <br/>
                             <h:outputLabel value="Valor"/>
-                            <p:inputText id="valor" value="#{ServicoBean.valor}"/>                            
+                            <p:inputText id="valor" value="#{ServicoManagedBean.servico.valor}"/>                            
                         </p:panelGrid>
                         <br/>
                         <p:commandButton value="Adicionar Servico" action="#{ServicoBean.adicionarServico()}" update="@form"></p:commandButton>

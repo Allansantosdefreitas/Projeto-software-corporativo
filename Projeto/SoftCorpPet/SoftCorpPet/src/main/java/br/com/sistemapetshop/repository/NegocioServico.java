@@ -61,7 +61,7 @@ public class NegocioServico {
     public List<Servico> listarServicos() {
         List<Servico> listaServico;
         
-        listaServico = et.createQuery("from Servico s").getResultList();
+        listaServico = et.createQuery("s FROM Servico s").getResultList();
         
         return listaServico;
         
