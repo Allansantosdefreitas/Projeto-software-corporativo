@@ -8,104 +8,63 @@ package br.com.sistemapetshop.repository;
 import br.com.sistemapetshop.model.Servico;
 import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.PostConstruct;
+import javax.ejb.Stateless;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
+import javax.ejb.TransactionManagement;
+import javax.ejb.TransactionManagementType;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 /**
  *
  * @author Usuario
  */
+@Stateless
+@TransactionManagement(TransactionManagementType.CONTAINER)
 public class NegocioServico {
+
     
-    private final static EntityManagerFactory EMF = Persistence.createEntityManagerFactory("sistema_pet_pu");
+    EntityManager et;
 
-    public static Long inserirServico(Servico servico) {
-        EntityManager em = null;
-        EntityTransaction et = null;
-
-        try {
-            em = EMF.createEntityManager();
-            et = em.getTransaction();
-
-            et.begin();
-            em.persist(servico);
-            et.commit();
-        } catch (Exception ex) {
-            if (et != null && et.isActive()) {
-                et.rollback();
-            }
-        } finally {
-            if (em != null) {
-                em.close();
-            }
-        }
-
-        return servico.getIdServico();
-    }
-
-    public static void atualizarServico(Servico servico) {
-        EntityManager em = null;
-        EntityTransaction et = null;
-
-        try {
-            em = EMF.createEntityManager();
-            et = em.getTransaction();
-
-            et.begin();
-            em.merge(servico);
-            et.commit();
-        } catch (Exception ex) {
-            if (et != null && et.isActive()) {
-                et.rollback();
-            }
-        } finally {
-            if (em != null) {
-                em.close();
-            }
-        }
-    }
-
-    public static void deletarServico(Servico servico) {
-        EntityManager em = null;
-        EntityTransaction et = null;
-
-        try {
-            em = EMF.createEntityManager();
-            et = em.getTransaction();
-            
-            Servico servicoRemove = em.merge(servico);
-
-            et.begin();
-            em.remove(servicoRemove);
-            et.commit();
-        } catch (Exception ex) {
-            if (et != null && et.isActive()) {
-                et.rollback();
-            }
-        } finally {
-            if (em != null) {
-                em.close();
-            }
-        }
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    public void inserirServico(Servico servico) {
+        
+        et.persist(servico);
 
     }
 
-    public static Servico consultarServico(Long idServico) {
-        EntityManager em = null;
-        Servico servicoResultado = null;
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    public void atualizarServico(Servico servico) {
 
-        try {
-            em = EMF.createEntityManager();
+        et.merge(servico);
+        
+    }
 
-            servicoResultado = em.find(Servico.class, idServico);
-        } finally {
-            if (em != null) {
-                em.close();
-            }
-        }
-        return servicoResultado;
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    public void deletarServico(Servico servico) {
+        
+        
+        et.remove(et);
+
+    }
+
+    @TransactionAttribute(TransactionAttributeType.SUPPORTS)
+    public Servico consultarServico(Long idServico) {
+        
+        return et.find(Servico.class, idServico);
+        
+    }
+    
+    @TransactionAttribute(TransactionAttributeType.SUPPORTS)
+    public List<Servico> listarServicos() {
+        List<Servico> listaServico;
+        
+        listaServico = et.createQuery("from Servico s").getResultList();
+        
+        return listaServico;
+        
     }
 
 }

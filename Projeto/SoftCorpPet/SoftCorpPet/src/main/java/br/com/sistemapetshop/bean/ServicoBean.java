@@ -7,6 +7,9 @@ package br.com.sistemapetshop.bean;
 
 import br.com.sistemapetshop.model.Servico;
 import br.com.sistemapetshop.repository.NegocioServico;
+import java.util.ArrayList;
+import java.util.List;
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -20,14 +23,33 @@ import javax.faces.bean.SessionScoped;
 public class ServicoBean {
     
     @EJB
+    NegocioServico negocioServico;
+    
     Servico servico;
     
+    ArrayList<Servico> listaServico;
     
+    @PostConstruct
+    public void constroi(){
+        Servico servico;
+        
+        List<Servico> listaServicos = listarServicos();
+    }
+    
+    
+    public List<Servico> listarServicos(){
+        
+        return negocioServico.listarServicos();
+    }
     
     public void adicionar(){
         
-        NegocioServico.inserirServico(servico);
+        negocioServico.inserirServico(servico);
       
+    }
+    
+    public List<Servico> getLista(){
+        return listaServico;
     }
     
     
