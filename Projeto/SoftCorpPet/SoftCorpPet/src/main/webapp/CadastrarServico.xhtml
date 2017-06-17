@@ -31,7 +31,7 @@
                 <br/>
                 <br/>
                 <h:form>
-                    <p:fieldset legend="Adiconar Serviço">
+                    <p:fieldset legend="Adicionar Serviço">
                         <p:panelGrid>
                             <h:outputLabel value="Nome"/>
                             <p:inputText id="nome" value="#{ServicoManagedBean.servico.nome}"/>
@@ -40,7 +40,7 @@
                             <p:inputText id="valor" value="#{ServicoManagedBean.servico.valor}"/>                            
                         </p:panelGrid>
                         <br/>
-                        <p:commandButton value="Adicionar Servico" action="#{ServicoBean.adicionarServico()}" update="@form"></p:commandButton>
+                        <p:commandButton value="Adicionar Servico" action="#{ServicoManagedBean.adicionar()}" update="@form"></p:commandButton>
                     </p:fieldset>
                 </h:form>
             </ui:define>

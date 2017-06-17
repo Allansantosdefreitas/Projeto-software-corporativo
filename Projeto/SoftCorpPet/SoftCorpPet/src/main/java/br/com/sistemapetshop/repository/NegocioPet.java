@@ -5,7 +5,7 @@
  */
 package br.com.sistemapetshop.repository;
 
-import br.com.sistemapetshop.model.Servico;
+import br.com.sistemapetshop.model.Pet;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
@@ -21,35 +21,35 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 @TransactionManagement(TransactionManagementType.CONTAINER)
-public class NegocioServico {
+public class NegocioPet {
 
     @PersistenceContext(unitName = "corporativoPU")
     private EntityManager em;
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void inserirServico(Servico servico) {
-        em.persist(servico);
+    public void inserirServico(Pet pet) {
+        em.persist(pet);
     }
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void atualizarServico(Servico servico) {
-        em.merge(servico);
+    public void atualizarServico(Pet pet) {
+        em.merge(pet);
     }
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void deletarServico(Servico servico) {
+    public void deletarServico(Pet pet) {
         em.remove(em);
     }
 
     @TransactionAttribute(TransactionAttributeType.SUPPORTS)
-    public Servico consultarServico(Long idServico) {
-        return em.find(Servico.class, idServico);
+    public Pet consultarServico(Long idPet) {
+        return em.find(Pet.class, idPet);
     }
 
     @TransactionAttribute(TransactionAttributeType.SUPPORTS)
-    public List<Servico> listarServicos() {
+    public List<Pet> listarServicos() {
 
-        return (List<Servico>) em.createQuery("From Servico s").getResultList();
+        return (List<Pet>) em.createQuery("From Servico s").getResultList();
     }
 
 }

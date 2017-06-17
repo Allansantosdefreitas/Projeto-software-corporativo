@@ -5,6 +5,7 @@
  */
 package br.com.sistemapetshop.repository;
 
+import br.com.sistemapetshop.model.Endereco;
 import br.com.sistemapetshop.model.Servico;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -17,39 +18,38 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author Jonathan Romualdo
+ * @author Usuario
  */
 @Stateless
 @TransactionManagement(TransactionManagementType.CONTAINER)
-public class NegocioServico {
+public class NegocioEndereco {
 
     @PersistenceContext(unitName = "corporativoPU")
     private EntityManager em;
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void inserirServico(Servico servico) {
-        em.persist(servico);
+    public void inserirEndereco(Endereco endereco) {
+        em.persist(endereco);
     }
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void atualizarServico(Servico servico) {
-        em.merge(servico);
+    public void atualizarEndereco(Endereco endereco) {
+        em.merge(endereco);
     }
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void deletarServico(Servico servico) {
-        em.remove(em);
+    public void deletarEndereco(Endereco endereco) {
+        em.remove(endereco);
     }
 
     @TransactionAttribute(TransactionAttributeType.SUPPORTS)
-    public Servico consultarServico(Long idServico) {
-        return em.find(Servico.class, idServico);
+    public Servico consultarEndereco(Long idEndereco) {
+        return em.find(Servico.class, idEndereco);
     }
 
     @TransactionAttribute(TransactionAttributeType.SUPPORTS)
-    public List<Servico> listarServicos() {
+    public List<Endereco> listarEnderecos() {
 
-        return (List<Servico>) em.createQuery("From Servico s").getResultList();
+        return (List<Endereco>) em.createQuery("From Endereco s").getResultList();
     }
-
 }

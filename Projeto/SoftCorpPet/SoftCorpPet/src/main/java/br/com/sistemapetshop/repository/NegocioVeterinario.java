@@ -1,11 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.sistemapetshop.repository;
 
-import br.com.sistemapetshop.model.Servico;
+import br.com.sistemapetshop.model.Veterinario;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
@@ -21,35 +16,35 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 @TransactionManagement(TransactionManagementType.CONTAINER)
-public class NegocioServico {
+public class NegocioVeterinario {
 
     @PersistenceContext(unitName = "corporativoPU")
     private EntityManager em;
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void inserirServico(Servico servico) {
-        em.persist(servico);
+    public void inserirVeterinario(Veterinario veterinario) {
+        em.persist(veterinario);
     }
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void atualizarServico(Servico servico) {
-        em.merge(servico);
+    public void atualizarVeterinario(Veterinario veterinario) {
+        em.merge(veterinario);
     }
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void deletarServico(Servico servico) {
-        em.remove(em);
+    public void deletarVeterinario(Veterinario veterinario) {
+        em.remove(veterinario);
     }
 
     @TransactionAttribute(TransactionAttributeType.SUPPORTS)
-    public Servico consultarServico(Long idServico) {
-        return em.find(Servico.class, idServico);
+    public Veterinario consultarVeterinario(Long idUsuario) {
+        return em.find(Veterinario.class, idUsuario);
     }
 
     @TransactionAttribute(TransactionAttributeType.SUPPORTS)
-    public List<Servico> listarServicos() {
+    public List<Veterinario> listarVeterinario() {
 
-        return (List<Servico>) em.createQuery("From Servico s").getResultList();
+        return (List<Veterinario>) em.createQuery("From Veterinario s").getResultList();
     }
-
+    
 }
