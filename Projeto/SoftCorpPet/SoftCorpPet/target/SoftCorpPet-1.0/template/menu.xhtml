@@ -24,7 +24,7 @@
                             <p:menuitem value="Veterinario" url="faces/CadastraVeterinario.xhtml" />
                             <p:menuitem value="Pet" url="faces/CadastraPet.xhtml" />
                         </p:submenu>
-                        
+
                         <p:submenu label="Consultar" icon="ui-icon-contact">
                             <p:menuitem value="Serviço" url="#" />
                             <p:menuitem value="Funcionário" url="#" />
@@ -42,12 +42,12 @@
                             <p:menuitem value="Pet" url="#" />
                             <p:menuitem value="Especialidade" url="#" />
                         </p:submenu>
-              
+
                     </p:submenu>  
 
                     <f:facet name="options">
-<!--                        <p:inputText style="margin-right:10px" placeholder="Search"/>-->
-                        <p:commandButton type="button" value="Logout" icon="ui-icon-extlink" />
+                        <p:commandButton value="cadastrar" icon="ui-icon-extlink" action="cadastrar"/>
+                        <p:commandButton value="entrar" icon="ui-icon-extlink" action="entrar"/>
                     </f:facet>
                 </p:menubar>
             </h:form>

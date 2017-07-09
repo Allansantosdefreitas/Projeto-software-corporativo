@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title><ui:insert name="title">Sistema Pet</ui:insert></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <h:outputStylesheet library="css" name="jsfcrud.css"/>
+        <h:outputScript library="js" name="jsfcrud.js"/>
+
+        <script src='https://www.google.com/recaptcha/api.js' />
+    </h:head>
+    <h:body>
+        <p:layout fullPage="true">
+            <p:layoutUnit position="north" size="65" header="#SistemaPet">
+                <h:form id="menuForm">
+                    <p:menubar>
+                        <p:menuitem value="Home" action="#"/>
+                        <p:submenu label="Menu">
+                            <p:submenu label="Novo" icon="ui-icon-plus">
+                                <p:menuitem value="Serviço" url="faces/CadastrarServico.xhtml" />
+                                <p:menuitem value="Funcionário" url="#" />
+                                <p:menuitem value="Consulta" url="#" />
+                                <p:menuitem value="Cliente" url="#" />
+                                <p:menuitem value="Veterinario" url="faces/CadastraVeterinario.xhtml" />
+                                <p:menuitem value="Pet" url="faces/CadastraPet.xhtml" />
+                            </p:submenu>
+
+                            <p:submenu label="Consultar" icon="ui-icon-contact">
+                                <p:menuitem value="Serviço" url="#" />
+                                <p:menuitem value="Funcionário" url="#" />
+                                <p:menuitem value="Consulta" url="#" />
+                                <p:menuitem value="Cliente" url="#" />
+                                <p:menuitem value="Pet" url="#" />
+                                <p:menuitem value="Especialidade" url="#" />
+                            </p:submenu>
+
+                            <p:submenu label="Editar" icon="ui-icon-pencil">
+                                <p:menuitem value="Serviço" url="#" />
+                                <p:menuitem value="Funcionário" url="#" />
+                                <p:menuitem value="Consulta" url="#" />
+                                <p:menuitem value="Cliente" url="#" />
+                                <p:menuitem value="Pet" url="#" />
+                                <p:menuitem value="Especialidade" url="#" />
+                            </p:submenu>
+
+                            <f:facet name="options">
+                                <p:commandButton value="cadastrar" icon="ui-icon-extlink" action="cadastrar"/>
+                                <p:commandButton value="entrar" icon="ui-icon-extlink" action="entrar"/>
+                            </f:facet>
+                        </p:submenu> 
+                    </p:menubar>
+                </h:form>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="center">
+                <ui:insert name="body"/>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="south" size="60">
+                <p:panel header="Direitos Reservados"/>
+                <ui:insert name="footer"/>
+            </p:layoutUnit>
+
+
+        </p:layout>
+    </h:body>
+</html>

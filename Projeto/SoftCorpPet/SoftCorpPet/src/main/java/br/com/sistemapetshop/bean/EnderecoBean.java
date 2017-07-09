@@ -7,7 +7,7 @@ package br.com.sistemapetshop.bean;
 
 import br.com.sistemapetshop.model.Endereco;
 import br.com.sistemapetshop.model.Veterinario;
-import br.com.sistemapetshop.repository.NegocioEndereco;
+import br.com.sistemapetshop.negocio.NegocioEndereco;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;

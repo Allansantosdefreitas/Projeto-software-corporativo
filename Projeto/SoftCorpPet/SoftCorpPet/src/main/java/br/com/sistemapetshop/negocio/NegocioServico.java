@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.sistemapetshop.repository;
+package br.com.sistemapetshop.negocio;
 
-import br.com.sistemapetshop.model.Endereco;
 import br.com.sistemapetshop.model.Servico;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -18,38 +17,39 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author Usuario
+ * @author Jonathan Romualdo
  */
 @Stateless
 @TransactionManagement(TransactionManagementType.CONTAINER)
-public class NegocioEndereco {
+public class NegocioServico {
 
     @PersistenceContext(unitName = "corporativoPU")
     private EntityManager em;
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void inserirEndereco(Endereco endereco) {
-        em.persist(endereco);
+    public void inserirServico(Servico servico) {
+        em.persist(servico);
     }
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void atualizarEndereco(Endereco endereco) {
-        em.merge(endereco);
+    public void atualizarServico(Servico servico) {
+        em.merge(servico);
     }
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void deletarEndereco(Endereco endereco) {
-        em.remove(endereco);
+    public void deletarServico(Servico servico) {
+        em.remove(em);
     }
 
     @TransactionAttribute(TransactionAttributeType.SUPPORTS)
-    public Servico consultarEndereco(Long idEndereco) {
-        return em.find(Servico.class, idEndereco);
+    public Servico consultarServico(Long idServico) {
+        return em.find(Servico.class, idServico);
     }
 
     @TransactionAttribute(TransactionAttributeType.SUPPORTS)
-    public List<Endereco> listarEnderecos() {
+    public List<Servico> listarServicos() {
 
-        return (List<Endereco>) em.createQuery("From Endereco s").getResultList();
+        return (List<Servico>) em.createQuery("From Servico s").getResultList();
     }
+
 }

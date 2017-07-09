@@ -3,6 +3,7 @@ br\com\sistemapetshop\repository\NegocioServico.class
 br\com\sistemapetshop\model\ConsultaMedica_.class
 br\com\sistemapetshop\model\Cliente_.class
 br\com\sistemapetshop\bean\ServicoBean.class
+br\com\sistemapetshop\repository\NegocioEndereco.class
 br\com\sistemapetshop\model\Servico_.class
 br\com\sistemapetshop\bean\VeterinarioBean.class
 br\com\sistemapetshop\model\Exame_.class
@@ -16,6 +17,7 @@ br\com\sistemapetshop\model\StatusConsulta.class
 br\com\sistemapetshop\model\EspecialidadeFuncionario.class
 br\com\sistemapetshop\model\Cliente.class
 br\com\sistemapetshop\model\Cartao.class
+br\com\sistemapetshop\bean\EnderecoBean.class
 br\com\sistemapetshop\model\ConsultaMedica.class
 br\com\sistemapetshop\model\Usuario_.class
 br\com\sistemapetshop\model\Veterinario_.class

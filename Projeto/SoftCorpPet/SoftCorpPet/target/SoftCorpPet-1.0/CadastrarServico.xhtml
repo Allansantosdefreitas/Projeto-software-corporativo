@@ -18,7 +18,7 @@
                                 <p:commandButton value="Ver Servicos" action="#" update="@form" ></p:commandButton>
                             </p:toolbarGroup>                    
                         </p:toolbar>
-                        <p:dataTable id="valoresList" value="#{ServicoManagedBean.listarServicos()}" var="servi">
+                        <p:dataTable id="valoresList" value="#{ServicoManagedBean.listaServicos}" var="servi">
                             <p:column headerText="nome">
                                 <h:outputText value="#{servi.nome}"/>
                             </p:column>
@@ -40,7 +40,7 @@
                             <p:inputText id="valor" value="#{ServicoManagedBean.servico.valor}"/>                            
                         </p:panelGrid>
                         <br/>
-                        <p:commandButton value="Adicionar Servico" action="#{ServicoManagedBean.adicionar()}" update="@form"></p:commandButton>
+                        <p:commandButton value="Adicionar Servico" action="#{ServicoManagedBean.salvar()}" update="@form"></p:commandButton>
                     </p:fieldset>
                 </h:form>
             </ui:define>

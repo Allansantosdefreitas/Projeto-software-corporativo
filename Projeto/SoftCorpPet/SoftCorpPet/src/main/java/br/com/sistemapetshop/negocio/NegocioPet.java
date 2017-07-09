@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.sistemapetshop.repository;
+package br.com.sistemapetshop.negocio;
 
-import br.com.sistemapetshop.model.Exame;
 import br.com.sistemapetshop.model.Pet;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -18,38 +17,39 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author Jonathn Romualdo
+ * @author Jonathan Romualdo
  */
 @Stateless
 @TransactionManagement(TransactionManagementType.CONTAINER)
-public class NegocioExame {
+public class NegocioPet {
 
     @PersistenceContext(unitName = "corporativoPU")
     private EntityManager em;
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void inserirServico(Exame exame) {
-        em.persist(exame);
+    public void inserirServico(Pet pet) {
+        em.persist(pet);
     }
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void atualizarServico(Exame exame) {
-        em.merge(exame);
+    public void atualizarServico(Pet pet) {
+        em.merge(pet);
     }
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void deletarServico(Exame exame) {
+    public void deletarServico(Pet pet) {
         em.remove(em);
     }
 
     @TransactionAttribute(TransactionAttributeType.SUPPORTS)
-    public Exame consultarServico(Long idExame) {
-        return em.find(Exame.class, idExame);
+    public Pet consultarServico(Long idPet) {
+        return em.find(Pet.class, idPet);
     }
 
     @TransactionAttribute(TransactionAttributeType.SUPPORTS)
-    public List<Exame> listarServicos() {
+    public List<Pet> listarServicos() {
 
-        return (List<Exame>) em.createQuery("From Servico s").getResultList();
+        return (List<Pet>) em.createQuery("From Servico s").getResultList();
     }
+
 }

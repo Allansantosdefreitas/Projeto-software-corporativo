@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.sistemapetshop.repository;
+package br.com.sistemapetshop.negocio;
 
-import br.com.sistemapetshop.model.Pet;
+import br.com.sistemapetshop.model.Endereco;
+import br.com.sistemapetshop.model.Servico;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
@@ -17,39 +18,38 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author Jonathan Romualdo
+ * @author Usuario
  */
 @Stateless
 @TransactionManagement(TransactionManagementType.CONTAINER)
-public class NegocioPet {
+public class NegocioEndereco {
 
     @PersistenceContext(unitName = "corporativoPU")
     private EntityManager em;
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void inserirServico(Pet pet) {
-        em.persist(pet);
+    public void inserirEndereco(Endereco endereco) {
+        em.persist(endereco);
     }
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void atualizarServico(Pet pet) {
-        em.merge(pet);
+    public void atualizarEndereco(Endereco endereco) {
+        em.merge(endereco);
     }
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void deletarServico(Pet pet) {
-        em.remove(em);
+    public void deletarEndereco(Endereco endereco) {
+        em.remove(endereco);
     }
 
     @TransactionAttribute(TransactionAttributeType.SUPPORTS)
-    public Pet consultarServico(Long idPet) {
-        return em.find(Pet.class, idPet);
+    public Servico consultarEndereco(Long idEndereco) {
+        return em.find(Servico.class, idEndereco);
     }
 
     @TransactionAttribute(TransactionAttributeType.SUPPORTS)
-    public List<Pet> listarServicos() {
+    public List<Endereco> listarEnderecos() {
 
-        return (List<Pet>) em.createQuery("From Servico s").getResultList();
+        return (List<Endereco>) em.createQuery("From Endereco s").getResultList();
     }
-
 }

@@ -1,6 +1,12 @@
-package br.com.sistemapetshop.repository;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package br.com.sistemapetshop.negocio;
 
-import br.com.sistemapetshop.model.Veterinario;
+import br.com.sistemapetshop.model.Exame;
+import br.com.sistemapetshop.model.Pet;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
@@ -12,39 +18,38 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author Jonathan Romualdo
+ * @author Jonathn Romualdo
  */
 @Stateless
 @TransactionManagement(TransactionManagementType.CONTAINER)
-public class NegocioVeterinario {
+public class NegocioExame {
 
     @PersistenceContext(unitName = "corporativoPU")
     private EntityManager em;
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void inserirVeterinario(Veterinario veterinario) {
-        em.persist(veterinario);
+    public void inserirServico(Exame exame) {
+        em.persist(exame);
     }
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void atualizarVeterinario(Veterinario veterinario) {
-        em.merge(veterinario);
+    public void atualizarServico(Exame exame) {
+        em.merge(exame);
     }
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void deletarVeterinario(Veterinario veterinario) {
-        em.remove(veterinario);
+    public void deletarServico(Exame exame) {
+        em.remove(em);
     }
 
     @TransactionAttribute(TransactionAttributeType.SUPPORTS)
-    public Veterinario consultarVeterinario(Long idUsuario) {
-        return em.find(Veterinario.class, idUsuario);
+    public Exame consultarServico(Long idExame) {
+        return em.find(Exame.class, idExame);
     }
 
     @TransactionAttribute(TransactionAttributeType.SUPPORTS)
-    public List<Veterinario> listarVeterinario() {
+    public List<Exame> listarServicos() {
 
-        return (List<Veterinario>) em.createQuery("From Veterinario s").getResultList();
+        return (List<Exame>) em.createQuery("From Servico s").getResultList();
     }
-    
 }

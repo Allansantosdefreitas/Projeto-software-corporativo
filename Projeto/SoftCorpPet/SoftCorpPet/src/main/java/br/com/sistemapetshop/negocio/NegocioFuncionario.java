@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.sistemapetshop.repository;
+package br.com.sistemapetshop.negocio;
 
-import br.com.sistemapetshop.model.Servico;
+import br.com.sistemapetshop.model.Funcionario;
+import java.io.Serializable;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
@@ -17,39 +18,37 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author Jonathan Romualdo
+ * @author Usuario
  */
 @Stateless
 @TransactionManagement(TransactionManagementType.CONTAINER)
-public class NegocioServico {
-
+public class NegocioFuncionario implements Serializable {
     @PersistenceContext(unitName = "corporativoPU")
     private EntityManager em;
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void inserirServico(Servico servico) {
-        em.persist(servico);
+    public void inserirServico(Funcionario funcionario) {
+        em.persist(funcionario);
     }
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void atualizarServico(Servico servico) {
-        em.merge(servico);
+    public void atualizarServico(Funcionario funcionario) {
+        em.merge(funcionario);
     }
 
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void deletarServico(Servico servico) {
-        em.remove(em);
+    public void deletarServico(Funcionario funcionario) {
+        em.remove(funcionario);
     }
 
     @TransactionAttribute(TransactionAttributeType.SUPPORTS)
-    public Servico consultarServico(Long idServico) {
-        return em.find(Servico.class, idServico);
+    public Funcionario consultarServico(Long idFuncionario) {
+        return em.find(Funcionario.class, idFuncionario);
     }
 
     @TransactionAttribute(TransactionAttributeType.SUPPORTS)
-    public List<Servico> listarServicos() {
+    public List<Funcionario> listarServicos() {
 
-        return (List<Servico>) em.createQuery("From Servico s").getResultList();
+        return (List<Funcionario>) em.createQuery("From Funcionario f").getResultList();
     }
-
 }
