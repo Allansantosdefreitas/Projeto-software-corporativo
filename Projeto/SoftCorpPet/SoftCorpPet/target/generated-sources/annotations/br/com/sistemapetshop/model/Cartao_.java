@@ -1,19 +1,19 @@
 package br.com.sistemapetshop.model;
 
+import br.com.sistemapetshop.model.Cliente;
 import java.util.Date;
 import javax.annotation.Generated;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value = "org.hibernate.jpamodelgen.JPAMetaModelEntityProcessor")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2017-07-10T19:08:01")
 @StaticMetamodel(Cartao.class)
-public abstract class Cartao_ {
+public class Cartao_ { 
 
-	public static volatile SingularAttribute<Cartao, Cliente> cliente;
-	public static volatile SingularAttribute<Cartao, Long> idCartao;
-	public static volatile SingularAttribute<Cartao, String> numero;
-	public static volatile SingularAttribute<Cartao, Date> dataValidade;
-	public static volatile SingularAttribute<Cartao, String> bandeira;
+    public static volatile SingularAttribute<Cartao, Cliente> cliente;
+    public static volatile SingularAttribute<Cartao, Long> idCartao;
+    public static volatile SingularAttribute<Cartao, String> numero;
+    public static volatile SingularAttribute<Cartao, Date> dataValidade;
+    public static volatile SingularAttribute<Cartao, String> bandeira;
 
 }
-

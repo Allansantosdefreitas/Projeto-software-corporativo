@@ -1,16 +1,17 @@
 package br.com.sistemapetshop.model;
 
+import br.com.sistemapetshop.model.ConsultaGeral;
+import br.com.sistemapetshop.model.EspecialidadeFuncionario;
 import javax.annotation.Generated;
 import javax.persistence.metamodel.ListAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value = "org.hibernate.jpamodelgen.JPAMetaModelEntityProcessor")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2017-07-10T19:08:01")
 @StaticMetamodel(Funcionario.class)
-public abstract class Funcionario_ extends br.com.sistemapetshop.model.Usuario_ {
+public class Funcionario_ extends Usuario_ {
 
-	public static volatile SingularAttribute<Funcionario, EspecialidadeFuncionario> especialidadeFuncionario;
-	public static volatile ListAttribute<Funcionario, ConsultaGeral> listaConsultaGeral;
+    public static volatile SingularAttribute<Funcionario, EspecialidadeFuncionario> especialidadeFuncionario;
+    public static volatile ListAttribute<Funcionario, ConsultaGeral> listaConsultaGeral;
 
 }
-

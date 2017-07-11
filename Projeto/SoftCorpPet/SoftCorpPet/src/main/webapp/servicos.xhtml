@@ -24,7 +24,7 @@ and open the template in the editor.
                         <p:dataTable id="tabelaListagemServicos" emptyMessage="Nenhum registro foi encontrado." paginator="true" value="#{ServicoManagedBean.listaServicos}" var="servico" rows="10">
 
                             <f:facet name="footer">
-                                <p:commandButton value="Novo" onsuccess="PF('dialogo').show();" actionListener="#{ServicoManagedBean.constroiServico}" update=":formServicos:painelServico"/>
+                                <p:commandButton value="Novo" oncomplete="PF('dialogo').show();" actionListener="#{ServicoManagedBean.constroiServico}" update=":formServicos:painelServico"/>
                             </f:facet>
 
                             <p:column headerText="Nome" sortBy="#{servico.nome}" filterBy="#{servico.nome}">
@@ -41,7 +41,7 @@ and open the template in the editor.
                                     <f:attribute name="servicoSelecionado" value="#{servico}"/>
                                 </p:commandButton>
 
-                                <p:commandButton value="Editar" icon="ui-icon-pencil" actionListener="#{ServicoManagedBean.editar}" update=":formListagemServicos:tabelaListagemServicos" oncomplete="PF('dialogo').show();">
+                                <p:commandButton value="Editar" icon="ui-icon-pencil" actionListener="#{ServicoManagedBean.editar}" update=":formServicos:painelServico" oncomplete="PF('dialogo').show();">
                                     <f:attribute name="servicoSelecionado" value="#{servico}"/>
                                 </p:commandButton>
                             </p:column>

@@ -42,6 +42,9 @@ import org.hibernate.validator.constraints.*;
 @Access(AccessType.FIELD)
 public abstract class Usuario implements Serializable {
 
+    
+    public static final String VETERINARIO = "veterinario";
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_usuario")

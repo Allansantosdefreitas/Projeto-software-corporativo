@@ -27,7 +27,7 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name = "tb_grupo")
 @NamedQueries({
     @NamedQuery(name = "Grupo.findAll", query = "SELECT g FROM Grupo g"),
-    @NamedQuery(name = "Grupo.findByStrNome", query = "SELECT g FROM Grupo g WHERE g.strNome = :strNome")})
+    @NamedQuery(name = "Grupo.findByStrNome", query = "SELECT g FROM Grupo g WHERE g.strNome = ?1")})
 public class Grupo implements Serializable {
 
     public static final String GRUPO_POR_NOME = "GrupoPorNome";

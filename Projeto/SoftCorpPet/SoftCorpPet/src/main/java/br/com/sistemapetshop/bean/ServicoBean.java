@@ -56,30 +56,31 @@ public class ServicoBean implements Serializable {
 
     public void editar(ActionEvent evento) {
         servico = (Servico) evento.getComponent().getAttributes().get("servicoSelecionado");
-
-        salvar();
     }
 
     public void excluir(ActionEvent evento) {
+        
 
         String defaultSuccessMsg = "Serviço removido com sucesso";
-        String defaultErrorMsg = "Erro ao carregar a lista";
+        String defaultErrorMsg = "Erro ao excluir o serviço";
 
         //Qual foi o componente clicado? Qual são os atributos? Qual o nome do atributo que eu quero trabalhar?
         servico = (Servico) evento.getComponent().getAttributes().get("servicoSelecionado");
 
         try {
+        System.out.println("SERVIÇO: " + servico.getNome());
             negocioServico.deletarServico(servico);
 
             Messages.addGlobalInfo(defaultSuccessMsg);
-
-            listarServicos();
+            constroi();
+            
         } catch (Exception erro) {
             Messages.addGlobalError(defaultErrorMsg);
             erro.printStackTrace();
-        } finally {
-            constroiServico();
         }
+//        } finally {
+//            constroiServico();
+//        }
     }
 
     public void listarServicos() {
