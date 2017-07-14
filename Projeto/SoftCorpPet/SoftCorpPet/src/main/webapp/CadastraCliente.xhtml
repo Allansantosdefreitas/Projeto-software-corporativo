@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <ui:composition template="template/layout.xhtml">
+            <ui:define name="content">
+                <p:fieldset legend="Cadatro de clientes">
+                    <p:growl id="growl"/>
+                    <h:form id="fomularioCadastroCliente">
+                        <h:panelGrid columns="2" cellpadding="5">
+                            
+                            <h:outputLabel value="Nome"/>
+                            <p:inputText id="nome" value="#{clienteManagedBean.cliente.nome}" required="true"/>
+
+                            <h:outputLabel value="Email"/>
+                            <p:inputText id="valor" value="#{clienteManagedBean.cliente.login}" required="true"/>     
+
+                            <h:outputLabel value="Login"/>
+                            <p:inputText id="email" value="#{clienteManagedBean.cliente.email}" required="true"/> 
+
+                            <h:outputLabel value="Senha"/>
+                            <p:password id="senha" value="#{clienteManagedBean.cliente.senha}" match="senhaConfirm" required="true"/>  
+
+                            <h:outputLabel value="Confirmar senha"/>
+                            <p:password id="senhaConfirm" value="#{clienteManagedBean.cliente.senha}" required="true"/>  
+                        </h:panelGrid>
+
+                        <h:panelGrid>
+                            
+                            <h:outputText value="Cep:" />
+                            <p:inputMask value="#{clienteManagedBean.endereco.cep}" mask="99.999-999" required="true"/>
+
+                            <h:outputLabel/>
+                            <p:commandButton value="Pesquisar" icon="ui-icon-search" action="#{clienteManagedBean.buscaCep()}" update=":fomularioCadastroCliente:dadosEndereco" />
+                        </h:panelGrid>
+
+                        <h:panelGrid id="dadosEndereco">
+                            
+                            <h:outputLabel value="Bairro"/>
+                            <p:inputText id="endereco" value="#{clienteManagedBean.endereco.bairro}" required="true"/> 
+
+                            <h:outputLabel value="Logradouro"/>
+                            <p:inputText id="endereco" value="#{clienteManagedBean.endereco.logradouro}" required="true"/> 
+                            
+                            <h:outputLabel value="Complemento"/>
+                            <p:inputText id="endereco" value="#{clienteManagedBean.endereco.complemento}" required="true"/> 
+
+                            <h:outputLabel value="Numero"/>
+                            <p:inputText id="endereco" value="#{clienteManagedBean.endereco.numero}" required="true"/> 
+                        </h:panelGrid>
+
+                        <h:panelGrid columns="2" cellpadding="5">
+                            <p:commandButton value="Cadastrar" actionListener="#{clienteManagedBean.salvar()}" update=":growl"/>
+                        </h:panelGrid>
+                    </h:form>
+                </p:fieldset>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
