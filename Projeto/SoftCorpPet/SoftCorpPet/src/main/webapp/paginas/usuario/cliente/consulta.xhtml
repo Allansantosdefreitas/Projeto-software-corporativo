@@ -2,14 +2,46 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"   
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
     <h:body>
 
-        <ui:composition template="template/layout.xhtml">
-            <ui:define name="content">
-                TESTESTESTSET
+        <ui:composition template="../../template/template.xhtml">
+            <ui:define name="body">
+                <h:form id="consultaForm">
+                    <p:growl id="growl" life="3500" autoUpdate="true"/>
+
+                    <p:panel id="panel" header="Consulta">
+                        <h:panelGrid columns="2" cellpadding="5">
+                            <h:outputLabel for="data" value="Data" />
+                            <p:calendar id="nome" mask="31/12/9999" value="#{ConsultaGeralManagedBean.consultaGeral.dataMarcada}" required="true" label="Data" />
+                            
+                            <h:outputLabel for="servico" value="Servico" />
+                            <p:selectOneMenu id="servico" value="#{ServicoManagedBean.listaServicos}" var="conServ" required="true" label="Servico" >
+                                <p:ajax listener="#{dropdownView.onCountryChange}" update="city" />
+                                <f:selectItem itemLabel="Selecione um item" value="" noSelectionOption="false"></f:selectItem>
+                                <f:selectItems value="#{conServ.nome}"></f:selectItems>                                                            
+                            </p:selectOneMenu>
+
+                            <h:outputLabel for="Funcionario" value="Funcionario" />
+                            <p:selectOneListbox id="funcinario" value="#{FuncionarioManagedBean.listaFuncionarios}" var="consFun">
+                                <p:ajax listener="#{dropdownView.onCountryChange}" update="city" />
+                                <f:selectItem itemLabel="Selecione um item" value="" noSelectionOption="false"/>
+                                <f:selectItems value="#{consFun.nome}"></f:selectItems>
+                            </p:selectOneListbox>
+                            
+                        </h:panelGrid>
+
+                        <p:commandButton value="Cadastrar" ajax="false" title="Cadastrar" action="#{ConsultaGeralManagedBean.salvar()}" icon="ui-icon-person" immediate="true" update=":growl"/>
+                    </p:panel>
+                </h:form>
             </ui:define>
         </ui:composition>
+
 
     </h:body>
 
