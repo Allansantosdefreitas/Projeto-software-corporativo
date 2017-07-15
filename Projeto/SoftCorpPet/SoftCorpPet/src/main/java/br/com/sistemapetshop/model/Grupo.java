@@ -30,7 +30,7 @@ import org.hibernate.validator.constraints.NotBlank;
     @NamedQuery(name = "Grupo.findByStrNome", query = "SELECT g FROM Grupo g WHERE g.strNome = ?1")})
 public class Grupo implements Serializable {
 
-    public static final String GRUPO_POR_NOME = "GrupoPorNome";
+    public static final String GRUPO_POR_NOME = "findByStrNome";
     public static final String USUARIO = "usuario";
     public static final String ADMINISTRADOR = "administrador";
     public static final String FUNCIONARIO = "funcionario";

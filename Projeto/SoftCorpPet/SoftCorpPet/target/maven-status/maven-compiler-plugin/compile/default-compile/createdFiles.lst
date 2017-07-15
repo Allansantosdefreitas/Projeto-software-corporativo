@@ -38,7 +38,6 @@ br\com\sistemapetshop\model\ConsultaMedica_.class
 br\com\sistemapetshop\model\Grupo_.class
 br\com\sistemapetshop\bean\ServicoBean.class
 br\com\sistemapetshop\util\WebServiceCep$Xml$3.class
-br\com\sistemapetshop\negocio\NegocioGrupoBean.class
 br\com\sistemapetshop\bean\VeterinarioBean.class
 br\com\sistemapetshop\model\Exame_.class
 br\com\sistemapetshop\bean\ServiceBean.class
@@ -64,4 +63,5 @@ br\com\sistemapetshop\util\WebServiceCep$Xml$6.class
 br\com\sistemapetshop\negocio\NegocioUsuario.class
 br\com\sistemapetshop\model\Exame.class
 br\com\sistemapetshop\model\Funcionario_.class
+br\com\sistemapetshop\negocio\GrupoRepository.class
 br\com\sistemapetshop\model\Pet_.class

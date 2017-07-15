@@ -5,8 +5,10 @@
  */
 package br.com.sistemapetshop.bean;
 
+import br.com.sistemapetshop.model.EspecialidadeFuncionario;
 import br.com.sistemapetshop.model.Funcionario;
 import br.com.sistemapetshop.negocio.NegocioFuncionario;
+import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -21,7 +23,7 @@ import org.omnifaces.util.Messages;
  */
 @ManagedBean(name = "FuncionarioManagedBean")
 @SessionScoped
-public class FuncionarioBean {
+public class FuncionarioBean implements Serializable {
 
     @EJB
     private NegocioFuncionario negocioFuncionario;
@@ -35,8 +37,12 @@ public class FuncionarioBean {
 
         listar();
     }
-    
-    public void constroiFuncionario(){
+
+    public EspecialidadeFuncionario[] getEspecialidadeFuncionario() {
+        return EspecialidadeFuncionario.values();
+    }
+
+    public void constroiFuncionario() {
         funcionario = new Funcionario();
     }
 
@@ -46,13 +52,13 @@ public class FuncionarioBean {
         String errorMsg = " Ocorreu um erro inesperado";
 
         try {
-            
+
             negocioFuncionario.atualizarServico(funcionario);
-            
+
             Messages.addGlobalInfo(successMsg);
             listar();
         } catch (Exception ex) {
-            
+
             Messages.addGlobalError(errorMsg);
             ex.printStackTrace();
         }
@@ -60,25 +66,25 @@ public class FuncionarioBean {
 
     public void editar(ActionEvent evento) {
         funcionario = (Funcionario) evento.getComponent().getAttributes().get("funcionarioSelecionado");
-        
+
         salvar();
     }
 
     public void remover(ActionEvent evento) {
-        
+
         String successMsg = "Removido com sucesso";
         String errorMsg = " Ocorreu um erro inesperado";
 
         funcionario = (Funcionario) evento.getComponent().getAttributes().get("funcionarioSelecionado");
-        
-        try{
-        
-        } catch(Exception ex){
-        
+
+        try {
+
+        } catch (Exception ex) {
+
         }
 
         constroiFuncionario();
-        
+
     }
 
     public void listar() {

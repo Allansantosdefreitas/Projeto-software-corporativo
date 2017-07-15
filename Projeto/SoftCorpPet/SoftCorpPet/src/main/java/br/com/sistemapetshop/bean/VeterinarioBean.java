@@ -2,7 +2,7 @@ package br.com.sistemapetshop.bean;
 
 import br.com.sistemapetshop.model.Grupo;
 import br.com.sistemapetshop.model.Veterinario;
-import br.com.sistemapetshop.negocio.NegocioGrupoBean;
+import br.com.sistemapetshop.negocio.GrupoRepository;
 import br.com.sistemapetshop.negocio.NegocioVeterinario;
 import java.util.List;
 import javax.annotation.PostConstruct;
@@ -23,7 +23,7 @@ public class VeterinarioBean {
     private NegocioVeterinario negocioVeterinario;
     
     @EJB
-    private NegocioGrupoBean grupoBean;
+    private GrupoRepository grupoRepository;
     private Veterinario veterinario;
 
     @PostConstruct
@@ -33,7 +33,7 @@ public class VeterinarioBean {
     
     public void salvar(){
         try{
-            veterinario.setGrupo(grupoBean.getGrupo(Grupo.GRUPO_POR_NOME, new String[]{veterinario.VETERINARIO}));
+            veterinario.setGrupo(grupoRepository.getGrupo(new String[]{Veterinario.VETERINARIO}));
             negocioVeterinario.atualizarVeterinario(veterinario);
             
             Messages.addGlobalInfo("cadastrado com sucesso!");

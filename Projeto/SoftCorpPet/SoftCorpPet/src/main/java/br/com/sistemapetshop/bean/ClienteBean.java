@@ -9,47 +9,70 @@ import br.com.sistemapetshop.model.Cartao;
 import br.com.sistemapetshop.negocio.ClienteRepository;
 import br.com.sistemapetshop.model.Cliente;
 import br.com.sistemapetshop.model.Endereco;
+import br.com.sistemapetshop.model.Grupo;
 import br.com.sistemapetshop.model.Pet;
+import br.com.sistemapetshop.negocio.GrupoRepository;
 import br.com.sistemapetshop.util.WebServiceCep;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import org.omnifaces.util.Messages;
+import org.primefaces.event.FlowEvent;
 
 /**
  *
  * @author jonathanpereira
  */
-@ManagedBean (name = "clienteManagedBean")
+@ManagedBean(name = "clienteManagedBean")
 @SessionScoped
-public class ClienteBean implements Serializable{
+public class ClienteBean implements Serializable {
 
     @EJB
     private ClienteRepository clienteRepository;
 
+    @EJB
+    private GrupoRepository grupoRepository;
+
     private List<Cliente> listaClientes;
     private List<Cartao> listaCartoes;
     private List<Pet> listaPets;
+    private Cartao cartao;
     private Endereco endereco;
     private Cliente cliente;
 
+    private boolean skip;
+
     @PostConstruct
     public void inicializar() {
+        listaCartoes = new ArrayList<>();
+        listaPets = new ArrayList<>();
+
         endereco = new Endereco();
         cliente = new Cliente();
+        cartao = new Cartao();
 
         listar();
+    }
+
+    public void inicializarCartao() {
+        cartao = new Cartao();
     }
 
     public void salvar() {
 
         try {
-            
+
+            cliente.setGrupo(grupoRepository.getGrupo(new String[]{Cliente.CLIENTE}));
+
             //Atribuir o endereço ao cliente antesde persistir
             cliente.setEndereco(endereco);
+            cliente.setListaPet(listaPets);
+            listaCartoes.add(cartao);
+            cliente.setCartao(listaCartoes);
 
             clienteRepository.salvar(cliente);
 
@@ -102,7 +125,7 @@ public class ClienteBean implements Serializable{
     }
 
     public void buscaCep() {
-        
+
         WebServiceCep webServiceCep = WebServiceCep.searchCep(endereco.getCep());
 
         if (webServiceCep.wasSuccessful()) {
@@ -115,6 +138,23 @@ public class ClienteBean implements Serializable{
 
             Messages.addGlobalError("Cep não encontrado");
         }
+    }
+
+    public String onFlowProcess(FlowEvent event) {
+        if (skip) {
+            skip = false;   //reset in case user goes back
+            return "confirm";
+        } else {
+            return event.getNewStep();
+        }
+    }
+
+    public boolean isSkip() {
+        return skip;
+    }
+
+    public void setSkip(boolean skip) {
+        this.skip = skip;
     }
 
     public List<Cartao> getListaCartoes() {
@@ -139,6 +179,14 @@ public class ClienteBean implements Serializable{
 
     public void setListaClientes(List<Cliente> listaClientes) {
         this.listaClientes = listaClientes;
+    }
+
+    public Cartao getCartao() {
+        return cartao;
+    }
+
+    public void setCartao(Cartao cartao) {
+        this.cartao = cartao;
     }
 
     public Endereco getEndereco() {

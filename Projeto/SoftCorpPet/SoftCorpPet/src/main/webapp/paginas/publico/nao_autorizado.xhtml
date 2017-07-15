@@ -6,14 +6,15 @@
       xmlns:p="http://primefaces.org/ui">
     <h:body>
 
-        <ui:composition template="../../template/layout.xhtml">
-            <ui:define name="content">
-                <p:panel id="paienal" header="Acesso não autorizado" footer="All rights reserved.">
-                    <h:panelGrid columns="1" cellpadding="4">
-                        <h:outputText value="Você não tem acesso a este recurso!"/>
-                    </h:panelGrid>
-                </p:panel>
+        <ui:composition template="/template/template.xhtml">
+            <ui:define name="title">Não autorizado</ui:define>
+            <ui:define name="body">
+                <center>
+                    <h1>Você naõ tem acesso a esse recurso<br/></h1>
+                    <h:graphicImage library="images" name="403.jpg" height="370"/>
+                </center>
             </ui:define>
+
         </ui:composition>
 
     </h:body>

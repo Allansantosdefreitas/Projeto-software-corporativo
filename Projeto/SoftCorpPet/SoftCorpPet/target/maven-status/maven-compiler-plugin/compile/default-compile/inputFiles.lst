@@ -4,7 +4,6 @@ C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto
 C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\bean\ServiceBean.java
 C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\util\Recaptcha.java
 C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\bean\NavegationBean.java
-C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\negocio\NegocioGrupoBean.java
 C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\bean\EnderecoBean.java
 C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\negocio\NegocioExame.java
 C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\Usuario.java
@@ -19,6 +18,7 @@ C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto
 C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\negocio\NegocioServico.java
 C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\Consulta.java
 C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\ValidaBandeira.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\negocio\GrupoRepository.java
 C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\bean\LogoutBean.java
 C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\Veterinario.java
 C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\Cartao.java

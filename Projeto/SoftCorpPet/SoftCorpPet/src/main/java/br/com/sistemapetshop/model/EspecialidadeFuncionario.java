@@ -8,5 +8,5 @@ package br.com.sistemapetshop.model;
 public enum EspecialidadeFuncionario{
     
     BANHISTA, TOSADOR;
-    
+
 }

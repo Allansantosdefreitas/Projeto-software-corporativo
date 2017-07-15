@@ -3,12 +3,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml"   
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets">
-    <h:body>
 
-        <ui:composition template="../../template/layout.xhtml">
+    <h:body>
+        <ui:composition template="../../template/template.xhtml">
+            <ui:define name="title">Erro interno</ui:define>
             <ui:define name="body">
-                TESTESTESTSET
+                <center>
+                    <h1>Ocorreu algum erro interno<br/></h1>
+                    <h:graphicImage library="images" name="500.jpg" height="370"/>
+                </center>
             </ui:define>
+
         </ui:composition>
 
     </h:body>

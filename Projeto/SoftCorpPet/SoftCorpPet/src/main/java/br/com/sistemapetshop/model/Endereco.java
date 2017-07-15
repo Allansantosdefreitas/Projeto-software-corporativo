@@ -39,34 +39,30 @@ public class Endereco implements Serializable {
     @Column(name = "id_endereco", nullable = false, unique = false)
     private Long idEndereco;
 
-    @NotBlank
     @Size(max=60)
     @Column(name = "str_logradouro", nullable = false, length = 60)
     private String logradouro;
 
-    @NotNull
     @Column(name = "int_numero", nullable = true)
     private Integer numero;
 
-    @NotBlank
     @Size(max=60)
     @Column(name = "str_complemento", length = 60, nullable = true)
     private String complemento;
 
     @NotBlank
-    @Size(max=9)
+    @Size(max=10)
     // falta colocar pattern de cep
-    @Column(name = "str_cep", length = 9, nullable = false)
+    @Column(name = "str_cep", length = 10, nullable = false)
     private String cep;
 
-    @NotBlank
     @Size(max=60)
     @Column(name = "str_bairro", length = 60, nullable = false)
     private String bairro;
 
     // Relacionamento Usuario
-    @OneToOne(mappedBy = "endereco", optional = false, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Usuario usuario;
+    //@OneToOne(mappedBy = "endereco", optional = false, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    //private Usuario usuario;
 
     public Endereco(){
         
@@ -77,7 +73,7 @@ public class Endereco implements Serializable {
         this.complemento = complemento;
         this.cep = cep;
         this.bairro = bairro;
-        this.usuario = usuario;
+        //this.usuario = usuario;
     }
     
     // getters e Setters -----------------------------
@@ -129,11 +125,11 @@ public class Endereco implements Serializable {
         this.bairro = bairro;
     }
     
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
+//    public Usuario getUsuario() {
+//        return usuario;
+//    }
+//
+//    public void setUsuario(Usuario usuario) {
+//        this.usuario = usuario;
+//    }
 }

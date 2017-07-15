@@ -30,7 +30,7 @@ and open the template in the editor.
                             <p:column headerText="Nome" sortBy="#{funcionario.nome}" filterBy="#{funcionario.nome}">
                                 <h:outputText value="#{funcionario.nome}"/>
                             </p:column>
-                            
+
                             <p:column headerText="Valor" sortBy="#{funcionario.especialidadeFuncionario}" >
                                 <h:outputText value="#{funcionario.especialidadeFuncionario}"/>
                             </p:column>
@@ -63,7 +63,10 @@ and open the template in the editor.
                             <p:inputText maxlength="50" size="30" value="#{FuncionarioManagedBean.funcionario.nome}" />
 
                             <p:outputLabel value="Especialidade do funcionário:" />
-                            <p:inputNumber value="#{FuncionarioManagedBean.funcionario.especialidadeFuncionario}"/>
+                            <p:selectOneMenu>
+                                <f:selectItem itemLabel="Especialidade" value="#{null}"/>
+                                <f:selectItems value="#{FuncionarioManagedBean.especialidadeFuncionario}"/>
+                            </p:selectOneMenu>
                         </h:panelGrid>
 
                         <h:panelGrid columns="2">

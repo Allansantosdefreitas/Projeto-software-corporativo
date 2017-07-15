@@ -95,10 +95,10 @@ public class Cartao implements Serializable {
         this.dataValidade = dataValidade;
     }
 
-    @PrePersist
-    public void validar() {
-        Validation.buildDefaultValidatorFactory().getValidator().validate(this, Cartao.class);
-    }
+//    @PrePersist
+//    public void validar() {
+//        Validation.buildDefaultValidatorFactory().getValidator().validate(this, Cartao.class);
+//    }
 
     // getters e Setters -----------------------------
     public Long getIdCartao() {

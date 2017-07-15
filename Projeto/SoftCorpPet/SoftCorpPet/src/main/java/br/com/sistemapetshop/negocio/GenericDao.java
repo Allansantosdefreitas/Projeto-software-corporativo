@@ -24,6 +24,10 @@ public abstract class GenericDao<Entidade> {
 
     private final Class<Entidade> classe;
 
+    public EntityManager getEntityManager() {
+        return em;
+    }
+
     public GenericDao(Class<Entidade> classe) {
         this.classe = classe;
     }

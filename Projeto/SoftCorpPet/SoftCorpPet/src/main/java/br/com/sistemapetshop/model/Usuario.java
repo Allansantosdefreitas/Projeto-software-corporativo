@@ -41,9 +41,12 @@ import org.hibernate.validator.constraints.*;
 @DiscriminatorColumn(name = "disc_usuario", discriminatorType = DiscriminatorType.STRING, length = 3) // 3 é o tamanho do campo discriminator (disc_usuario)
 @Access(AccessType.FIELD)
 public abstract class Usuario implements Serializable {
-
     
     public static final String VETERINARIO = "veterinario";
+    public static final String ADMINISTRADOR = "administrador";
+    public static final String CLIENTE = "cliente";
+    public static final String FUNCIONARIO = "funcionario";
+    public static final String USUARIO = "usuario";
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -56,7 +59,6 @@ public abstract class Usuario implements Serializable {
     private String nome;
 
     @NotNull
-    @Email
     @Size(max = 60)
     @Column(name = "str_email", length = 60, nullable = false, unique = true)
     private String email;
@@ -67,12 +69,11 @@ public abstract class Usuario implements Serializable {
     private String login;
 
     @NotBlank
-    @Size(min = 8, max = 16)
-    @Pattern(regexp = "(?=.*\\p{Digit}).{8,16}")
-    @Column(name = "str_senha", length = 16, nullable = false)
+    @Size(min = 8, max = 255)
+    @Column(name = "str_senha", length = 255, nullable = false)
     private String senha;
 
-    @Size(max = 60)
+    @Size(max = 255)
     @Column(name = "str_sal")
     private String sal;
 
