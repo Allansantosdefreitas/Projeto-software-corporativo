@@ -1,39 +1,43 @@
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\acesso\Papel.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\Consulta.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\Cartao.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\negocio\NegocioPet.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\negocio\NegocioExame.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\util\Recaptcha.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\negocio\NegocioVeterinario.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\negocio\ClienteRepository.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\Veterinario.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\bean\GrupoBean.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\Pet.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\ConsultaGeral.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\negocio\NegocioUsuario.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\bean\FuncionarioBean.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\ValidaBandeira.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\negocio\NegocioGrupoBean.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\negocio\NegocioFuncionario.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\Cliente.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\bean\NavegationBean.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\ConsultaMedica.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\Usuario.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\Endereco.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\bean\ClienteBean.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\StatusConsulta.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\bean\LoginBean.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\Servico.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\bean\EnderecoBean.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\Grupo.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\ValidadorBandeira.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\negocio\GenericDao.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\bean\ServicoBean.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\negocio\NegocioServico.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\bean\VeterinarioBean.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\bean\LogoutBean.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\EspecialidadeFuncionario.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\Exame.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\Funcionario.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\bean\UsuarioBean.java
-C:\Users\jonathanpereira\Documents\SourceTree\Projetos Facul\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\negocio\NegocioEndereco.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\ValidadorBandeira.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\Grupo.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\negocio\NegocioFuncionario.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\bean\ServiceBean.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\util\Recaptcha.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\bean\NavegationBean.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\negocio\NegocioGrupoBean.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\bean\EnderecoBean.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\negocio\NegocioExame.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\Usuario.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\StatusConsulta.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\bean\ClienteBean.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\Funcionario.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\negocio\GenericDao.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\Pet.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\bean\FuncionarioBean.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\bean\GrupoBean.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\negocio\ClienteRepository.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\negocio\NegocioServico.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\Consulta.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\ValidaBandeira.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\bean\LogoutBean.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\Veterinario.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\Cartao.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\util\CepWebService.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\bean\LoginBean.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\acesso\Papel.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\Endereco.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\ConsultaGeral.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\bean\UsuarioBean.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\Cliente.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\ConsultaMedica.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\EspecialidadeFuncionario.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\Exame.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\negocio\NegocioVeterinario.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\negocio\NegocioUsuario.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\bean\ServicoBean.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\model\Servico.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\interceptadores\LoginInterceptador.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\negocio\NegocioPet.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\bean\VeterinarioBean.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\negocio\NegocioEndereco.java
+C:\Users\Usuario\Documents\Projetos_Github\SourceTree_Projetos\DSC_Allan\Projeto\SoftCorpPet\SoftCorpPet\src\main\java\br\com\sistemapetshop\util\WebServiceCep.java

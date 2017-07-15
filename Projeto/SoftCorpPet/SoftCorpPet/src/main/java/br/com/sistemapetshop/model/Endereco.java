@@ -14,6 +14,7 @@ import javax.persistence.NamedNativeQueries;
 import javax.persistence.NamedNativeQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -43,7 +44,7 @@ public class Endereco implements Serializable {
     @Column(name = "str_logradouro", nullable = false, length = 60)
     private String logradouro;
 
-    @NotBlank
+    @NotNull
     @Column(name = "int_numero", nullable = true)
     private Integer numero;
 

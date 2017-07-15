@@ -11,7 +11,9 @@ import br.com.sistemapetshop.model.Cliente;
 import br.com.sistemapetshop.model.Endereco;
 import br.com.sistemapetshop.model.Pet;
 import br.com.sistemapetshop.util.WebServiceCep;
+import java.io.Serializable;
 import java.util.List;
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -23,7 +25,7 @@ import org.omnifaces.util.Messages;
  */
 @ManagedBean (name = "clienteManagedBean")
 @SessionScoped
-public class ClienteBean {
+public class ClienteBean implements Serializable{
 
     @EJB
     private ClienteRepository clienteRepository;
@@ -34,7 +36,9 @@ public class ClienteBean {
     private Endereco endereco;
     private Cliente cliente;
 
+    @PostConstruct
     public void inicializar() {
+        endereco = new Endereco();
         cliente = new Cliente();
 
         listar();
