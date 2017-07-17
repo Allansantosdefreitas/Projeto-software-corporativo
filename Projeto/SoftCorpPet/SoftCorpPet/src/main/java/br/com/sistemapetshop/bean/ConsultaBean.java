@@ -6,8 +6,7 @@
 package br.com.sistemapetshop.bean;
 
 import br.com.sistemapetshop.model.ConsultaGeral;
-import br.com.sistemapetshop.model.Servico;
-import br.com.sistemapetshop.negocio.NegocioConsultaGeral;
+import br.com.sistemapetshop.negocio.ConsultaGeralService;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -25,7 +24,7 @@ import org.omnifaces.util.Messages;
 public class ConsultaBean {
 
     @EJB
-    private NegocioConsultaGeral negocioConsultaGeral;
+    private ConsultaGeralService consultaGeralService;
 
     private ConsultaGeral consultaGeral;
     private List<ConsultaGeral> listaConsultaGeral;
@@ -47,7 +46,7 @@ public class ConsultaBean {
         String defaultSuccessMsg = "Salvo com sucesso";
 
         try {
-            negocioConsultaGeral.atualizarConsultaGeral(consultaGeral);
+            consultaGeralService.atualizar(consultaGeral);
             Messages.addGlobalInfo(defaultSuccessMsg);
 
             listarConsultaGeral();
@@ -73,7 +72,7 @@ public class ConsultaBean {
 
         try {
             System.out.println("CONSULTA: " + consultaGeral.getServico()+ "DATA: "+ consultaGeral.getDataMarcada());
-            negocioConsultaGeral.deletarConsultaGeral(consultaGeral);
+            consultaGeralService.remover(consultaGeral);
 
             Messages.addGlobalInfo(defaultSuccessMsg);
             constroi();
@@ -92,7 +91,7 @@ public class ConsultaBean {
         String errorMsg = "Erro ao carregar a lista";
 
         try {
-            listaConsultaGeral = negocioConsultaGeral.listarConsultaGeral();
+            listaConsultaGeral = consultaGeralService.listar();
         } catch (Exception ex) {
             Messages.addGlobalError(errorMsg);
         }

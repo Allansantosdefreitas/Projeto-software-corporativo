@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Usuario
+ * @author jonathanpereira
  */
 @ManagedBean(name = "managedLogoutBean")
 @ViewScoped

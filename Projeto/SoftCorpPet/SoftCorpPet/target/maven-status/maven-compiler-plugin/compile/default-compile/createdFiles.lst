@@ -21,6 +21,7 @@ br\com\sistemapetshop\model\Cartao.class
 br\com\sistemapetshop\model\ConsultaMedica.class
 br\com\sistemapetshop\negocio\NegocioVeterinario.class
 br\com\sistemapetshop\model\Usuario_.class
+br\com\sistemapetshop\bean\ConsultaBean.class
 br\com\sistemapetshop\model\ConsultaGeral_.class
 br\com\sistemapetshop\model\Funcionario.class
 br\com\sistemapetshop\model\Veterinario.class
@@ -56,6 +57,7 @@ br\com\sistemapetshop\model\Grupo.class
 br\com\sistemapetshop\util\CepWebService.class
 br\com\sistemapetshop\interceptadores\LoginInterceptador.class
 br\com\sistemapetshop\util\WebServiceCep.class
+br\com\sistemapetshop\negocio\NegocioConsultaGeral.class
 br\com\sistemapetshop\model\Usuario.class
 br\com\sistemapetshop\bean\LogoutBean.class
 br\com\sistemapetshop\negocio\NegocioEndereco.class

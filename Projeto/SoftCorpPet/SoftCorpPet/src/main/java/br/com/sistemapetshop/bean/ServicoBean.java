@@ -1,7 +1,7 @@
 package br.com.sistemapetshop.bean;
 
 import br.com.sistemapetshop.model.Servico;
-import br.com.sistemapetshop.negocio.NegocioServico;
+import br.com.sistemapetshop.negocio.ServicoService;
 import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
@@ -20,7 +20,7 @@ import org.omnifaces.util.Messages;
 public class ServicoBean implements Serializable {
 
     @EJB
-    private NegocioServico negocioServico;
+    private ServicoService servicoService;
 
     private Servico servico;
     private List<Servico> listaServicos;
@@ -42,7 +42,7 @@ public class ServicoBean implements Serializable {
         String defaultSuccessMsg = "Salvo com sucesso";
 
         try {
-            negocioServico.atualizarServico(servico);
+            servicoService.atualizar(servico);
             Messages.addGlobalInfo(defaultSuccessMsg);
 
             listarServicos();
@@ -69,7 +69,7 @@ public class ServicoBean implements Serializable {
 
         try {
         System.out.println("SERVIÇO: " + servico.getNome());
-            negocioServico.deletarServico(servico);
+            servicoService.remover(servico);
 
             Messages.addGlobalInfo(defaultSuccessMsg);
             constroi();
@@ -88,7 +88,7 @@ public class ServicoBean implements Serializable {
         String errorMsg = "Erro ao carregar a lista";
         
         try {
-            listaServicos = negocioServico.listarServicos();
+            listaServicos = servicoService.listar();
         } catch(Exception ex){
             Messages.addGlobalError(errorMsg);
         }

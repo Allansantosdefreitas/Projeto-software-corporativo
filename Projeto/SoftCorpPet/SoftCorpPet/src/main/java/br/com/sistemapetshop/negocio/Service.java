@@ -17,7 +17,7 @@ import javax.persistence.criteria.CriteriaQuery;
  * @author jonathanpereira
  * @param <Entidade>
  */
-public abstract class GenericDao<Entidade> {
+public abstract class Service<Entidade> {
 
     @PersistenceContext(unitName = "corporativoPU")
     private EntityManager em;
@@ -28,7 +28,7 @@ public abstract class GenericDao<Entidade> {
         return em;
     }
 
-    public GenericDao(Class<Entidade> classe) {
+    public Service(Class<Entidade> classe) {
         this.classe = classe;
     }
 

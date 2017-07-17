@@ -5,7 +5,11 @@
  */
 package br.com.sistemapetshop.negocio;
 
+import static br.com.sistemapetshop.acesso.Papel.ADMINISTRADOR;
+import static br.com.sistemapetshop.acesso.Papel.CLIENTE;
+import static br.com.sistemapetshop.acesso.Papel.FUNCIONARIO;
 import br.com.sistemapetshop.model.Cliente;
+import javax.annotation.security.DeclareRoles;
 import javax.ejb.Stateless;
 
 /**
@@ -13,9 +17,10 @@ import javax.ejb.Stateless;
  * @author jonathanpereira
  */
 @Stateless
-public class ClienteRepository extends GenericDao<Cliente> {
+@DeclareRoles({ADMINISTRADOR, FUNCIONARIO, CLIENTE})
+public class ClienteService extends Service<Cliente> {
 
-    public ClienteRepository() {
+    public ClienteService() {
         super(Cliente.class);
     }
     

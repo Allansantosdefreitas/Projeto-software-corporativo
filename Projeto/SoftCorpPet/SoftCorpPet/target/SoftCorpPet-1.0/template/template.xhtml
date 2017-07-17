@@ -27,35 +27,23 @@ and open the template in the editor.
                         <p:menuitem value="Home" action="#"/>
                         <p:submenu label="Menu">
                             <p:submenu label="Novo" icon="ui-icon-plus">
-                                <p:menuitem value="Serviço" url="faces/CadastrarServico.xhtml" />
-                                <p:menuitem value="Funcionário" url="#" />
-                                <p:menuitem value="Consulta" url="#" />
-                                <p:menuitem value="Cliente" url="#" />
-                                <p:menuitem value="Veterinario" url="faces/CadastraVeterinario.xhtml" />
-                                <p:menuitem value="Pet" url="faces/CadastraPet.xhtml" />
+                                <p:menuitem value="Serviço" url="faces/paginas/admin/servicos.xhtml" rendered="#{facesContext.externalContext.isUserInRole('administrador')}"/>
+                                <p:menuitem value="Funcionário" url="faces/paginas/admin/funcionarios.xhtml" rendered="#{facesContext.externalContext.isUserInRole('administrador')}"/>
+                                <p:menuitem value="Veterinario" url="faces/paginas/admin/CadastraVeterinario.xhtml" rendered="#{facesContext.externalContext.isUserInRole('administrador')}"/>
                             </p:submenu>
 
                             <p:submenu label="Consultar" icon="ui-icon-contact">
-                                <p:menuitem value="Serviço" url="#" />
-                                <p:menuitem value="Funcionário" url="#" />
-                                <p:menuitem value="Consulta" url="#" />
-                                <p:menuitem value="Cliente" url="#" />
-                                <p:menuitem value="Pet" url="#" />
-                                <p:menuitem value="Especialidade" url="#" />
+                                <p:menuitem value="Pet" ajax="false" action="faces/paginas/usuario/cliente/CadastraPet.xhtml" rendered="#{facesContext.externalContext.isUserInRole('cliente')}"/>
                             </p:submenu>
-
-                            <p:submenu label="Editar" icon="ui-icon-pencil">
-                                <p:menuitem value="Serviço" url="#" />
-                                <p:menuitem value="Funcionário" url="#" />
-                                <p:menuitem value="Consulta" url="#" />
-                                <p:menuitem value="Cliente" url="#" />
-                                <p:menuitem value="Pet" url="#" />
-                                <p:menuitem value="Especialidade" url="#" />
+                            
+                            <p:submenu label="Conta" icon="ui-icon-pencil">
+                                <p:menuitem value="Cadastrar" action="cadastrar" ajax="false"/>
+                                <p:menuitem value="Entrar" action="entrar" ajax="false"/>
                             </p:submenu>
-
+                            
                             <f:facet name="options">
-                                <p:commandButton value="cadastrar" icon="ui-icon-extlink" action="cadastrar"/>
-                                <p:commandButton value="entrar" icon="ui-icon-extlink" action="entrar"/>
+                                <p:commandButton value="Cadastrar" icon="ui-icon-extlink" action="cadastrar"/>
+                                <p:commandButton value="Entrar" icon="ui-icon-extlink" action="entrar"/>
                             </f:facet>
                         </p:submenu> 
                     </p:menubar>

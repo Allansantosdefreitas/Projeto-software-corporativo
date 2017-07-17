@@ -6,7 +6,7 @@
 package br.com.sistemapetshop.bean;
 
 import br.com.sistemapetshop.model.Grupo;
-import br.com.sistemapetshop.negocio.GrupoRepository;
+import br.com.sistemapetshop.negocio.GrupoService;
 import java.io.Serializable;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
@@ -21,14 +21,14 @@ import javax.faces.view.ViewScoped;
 public class GrupoBean implements Serializable{
 
     @EJB
-    private GrupoRepository grupoRepository;
+    private GrupoService grupoService;
 
     public GrupoBean() {
 
     }
 
     public Grupo getGrupo(String nomeGrupo) {
-        return grupoRepository.getGrupo(new String[]{nomeGrupo});
+        return grupoService.getGrupo(new String[]{nomeGrupo});
     }
 
 }

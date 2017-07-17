@@ -7,7 +7,7 @@ package br.com.sistemapetshop.bean;
 
 /**
  *
- * @author Usuario
+ * @author jonathanpereira
  */
 public class UsuarioBean {
     

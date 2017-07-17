@@ -7,7 +7,7 @@ package br.com.sistemapetshop.bean;
 
 import br.com.sistemapetshop.model.EspecialidadeFuncionario;
 import br.com.sistemapetshop.model.Funcionario;
-import br.com.sistemapetshop.negocio.NegocioFuncionario;
+import br.com.sistemapetshop.negocio.FuncionarioService;
 import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
@@ -26,7 +26,7 @@ import org.omnifaces.util.Messages;
 public class FuncionarioBean implements Serializable {
 
     @EJB
-    private NegocioFuncionario negocioFuncionario;
+    private FuncionarioService funcionarioService;
 
     private Funcionario funcionario;
     private List<Funcionario> listaFuncionarios;
@@ -53,7 +53,7 @@ public class FuncionarioBean implements Serializable {
 
         try {
 
-            negocioFuncionario.atualizarServico(funcionario);
+            funcionarioService.atualizar(funcionario);
 
             Messages.addGlobalInfo(successMsg);
             listar();
@@ -88,7 +88,7 @@ public class FuncionarioBean implements Serializable {
     }
 
     public void listar() {
-        listaFuncionarios = negocioFuncionario.listarServicos();
+        listaFuncionarios = funcionarioService.listar();
     }
 
     public Funcionario getFuncionario() {

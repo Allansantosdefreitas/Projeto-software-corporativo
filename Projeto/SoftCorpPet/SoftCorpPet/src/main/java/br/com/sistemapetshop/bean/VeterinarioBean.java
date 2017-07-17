@@ -1,9 +1,8 @@
 package br.com.sistemapetshop.bean;
 
-import br.com.sistemapetshop.model.Grupo;
 import br.com.sistemapetshop.model.Veterinario;
-import br.com.sistemapetshop.negocio.GrupoRepository;
-import br.com.sistemapetshop.negocio.NegocioVeterinario;
+import br.com.sistemapetshop.negocio.GrupoService;
+import br.com.sistemapetshop.negocio.VeterinarioService;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -20,10 +19,10 @@ import org.omnifaces.util.Messages;
 public class VeterinarioBean {
 
     @EJB
-    private NegocioVeterinario negocioVeterinario;
+    private VeterinarioService veterinarioService;
     
     @EJB
-    private GrupoRepository grupoRepository;
+    private GrupoService grupoRepository;
     private Veterinario veterinario;
 
     @PostConstruct
@@ -34,7 +33,7 @@ public class VeterinarioBean {
     public void salvar(){
         try{
             veterinario.setGrupo(grupoRepository.getGrupo(new String[]{Veterinario.VETERINARIO}));
-            negocioVeterinario.atualizarVeterinario(veterinario);
+            veterinarioService.atualizar(veterinario);
             
             Messages.addGlobalInfo("cadastrado com sucesso!");
         }catch(Exception ex){
@@ -58,7 +57,7 @@ public class VeterinarioBean {
     }
     
     public List<Veterinario> listarVeterinarios() {
-        return negocioVeterinario.listarVeterinario();
+        return veterinarioService.listar();
     }
 
     public void setVeterinario(Veterinario veterinario) {

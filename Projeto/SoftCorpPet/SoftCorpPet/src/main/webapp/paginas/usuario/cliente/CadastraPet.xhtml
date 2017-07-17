@@ -1,15 +1,21 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Cadastro de Pets</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <h:body>
-        <ui:composition template="template/layout.xhtml">
-            <ui:define name="content">
+        <ui:composition template="/template/template.xhtml">
+            <ui:define name="body">
                 <p:fieldset legend="Serviços" toggleable="true" toggleSpeed="500">
                     <p:ajax event="toggle" listener="#{fieldsetView.handleToggle}"/>
                     <h:form>
@@ -18,7 +24,7 @@
                                 <p:commandButton value="Ver Servicos" action="#" update="@form" ></p:commandButton>
                             </p:toolbarGroup>                    
                         </p:toolbar>
-                        <p:dataTable id="valoresList" value="#{ServicoManagedBean.listaServicos}" var="servi">
+                        <p:dataTable id="valoresList" value="#{ServicoManagedBean.listarServicos()}" var="servi">
                             <p:column headerText="nome">
                                 <h:outputText value="#{servi.nome}"/>
                             </p:column>
@@ -40,12 +46,10 @@
                             <p:inputText id="valor" value="#{ServicoManagedBean.servico.valor}"/>                            
                         </p:panelGrid>
                         <br/>
-                        <p:commandButton value="Adicionar Servico" action="#{ServicoManagedBean.salvar()}" update="@form"></p:commandButton>
+                        <p:commandButton value="Adicionar Servico" action="#{ServicoManagedBean.adicionar()}" update="@form"></p:commandButton>
                     </p:fieldset>
                 </h:form>
             </ui:define>
         </ui:composition>
     </h:body>
-
 </html>
-

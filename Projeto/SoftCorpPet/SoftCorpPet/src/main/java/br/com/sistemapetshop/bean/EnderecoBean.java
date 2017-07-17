@@ -6,8 +6,7 @@
 package br.com.sistemapetshop.bean;
 
 import br.com.sistemapetshop.model.Endereco;
-import br.com.sistemapetshop.model.Veterinario;
-import br.com.sistemapetshop.negocio.NegocioEndereco;
+import br.com.sistemapetshop.negocio.EnderecoService;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -16,14 +15,14 @@ import javax.faces.bean.SessionScoped;
 
 /**
  *
- * @author Usuario
+ * @author jonathanpereira
  */
 @ManagedBean(name = "EnderecoManagedBean")
 @SessionScoped
 public class EnderecoBean {
 
     @EJB
-    private NegocioEndereco negocioEndereco;
+    private EnderecoService enderecoService;
 
     private Endereco endereco;
 
@@ -33,11 +32,11 @@ public class EnderecoBean {
     }
 
     public List<Endereco> listarEnderecos() {
-        return negocioEndereco.listarEnderecos();
+        return enderecoService.listar();
     }
 
     public void adicionar() {
-        negocioEndereco.inserirEndereco(endereco);
+        enderecoService.salvar(endereco);
     }
 
     public Endereco getEndereco() {

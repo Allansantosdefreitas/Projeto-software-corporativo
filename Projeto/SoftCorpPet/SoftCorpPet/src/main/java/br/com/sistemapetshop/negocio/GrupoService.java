@@ -5,7 +5,12 @@
  */
 package br.com.sistemapetshop.negocio;
 
+import static br.com.sistemapetshop.acesso.Papel.ADMINISTRADOR;
+import static br.com.sistemapetshop.acesso.Papel.CLIENTE;
+import static br.com.sistemapetshop.acesso.Papel.FUNCIONARIO;
 import br.com.sistemapetshop.model.Grupo;
+import javax.annotation.security.DeclareRoles;
+import javax.annotation.security.PermitAll;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
@@ -17,12 +22,14 @@ import javax.persistence.TypedQuery;
  * @author jonathanpereira
  */
 @Stateless
-public class GrupoRepository extends GenericDao<Grupo> {
+@DeclareRoles({ADMINISTRADOR, FUNCIONARIO, CLIENTE})
+public class GrupoService extends Service<Grupo> {
 
-    public GrupoRepository() {
+    public GrupoService() {
         super(Grupo.class);
     }
 
+    @PermitAll
     @TransactionAttribute(TransactionAttributeType.SUPPORTS)
     public Grupo getGrupo(String[] grupos) {
         EntityManager em = getEntityManager();

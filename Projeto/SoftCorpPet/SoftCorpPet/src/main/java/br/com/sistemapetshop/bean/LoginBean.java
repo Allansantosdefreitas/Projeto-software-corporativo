@@ -16,7 +16,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /**
  *
- * @author Usuario
+ * @author jonathanpereira
  */
 @ManagedBean(name = "managedLoginBean")
 @RequestScoped

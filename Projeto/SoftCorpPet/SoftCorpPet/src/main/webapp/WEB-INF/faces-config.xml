@@ -18,11 +18,11 @@
         <from-view-id>/*</from-view-id>
         <navigation-case>
             <from-outcome>sair</from-outcome>
-            <to-view-id>/index.xhtml</to-view-id>
+            <to-view-id>/faces/index.xhtml</to-view-id>
         </navigation-case>        
         <navigation-case>
             <from-outcome>inicio</from-outcome>
-            <to-view-id>/index.xhtml</to-view-id>
+            <to-view-id>/faces/index.xhtml</to-view-id>
         </navigation-case>        
     </navigation-rule>
         
@@ -30,23 +30,23 @@
         <from-view-id>/index.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>entrar</from-outcome>
-            <to-view-id>/pages/public/login.xhtml</to-view-id>
+            <to-view-id>/faces/paginas/publico/login.xhtml</to-view-id>
         </navigation-case>        
         <navigation-case>
             <from-outcome>cadastrar</from-outcome>
-            <to-view-id>/pages/public/novoCadastroUsuario.xhtml</to-view-id>
+            <to-view-id>/faces/paginas/publico/CadastraCliente.xhtml</to-view-id>
         </navigation-case>        
     </navigation-rule>
         
     <navigation-rule>
-        <from-view-id>/pages/public/*</from-view-id>
+        <from-view-id>/faces/paginas/publico/*</from-view-id>
         <navigation-case>
             <from-outcome>entrar</from-outcome>
-            <to-view-id>/pages/public/login.xhtml</to-view-id>
+            <to-view-id>/faces/pages/public/login.xhtml</to-view-id>
         </navigation-case>        
         <navigation-case>
             <from-outcome>cadastrar</from-outcome>
-            <to-view-id>/pages/public/novoCadastroUsuario.xhtml</to-view-id>
+            <to-view-id>/faces/pages/public/CadastraCliente.xhtml</to-view-id>
         </navigation-case>              
     </navigation-rule>
 
@@ -59,28 +59,16 @@
 	<from-view-id>/pages/public/login.xhtml</from-view-id>
 	<navigation-case>
 	    <from-outcome>sucesso</from-outcome>
-	    <to-view-id>/pages/user/bemVindo.xhtml</to-view-id>
+	    <to-view-id>/faces/paginas/cliente/CadastraPet.xhtml</to-view-id>
 	</navigation-case>        
 	<navigation-case>
 	    <from-outcome>falha</from-outcome>
-	    <to-view-id>/pages/public/login.xhtml</to-view-id>
+	    <to-view-id>/faces/paginas/publico/login.xhtml</to-view-id>
 	</navigation-case>         
 	<navigation-case>
 	    <from-outcome>cancelar</from-outcome>
-	    <to-view-id>/index.xhtml</to-view-id>
+	    <to-view-id>/faces/index.xhtml</to-view-id>
 	</navigation-case>       
     </navigation-rule>
-    
-    <navigation-rule>
-        <from-view-id>/pages/user/bemVindo.xhtml</from-view-id>
-        <navigation-case>
-            <from-outcome>buscar</from-outcome>
-            <to-view-id>/pages/user/buscarProfissional.xhtml</to-view-id>
-        </navigation-case>        
-        <navigation-case>
-            <from-outcome>cadastroProfissional</from-outcome>
-            <to-view-id>/pages/user/cadastroProfissional.xhtml</to-view-id>
-        </navigation-case>          
-</navigation-rule>
     
 </faces-config>

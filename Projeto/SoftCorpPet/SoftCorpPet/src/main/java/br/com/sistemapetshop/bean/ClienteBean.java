@@ -6,12 +6,11 @@
 package br.com.sistemapetshop.bean;
 
 import br.com.sistemapetshop.model.Cartao;
-import br.com.sistemapetshop.negocio.ClienteRepository;
+import br.com.sistemapetshop.negocio.ClienteService;
 import br.com.sistemapetshop.model.Cliente;
 import br.com.sistemapetshop.model.Endereco;
-import br.com.sistemapetshop.model.Grupo;
 import br.com.sistemapetshop.model.Pet;
-import br.com.sistemapetshop.negocio.GrupoRepository;
+import br.com.sistemapetshop.negocio.GrupoService;
 import br.com.sistemapetshop.util.WebServiceCep;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -32,10 +31,10 @@ import org.primefaces.event.FlowEvent;
 public class ClienteBean implements Serializable {
 
     @EJB
-    private ClienteRepository clienteRepository;
+    private ClienteService clienteService;
 
     @EJB
-    private GrupoRepository grupoRepository;
+    private GrupoService grupoService;
 
     private List<Cliente> listaClientes;
     private List<Cartao> listaCartoes;
@@ -66,7 +65,7 @@ public class ClienteBean implements Serializable {
 
         try {
 
-            cliente.setGrupo(grupoRepository.getGrupo(new String[]{Cliente.CLIENTE}));
+            cliente.setGrupo(grupoService.getGrupo(new String[]{Cliente.CLIENTE}));
 
             //Atribuir o endereço ao cliente antesde persistir
             cliente.setEndereco(endereco);
@@ -74,7 +73,7 @@ public class ClienteBean implements Serializable {
             listaCartoes.add(cartao);
             cliente.setCartao(listaCartoes);
 
-            clienteRepository.salvar(cliente);
+            clienteService.salvar(cliente);
 
             Messages.addGlobalInfo("Salvo com sucesso.");
         } catch (Exception ex) {
@@ -88,7 +87,7 @@ public class ClienteBean implements Serializable {
 
         try {
 
-            clienteRepository.atualizar(cliente);
+            clienteService.atualizar(cliente);
 
             Messages.addGlobalInfo("Atualizado com sucesso.");
         } catch (Exception ex) {
@@ -102,7 +101,7 @@ public class ClienteBean implements Serializable {
 
         try {
 
-            clienteRepository.remover(cliente);
+            clienteService.remover(cliente);
 
             Messages.addGlobalInfo("Cliente removido com sucesso!");
         } catch (Exception ex) {
@@ -116,7 +115,7 @@ public class ClienteBean implements Serializable {
 
         try {
 
-            listaClientes = clienteRepository.listar();
+            listaClientes = clienteService.listar();
         } catch (Exception ex) {
 
             Messages.addGlobalError("Ocorreu um erro inesperado ao carregar a lista.");
