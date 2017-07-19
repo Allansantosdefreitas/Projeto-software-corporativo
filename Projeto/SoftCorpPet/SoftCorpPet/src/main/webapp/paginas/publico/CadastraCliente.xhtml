@@ -34,10 +34,12 @@ and open the template in the editor.
                                         <p:inputText id="nome" value="#{clienteManagedBean.cliente.nome}" required="true"/>
 
                                         <p:outputLabel for="email" value="Email"/>
-                                        <p:inputText id="email" value="#{clienteManagedBean.cliente.login}" required="true"/>     
+                                        <p:inputText id="email" value="#{clienteManagedBean.cliente.email}" required="true" validatorMessage="Formato de email inválido">
+                                            <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$"/>
+                                        </p:inputText>     
 
                                         <p:outputLabel for="login" value="Login"/>
-                                        <p:inputText id="login" value="#{clienteManagedBean.cliente.email}" required="true"/> 
+                                        <p:inputText id="login" value="#{clienteManagedBean.cliente.login}" required="true"/> 
 
                                         <p:outputLabel for="senha" value="Senha"/>
                                         <p:password id="senha" value="#{clienteManagedBean.cliente.senha}" match="senhaConfirm" required="true"/>  

@@ -6,7 +6,7 @@
       xmlns:p="http://primefaces.org/ui">
     <h:body>
 
-        <ui:composition template="../../template/template.xhtml">
+        <ui:composition template="/template/template.xhtml">
             <ui:define name="body">
                 <h:form id="loginForm">
                     <p:growl id="growl" life="3500" autoUpdate="true"/>
@@ -19,9 +19,8 @@
                             <h:outputLabel value="Captcha: " />
                             <div class="g-recaptcha" data-sitekey="#{facesContext.externalContext.getInitParameter('PUBLIC_CAPTCHA_KEY')}"/>
                         </h:panelGrid>
-                        <p:commandButton action="#{managedLoginBean.login()}" value="Login" ajax="false" update="growl, panel" 
+                        <p:commandButton ajax="false" action="#{managedLoginBean.login()}" value="Login" update="growl, panel" 
                                          title="Logar" icon="ui-icon-play" validateClient="true"/> 
-                        <p:commandButton value="Cadastrar" ajax="false" title="Cadastrar" action="cadastrar" icon="ui-icon-person" immediate="true"/>
                     </p:panel>
                 </h:form>
             </ui:define>

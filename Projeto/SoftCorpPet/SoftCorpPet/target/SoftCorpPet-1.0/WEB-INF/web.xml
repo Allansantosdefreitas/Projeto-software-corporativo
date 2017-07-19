@@ -17,10 +17,8 @@
             <url-pattern>/faces/paginas/admin/*</url-pattern>
             <http-method>GET</http-method>
             <http-method>POST</http-method>
-            <http-method>HEAD</http-method>
             <http-method>PUT</http-method>
             <http-method>OPTIONS</http-method>
-            <http-method>TRACE</http-method>
             <http-method>DELETE</http-method>            
         </web-resource-collection>
         <auth-constraint>
@@ -39,10 +37,8 @@
             <url-pattern>/faces/paginas/usuario/cliente/*</url-pattern>
             <http-method>GET</http-method>
             <http-method>POST</http-method>
-            <http-method>HEAD</http-method>
             <http-method>PUT</http-method>
             <http-method>OPTIONS</http-method>
-            <http-method>TRACE</http-method>
             <http-method>DELETE</http-method>            
         </web-resource-collection>
         <auth-constraint>
@@ -62,10 +58,8 @@
             <url-pattern>/faces/paginas/usuario/funcionario/*</url-pattern>
             <http-method>GET</http-method>
             <http-method>POST</http-method>
-            <http-method>HEAD</http-method>
             <http-method>PUT</http-method>
             <http-method>OPTIONS</http-method>
-            <http-method>TRACE</http-method>
             <http-method>DELETE</http-method>            
         </web-resource-collection>
         <auth-constraint>
@@ -84,11 +78,7 @@
             <url-pattern>/faces/paginas/publico/*</url-pattern>
             <http-method>GET</http-method>
             <http-method>POST</http-method>
-            <http-method>HEAD</http-method>
-            <http-method>PUT</http-method>
             <http-method>OPTIONS</http-method>
-            <http-method>TRACE</http-method>
-            <http-method>DELETE</http-method>            
         </web-resource-collection> 
         <user-data-constraint>
             <transport-guarantee>CONFIDENTIAL</transport-guarantee>

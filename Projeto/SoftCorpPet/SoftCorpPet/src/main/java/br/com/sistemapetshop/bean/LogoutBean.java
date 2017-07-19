@@ -5,6 +5,7 @@
  */
 package br.com.sistemapetshop.bean;
 
+import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
@@ -18,7 +19,7 @@ import javax.servlet.http.HttpSession;
  */
 @ManagedBean(name = "managedLogoutBean")
 @ViewScoped
-public class LogoutBean {
+public class LogoutBean implements Serializable{
 
     public LogoutBean() {
     }
