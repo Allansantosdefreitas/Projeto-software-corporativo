@@ -51,6 +51,7 @@ public class LoginBean {
 
         } catch (ServletException ex) {
             
+            ex.printStackTrace();
             setLogin(null);
             adicionarMensagem("Senha ou usuário inválidos!");
             

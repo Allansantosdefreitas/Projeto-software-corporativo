@@ -17,7 +17,7 @@ import javax.ejb.Stateless;
  * @author jonathanpereira
  */
 @Stateless
-@DeclareRoles({ADMINISTRADOR, FUNCIONARIO, CLIENTE})
+//@DeclareRoles({ADMINISTRADOR, FUNCIONARIO, CLIENTE})
 public class ServicoService extends Service<Servico> {
     
     public ServicoService(){

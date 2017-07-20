@@ -6,6 +6,7 @@
 package br.com.sistemapetshop.negocio;
 
 import java.util.List;
+import javax.annotation.security.PermitAll;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
@@ -53,6 +54,7 @@ public abstract class Service<Entidade> {
         return em.find(classe, idEntidade);
     }
 
+    @PermitAll /* Provisório :) */
     @TransactionAttribute(TransactionAttributeType.SUPPORTS)
     public List<Entidade> listar() {
         CriteriaQuery criteria = em.getCriteriaBuilder().createQuery();
