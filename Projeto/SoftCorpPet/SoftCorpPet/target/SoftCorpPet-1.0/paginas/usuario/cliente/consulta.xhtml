@@ -3,14 +3,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml"   
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <html xmlns="http://www.w3.org/1999/xhtml"   
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
     <h:body>
 
-        <ui:composition template="../../template/template.xhtml">
+        <ui:composition template="/template/template.xhtml">
             <ui:define name="body">
                 <h:form id="consultaForm">
                     <p:growl id="growl" life="3500" autoUpdate="true"/>
@@ -18,22 +15,27 @@
                     <p:panel id="panel" header="Consulta">
                         <h:panelGrid columns="2" cellpadding="5">
                             <h:outputLabel for="data" value="Data" />
-                            <p:calendar id="nome" mask="31/12/9999" value="#{ConsultaGeralManagedBean.consultaGeral.dataMarcada}" required="true" label="Data" />
-                            
-                            <h:outputLabel for="servico" value="Servico" />
-                            <p:selectOneMenu id="servico" value="#{ServicoManagedBean.listaServicos}" var="conServ" required="true" label="Servico" >
-                                <p:ajax listener="#{dropdownView.onCountryChange}" update="city" />
-                                <f:selectItem itemLabel="Selecione um item" value="" noSelectionOption="false"></f:selectItem>
-                                <f:selectItems value="#{conServ.nome}"></f:selectItems>                                                            
+                            <p:calendar id="data" mask="99/99/2017" value="#{ConsultaGeralManagedBean.consultaGeral.dataMarcada}" required="true" label="Data" />
+
+                            <h:outputLabel for="status" value="Status" />
+                            <p:selectOneMenu id="status" value="#{ConsultaGeralManagedBean.statusConsulta}">
+                                <f:selectItem itemLabel="Selecione o status" itemValue="#{null}"/>
+                                <f:selectItems value="#{ConsultaGeralManagedBean.statusConsultas}" />
                             </p:selectOneMenu>
 
-                            <h:outputLabel for="Funcionario" value="Funcionario" />
-                            <p:selectOneListbox id="funcinario" value="#{FuncionarioManagedBean.listaFuncionarios}" var="consFun">
-                                <p:ajax listener="#{dropdownView.onCountryChange}" update="city" />
-                                <f:selectItem itemLabel="Selecione um item" value="" noSelectionOption="false"/>
-                                <f:selectItems value="#{consFun.nome}"></f:selectItems>
-                            </p:selectOneListbox>
-                            
+                            <h:outputLabel for="servico" value="Servico" />
+                            <p:selectOneMenu id="servico" value="#{ServicoManagedBean.servico}">
+                                <f:selectItem itemLabel="Selecione um servico" itemValue="#{null}"/>
+                                <f:selectItems value="#{ServicoManagedBean.listaServicos}" var="servico" itemValue="#{servico}" itemLabel="#{servico.nome}"/>
+                            </p:selectOneMenu>
+
+
+                            <h:outputLabel for="funcionario" value="Funcionario" />
+                            <p:selectOneMenu id="funcionario" value="#{FuncionarioManagedBean.funcionario}">
+                                <f:selectItem itemLabel="Selecione um funcionario" itemValue="#{null}"/>
+                                <f:selectItems value="#{FuncionarioManagedBean.listaFuncionarios}" var="funcionario" itemValue="#{funcionario}" itemLabel="#{funcionario.nome}"/>
+                            </p:selectOneMenu>
+
                         </h:panelGrid>
 
                         <p:commandButton value="Cadastrar" ajax="false" title="Cadastrar" action="#{ConsultaGeralManagedBean.salvar()}" icon="ui-icon-person" immediate="true" update=":growl"/>

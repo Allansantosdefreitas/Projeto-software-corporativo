@@ -6,7 +6,9 @@
 package br.com.sistemapetshop.bean;
 
 import br.com.sistemapetshop.model.ConsultaGeral;
+import br.com.sistemapetshop.model.StatusConsulta;
 import br.com.sistemapetshop.negocio.ConsultaGeralService;
+import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -21,13 +23,14 @@ import org.omnifaces.util.Messages;
  */
 @ManagedBean(name = "ConsultaGeralManagedBean")
 @SessionScoped
-public class ConsultaBean {
+public class ConsultaBean implements Serializable {
 
     @EJB
     private ConsultaGeralService consultaGeralService;
 
     private ConsultaGeral consultaGeral;
     private List<ConsultaGeral> listaConsultaGeral;
+    private StatusConsulta statusConsulta;
 
     @PostConstruct
     public void constroi() {
@@ -95,6 +98,18 @@ public class ConsultaBean {
         } catch (Exception ex) {
             Messages.addGlobalError(errorMsg);
         }
+    }
+    
+    public StatusConsulta[] getStatusConsultas(){
+        return StatusConsulta.values();
+    }
+    
+    public StatusConsulta getStatusConsulta(){
+        return statusConsulta;
+    }
+    
+    public void setStatusConsulta(StatusConsulta statusConsulta){
+        this.statusConsulta = statusConsulta;
     }
 
     public List<ConsultaGeral> getListaConsultaGeral() {

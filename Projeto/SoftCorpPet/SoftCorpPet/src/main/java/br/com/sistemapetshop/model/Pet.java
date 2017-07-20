@@ -36,7 +36,9 @@ import org.hibernate.validator.constraints.NotBlank;
 @NamedQueries(
         {
             @NamedQuery(name = "Pet.PorNome", 
-            query = "from Pet p where p.nome like :nome order by p.nome")
+            query = "from Pet p where p.nome like :nome order by p.nome"),
+            @NamedQuery(name = "Pet.todos",
+            query = "From Pet p")
         }
 )
 @NamedNativeQueries(
@@ -46,6 +48,9 @@ import org.hibernate.validator.constraints.NotBlank;
     }
 )
 public class Pet implements Serializable {
+    
+    public static final String POR_NOME = "Pet.PorNome";
+    public static final String TODOS = "Pet.todos";
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

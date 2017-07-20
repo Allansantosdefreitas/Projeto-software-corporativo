@@ -11,62 +11,28 @@
     <body>
         <ui:composition template="/template/template.xhtml">
             <ui:define name="body">
+                <h:form id="form">
+                    <p:repeat value="#{ServicoManagedBean.listaServicos}" var="servico" >
+                        <h:panelGrid columns="2" style="width:100%" columnClasses="logo,detail" >
+                            <p:outputPanel>
+                                <h:panelGrid columns="2" cellpadding="5">
+                                    <h:outputText value="Nome:" />
+                                    <h:outputText value="#{servico.nome}" style="font-weight: bold"/>
 
-                <p:growl id="mensagem"/>
+                                    <h:outputText value="Valor:" />
+                                    <h:outputText value="#{servico.valor}" style="font-weight: bold"/>
 
-                <h:form  id="formListagemServicos">
-                    <p:panel header="Serviços - Listados">
-                        <p:dataTable id="tabelaListagemServicos" emptyMessage="Nenhum registro foi encontrado." paginator="true" value="#{ServicoManagedBean.listaServicos}" var="servico" rows="10">
+                                    <h:outputText value="Valor:" />
+                                    <h:outputText value="#{servico.valor}" style="font-weight: bold"/>
+                                </h:panelGrid>
 
-                            <f:facet name="footer">
-                                <p:commandButton value="Novo" oncomplete="PF('dialogo').show();" actionListener="#{ServicoManagedBean.constroiServico}" update=":formServicos:painelServico"/>
-                            </f:facet>
+                                <p:commandButton value="Contratar"/>
+                            </p:outputPanel>
+                        </h:panelGrid>
+                        <hr />
+                    </p:repeat>
 
-                            <p:column headerText="Nome" sortBy="#{servico.nome}" filterBy="#{servico.nome}">
-                                <h:outputText value="#{servico.nome}"/>
-                            </p:column>
-
-                            <p:column headerText="Valor" sortBy="#{servico.valor}" >
-                                <h:outputText value="#{servico.valor}"/>
-                            </p:column>
-
-                            <p:column headerText="Opções">
-                                <p:commandButton value="Excluir" icon="ui-icon-trash" actionListener="#{ServicoManagedBean.excluir}" update=":mensagem :formListagemServicos:tabelaListagemServicos">
-                                    <p:confirm header="Confirmação" message="Tem certeza que deseja excluir este serviço?" icon="ui-icon-alert"/>
-                                    <f:attribute name="servicoSelecionado" value="#{servico}"/>
-                                </p:commandButton>
-
-                                <p:commandButton value="Editar" icon="ui-icon-pencil" actionListener="#{ServicoManagedBean.editar}" update=":formServicos:painelServico" oncomplete="PF('dialogo').show();">
-                                    <f:attribute name="servicoSelecionado" value="#{servico}"/>
-                                </p:commandButton>
-                            </p:column>
-                        </p:dataTable>
-
-                        <p:confirmDialog global="true">
-                            <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"/>
-                            <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="iu-icon-close"/>
-                        </p:confirmDialog>
-
-                    </p:panel>
                 </h:form>
-
-                <p:dialog header="Serviço - Cadastro" widgetVar="dialogo" draggable="false" resizable="false" modal="false" closable="false">
-                    <h:form id="formServicos">
-
-                        <h:panelGrid id="painelServico" columns="2">
-                            <p:outputLabel value="Nome:" />
-                            <p:inputText maxlength="50" size="30" value="#{ServicoManagedBean.servico.nome}" />
-
-                            <p:outputLabel value="Valor:" />
-                            <p:inputNumber value="#{ServicoManagedBean.servico.valor}"/>
-                        </h:panelGrid>
-
-                        <h:panelGrid columns="2">
-                            <p:commandButton value="Salvar" actionListener="#{ServicoManagedBean.salvar}" update=":mensagem :formServicos:painelServico :formListagemServicos:tabelaListagemServicos" />
-                            <p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();" />
-                        </h:panelGrid>
-                    </h:form>
-                </p:dialog>
             </ui:define>
         </ui:composition>
     </body>

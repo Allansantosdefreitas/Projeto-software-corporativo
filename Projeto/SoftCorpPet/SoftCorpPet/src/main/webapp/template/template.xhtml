@@ -40,9 +40,9 @@ and open the template in the editor.
                         </p:submenu>
 
                         <f:facet name="options">
-                            <p:inputText style="margin-right:10px" placeholder="Search" rendered="#{facesContext.externalContext.isUserInRole('administrador')}"/>
-                            <p:commandButton ajax="false" action="cadastrar" value="Cadastrar" icon="ui-icon-plusthick"/>
-                            <p:commandButton ajax="false" action="entrar" value="Entrar" icon="ui-icon-arrowreturnthick-1-e"/>
+                            <p:commandButton ajax="false" action="pedidos" value="Meus pedidos" icon="ui-icon-cart"/>
+                            <p:commandButton ajax="false" action="cadastrar" value="Cadastrar" icon="ui-icon-plusthick" rendered="#{empty request.remoteUser}"/>
+                            <p:commandButton ajax="false" action="entrar" value="Entrar" icon="ui-icon-arrowreturnthick-1-e" rendered="#{empty request.remoteUser}"/>
                             <p:commandButton ajax="false" action="#{managedLogoutBean.logout()}" value="Sair" icon="ui-icon-extlink" rendered="#{not empty request.remoteUser}"/>
                         </f:facet>
                     </p:menubar>

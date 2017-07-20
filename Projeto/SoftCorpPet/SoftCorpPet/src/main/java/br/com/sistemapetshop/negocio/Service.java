@@ -10,6 +10,7 @@ import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaQuery;
 
 /**
@@ -60,4 +61,47 @@ public abstract class Service<Entidade> {
         //return (List<Entidade>) em.createQuery("From " + classe + " c").getResultList();
         return em.createQuery(criteria).getResultList();
     }
+
+    @TransactionAttribute(TransactionAttributeType.SUPPORTS)
+    protected List<Entidade> getEntidades(String nomeQuery) {
+        TypedQuery<Entidade> query = em.createNamedQuery(nomeQuery, classe);
+        return query.getResultList();
+    }
+
+    @TransactionAttribute(TransactionAttributeType.SUPPORTS)
+    protected List<Entidade> getEntidades(String nomeQuery, Object[] parametros) {
+        TypedQuery<Entidade> query = em.createNamedQuery(nomeQuery, classe);
+
+        int i = 1;
+        for (Object parametro : parametros) {
+            query.setParameter(i++, parametro);
+        }
+
+        return query.getResultList();
+    }
+
+    @TransactionAttribute(TransactionAttributeType.SUPPORTS)
+    protected Entidade getEntidade(String nomeQuery, Object[] parametros) {
+        TypedQuery<Entidade> query = em.createNamedQuery(nomeQuery, classe);
+
+        int i = 1;
+        for (Object parametro : parametros) {
+            query.setParameter(i++, parametro);
+        }
+
+        return query.getSingleResult();
+    }
+
+    @TransactionAttribute(TransactionAttributeType.SUPPORTS)
+    protected Boolean checarExistencia(String nomeQuery, Object parametro) {
+        Entidade entidade;
+
+        entidade = getEntidade(nomeQuery, new Object[]{parametro});
+        if (entidade != null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
