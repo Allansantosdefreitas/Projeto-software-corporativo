@@ -39,7 +39,7 @@ public class ConsultaBean implements Serializable {
         listarConsultaGeral();
     }
 
-    public void constroiServico() {
+    public void constroiConsultaGeral() {
         consultaGeral = new ConsultaGeral();
     }
 
@@ -57,12 +57,12 @@ public class ConsultaBean implements Serializable {
             Messages.addGlobalError(defaultErrorMsg);
             exception.printStackTrace();
         } finally {
-            constroiServico();
+            constroiConsultaGeral();
         }
     }
 
     public void editar(ActionEvent evento) {
-        consultaGeral = (ConsultaGeral) evento.getComponent().getAttributes().get("servicoSelecionado");
+        consultaGeral = (ConsultaGeral) evento.getComponent().getAttributes().get("consultaSelecionada");
     }
 
     public void excluir(ActionEvent evento) {
