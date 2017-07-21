@@ -9,42 +9,29 @@
 
         <ui:composition template="/template/template.xhtml">
             <ui:define name="body">
+
                 <p:growl id="mensagem"/>
 
-                <h:form  id="formListagemServicos">
-                    <p:panel header="Seus pets">
-                        <p:dataTable id="tabelaListagemServicos" emptyMessage="Nenhum registro foi encontrado." paginator="true" value="#{ServicoManagedBean.listaServicos}" var="servico" rows="10">
-
-                            <f:facet name="footer">
-                                <p:commandButton value="Novo" oncomplete="PF('dialogo').show();" actionListener="#{ServicoManagedBean.constroiServico}" update=":formServicos:painelServico"/>
+                <h:form id="formListagemServicos">
+                    <p:repeat value="#{clienteManagedBean.listaPets}" var="pet">
+                        <p:panelGrid columns="2">
+                            <f:facet name="header">
+                                <p:graphicImage library="images" name="500.png" />
                             </f:facet>
 
-                            <p:column headerText="Nome" sortBy="#{servico.nome}" filterBy="#{servico.nome}">
-                                <h:outputText value="#{servico.nome}"/>
-                            </p:column>
+                            <h:outputText value="Name:" />
+                            <h:outputText value="Kobe Bryant" />
 
-                            <p:column headerText="Valor" sortBy="#{servico.valor}" >
-                                <h:outputText value="#{servico.valor}"/>
-                            </p:column>
+                            <h:outputText value="Team:" />
+                            <h:outputText value="Los Angeles Lakers" />
 
-                            <p:column headerText="Opções">
-                                <p:commandButton value="Excluir" icon="ui-icon-trash" actionListener="#{ServicoManagedBean.excluir}" update=":mensagem :formListagemServicos:tabelaListagemServicos">
-                                    <p:confirm header="Confirmação" message="Tem certeza que deseja excluir este serviço?" icon="ui-icon-alert"/>
-                                    <f:attribute name="servicoSelecionado" value="#{servico}"/>
-                                </p:commandButton>
+                            <h:outputText value="Position:" />
+                            <h:outputText value="Shooting Guard" />
 
-                                <p:commandButton value="Editar" icon="ui-icon-pencil" actionListener="#{ServicoManagedBean.editar}" update=":formServicos:painelServico" oncomplete="PF('dialogo').show();">
-                                    <f:attribute name="servicoSelecionado" value="#{servico}"/>
-                                </p:commandButton>
-                            </p:column>
-                        </p:dataTable>
-
-                        <p:confirmDialog global="true">
-                            <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"/>
-                            <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="iu-icon-close"/>
-                        </p:confirmDialog>
-
-                    </p:panel>
+                            <h:outputText value="Number:" />
+                            <h:outputText value="24" />
+                        </p:panelGrid>
+                    </p:repeat>
                 </h:form>
 
                 <p:dialog header="Serviço - Cadastro" widgetVar="dialogo" draggable="false" resizable="false" modal="false" closable="false">
@@ -52,21 +39,19 @@
 
                         <h:panelGrid id="painelServico" columns="2">
                             <p:outputLabel value="Nome:" />
-                            <p:inputText maxlength="50" size="30" value="#{ServicoManagedBean.servico.nome}" />
+                            <p:inputText maxlength="50" size="30"  />
 
                             <p:outputLabel value="Valor:" />
-                            <p:inputNumber value="#{ServicoManagedBean.servico.valor}"/>
+                            <p:inputNumber />
                         </h:panelGrid>
 
                         <h:panelGrid columns="2">
-                            <p:commandButton value="Salvar" actionListener="#{ServicoManagedBean.salvar}" update=":mensagem :formServicos:painelServico :formListagemServicos:tabelaListagemServicos" />
+                            <p:commandButton value="Salvar" update=":mensagem" />
                             <p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();" />
                         </h:panelGrid>
                     </h:form>
                 </p:dialog>
             </ui:define>
         </ui:composition>
-
     </h:body>
-
 </html>
