@@ -23,7 +23,6 @@ public class ValidadorBandeira implements ConstraintValidator<ValidaBandeira, St
         this.bandeiras.add("Visa");
         this.bandeiras.add("Master Card");
         this.bandeiras.add("Elo");
-        this.bandeiras.add("Cielo");
         this.bandeiras.add("HiperCard");
     }
 

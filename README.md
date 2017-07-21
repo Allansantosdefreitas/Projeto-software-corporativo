@@ -20,5 +20,9 @@ Projeto da disciplina de Desenvolvimento de Software Corporativo
 	- inserir fotos para serviço (se funcionar o de pet)
 	- e outras coisas ainda.. :)
 
++ Tarefinhas
 
+	- redirecionar página depois de cadastrar usuário
+
+	
   ##### "É final, amigo!"

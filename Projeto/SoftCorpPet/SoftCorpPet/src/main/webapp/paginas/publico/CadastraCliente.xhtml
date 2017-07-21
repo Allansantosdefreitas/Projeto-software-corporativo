@@ -20,11 +20,6 @@ and open the template in the editor.
                 <p:fieldset legend="Cadatro de clientes">
                     <p:growl id="growl"/>
                     <h:form id="fomularioCadastroCliente">
-
-
-
-
-
                         <p:wizard flowListener="#{clienteManagedBean.onFlowProcess}">
                             <p:tab id="conta" title="Conta">
                                 <p:panel header="Conta">
@@ -87,7 +82,12 @@ and open the template in the editor.
                                         <p:inputText id="numeroCartao" value="#{clienteManagedBean.cartao.numero}"/>
 
                                         <p:outputLabel for="bandeira" value="Bandeira:"/>
-                                        <p:inputText id="bandeira" value="#{clienteManagedBean.cartao.bandeira}"/>
+                                        <p:selectOneListbox id="bandeira" value="#{clienteManagedBean.cartao.bandeira}">
+                                            <f:selectItem itemLabel="Master Card" itemValue="Master Card" />
+                                            <f:selectItem itemLabel="Visa" itemValue="Visa" />
+                                            <f:selectItem itemLabel="Elo" itemValue="Elo" />
+                                            <f:selectItem itemLabel="HiperCard" itemValue="HiperCard" />
+                                        </p:selectOneListbox>
 
                                         <p:outputLabel for="dataValidade" value="Data de validade:"/>
                                         <p:inputMask id="dataValidade" value="#{clienteManagedBean.cartao.dataValidade}" mask="99/99/9999" >
