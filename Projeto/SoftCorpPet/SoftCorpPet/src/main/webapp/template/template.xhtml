@@ -29,14 +29,15 @@ and open the template in the editor.
                         
                         <p:menuitem value="Home" url="index.xhtml" icon="ui-icon-home" />
                         
-                        <p:submenu label="Novo" icon="ui-icon-document" rendered="#{facesContext.externalContext.isUserInRole('administrador')}">
-                            <p:menuitem value="Serviço" url="#" />
-                            <p:menuitem value="Funcionario" url="#" />
-                            <p:menuitem value="Veretinário" url="#" />
+                        <p:submenu label="Geranciar" icon="ui-icon-document" rendered="#{facesContext.externalContext.isUserInRole('administrador')}">
+                            <p:menuitem value="Serviços" url="/faces/paginas/admin/servicos.xhtml" />
+                            <p:menuitem value="Funcionarios" url="/faces/paginas/admin/funcionarios.xhtml" />
+                            <p:menuitem value="Pets" url="/faces/paginas/admin/pet.xhtml" />
+                            <p:menuitem value="Clientes" url="/faces/paginas/admin/cliente.xhtml" />
                         </p:submenu>
 
-                        <p:submenu label="Consultar" icon="ui-icon-pencil">
-                            <p:menuitem value="Pets" url="#" />
+                        <p:submenu label="Consultar" icon="ui-icon-pencil" rendered="#{facesContext.externalContext.isUserInRole('cliente')}">
+                            <p:menuitem value="Pets" url="/faces/paginas/usuario/cliente/CadastraPet.xhtml" />
                         </p:submenu>
 
                         <f:facet name="options">
