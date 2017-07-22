@@ -6,9 +6,18 @@
 package br.com.sistemapetshop.bean;
 
 import br.com.sistemapetshop.model.ConsultaGeral;
+import br.com.sistemapetshop.model.Funcionario;
+import br.com.sistemapetshop.model.Servico;
 import br.com.sistemapetshop.model.StatusConsulta;
 import br.com.sistemapetshop.negocio.ConsultaGeralService;
+import br.com.sistemapetshop.negocio.FuncionarioService;
+import br.com.sistemapetshop.negocio.ServicoService;
 import java.io.Serializable;
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.LinkedList;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -30,13 +39,30 @@ public class ConsultaBean implements Serializable {
 
     private ConsultaGeral consultaGeral;
     private List<ConsultaGeral> listaConsultaGeral;
+    private List<Funcionario> listaFuncionario;
+    private List<Servico> listaServicos;
     private StatusConsulta statusConsulta;
+    private Servico servico;
+    private Funcionario funcionario;
+    private String dataMarcada;
+    private String nomeDoServico;
+    private String nomeDoFuncionario;
 
+    
     @PostConstruct
     public void constroi() {
+        //listaServicos = new List<Servico>();
+        //listaFuncionario = new List<Funcionario>();
         consultaGeral = new ConsultaGeral();
+        servico = new Servico();
+        funcionario= new Funcionario();
+        dataMarcada = new String();
+        //nomeDoFuncionario = new String();
+        //nomeDoServico = new String();
 
         listarConsultaGeral();
+        //listarServicos();
+        //listaFuncionario = funcionarioService.listar();           
     }
 
     public void constroiConsultaGeral() {
@@ -45,13 +71,22 @@ public class ConsultaBean implements Serializable {
 
     public void salvar() {
 
+        
+        //nomeDoServico = consultaGeral.getServico().getNome();
+        //nomeDoFuncionario = consultaGeral.getFuncionario().getNome();
+        
+        //setServico(nomeDoServico);
+        //setFuncionario(nomeDoFuncionario);
+        
+        consultaGeral.setServico(servico);
+        
         String defaultErrorMsg = "Ocorreu um erro inesperado";
         String defaultSuccessMsg = "Salvo com sucesso";
 
         try {
-            consultaGeralService.atualizar(consultaGeral);
-            Messages.addGlobalInfo(defaultSuccessMsg);
-
+            
+            consultaGeralService.salvar(consultaGeral);
+            Messages.addGlobalInfo("Salvo com sucesso.");
             listarConsultaGeral();
         } catch (Exception exception) {
             Messages.addGlobalError(defaultErrorMsg);
@@ -123,6 +158,59 @@ public class ConsultaBean implements Serializable {
     public ConsultaGeral getConsultaGeral() {
         return consultaGeral;
     }
-
+    
+    public Servico getServico(){
+        return servico;
+    }
+    
+    public void setServico(Servico novo){
+        servico = novo;
+    }
+    
+    /*
+    public String getNomeDoServico(){
+        return nomeDoServico;
+    }
+    
+    public void setNomeDoServico(String nome){
+        nomeDoServico = nome;
+    }
+    
+    
+    public String getNomeDoFuncionario(){
+        return nomeDoFuncionario;
+    }
+    
+    public void setNomeDoFuncionario(String nome){
+        nomeDoFuncionario = nome;
+    }
+    */
+    
+    public void setDataMarcada(String dataMarcada) throws ParseException{
+        DateFormat formatter = new SimpleDateFormat("MM/dd/yy");
+        Date date = (Date)formatter.parse(dataMarcada);
+        consultaGeral.setDataMarcada(date);
+    }
+    
+    /*
+    public void setFuncionario(String nomeFuncionario){
+        for(int i=0; i<listaFuncionario.size();i++){
+            if(nomeFuncionario == listaFuncionario.get(i).getNome()){
+                funcionario = listaFuncionario.get(i);
+            }
+        }
+        consultaGeral.setFuncionario(funcionario);
+    }
+    
+    public void setServico(String nomeServico){
+        //listaServicos = servicoService.listar();
+        for(int i=0; i<listaServicos.size();i++){
+            if(nomeServico == listaServicos.get(i).getNome()){
+                servico = listaServicos.get(i);
+            }
+        }
+        consultaGeral.setServico(servico);
+    }*/
+    
 }
 
