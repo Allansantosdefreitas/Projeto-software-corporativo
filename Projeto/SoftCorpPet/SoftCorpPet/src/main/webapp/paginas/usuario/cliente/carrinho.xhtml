@@ -21,7 +21,7 @@ and open the template in the editor.
 
                 <h:form  id="formListagemServicos">
                     <p:panel header="Serviços - Listados">
-                        <p:dataTable id="tabelaListagemServicos" emptyMessage="Nenhum registro foi encontrado." paginator="true" value="#{ServicoManagedBean.listaServicos}" var="servico" rows="10">
+                        <p:dataTable id="tabelaListagemServicos" emptyMessage="Nenhum registro foi encontrado." paginator="true" var="servico" rows="10">
 
                             <f:facet name="footer">
                                 <p:commandButton value="Novo" oncomplete="PF('dialogo').show();" actionListener="#{ServicoManagedBean.constroiServico}" update=":formServicos:painelServico"/>

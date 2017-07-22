@@ -19,6 +19,7 @@ import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.event.ActionEvent;
 import org.omnifaces.util.Messages;
 import org.primefaces.event.FlowEvent;
 
@@ -97,19 +98,40 @@ public class ClienteBean implements Serializable {
         }
     }
 
-    public void remover() {
+//    public void remover() {
+//
+//        try {
+//
+//            clienteService.remover(cliente);
+//
+//            Messages.addGlobalInfo("Cliente removido com sucesso!");
+//        } catch (Exception ex) {
+//
+//            Messages.addGlobalError("Ocorreu um erro inesperado.");
+//            ex.printStackTrace();
+//        }
+//    }
+     public void excluir(ActionEvent evento) {
+        
+
+        String defaultSuccessMsg = "Cliente removido com sucesso!";
+        String defaultErrorMsg = "Ocorreu um erro inesperado.";
+        
+        //Qual foi o componente clicado? Qual são os atributos? Qual o nome do atributo que eu quero trabalhar?
+        cliente = (Cliente) evento.getComponent().getAttributes().get("servicoSelecionado");
 
         try {
-
             clienteService.remover(cliente);
 
-            Messages.addGlobalInfo("Cliente removido com sucesso!");
-        } catch (Exception ex) {
-
-            Messages.addGlobalError("Ocorreu um erro inesperado.");
-            ex.printStackTrace();
+            Messages.addGlobalInfo(defaultSuccessMsg);
+            //constroi();
+            inicializar();
+        } catch (Exception erro) {
+            Messages.addGlobalError(defaultErrorMsg);
+            erro.printStackTrace();
         }
     }
+
 
     public void listar() {
 
@@ -123,6 +145,10 @@ public class ClienteBean implements Serializable {
         }
     }
 
+    public void editar(ActionEvent evento) {
+        cliente = (Cliente) evento.getComponent().getAttributes().get("servicoSelecionado");
+    }
+    
     public void buscaCep() {
 
         WebServiceCep webServiceCep = WebServiceCep.searchCep(endereco.getCep());

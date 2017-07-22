@@ -3,6 +3,7 @@ br\com\sistemapetshop\model\ValidadorBandeira.class
 br\com\sistemapetshop\negocio\UsuarioService.class
 br\com\sistemapetshop\bean\UsuarioBean.class
 br\com\sistemapetshop\model\Cliente_.class
+br\com\sistemapetshop\bean\CarrinhoBean.class
 br\com\sistemapetshop\model\Servico_.class
 br\com\sistemapetshop\bean\GrupoBean.class
 br\com\sistemapetshop\model\Endereco_.class
@@ -11,6 +12,7 @@ br\com\sistemapetshop\util\WebServiceCep$Xml$5.class
 br\com\sistemapetshop\bean\ClienteBean.class
 br\com\sistemapetshop\bean\NavegationBean.class
 br\com\sistemapetshop\util\WebServiceCep$IterableElement.class
+br\com\sistemapetshop\util\ConverterFuncionario.class
 br\com\sistemapetshop\model\StatusConsulta.class
 br\com\sistemapetshop\model\EspecialidadeFuncionario.class
 br\com\sistemapetshop\model\Cliente.class
@@ -48,6 +50,7 @@ br\com\sistemapetshop\bean\LoginBean.class
 br\com\sistemapetshop\model\ConsultaGeral.class
 br\com\sistemapetshop\bean\FuncionarioBean.class
 br\com\sistemapetshop\negocio\FuncionarioService.class
+br\com\sistemapetshop\util\ConverterServico.class
 br\com\sistemapetshop\model\Consulta_.class
 br\com\sistemapetshop\util\WebServiceCep$XmlEnums.class
 br\com\sistemapetshop\util\WebServiceCep$1.class

@@ -9,7 +9,6 @@ import static br.com.sistemapetshop.acesso.Papel.ADMINISTRADOR;
 import static br.com.sistemapetshop.acesso.Papel.CLIENTE;
 import static br.com.sistemapetshop.acesso.Papel.FUNCIONARIO;
 import br.com.sistemapetshop.model.Cliente;
-import br.com.sistemapetshop.model.Servico;
 import java.util.List;
 import javax.annotation.security.DeclareRoles;
 import javax.annotation.security.PermitAll;
