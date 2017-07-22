@@ -23,6 +23,7 @@ import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 import org.omnifaces.util.Messages;
 
@@ -41,6 +42,7 @@ public class ConsultaBean implements Serializable {
     private List<ConsultaGeral> listaConsultaGeral;
     private List<Funcionario> listaFuncionario;
     private List<Servico> listaServicos;
+    private List<ConsultaGeral> listaConsultaDoUsuario;
     private StatusConsulta statusConsulta;
     private Servico servico;
     private Funcionario funcionario;
@@ -61,6 +63,7 @@ public class ConsultaBean implements Serializable {
         //nomeDoServico = new String();
 
         listarConsultaGeral();
+        listarConsultasDoUsuario();
         //listarServicos();
         //listaFuncionario = funcionarioService.listar();           
     }
@@ -79,6 +82,7 @@ public class ConsultaBean implements Serializable {
         //setFuncionario(nomeDoFuncionario);
         
         consultaGeral.setServico(servico);
+        consultaGeral.setFuncionario(funcionario);
         
         String defaultErrorMsg = "Ocorreu um erro inesperado";
         String defaultSuccessMsg = "Salvo com sucesso";
@@ -123,6 +127,23 @@ public class ConsultaBean implements Serializable {
 //            constroiServico();
 //        }
     }
+    
+    public void listarConsultasDoUsuario(){
+        String errorMsg = "Erro ao carregar a lista";
+        try {
+            listaConsultaGeral = consultaGeralService.listar();
+            String nomeUsuario =  FacesContext.getCurrentInstance().getExternalContext().getRemoteUser();
+            for(int i=0; i<listaConsultaGeral.size();i++){
+                if(listaConsultaDoUsuario.get(i).getFuncionario().getNome() == nomeUsuario){
+                    listaConsultaDoUsuario.add(listaConsultaGeral.get(i));
+                }
+            }
+            
+        } catch (Exception ex) {
+            Messages.addGlobalError(errorMsg);
+        }
+    
+    }
 
     public void listarConsultaGeral() {
 
@@ -153,6 +174,14 @@ public class ConsultaBean implements Serializable {
 
     public void setListaConsultaGeral(List<ConsultaGeral> listaConsultaGeral) {
         this.listaConsultaGeral = listaConsultaGeral;
+    }
+    
+    public List<ConsultaGeral> getListaConsultaDoUsuario() {
+        return listaConsultaDoUsuario;
+    }
+
+    public void setListaConsultaDoUsuario(List<ConsultaGeral> listaConsulta) {
+        this.listaConsultaDoUsuario = listaConsulta;
     }
 
     public ConsultaGeral getConsultaGeral() {
