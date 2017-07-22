@@ -14,7 +14,7 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <h:body>
-        <ui:composition template="template/layout.xhtml">
+        <ui:composition template="/template/layout.xhtml">
             <ui:define name="content">
                 <p:fieldset legend="Veterinarios" toggleable="true" toggleSpeed="500">
                     <p:ajax event="toggle" listener="#{fieldsetView.handleToggle}"/>

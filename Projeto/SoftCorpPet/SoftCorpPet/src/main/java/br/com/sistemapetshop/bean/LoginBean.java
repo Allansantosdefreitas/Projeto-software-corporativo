@@ -5,11 +5,14 @@
  */
 package br.com.sistemapetshop.bean;
 
+import br.com.sistemapetshop.model.Cliente;
 import br.com.sistemapetshop.util.Recaptcha;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import org.hibernate.validator.constraints.NotBlank;
@@ -21,40 +24,49 @@ import org.hibernate.validator.constraints.NotBlank;
 @ManagedBean(name = "managedLoginBean")
 @RequestScoped
 public class LoginBean {
-    
+
     @NotBlank
     private String login;
-    
+
     @NotBlank
     private String senha;
     private FacesContext facesContext;
 
     public String login() {
-        
+
         try {
-            
+
             facesContext = FacesContext.getCurrentInstance();
             Recaptcha recaptcha = new Recaptcha(facesContext);
 
             if (recaptcha.validar()) {
                 HttpServletRequest request = (HttpServletRequest) facesContext.getExternalContext().getRequest();
                 request.login(login, senha);
-                
+
+//                FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("usuarioSessao", yourObject);
                 facesContext.getExternalContext().getSession(true);
-            } else {
+               
+                facesContext.getCurrentInstance().getExternalContext().getRemoteUser();
                 
+//                EntityManager em = getEntityManager();
+//                TypedQuery<Cliente> query = em.createNamedQuery("Cliente.PorLoginSQL");
+                //query.setParameter(1, login);
+                
+
+            } else {
+
                 setLogin(null);
                 adicionarMensagem("Captcha inválido!");
-                
+
                 return "falha";
             }
 
         } catch (ServletException ex) {
-            
+
             ex.printStackTrace();
             setLogin(null);
             adicionarMensagem("Senha ou usuário inválidos!");
-            
+
             return "falha";
         }
 
