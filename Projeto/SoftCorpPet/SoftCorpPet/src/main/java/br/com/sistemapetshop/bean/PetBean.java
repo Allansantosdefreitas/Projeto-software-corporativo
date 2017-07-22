@@ -103,6 +103,18 @@ public class PetBean implements Serializable{
             Messages.addGlobalError(errorMsg);
         }
     }
+    
+        public void listarpetsUsuario() {
+
+        String errorMsg = "Erro ao carregar a lista";
+
+        try {
+            listapet = petService.listarPetsUsuario();
+        } catch (Exception ex) {
+            Messages.addGlobalError(errorMsg);
+        }
+    }
+
 
         public List<Pet> getListapet() {
         return listapet;

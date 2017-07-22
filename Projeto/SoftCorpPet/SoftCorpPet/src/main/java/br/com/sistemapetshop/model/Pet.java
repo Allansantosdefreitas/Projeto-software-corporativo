@@ -36,9 +36,15 @@ import org.hibernate.validator.constraints.NotBlank;
 @NamedQueries(
         {
             @NamedQuery(name = "Pet.PorNome", 
-            query = "from Pet p where p.nome like :nome order by p.nome"),
+                query = "from Pet p where p.nome like :nome order by p.nome"
+            ),
             @NamedQuery(name = "Pet.todos",
-            query = "From Pet p")
+                query = "From Pet p"
+            ),
+            @NamedQuery(name = "Pet.porLoginUsuario",
+                query = "FROM Pet p WHERE p.cliente = (SELECT cliente FROM Cliente c WHERE c.login like ?)"
+            )
+            
         }
 )
 @NamedNativeQueries(

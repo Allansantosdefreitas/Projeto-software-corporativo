@@ -15,6 +15,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import org.hibernate.validator.constraints.NotBlank;
 
 /**
@@ -43,16 +44,18 @@ public class LoginBean {
                 HttpServletRequest request = (HttpServletRequest) facesContext.getExternalContext().getRequest();
                 request.login(login, senha);
 
-//                FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("usuarioSessao", yourObject);
-                facesContext.getExternalContext().getSession(true);
+                    HttpSession session = (HttpSession)facesContext.getExternalContext().getSession(true);
                
-                facesContext.getCurrentInstance().getExternalContext().getRemoteUser();
+                session.setAttribute("loginUsuarioSessao", login);
+                
+                System.out.println("sessoa usr: " + session.getAttribute("loginUsuarioSessao") );
                 
 //                EntityManager em = getEntityManager();
 //                TypedQuery<Cliente> query = em.createNamedQuery("Cliente.PorLoginSQL");
                 //query.setParameter(1, login);
                 
-
+                //FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("LoginUsuarioSessao", login);
+                
             } else {
 
                 setLogin(null);
