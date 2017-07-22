@@ -84,7 +84,6 @@ public class FuncionarioBean implements Serializable {
         }
 
         constroiFuncionario();
-
     }
 
     public void listar() {
