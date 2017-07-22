@@ -33,7 +33,10 @@ import javax.validation.Valid;
 @NamedQueries(
         {
             @NamedQuery(name = "Veterinario.PorNome",
-                    query = "from Veterinario v where v.nome like :nome order by v.nome")
+                query = "from Veterinario v where v.nome like :nome order by v.nome")
+            ,
+            @NamedQuery(name = "Veterinario.todos",
+                query = "From Veterinario v")
         }
 )
 @NamedNativeQueries(
@@ -44,6 +47,8 @@ import javax.validation.Valid;
 )
 public class Veterinario extends Usuario implements Serializable {
 
+    public static final String TODOS = "Veterinario.todos";
+    
     @Column(name = "str_crmv", nullable = false, length = 60, unique = true)
     private String crmv;
 

@@ -47,6 +47,12 @@ public class PetBean implements Serializable{
         String defaultSuccessMsg = "Salvo com sucesso";
 
         try {
+            Boolean pedegreeBool = Boolean.valueOf(pet.getPedegree());
+            pet.setPedegree(pedegreeBool);
+            
+//            Float pesoFloat = Float.valueOf(pet.getPeso());
+//            pet.setPeso(pesoFloat);
+//            
             petService.atualizar(pet);
             Messages.addGlobalInfo(defaultSuccessMsg);
 
@@ -60,13 +66,13 @@ public class PetBean implements Serializable{
     }
 
     public void editar(ActionEvent evento) {
-        pet = (Pet) evento.getComponent().getAttributes().get("consultaSelecionada");
+        pet = (Pet) evento.getComponent().getAttributes().get("servicoSelecionado"); // change
     }
 
     public void excluir(ActionEvent evento) {
 
-        String defaultSuccessMsg = "Consulta removida com sucesso";
-        String defaultErrorMsg = "Erro ao excluir a consulta";
+        String defaultSuccessMsg = "Pet removido com sucesso";
+        String defaultErrorMsg = "Erro ao excluir pet";
 
         //Qual foi o componente clicado? Qual são os atributos? Qual o nome do atributo que eu quero trabalhar?
         pet = (Pet) evento.getComponent().getAttributes().get("servicoSelecionado");
@@ -97,7 +103,7 @@ public class PetBean implements Serializable{
             Messages.addGlobalError(errorMsg);
         }
     }
-    
+
         public List<Pet> getListapet() {
         return listapet;
     }
@@ -108,6 +114,14 @@ public class PetBean implements Serializable{
 
     public Pet getpet() {
         return pet;
+    }
+
+    public Pet getPet() {
+        return pet;
+    }
+
+    public void setPet(Pet pet) {
+        this.pet = pet;
     }
 
 }

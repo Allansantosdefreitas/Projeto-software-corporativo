@@ -64,7 +64,7 @@ public class Pet implements Serializable {
 
     @NotBlank
     @Column(name = "flt_peso", nullable = false)
-    private Float peso;
+    private Double peso;
 
     @Size(max=60)
     @Column(name = "str_raca", nullable = false, length = 60)
@@ -77,7 +77,7 @@ public class Pet implements Serializable {
     // Relacionamento Cliente
     @Valid
     @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.PERSIST)
+    @ManyToOne(fetch = FetchType.LAZY, optional = true, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "fk_cliente", referencedColumnName = "id_cliente")
     private Cliente cliente;
 
@@ -103,11 +103,11 @@ public class Pet implements Serializable {
         this.nome = nome;
     }
 
-    public Float getPeso() {
+    public Double getPeso() {
         return peso;
     }
 
-    public void setPeso(Float peso) {
+    public void setPeso(Double peso) {
         this.peso = peso;
     }
 

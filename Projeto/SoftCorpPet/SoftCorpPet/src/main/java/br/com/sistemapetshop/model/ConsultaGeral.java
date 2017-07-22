@@ -37,11 +37,17 @@ import javax.validation.Valid;
             @NamedQuery(
                     name = "ConsultaGeral.PorId",
                     query = "SELECT c FROM ConsultaGeral c WHERE c.idConsulta = ?1"
+            ),
+            @NamedQuery(
+                    name = "ConsultaGeral.todos",
+                    query = "From ConsultaGeral c"
             )
         }
 )
 public class ConsultaGeral extends Consulta implements Serializable {
 
+    public static final String TODOS = "ConsultaGeral.todos";
+    
     // Relacionamento Servico
     @Valid
     @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.PERSIST)

@@ -35,17 +35,22 @@ import org.hibernate.validator.constraints.NotBlank;
 @Access(AccessType.FIELD)
 @NamedQueries(
         {
-            @NamedQuery(name = "Servico.PorNome", 
-            query = "from Servico s where s.nome like :nome order by s.nome")
+            @NamedQuery(name = "Servico.PorNome",
+                    query = "from Servico s where s.nome like :nome order by s.nome")
+            ,
+            @NamedQuery(name = "Servico.todos",
+                    query = "From Servico s")
         }
 )
 @NamedNativeQueries(
-    {
-        @NamedNativeQuery(name = "Servico.PorPreco",
-        query = "select ser.str_nome, ser.dbl_valor from tb_servico ser where ser.dbl_valor like ?")
-    }
+        {
+            @NamedNativeQuery(name = "Servico.PorPreco",
+                    query = "select ser.str_nome, ser.dbl_valor from tb_servico ser where ser.dbl_valor like ?")
+        }
 )
 public class Servico implements Serializable {
+
+    public static final String TODOS = "Servico.todos";
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

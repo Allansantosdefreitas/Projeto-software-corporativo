@@ -14,6 +14,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.NamedNativeQueries;
 import javax.persistence.NamedNativeQuery;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.Valid;
@@ -27,6 +29,12 @@ import org.hibernate.validator.constraints.NotBlank;
 @Entity
 @Table(name = "tb_exame")
 @Access(AccessType.FIELD)
+@NamedQueries(
+        {
+            @NamedQuery(name = "Exame.todos",
+                    query = "From Exame e")
+        }
+)
 @NamedNativeQueries(
         {
             @NamedNativeQuery(name = "Exame.PorTipo",
@@ -36,6 +44,8 @@ import org.hibernate.validator.constraints.NotBlank;
 )
 public class Exame implements Serializable {
 
+    public static final String TODOS = "Exame.todos";
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_exame", nullable = false)

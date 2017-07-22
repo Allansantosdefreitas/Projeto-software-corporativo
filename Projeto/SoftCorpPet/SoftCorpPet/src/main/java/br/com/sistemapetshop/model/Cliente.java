@@ -37,6 +37,10 @@ import javax.validation.Valid;
             @NamedQuery(
                     name = "Cliente.PorId",
                     query = "SELECT c FROM Cliente c WHERE c.idUsuario = ?1"
+            ),
+            @NamedQuery(
+                    name = "Cliente.todos",
+                    query = "From Cliente c"
             )
         }
 )
@@ -50,6 +54,8 @@ import javax.validation.Valid;
         }
 )
 public class Cliente extends Usuario implements Serializable {
+
+    public static final String TODOS = "Cliente.todos";
 
     // Relacionamento Cartao
     @Valid

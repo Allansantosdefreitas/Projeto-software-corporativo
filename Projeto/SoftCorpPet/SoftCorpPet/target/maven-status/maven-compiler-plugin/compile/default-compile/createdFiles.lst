@@ -39,6 +39,7 @@ br\com\sistemapetshop\model\Grupo_.class
 br\com\sistemapetshop\negocio\EnderecoService.class
 br\com\sistemapetshop\bean\ServicoBean.class
 br\com\sistemapetshop\util\WebServiceCep$Xml$3.class
+br\com\sistemapetshop\bean\PetBean.class
 br\com\sistemapetshop\bean\VeterinarioBean.class
 br\com\sistemapetshop\negocio\VeterinarioService.class
 br\com\sistemapetshop\model\Exame_.class

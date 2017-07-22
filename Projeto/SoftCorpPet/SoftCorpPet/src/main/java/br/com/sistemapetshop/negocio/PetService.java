@@ -28,8 +28,8 @@ public class PetService  extends Service<Pet>{
     public PetService(){
         super(Pet.class);
     }
-    
-    @RolesAllowed({CLIENTE})
+//    
+//    @RolesAllowed({CLIENTE})
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
     @Override
     public void salvar(Pet pet) {
@@ -39,16 +39,16 @@ public class PetService  extends Service<Pet>{
             em.persist(pet);
         }
     }
-
-    @RolesAllowed({CLIENTE})
+//
+//    @RolesAllowed({CLIENTE})
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
     @Override
     public void atualizar(Pet pet) {
         EntityManager em = getEntityManager();
         em.merge(pet);
     }
-
-    @RolesAllowed({CLIENTE})
+//
+//    @RolesAllowed({CLIENTE})
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
     @Override
     public void remover(Pet pet) {

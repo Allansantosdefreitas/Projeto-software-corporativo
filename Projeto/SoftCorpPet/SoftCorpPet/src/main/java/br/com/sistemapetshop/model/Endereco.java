@@ -12,6 +12,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedNativeQueries;
 import javax.persistence.NamedNativeQuery;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -25,6 +27,13 @@ import org.hibernate.validator.constraints.NotBlank;
 @Entity
 @Table(name = "tb_endereco")
 @Access(AccessType.FIELD)
+@NamedQueries(
+        {
+            @NamedQuery(name = "Endereco.todos",
+                    query = "From Endereco s")
+        }
+)
+
 @NamedNativeQueries(
         {
             @NamedNativeQuery(name = "Endereco.PorLogradouro",
@@ -33,6 +42,8 @@ import org.hibernate.validator.constraints.NotBlank;
         }
 )
 public class Endereco implements Serializable {
+
+    public static final String TODOS = "Endereco.todos";
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
